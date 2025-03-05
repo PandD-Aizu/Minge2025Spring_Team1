@@ -18,13 +18,13 @@ EditorBuildSettings:
     path: Assets/Minge2025Spring/Scenes/Tutorial.unity
     guid: 3f9f58ac1ffd7bc4cbc36f6f5eb8b635
   - enabled: 1
-    path: Assets/Minge2025Spring/Scenes/Stage01.unity
+    path: Assets/Minge2025Spring/Kora/Stage01.unity
     guid: 8e883e913f86b0141aa6a89b728c616d
   - enabled: 1
-    path: Assets/Minge2025Spring/Scenes/Stage02.unity
+    path: Assets/Minge2025Spring/Momiji/Stage02.unity
     guid: 613c48a964919aa4ea6e2c1218f0f828
   - enabled: 1
-    path: Assets/Minge2025Spring/Scenes/Stage03.unity
+    path: Assets/Minge2025Spring/Tottoko/Stage03.unity
     guid: 16cbeaf702092424d922a98415e1c4d0
   - enabled: 1
     path: Assets/Minge2025Spring/Scenes/Stage04.unity
