@@ -1,16 +1,18 @@
-﻿using NaughtyAttributes;
+﻿using System;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle
 {
-    public class PuzzleUIModel : MonoBehaviour
+    [Serializable]
+    public class PuzzleUIModel
     {
         [Header("ボタン")] 
-        [SerializeField] private Button puzzleOnOffButton;
-
+        [SerializeField] private Button puzzleOnOffButton; // パズルの表示切替ボタン
+        
         [Header("フラグ")] 
-        [ShowNonSerializedField] private bool isShowing;
+        [SerializeField] private bool isShowing; // パズルが表示されているかどうか
         
         /* getter と setter */
         public Button PuzzleOnOffButton { get => puzzleOnOffButton; set => puzzleOnOffButton = value; }

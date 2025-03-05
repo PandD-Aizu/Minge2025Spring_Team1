@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using NaughtyAttributes;
+using UnityEngine;
 
 namespace Puzzle
 {
@@ -10,11 +11,6 @@ namespace Puzzle
         public void Start()
         {
             SubscribeEvents();
-        }
-
-        public void Update()
-        {
-            
         }
         
         // @brief イベント群の登録
