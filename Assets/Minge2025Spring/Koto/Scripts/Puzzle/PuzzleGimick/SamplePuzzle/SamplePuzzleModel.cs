@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 namespace Puzzle
 {
+    // サンプルのパズル
+    // データを管理するクラス
     [Serializable]
     public class SamplePuzzleModel
     {
