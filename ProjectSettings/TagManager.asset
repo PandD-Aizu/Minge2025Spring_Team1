@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Enemy
+  - CharacterPlacement
+  - EnemyWalkable
+  - EnemyUnWalkable
+  - EnemyGoalPlacement
+  - EnemySpawnPlacement
   layers:
   - Default
   - TransparentFX
@@ -11,13 +17,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - CharacterPlacement
+  - EnemyWalkable
+  - EnemyUnWalkable
+  - EnemyGoalPlacement
+  - EnemySpawnPlacement
   - 
   - 
   - 
