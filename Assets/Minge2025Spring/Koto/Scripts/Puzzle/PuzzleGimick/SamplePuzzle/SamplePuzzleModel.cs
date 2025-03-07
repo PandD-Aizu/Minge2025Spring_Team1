@@ -4,23 +4,21 @@ using UnityEngine;
 namespace Puzzle
 {
     // サンプルのパズル
-    // データを管理するクラス
+    // データを管理するクラス(Buttonなどは使えない)
     [CreateAssetMenu(fileName = "SamplePuzzleModel", menuName = "ScriptableObject/SamplePuzzleModel")]
-    public class SamplePuzzleModel : ScriptableObject
+    public class SamplePuzzleModel : AbstractPuzzleModel
     {
-        [Header("与えるコスト")] 
-        [SerializeField] private int COST = 5; // プレイヤーに与えるコスト
-        
-        [Header("パズルの状態")]
-        [SerializeField] private BoolReactiveProperty isSolved = new BoolReactiveProperty(false); // パズルが解かれたかどうか
+        [Header("プレイヤーに与えるコスト")]
+        [SerializeField] private int GIVECOST = 10; // プレイヤーに与えるコスト
         
         /* getter と setter */
-        public BoolReactiveProperty IsSolved { get => isSolved; set => isSolved = value; }
+        public override BoolReactiveProperty IsSolved { get => isSolved; set => isSolved = value; }
         
         // @brief プレイヤーにコストを与える
-        public int GiveCost()
+        // @return プレイヤーに与えるコスト
+        public override int GiveCost()
         {
-            return COST;
+            return GIVECOST;
         }
     }
 }

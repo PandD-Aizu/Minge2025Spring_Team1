@@ -10,8 +10,8 @@ namespace Puzzle
         [SerializeField] private Button puzzleOnOffButton; // パズルの表示切替ボタン
         
         [Header("画像")]
-        [SerializeField] private SpriteRenderer puzzleBackGround; // パズル画面の背景
-        [SerializeField] private GameObject puzzleScreen; // パズル画面
+        [SerializeField] private SpriteRenderer puzzleBackGround; // パズル画面の背景(SampleScene要参照)
+        [SerializeField] private GameObject puzzleScreen;         // パズル画面
         
         /* getter と setter */
         public Button PuzzleOnOffButton { get => puzzleOnOffButton; set => puzzleOnOffButton = value; }

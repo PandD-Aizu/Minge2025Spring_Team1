@@ -22,7 +22,7 @@ namespace Puzzle
         private ParticleSystem.Particle[] particles; // 粒子の個数を管理する配列
         
         /* getter と setter */
-        public Button CookieButton { get => cookieButton; set => cookieButton = value; }
+        public Button CookieButton  => cookieButton;
 
         // @brief 描画の初期化関数
         public void Initialize()
@@ -47,7 +47,7 @@ namespace Puzzle
         public void AttractParticle()
         {
             // nullチェック
-            if (magicParticle == null || target == null) 
+            if (magicParticle == null) 
                 return;
 
             // パーティクルの最大数を取得

@@ -15,7 +15,7 @@ namespace Cost
         // @brief エントリポイント
         private void Start()
         {
-            puzzleModel.OnSolvePuzzle += UpdateCost;
+            puzzleModel.OnSolvePuzzle += UpdateCost; // パズルを解いたときに得られたコストを通知する
             model.Init();
         }
         
@@ -30,7 +30,6 @@ namespace Cost
         // @brief メモリリークを防ぐための処理
         public void Dispose()
         {
-            puzzleModel.OnSolvePuzzle = null;
             model.Cost = 0;
         }
     }

@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Puzzle
 {
+    // パズル機能を管理するクラス
     public class PuzzlePresenter : MonoBehaviour, IDisposable
     {
         [Header("依存関係")] 

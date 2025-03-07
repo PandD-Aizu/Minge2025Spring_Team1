@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031d240be4b34a2b92fff91c3b6db4e2, type: 3}
   m_Name: SamplePuzzleModel
   m_EditorClassIdentifier: 
-  cookieButton: {fileID: 0}
-  COST: 5
   isSolved:
-    value: 0
+    value: 1
+  GIVECOST: 5

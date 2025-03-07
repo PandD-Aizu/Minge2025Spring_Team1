@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Puzzle
 {
     // サンプルのパズル
-    //　ビューとモデルのデータのやり取りを仲介をするクラス
+    //　viewとmodelのデータのやり取りを仲介をするクラス
     public class SamplePuzzlePresenter : MonoBehaviour, IDisposable
     {
         [Header("依存関係")]
@@ -27,11 +27,12 @@ namespace Puzzle
         // @brief イベント群の登録
         private void SubScribeEvents()
         {
+            // クッキーボタンが押されたときのイベントを登録
             view.CookieButton.onClick.AddListener(() =>
             {
-                view.ScalingCookie();
-                view.PlayParticle();
-                model.IsSolved.SetValueAndForceNotify(true);
+                view.ScalingCookie();                        // クッキーの拡縮アニメーション
+                view.PlayParticle();                         // パーティクルの再生
+                model.IsSolved.SetValueAndForceNotify(true); // パズルを解いたことを通知
             });
         }
 

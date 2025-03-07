@@ -7,7 +7,7 @@ namespace Puzzle
     public class PuzzleGimmickModel : ScriptableObject
     {
         [Header("得られたコスト")]
-        [SerializeField] private ReactiveProperty<int> notifyCostChange = new ReactiveProperty<int>(0); // パズルを解いたときに得られたコスト
+        [SerializeField] private ReactiveProperty<int> notifyCostChange = new ReactiveProperty<int>(0);
         
         /* getter と setter */
         public ReactiveProperty<int> NotifyCostChange { get => notifyCostChange; set => notifyCostChange = value; }

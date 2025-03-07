@@ -7,10 +7,10 @@ namespace Cost
     public class CostControllerModel : ScriptableObject
     {
         [Header("初期化時の値")]
-        [SerializeField] private int initCost; // 初期化時の値
+        [SerializeField] private int initCost;
         
         [Header("コスト")]
-        [SerializeField] private int cost; // コスト
+        [SerializeField] private int cost;
         
         /* getter と setter */
         public int Cost { get => cost; set => cost = value; }
