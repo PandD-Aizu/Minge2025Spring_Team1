@@ -11,7 +11,7 @@ namespace Cost
         // @param cost 現在のコスト
         public void UpdateCostText(int cost)
         {
-            costText.text = cost.ToString();
+            costText.text = "Cost " + cost.ToString();
         }
     }
 }

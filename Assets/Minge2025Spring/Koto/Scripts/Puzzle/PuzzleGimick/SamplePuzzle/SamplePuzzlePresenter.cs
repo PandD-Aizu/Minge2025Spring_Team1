@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Puzzle
 {
     // サンプルのパズル
     //　ビューとモデルのデータのやり取りを仲介をするクラス
-    public class SamplePuzzlePresenter : MonoBehaviour
+    public class SamplePuzzlePresenter : MonoBehaviour, IDisposable
     {
         [Header("依存関係")]
         [SerializeField] private SamplePuzzleModel model;
@@ -26,11 +27,18 @@ namespace Puzzle
         // @brief イベント群の登録
         private void SubScribeEvents()
         {
-            model.CookieButton.onClick.AddListener(() =>
+            view.CookieButton.onClick.AddListener(() =>
             {
                 view.ScalingCookie();
                 view.PlayParticle();
+                model.IsSolved.SetValueAndForceNotify(true);
             });
+        }
+
+        // @brief メモリリークを防ぐための処理
+        public void Dispose()
+        {
+            
         }
     }
 }

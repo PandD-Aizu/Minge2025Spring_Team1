@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Puzzle
 {
-    [Serializable]
-    public class PuzzleStateModel
+    [CreateAssetMenu(fileName = "PuzzleStateModel", menuName = "ScriptableObject/PuzzleStateModel")]
+    public class PuzzleStateModel : ScriptableObject
     {
         public enum PuzzleState { samplePuzzle, samplePuzzle2, samplePuzzle3 }
         

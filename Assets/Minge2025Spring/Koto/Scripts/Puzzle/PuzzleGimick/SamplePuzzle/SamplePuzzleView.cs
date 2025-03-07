@@ -1,5 +1,6 @@
 ﻿using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Puzzle
 {
@@ -7,6 +8,9 @@ namespace Puzzle
     // UIの描画などを管理するクラス
     public class SamplePuzzleView : MonoBehaviour
     {
+        [Header("ボタン")]
+        [SerializeField] private Button cookieButton; // クッキーボタン
+        
         [Header("画像")]
         [SerializeField] private GameObject cookie; // クッキーの画像(魔力の塊の画像)
         
@@ -16,6 +20,9 @@ namespace Puzzle
         
         private const float FORCE = 50.0f;           // パーティクルの吸引力
         private ParticleSystem.Particle[] particles; // 粒子の個数を管理する配列
+        
+        /* getter と setter */
+        public Button CookieButton { get => cookieButton; set => cookieButton = value; }
 
         // @brief 描画の初期化関数
         public void Initialize()
@@ -33,7 +40,7 @@ namespace Puzzle
         // @brief クッキークリック時にパーティクルを排出する
         public void PlayParticle()
         {
-            magicParticle.Emit(10);
+            magicParticle.Emit(5);
         }
         
         // @brief パーティクルを引き寄せる
@@ -61,24 +68,6 @@ namespace Puzzle
             }
             
             magicParticle.SetParticles(particles, count);
-        }
-        
-        // @brief パーティクルが他のオブジェクトに衝突したときに呼び出される
-        // @param other 衝突したオブジェクト
-        private void OnParticleCollision(GameObject other)
-        {
-            Debug.Log(other.transform.tag);
-            if (other.transform.CompareTag("Cost"))
-            {
-                int numParticlesAlive = magicParticle.GetParticles(particles);
-
-                for (int i = 0; i < numParticlesAlive; i++)
-                {
-                    particles[i].remainingLifetime = 0; // パーティクルを即座に消す
-                }
-
-                magicParticle.SetParticles(particles, numParticlesAlive);
-            }
         }
     }
 }

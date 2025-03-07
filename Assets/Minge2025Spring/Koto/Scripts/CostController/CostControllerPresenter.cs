@@ -16,6 +16,7 @@ namespace Cost
         private void Start()
         {
             puzzleModel.OnSolvePuzzle += UpdateCost;
+            model.Init();
         }
         
         // @brief コストを増減させる
@@ -30,6 +31,7 @@ namespace Cost
         public void Dispose()
         {
             puzzleModel.OnSolvePuzzle = null;
+            model.Cost = 0;
         }
     }
 }

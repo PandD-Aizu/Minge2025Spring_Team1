@@ -1,27 +1,40 @@
 ﻿using System;
 using Cost;
 using NaughtyAttributes;
+using UniRx;
 using UnityEngine;
 
 namespace Puzzle
 {
-    public class PuzzlePresenter : MonoBehaviour
+    public class PuzzlePresenter : MonoBehaviour, IDisposable
     {
         [Header("依存関係")] 
-        [SerializeField] private PuzzleModel puzzleModel;
+        [SerializeField] private PuzzleModel model;
         [SerializeField] private CostControllerModel costControllerModel;
         [SerializeField] private PuzzleGimmickModel puzzleGimmickModel;
 
-        private void Update()
+        // @brief エントリポイント  
+        private void Start()
         {
-            // TODO: パズルを解いたときにコストの増減を通知する
+            SubScribeEvents();
         }
         
-        // @brief コストの増減を通知する
-        private void NotifyCostInfo()
+        // @brief イベント群の登録
+        private void SubScribeEvents()
         {
-            int costValue = puzzleGimmickModel.Cost;
-            puzzleModel.OnSolvePuzzle?.Invoke(costValue);
+            // パズルを解いたときに得られたコストを通知する
+            puzzleGimmickModel.NotifyCostChange
+                .Skip(1) // 初期化時のイベントをスキップ
+                .Subscribe((changeValue) =>
+                {
+                    model.OnSolvePuzzle?.Invoke(changeValue);
+                });
+        }
+
+        // @brief メモリリークを防ぐための処理
+        public void Dispose()
+        {
+            model.OnSolvePuzzle = null;
         }
     }
 }

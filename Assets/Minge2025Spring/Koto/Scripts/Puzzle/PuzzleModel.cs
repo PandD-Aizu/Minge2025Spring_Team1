@@ -3,8 +3,8 @@ using UnityEngine;
 
 namespace Puzzle
 {
-    [Serializable]
-    public class PuzzleModel
+    [CreateAssetMenu(fileName = "PuzzleModel", menuName = "ScriptableObject/PuzzleModel")]
+    public class PuzzleModel : ScriptableObject
     {
         private Action<int> onSolvePuzzle; // パズルを解いたときの処理
         

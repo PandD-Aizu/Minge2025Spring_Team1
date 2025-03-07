@@ -1,18 +1,26 @@
-﻿using System;
+﻿using UniRx;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Puzzle
 {
     // サンプルのパズル
     // データを管理するクラス
-    [Serializable]
-    public class SamplePuzzleModel
+    [CreateAssetMenu(fileName = "SamplePuzzleModel", menuName = "ScriptableObject/SamplePuzzleModel")]
+    public class SamplePuzzleModel : ScriptableObject
     {
-        [Header("ボタン")]
-        [SerializeField] private Button cookieButton; // クッキーボタン
+        [Header("与えるコスト")] 
+        [SerializeField] private int COST = 5; // プレイヤーに与えるコスト
+        
+        [Header("パズルの状態")]
+        [SerializeField] private BoolReactiveProperty isSolved = new BoolReactiveProperty(false); // パズルが解かれたかどうか
         
         /* getter と setter */
-        public Button CookieButton { get => cookieButton; set => cookieButton = value; }
+        public BoolReactiveProperty IsSolved { get => isSolved; set => isSolved = value; }
+        
+        // @brief プレイヤーにコストを与える
+        public int GiveCost()
+        {
+            return COST;
+        }
     }
 }

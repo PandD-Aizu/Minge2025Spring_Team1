@@ -1,15 +1,15 @@
-﻿using System;
+﻿using UniRx;
 using UnityEngine;
 
 namespace Puzzle
 {
-    [Serializable]
-    public class PuzzleGimmickModel
+    [CreateAssetMenu(fileName = "PuzzleGimmickModel", menuName = "ScriptableObject/PuzzleGimmickModel")]
+    public class PuzzleGimmickModel : ScriptableObject
     {
         [Header("得られたコスト")]
-        [SerializeField] private int cost; // パズルを解いたときに得られたコスト
+        [SerializeField] private ReactiveProperty<int> notifyCostChange = new ReactiveProperty<int>(0); // パズルを解いたときに得られたコスト
         
         /* getter と setter */
-        public int Cost { get => cost; set => cost = value; }
+        public ReactiveProperty<int> NotifyCostChange { get => notifyCostChange; set => notifyCostChange = value; }
     }
 }
