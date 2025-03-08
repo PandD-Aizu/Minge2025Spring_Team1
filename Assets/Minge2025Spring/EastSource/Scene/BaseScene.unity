@@ -5694,6 +5694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b1f71aa1b2734aa8957ed1fe4ecc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isdebugMode: 1
+  testWalkableCellNumber: 4
 --- !u!1001 &1991978155
 PrefabInstance:
   m_ObjectHideFlags: 0

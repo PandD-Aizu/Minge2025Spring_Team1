@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,11 @@ public class GameManager : MonoBehaviour
         public int weight;
     }
     
+    [FormerlySerializedAs("debugMode")]
+    [Header("Debugger Mode")]
+    [SerializeField] private bool isdebugMode = false;
+    [SerializeField] private int testWalkableCellNumber = 0;
+    
     private GameObject[] enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
     public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
@@ -23,7 +29,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
-        
     }
 
     private void Start()
@@ -38,19 +43,52 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (testWalkableCellNumber >= enemyWalkableCells.Length)
+        {
+            isdebugMode = false;
+            testWalkableCellNumber = 0;
+            Debug.Log("testWalkableCellNumber overflow");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && isdebugMode)
+        {
+            foreach (GameObject enemyWalkableCell in enemyWalkableCells)
+            {
+                Vector3 temp = enemyWalkableCell.transform.position;
+                temp.y = 0;
+                enemyWalkableCell.transform.position = temp;
+            }
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Space) && isdebugMode)
         {
             Debug.Log("get Key space");
-            SearchShortestRoot(enemyWalkableCells[1].gameObject.GetComponent<EnemyWalkableCell>(), enemyGoalPointCells[1].transform.position);
-            while (false)
-            {
-                
-            }
+            SearchShortestRoot(enemyWalkableCells[testWalkableCellNumber].gameObject.GetComponent<EnemyWalkableCell>(), enemyGoalPointCells[1].transform.position);
             Debug.Log("finish");
 
+            EnemyWalkableCell currentEnemyWalkableCell = enemyWalkableCells[testWalkableCellNumber].GetComponent<EnemyWalkableCell>();
+            int number = 0;
             while (true)
             {
+                DebugUp1PositionY(currentEnemyWalkableCell);
+                if (currentEnemyWalkableCell.NextCell == null)
+                {
+                    break;
+                }
                 
+                if (currentEnemyWalkableCell.NextCell == currentEnemyWalkableCell)  // 自己ループを防ぐ
+                {
+                    Debug.LogError("NextCell is pointing to itself! Breaking loop.");
+                    break;
+                }
+                
+                currentEnemyWalkableCell = currentEnemyWalkableCell.NextCell;
+                number++;
+                if (number > 100)
+                {
+                    Debug.LogWarning("number overflow");
+                    break;
+                }
             }
         }
     }
@@ -77,6 +115,7 @@ public class GameManager : MonoBehaviour
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
     private void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
     {
+        ResetCell();
         List<EnemyWalkableCell> passedCells = new List<EnemyWalkableCell>();
         List<SearchShortestRootInfo> TerminalCellsInfos = new List<SearchShortestRootInfo>(); /*現在調べたセルの中で末端のセルのリスト*/
         EnemyWalkableCell connectGoalCell = null;
@@ -91,6 +130,8 @@ public class GameManager : MonoBehaviour
         });
 
 
+        int maxSteps = 500; // 無限ループ防止
+        int stepCount = 0;
         while (connectGoalCell == null)
         {
             TerminalCellsInfos.Sort((a, b) => a.weight.CompareTo(b.weight));
@@ -99,7 +140,8 @@ public class GameManager : MonoBehaviour
             
             //末端のセルの隣接するセルを確認TerminalCellsに格納
             if (currentTerminalCellInfo.enemyWalkableCell.UpCell != null
-                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.UpCell))
+                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.UpCell)
+                && currentTerminalCellInfo.enemyWalkableCell.UpCell.isWalkable)
             {
                 currentTerminalCellInfo.enemyWalkableCell.UpCell.PreviousCell = currentTerminalCellInfo.enemyWalkableCell; 
                 TerminalCellsInfos.Add(CreateTerminalCell(currentTerminalCellInfo, currentTerminalCellInfo.enemyWalkableCell.UpCell)); 
@@ -107,7 +149,8 @@ public class GameManager : MonoBehaviour
             }
 
             if (currentTerminalCellInfo.enemyWalkableCell.DownCell != null
-                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.DownCell))
+                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.DownCell)
+                && currentTerminalCellInfo.enemyWalkableCell.DownCell.isWalkable)
             {
                 currentTerminalCellInfo.enemyWalkableCell.DownCell.PreviousCell = currentTerminalCellInfo.enemyWalkableCell; 
                 TerminalCellsInfos.Add(CreateTerminalCell(currentTerminalCellInfo, currentTerminalCellInfo.enemyWalkableCell.DownCell)); 
@@ -115,7 +158,8 @@ public class GameManager : MonoBehaviour
             }
 
             if (currentTerminalCellInfo.enemyWalkableCell.RightCell != null
-                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.RightCell))
+                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.RightCell)
+                && currentTerminalCellInfo.enemyWalkableCell.RightCell.isWalkable)
             {
                 currentTerminalCellInfo.enemyWalkableCell.RightCell.PreviousCell = currentTerminalCellInfo.enemyWalkableCell;
                 TerminalCellsInfos.Add(CreateTerminalCell(currentTerminalCellInfo, currentTerminalCellInfo.enemyWalkableCell.RightCell));
@@ -123,14 +167,28 @@ public class GameManager : MonoBehaviour
             }
 
             if (currentTerminalCellInfo.enemyWalkableCell.LeftCell != null
-                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.LeftCell))
+                && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.LeftCell)
+                && currentTerminalCellInfo.enemyWalkableCell.LeftCell.isWalkable)
             { 
                 currentTerminalCellInfo.enemyWalkableCell.LeftCell.PreviousCell = currentTerminalCellInfo.enemyWalkableCell; 
                 TerminalCellsInfos.Add(CreateTerminalCell(currentTerminalCellInfo, currentTerminalCellInfo.enemyWalkableCell.LeftCell)); 
                 passedCells.Add(currentTerminalCellInfo.enemyWalkableCell.LeftCell);
             }
             
+            if (TerminalCellsInfos.Count == 0) // 追加の無限ループ防止策
+            {
+                Debug.LogError("No more terminal cells! Breaking loop.");
+                break;
+            }
+            
             connectGoalCell = CheckadjacentGoal(TerminalCellsInfos, goalPosition);
+            
+            stepCount++;
+            if (stepCount > maxSteps)
+            {
+                Debug.LogError("SearchShortestRoot exceeded max steps! Breaking loop.");
+                break;
+            }
             
             
         }
@@ -202,5 +260,27 @@ public class GameManager : MonoBehaviour
         }
         
         Debug.Log("finish connecting to goal from current cell :" + number);
+    }
+
+    private void ResetCell()
+    {
+        foreach (GameObject enemyWalkableCellObject in enemyWalkableCells)
+        {
+            if (enemyWalkableCellObject.TryGetComponent(out EnemyWalkableCell enemyWalkableCell))
+            {
+                enemyWalkableCell.NextCell = null;
+                enemyWalkableCell.PreviousCell = null;
+            }
+        }
+    }
+
+    private void DebugUp1PositionY(EnemyWalkableCell enemyWalkableCell)
+    {
+        if (isdebugMode)
+        {
+            Vector3 temp = enemyWalkableCell.gameObject.transform.position;
+            temp.y += 1f;
+            enemyWalkableCell.gameObject.transform.position = temp;
+        }
     }
 }

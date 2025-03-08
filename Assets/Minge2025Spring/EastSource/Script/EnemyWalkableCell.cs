@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyWalkableCell : MonoBehaviour
 {
+    public bool isWalkable = true;
+        
     private EnemyWalkableCell upCell = null;
     private EnemyWalkableCell downCell = null;
     private EnemyWalkableCell leftCell = null;
