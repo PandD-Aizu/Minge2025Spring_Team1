@@ -44,6 +44,7 @@ namespace Puzzle
         }
         
         // @brief パーティクルを引き寄せる
+        // TODO: ForceField使うのでいらないかも(保険として残しておく)
         public void AttractParticle()
         {
             // nullチェック

@@ -19,10 +19,10 @@ namespace Puzzle
         [SerializeField] private int MAX_MAGICCIRCLE = 5; // 魔法陣の最大数
         
         /* getter と setter */
-        public override BoolReactiveProperty IsSolved { get => isSolved; set => isSolved = value; }
-        public int CurrentMagicCircle { get => currentMagicCircle; set => currentMagicCircle = value; }
-        public int InitMagicCircle { get => INIT_MAGICCIRCLE; }
-        public int MaxMagicCircle { get => MAX_MAGICCIRCLE; }
+        public override BoolReactiveProperty IsSolved { get => isSolved;           set => isSolved           = value; }
+        public int CurrentMagicCircle                 { get => currentMagicCircle; set => currentMagicCircle = value; }
+        public int InitMagicCircle                    { get => INIT_MAGICCIRCLE; }
+        public int MaxMagicCircle                     { get => MAX_MAGICCIRCLE; }
 
         // @brief 初期化関数
         public void Init()

@@ -14,8 +14,8 @@ namespace Puzzle
         [SerializeField] private int currentPuzzleIndex; 
         
         /* getter と setter */
-        public ReactiveProperty<int> NotifyCostChange { get => notifyCostChange; set => notifyCostChange = value; }
-        public int CurrentPuzzleIndex { get => currentPuzzleIndex; set => currentPuzzleIndex = value; }
+        public ReactiveProperty<int> NotifyCostChange { get => notifyCostChange;   set => notifyCostChange   = value; }
+        public int CurrentPuzzleIndex                 { get => currentPuzzleIndex; set => currentPuzzleIndex = value; }
 
         // @brief 初期化関数
         public void Init()

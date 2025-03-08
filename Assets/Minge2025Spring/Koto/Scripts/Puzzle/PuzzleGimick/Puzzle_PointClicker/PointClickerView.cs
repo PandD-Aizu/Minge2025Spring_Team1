@@ -19,7 +19,7 @@ namespace Puzzle
         [SerializeField] private Button point;
 
         [Header("画像")] 
-        [SerializeField] private GameObject magicCircle; // 魔法陣の画像
+        [SerializeField] private GameObject magicCircle;        // 魔法陣の画像
         [SerializeField] private List<GameObject> magicCircles; // 魔法陣の画像のリスト
          
         [Header("パーティクル")]
@@ -28,9 +28,6 @@ namespace Puzzle
         
         private const float FORCE = 50.0f;           // パーティクルの吸引力
         private ParticleSystem.Particle[] particles; // 粒子の個数を管理する配列
-        
-        /* getter と setter */
-        public Button Point => point;
         
         // @brief 描画の初期化関数
         public void Initialize()
@@ -85,6 +82,7 @@ namespace Puzzle
         }
         
         // @brief パーティクルを引き寄せる
+        // TODO: ForceFieldつかうのでいらないかも(保険として残しておく)
         public void AttractParticle()
         {
             // nullチェック
