@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,12 +15,15 @@ public class GameManager : MonoBehaviour
     }
     
     private GameObject[] enemyWalkableCells;
+    private GameObject[] enemyGoalPointCells;
     public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
     
     private void Awake()
     {
         Instance = this;
         UpdateEnemyWalkableCells();
+        UpdateEnemyGoalPointCells();
+        
     }
 
     private void Start()
@@ -30,6 +34,25 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log("get Key space");
+            SearchShortestRoot(enemyWalkableCells[1].gameObject.GetComponent<EnemyWalkableCell>(), enemyGoalPointCells[1].transform.position);
+            while (false)
+            {
+                
+            }
+            Debug.Log("finish");
+
+            while (true)
+            {
+                
+            }
+        }
     }
     
     //brief シーン上のエネミーが通れるエリアを取得する
@@ -42,12 +65,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void UpdateEnemyGoalPointCells()
+    {
+        enemyGoalPointCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyGoalPoint);
+        foreach (GameObject enemyGoalPointCell in enemyGoalPointCells)
+        {
+            Debug.Log("position: " + enemyGoalPointCell.transform.position + "name: " +enemyGoalPointCell.gameObject.name);
+        }
+    }
+
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
     private void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
     {
         List<EnemyWalkableCell> passedCells = new List<EnemyWalkableCell>();
-        List<SearchShortestRootInfo> TerminalCellsInfos = new List<SearchShortestRootInfo>();　/*現在調べたセルの中で末端のセルのリスト*/
-        
+        List<SearchShortestRootInfo> TerminalCellsInfos = new List<SearchShortestRootInfo>(); /*現在調べたセルの中で末端のセルのリスト*/
+        EnemyWalkableCell connectGoalCell = null;
         passedCells.Add(currentCell);
         
         //初期のTerminalCellsをつくる
@@ -59,14 +91,13 @@ public class GameManager : MonoBehaviour
         });
 
 
-        while (!CheckadjacentGoal(TerminalCellsInfos, goalPosition))
+        while (connectGoalCell == null)
         {
             TerminalCellsInfos.Sort((a, b) => a.weight.CompareTo(b.weight));
-            
             SearchShortestRootInfo currentTerminalCellInfo = TerminalCellsInfos[0];
             TerminalCellsInfos.Remove(TerminalCellsInfos[0]);
             
-            //末端のセルの隣接するセルを確認
+            //末端のセルの隣接するセルを確認TerminalCellsに格納
             if (currentTerminalCellInfo.enemyWalkableCell.UpCell != null
                 && !PassedCellsExist(passedCells, currentTerminalCellInfo.enemyWalkableCell.UpCell))
             {
@@ -99,7 +130,18 @@ public class GameManager : MonoBehaviour
                 passedCells.Add(currentTerminalCellInfo.enemyWalkableCell.LeftCell);
             }
             
+            connectGoalCell = CheckadjacentGoal(TerminalCellsInfos, goalPosition);
+            
+            
         }
+        
+        //connectGoalCellの名前をコーンソールに表示するだけなので無視でおけ
+        if (connectGoalCell != null)
+        {
+            Debug.Log(connectGoalCell.gameObject.name);
+        }
+        
+        ToGoalfromStart(connectGoalCell);
     }
 
     //brief 新しい末端セルを作る関数
@@ -115,19 +157,19 @@ public class GameManager : MonoBehaviour
     }
     
     //brief 末端セルがゴールセルと隣接しているか確認
-    private bool CheckadjacentGoal(List<SearchShortestRootInfo> TerminalCellsInfos, Vector3 goalPosition)
+    private EnemyWalkableCell CheckadjacentGoal(List<SearchShortestRootInfo> TerminalCellsInfos, Vector3 goalPosition)
     {
         foreach (SearchShortestRootInfo terminalCellsInfo in TerminalCellsInfos)
         {
-            if (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x, 1) 
-                || Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x, -1) 
-                || Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z, 1) 
-                || Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z, -1))
+            if ((Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x, 1) && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.z, 0))
+                || (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x, -1)  && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.z, 0))
+                || (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z, 1)  && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.x, 0))
+                || (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z, -1) && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.x, 0)))
             {
-                return true;
+                return terminalCellsInfo.enemyWalkableCell;
             }
         }
-        return false;
+        return null;
     }
     
     //過去に検索したセルか確認
@@ -141,5 +183,24 @@ public class GameManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    //ルート内のセルのNextCellに適当なセルを格納するセル
+    private void ToGoalfromStart(EnemyWalkableCell connectGoalCell)
+    {
+        EnemyWalkableCell currentConnectGoalCell = connectGoalCell;
+        int number = 0;
+        while (true)
+        {
+            if (currentConnectGoalCell.PreviousCell == null)
+            {
+                break;
+            }
+            currentConnectGoalCell.PreviousCell.NextCell = currentConnectGoalCell;
+            currentConnectGoalCell = currentConnectGoalCell.PreviousCell;
+            number++;
+        }
+        
+        Debug.Log("finish connecting to goal from current cell :" + number);
     }
 }

@@ -21,7 +21,6 @@ public class EnemyWalkableCell : MonoBehaviour
     private void Start()
     {
         InitSurroundingCells();
-        
     }
 
     private void InitSurroundingCells()

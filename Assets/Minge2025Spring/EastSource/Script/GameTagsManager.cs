@@ -7,4 +7,5 @@ public class GameTagsManager : MonoBehaviour
     public const string EnemyWalkable = "EnemyWalkable";
     public const string EnemyUnWalkable = "EnemyUnWalkable";
     public const string CharacterPlacement = "CharacterPlacement";
+    public const string EnemyGoalPoint = "EnemyGoalPoint";
 }
