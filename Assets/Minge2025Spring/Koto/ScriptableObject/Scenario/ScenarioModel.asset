@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283d2cbe96d945b8bd45ab7aec6f75ab, type: 3}
+  m_Name: ScenarioModel
+  m_EditorClassIdentifier: 
+  filePath:
+  - SampleScenario.json
+  currentFilePathIndex: 1
+  scenarioData:
+    scenes:
+    - id: 1
+      name: "\u4E3B\u4EBA\u516C"
+      sentence: "\u3053\u308C\u306F\u6700\u521D\u306E\u30B7\u30CA\u30EA\u30AA\u3067\u3059\u3002"
+      background: bg1.png
+    - id: 2
+      name: "\u30D2\u30ED\u30A4\u30F3"
+      sentence: "\u6B21\u306E\u30B7\u30FC\u30F3\u3078\u9032\u307F\u307E\u3059\u3002"
+      background: bg2.png
+  currentSceneIndex: 2

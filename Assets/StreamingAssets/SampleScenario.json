@@ -1,0 +1,16 @@
+﻿{
+  "scenes": [
+    {
+      "id": 1,
+      "name": "主人公",
+      "sentence": "これは最初のシナリオです。",
+      "background": "bg1.png"
+    },
+    {
+      "id": 2,
+      "name": "ヒロイン",
+      "sentence": "次のシーンへ進みます。",
+      "background": "bg2.png"
+    }
+  ]
+}
