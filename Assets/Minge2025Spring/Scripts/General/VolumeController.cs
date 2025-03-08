@@ -20,8 +20,6 @@ namespace General
         private FMOD.Studio.VCA bgmVCA;
         private FMOD.Studio.VCA seVCA;
         
-        private bool isInitialized = false;
-        
         // @brief 初期化処理
         protected override void OnAwakeProcess()
         {
