@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PuzzleGimmickModel
   m_EditorClassIdentifier: 
   notifyCostChange:
-    value: 0
+    value: 5
+  currentPuzzleIndex: 1

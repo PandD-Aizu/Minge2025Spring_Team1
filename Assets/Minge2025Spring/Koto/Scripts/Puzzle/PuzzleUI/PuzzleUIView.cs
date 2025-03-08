@@ -8,6 +8,8 @@ namespace Puzzle
     {
         [Header("ボタン")]
         [SerializeField] private Button puzzleOnOffButton; // パズルの表示切替ボタン
+        [SerializeField] private Button rightButton;       // パズル切り替えボタン(右)
+        [SerializeField] private Button leftButton;        // パズル切り替えボタン(左)
         
         [Header("画像")]
         [SerializeField] private SpriteRenderer puzzleBackGround; // パズル画面の背景(SampleScene要参照)
@@ -15,6 +17,8 @@ namespace Puzzle
         
         /* getter と setter */
         public Button PuzzleOnOffButton { get => puzzleOnOffButton; set => puzzleOnOffButton = value; }
+        public Button RightButton       { get => rightButton;       set => rightButton       = value; }
+        public Button LeftButton        { get => leftButton;        set => leftButton        = value; }
 
         // @brief パズル画面の表示切替
         // @param isShowing 開いているか閉じているか
