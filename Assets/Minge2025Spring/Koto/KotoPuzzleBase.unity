@@ -319,6 +319,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!198 &1569015028 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6118326973733677142, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+  m_PrefabInstance: {fileID: 1310865617240362073}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1642503621
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +697,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1557234983}
     m_Modifications:
+    - target: {fileID: 1640571473101677528, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062784692925474768, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2062784692925474768, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150257589748672525, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150257589748672525, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2353597259475220532, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -772,19 +797,186 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2882064226949903804, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044706769937888041, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_text
+      value: Click Magic Circle!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044706769937888041, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 4096
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044706769937888041, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649392532339447, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3074649392532339447, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3d2b243ef8829c240a85390c03f3c25f, type: 3}
     - target: {fileID: 5512119326700277137, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
       propertyPath: m_Name
       value: PuzzleScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 5717224630882619088, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638798041199962049, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638798041199962049, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638798041199962049, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6638798041199962049, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: point
+      value: 
+      objectReference: {fileID: 1310865617240362075}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: target.x
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: target.y
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: magicCircle
+      value: 
+      objectReference: {fileID: 1310865617240362074}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: magicParticle
+      value: 
+      objectReference: {fileID: 1569015028}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: spawnXRange.x
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: spawnXRange.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: spawnYRange.x
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: spawnYRange.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651470476158884840, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: samplePuzzle.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7651470476158884840, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: 'samplePuzzle.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 253cc258c69bf9d4196b00fe7d2ab791, type: 2}
     - target: {fileID: 8026946689439991259, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
       propertyPath: puzzleBackGround
       value: 
       objectReference: {fileID: 81409871}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    - target: {fileID: 8051842086894473615, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: view
+      value: 
+      objectReference: {fileID: 1310865617240362076}
+    - target: {fileID: 8051842086894473615, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 11400000, guid: 253cc258c69bf9d4196b00fe7d2ab791, type: 2}
+    - target: {fileID: 8225669301875022467, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407153685170313893, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_text
+      value: Click MagicPower!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407153685170313893, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_fontSize
+      value: 24.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 8440786905362660099, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 120
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2461905100433006373, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 5593433796479221835, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+    - {fileID: 8093787597130094743, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+    - {fileID: 8829601072815997888, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+--- !u!1 &1310865617240362074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2882064226949903804, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+  m_PrefabInstance: {fileID: 1310865617240362073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1310865617240362075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8225669301875022467, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+  m_PrefabInstance: {fileID: 1310865617240362073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310865617240362074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1310865617240362076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7021055338763766050, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
+  m_PrefabInstance: {fileID: 1310865617240362073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff030ba49a5c4a4086994627b5de8ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1389969680915625607
 PrefabInstance:
   m_ObjectHideFlags: 0
