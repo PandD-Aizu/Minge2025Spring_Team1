@@ -11,6 +11,7 @@ TagManager:
   - EnemyGoalPlacement
   - EnemySpawnPlacement
   - EnemyGoalPoint
+  - Cost
   layers:
   - Default
   - TransparentFX
