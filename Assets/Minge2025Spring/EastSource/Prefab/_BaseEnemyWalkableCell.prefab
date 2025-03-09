@@ -118,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5512419370644802674}
   - component: {fileID: 1207129473805411205}
+  - component: {fileID: 724005369866880655}
   m_Layer: 9
   m_Name: _BaseEnemyWalkableCell
   m_TagString: EnemyWalkable
@@ -133,7 +134,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140601511677387632}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -153,3 +154,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWalkable: 1
+--- !u!65 &724005369866880655
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140601511677387632}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

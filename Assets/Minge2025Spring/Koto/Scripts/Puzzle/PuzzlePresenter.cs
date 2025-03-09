@@ -28,14 +28,14 @@ namespace Puzzle
                 .Skip(1) // 初期化時のイベントをスキップ
                 .Subscribe((changeValue) =>
                 {
-                    model.OnSolvePuzzle?.Invoke(changeValue);
+                    costControllerModel.Cost.Value += changeValue;
                 });
         }
 
         // @brief メモリリークを防ぐための処理
         public void Dispose()
         {
-            model.OnSolvePuzzle = null;
+            
         }
     }
 }

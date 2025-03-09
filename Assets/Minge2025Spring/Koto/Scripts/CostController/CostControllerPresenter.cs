@@ -1,5 +1,6 @@
 ﻿using System;
 using Puzzle;
+using UniRx;
 using UnityEngine;
 
 namespace Cost
@@ -14,22 +15,26 @@ namespace Cost
         // @brief エントリポイント
         private void Start()
         {
-            puzzleModel.OnSolvePuzzle += UpdateCost; // パズルを解いたときに得られたコストを通知する
             model.Init();
+            SubscribeEvents();
         }
         
-        // @brief コストを増減させる
-        // @param costValue コストの増減値
-        private void UpdateCost(int costValue)
+        // @brief イベント群の登録
+        private void SubscribeEvents()
         {
-            model.Cost += costValue;
-            view.UpdateCostText(model.Cost);
+            // パズルを解いたときに得られたコストを通知する
+            model.Cost
+                .Skip(1)
+                .Subscribe((changeVal) =>
+                {
+                    view.UpdateCostText(changeVal); // コストの表示を更新
+                });
         }
 
         // @brief メモリリークを防ぐための処理
         public void Dispose()
         {
-            model.Cost = 0;
+            
         }
     }
 }

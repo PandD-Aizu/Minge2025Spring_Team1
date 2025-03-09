@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UniRx;
+using UnityEngine;
 
 namespace Cost
 {
@@ -9,15 +10,15 @@ namespace Cost
         [SerializeField] private int initCost;
         
         [Header("コスト")]
-        [SerializeField] private int cost;
+        [SerializeField] private ReactiveProperty<int> cost = new ReactiveProperty<int>();
         
         /* getter と setter */
-        public int Cost { get => cost; set => cost = value; }
+        public ReactiveProperty<int> Cost { get => cost; set => cost = value; }
 
         // @brief 初期化処理
         public void Init()
         {
-            cost = initCost;
+            cost.Value = initCost;
         }
     }
 }
