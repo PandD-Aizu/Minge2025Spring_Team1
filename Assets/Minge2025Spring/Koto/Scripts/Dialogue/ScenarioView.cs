@@ -9,8 +9,9 @@ namespace Dialogue
 {
     public class ScenarioView : MonoBehaviour
     {
-        [Header("メニューパネル")] 
-        [SerializeField] private GameObject menuPanel;
+        [Header("パネル")] 
+        [SerializeField] private GameObject menuPanel;     // メニューパネル
+        [SerializeField] private GameObject dialoguePanel; // ログパネル
          
         [Header("テキスト")] 
         [SerializeField] private TextMeshProUGUI nameText;     // キャラクタ名
@@ -19,6 +20,7 @@ namespace Dialogue
         [Header("ボタン")] 
         [SerializeField] private Button dialogueButton; // ダイアログ進行ボタン
         [SerializeField] private Button menuButton;     // メニューボタン
+        [SerializeField] private Button logButton;      // ログボタン
 
         [Header("背景")] 
         [SerializeField] private SpriteRenderer background;
@@ -28,6 +30,7 @@ namespace Dialogue
         public TextMeshProUGUI SentenceText { get => sentenceText; set => sentenceText = value; }
         public Button DialogueButton        { get => dialogueButton; }
         public Button MenuButton            { get => menuButton; }
+        public Button LogButton             { get => logButton; }
 
         // @brief 会話ウィンドウの表示更新
         // @param scenarioData シナリオデータ, currentIndex シナリオのインデックス
@@ -51,6 +54,22 @@ namespace Dialogue
                 menuPanel.transform.DOLocalMoveY(850, 0.5f)
                     .SetEase(Ease.OutSine)
                     .OnComplete(() => menuPanel.SetActive(!menuPanel.activeSelf));
+            }
+        }
+        
+        public void ToggleDialoguePanel()
+        {
+            if (!dialoguePanel.activeSelf) // ダイアログパネルを上から表示 
+            {
+                dialoguePanel.SetActive(!dialoguePanel.activeSelf);
+                dialoguePanel.transform.DOLocalMoveY(0, 0.5f)
+                    .SetEase(Ease.OutSine);
+            }
+            else                       // ダイアログパネルを上に隠す
+            {
+                dialoguePanel.transform.DOLocalMoveY(1100, 0.5f)
+                    .SetEase(Ease.OutSine)
+                    .OnComplete(() => dialoguePanel.SetActive(!dialoguePanel.activeSelf));
             }
         }
     }
