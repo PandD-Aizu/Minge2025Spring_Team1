@@ -4,6 +4,13 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Enemy
+  - CharacterPlacement
+  - EnemyWalkable
+  - EnemyUnWalkable
+  - EnemyGoalPlacement
+  - EnemySpawnPlacement
+  - EnemyGoalPoint
   - Cost
   layers:
   - Default
@@ -12,14 +19,14 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - CharacterPlacement
+  - EnemyWalkable
+  - EnemyUnWalkable
+  - EnemyGoalPlacement
+  - EnemySpawnPlacement
+  - EnemyGoalPoint
   - 
   - 
   - 
