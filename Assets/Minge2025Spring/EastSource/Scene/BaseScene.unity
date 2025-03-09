@@ -5695,7 +5695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isdebugMode: 1
-  testWalkableCellNumber: 4
+  testWalkableCellNumber: 0
 --- !u!1001 &1991978155
 PrefabInstance:
   m_ObjectHideFlags: 0

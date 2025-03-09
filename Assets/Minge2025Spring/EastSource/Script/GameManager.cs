@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         });
 
 
-        int maxSteps = 500; // 無限ループ防止
+        int maxSteps = 1000; // 無限ループ防止
         int stepCount = 0;
         while (connectGoalCell == null)
         {
@@ -190,6 +190,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
             
+            Debug.Log(CheckadjacentGoal(TerminalCellsInfos, goalPosition));
             
         }
         
@@ -198,8 +199,15 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(connectGoalCell.gameObject.name);
         }
-        
-        ToGoalfromStart(connectGoalCell);
+
+        if (connectGoalCell == null)
+        {
+            Debug.Log("Cannot discover root to goal.");
+        }
+        else
+        {
+            ToGoalfromStart(connectGoalCell);
+        }
     }
 
     //brief 新しい末端セルを作る関数
@@ -219,10 +227,10 @@ public class GameManager : MonoBehaviour
     {
         foreach (SearchShortestRootInfo terminalCellsInfo in TerminalCellsInfos)
         {
-            if ((Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x, 1) && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.z, 0))
-                || (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x, -1)  && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.z, 0))
-                || (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z, 1)  && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.x, 0))
-                || (Mathf.Approximately(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z, -1) && Mathf.Approximately(this.gameObject.transform.position.z - goalPosition.x, 0)))
+            if ((Mathf.Abs(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x) == 1 
+                 && Mathf.Abs(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z) == 0)
+                || (Mathf.Abs(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.z - goalPosition.z) == 1 
+                    && Mathf.Abs(terminalCellsInfo.enemyWalkableCell.gameObject.transform.position.x - goalPosition.x) == 0))
             {
                 return terminalCellsInfo.enemyWalkableCell;
             }
