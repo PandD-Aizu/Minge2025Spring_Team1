@@ -16,12 +16,24 @@ namespace CharacterDeploySys
         
         public GameObject CharacterPrefab { get => characterPrefab; }
         public GameObject CursorPreview { get => cursorPreview; }
+
+        // @brief 初期化処理
+        public void Init()
+        {
+            cursorPreview.SetActive(false);
+        }
         
         // @brief プレビューの画像を変更
         // @param sprite 画像
         public void ChangeCursorPreviewSprite(Sprite sprite)
         {
             cursorPreview.transform.GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+        
+        public void SetPreview(Vector3 previewPos)
+        {
+            cursorPreview.SetActive(true);
+            cursorPreview.transform.position = previewPos;
         }
         
         // @brief カーソル位置にキャラクターを配置

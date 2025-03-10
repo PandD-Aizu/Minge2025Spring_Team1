@@ -7,10 +7,11 @@ namespace CharacterDeploySys
     public class CharacterDeployModel : ScriptableObject
     {
         [Header("フラグ")]
-        [SerializeField] private bool isDeployActive;
+        [SerializeField] private bool isDeployActive;    // ユニットがドラッグアンドドロップ中か
+        [SerializeField] private bool isDeployAvailable; // ユニットが配置可能か
 
         [Header("レイヤーマスク")]
-        [SerializeField] private LayerMask characterLayer;
+        [SerializeField] private LayerMask deployLayer;
         [SerializeField] private LayerMask characterUILayer;
 
         [Header("選択したキャラクター")]
@@ -20,7 +21,8 @@ namespace CharacterDeploySys
         [SerializeField] private int cost;
          
         public bool IsDeployActive          { get => isDeployActive; set => isDeployActive = value; }
-        public LayerMask CharacterLayer     { get => characterLayer; set => characterLayer = value; }
+        public bool IsDeployAvailable       { get => isDeployAvailable; set => isDeployAvailable = value; }
+        public LayerMask DeployLayer        { get => deployLayer; set => deployLayer = value; }
         public LayerMask CharacterUILayer   { get => characterUILayer; }
         public GameObject SelectedCharacter { get => selectedCharacter; set => selectedCharacter = value; }
         public int Cost                     { get => cost; set => cost = value; }
@@ -29,6 +31,7 @@ namespace CharacterDeploySys
         public void Init()
         {
             isDeployActive = false;
+            isDeployAvailable = false;
             cost = 0;
             selectedCharacter = null;
         }

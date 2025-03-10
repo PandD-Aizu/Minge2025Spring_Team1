@@ -11,8 +11,6 @@ namespace CharacterDeploySys
         [SerializeField] private CharacterDeployModel model;
         [SerializeField] private CharacterDeployView view;
         [SerializeField] private CostControllerModel costControllerModel;
-        
-        
 
         // @brief エントリポイント
         private void Start()
@@ -37,55 +35,86 @@ namespace CharacterDeploySys
         private void SetCharacterPos()
         {
             AllyInfo allyInfo = null;
-            Ray characterRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            Ray cellRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit characterHit = new RaycastHit();
             RaycastHit cellHit = new RaycastHit();
+            RaycastHit previewHit = new RaycastHit();
             
             // キャラクターのUIをクリックしたら、プレビューを表示
             if (Input.GetMouseButton(0) && 
-                Physics.Raycast(characterRay, out characterHit, Mathf.Infinity, model.CharacterUILayer) &&
+                Physics.Raycast(ray, out characterHit, Mathf.Infinity, model.CharacterUILayer) &&
                 !model.IsDeployActive)
             {
-                Debug.Log("キャラクターのUIをクリックしました");
                 allyInfo = characterHit.collider.gameObject.GetComponent<CharacterUIPresenter>().Model; // キャラ情報を取得する
                 
                 // コストが足りていたら、プレビューを表示する
                 if(costControllerModel.Cost.Value >= allyInfo.Cost)
                 {
-                    characterHit.collider.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.gray; // 選択中のキャラUIはちょっと黒くする
                     //view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);                                       // プレビューの画像をキャラの画像に変更
-                    SetLayer(allyInfo.CharacterLayer);                                                              // プレビューのレイヤーを変更
+                    SetLayer(allyInfo.CharacterLayer);                                                                // プレビューのレイヤーを変更
                     
-                    model.Cost = allyInfo.Cost;                                                                     // コストを設定
-                    model.SelectedCharacter = characterHit.collider.gameObject;                                     // キャラクターのUIを設定
-                    model.IsDeployActive = true;                                                                    // ユニット配置可能フラグを立てる
+                    model.Cost = allyInfo.Cost;                                                                       // コストを設定
+                    model.SelectedCharacter = characterHit.collider.gameObject;                                       // キャラクターのUIを設定
+                    model.IsDeployActive = true;                                                                      // ユニット配置可能フラグを立てる
                 }
             }
 
             // マウスを押している間、3D空間上にプレビューを表示する
             if (Input.GetMouseButton(0) && 
-                Physics.Raycast(cellRay, out cellHit, Mathf.Infinity, model.CharacterLayer) &&
-                model.IsDeployActive)
+                Physics.Raycast(ray, out cellHit, Mathf.Infinity, model.DeployLayer)
+                && model.IsDeployActive)
             {
                 Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up;
-                view.CursorPreview.transform.position = characterDeployPos;
+                view.SetPreview(characterDeployPos);
+                model.IsDeployAvailable = true;
+            }
+            
+            // マウスを押している状態で、配置可能マス外にカーソルがある場合、プレビューをカーソルに追従するようにする
+            if (Input.GetMouseButton(0) && 
+                !Physics.Raycast(ray, out cellHit, Mathf.Infinity, model.DeployLayer) &&
+                model.IsDeployActive)
+            {
+                Vector3 previewPos = GetMouseWorldPosition(ray);
+                view.SetPreview(previewPos);
+                model.IsDeployAvailable = false;
             }
 
-            // マウスを離したら、キャラクターを配置する
-            if (Input.GetMouseButtonUp(0) && model.IsDeployActive)
+            // 設置可能であり、マウスを離したときユニットを配置する
+            if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable)
             {
-                costControllerModel.Cost.Value -= model.Cost;                                          // コストを減らす
-                view.DeployAlly(view.CursorPreview.transform.position);                          // ユニットを配置する
-                Destroy(model.SelectedCharacter);                                                // 選択中のキャラUIを削除する
+                costControllerModel.Cost.Value -= model.Cost;           // コストを減らす
+                view.DeployAlly(view.CursorPreview.transform.position); // ユニットを配置する
+                Destroy(model.SelectedCharacter);                       // 選択中のキャラUIを削除する
                 model.Init();
+                view.Init();
+            }
+            
+            // 設置可能ではないが、マウスを離したときプレビューを初期化する
+            if(Input.GetMouseButtonUp(0) && model.IsDeployActive && !model.IsDeployAvailable)
+            {
+                model.Init();
+                view.Init();
             }
         }
         
         // @brief プレビューのレイヤーを変更
         private void SetLayer(LayerMask layer)
         {
-            model.CharacterLayer = layer;
+            model.DeployLayer = layer;
+        }
+        
+        // @brief マウスのワールド座標を取得
+        // @param ray レイ
+        // @return マウスのワールド座標
+        private Vector3 GetMouseWorldPosition(Ray ray)
+        {
+            // カーソル位置のワールド座標を取得
+            Plane plane = new Plane(Vector3.up, Vector3.zero); // (0, 0, 0)を基準にする
+            
+            if (plane.Raycast(ray, out float distance))
+                return ray.GetPoint(distance) + Vector3.up;
+            
+            return Vector3.up;
         }
     }
 }
