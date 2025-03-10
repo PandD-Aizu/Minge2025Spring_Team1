@@ -21,6 +21,9 @@ namespace Dialogue
         [SerializeField] private Button dialogueButton; // ダイアログ進行ボタン
         [SerializeField] private Button menuButton;     // メニューボタン
         [SerializeField] private Button logButton;      // ログボタン
+        [SerializeField] private Button optionButton;   // オプションボタン
+        [SerializeField] private Button skipButton;     // スキップボタン
+        [SerializeField] private Button closeButton;    // ログパネルを閉じるボタン
 
         [Header("背景")] 
         [SerializeField] private SpriteRenderer background;
@@ -31,6 +34,9 @@ namespace Dialogue
         public Button DialogueButton        { get => dialogueButton; }
         public Button MenuButton            { get => menuButton; }
         public Button LogButton             { get => logButton; }
+        public Button OptionButton          { get => optionButton; }
+        public Button SkipButton            { get => skipButton; }
+        public Button CloseButton           { get => closeButton; }
 
         // @brief 会話ウィンドウの表示更新
         // @param scenarioData シナリオデータ, currentIndex シナリオのインデックス
