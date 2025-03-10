@@ -30,6 +30,7 @@ namespace CharacterDeploySys
             cursorPreview.transform.GetComponent<SpriteRenderer>().sprite = sprite;
         }
         
+        // @brief キャラクターのプレビューを表示する
         public void SetPreview(Vector3 previewPos)
         {
             cursorPreview.SetActive(true);

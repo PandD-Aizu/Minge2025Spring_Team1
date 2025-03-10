@@ -46,17 +46,7 @@ namespace CharacterDeploySys
                 !model.IsDeployActive)
             {
                 allyInfo = characterHit.collider.gameObject.GetComponent<CharacterUIPresenter>().Model; // キャラ情報を取得する
-                
-                // コストが足りていたら、プレビューを表示する
-                if(costControllerModel.Cost.Value >= allyInfo.Cost)
-                {
-                    //view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);                                       // プレビューの画像をキャラの画像に変更
-                    SetLayer(allyInfo.CharacterLayer);                                                                // プレビューのレイヤーを変更
-                    
-                    model.Cost = allyInfo.Cost;                                                                       // コストを設定
-                    model.SelectedCharacter = characterHit.collider.gameObject;                                       // キャラクターのUIを設定
-                    model.IsDeployActive = true;                                                                      // ユニット配置可能フラグを立てる
-                }
+                ClickCharacterUI(allyInfo, characterHit);
             }
 
             // マウスを押している間、3D空間上にプレビューを表示する
@@ -64,9 +54,7 @@ namespace CharacterDeploySys
                 Physics.Raycast(ray, out cellHit, Mathf.Infinity, model.DeployLayer)
                 && model.IsDeployActive)
             {
-                Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up;
-                view.SetPreview(characterDeployPos);
-                model.IsDeployAvailable = true;
+                PreviewCharacterOnDeployLayer(cellHit);
             }
             
             // マウスを押している状態で、配置可能マス外にカーソルがある場合、プレビューをカーソルに追従するようにする
@@ -74,30 +62,74 @@ namespace CharacterDeploySys
                 !Physics.Raycast(ray, out cellHit, Mathf.Infinity, model.DeployLayer) &&
                 model.IsDeployActive)
             {
-                Vector3 previewPos = GetMouseWorldPosition(ray);
-                view.SetPreview(previewPos);
-                model.IsDeployAvailable = false;
+                PreviewCharacterOutDeployLayer(ray);
             }
 
             // 設置可能であり、マウスを離したときユニットを配置する
             if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable)
             {
-                costControllerModel.Cost.Value -= model.Cost;           // コストを減らす
-                view.DeployAlly(view.CursorPreview.transform.position); // ユニットを配置する
-                Destroy(model.SelectedCharacter);                       // 選択中のキャラUIを削除する
-                model.Init();
-                view.Init();
+                DeployCharacter();
             }
             
             // 設置可能ではないが、マウスを離したときプレビューを初期化する
             if(Input.GetMouseButtonUp(0) && model.IsDeployActive && !model.IsDeployAvailable)
             {
-                model.Init();
-                view.Init();
+                InitCharacterDeploy();
             }
         }
         
-        // @brief プレビューのレイヤーを変更
+        // @brief キャラクターのプレビューを表示する
+        // @param allyInfo キャラクター情報, characterHit キャラクターのヒット情報
+        private void ClickCharacterUI(AllyInfo allyInfo, RaycastHit characterHit)
+        {
+            // コストが足りていたら、プレビューを表示する
+            if(costControllerModel.Cost.Value >= allyInfo.Cost)
+            {
+                //view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);                                       // プレビューの画像をキャラの画像に変更
+                SetLayer(allyInfo.CharacterLayer);                                                                // プレビューのレイヤーを変更
+                    
+                model.Cost = allyInfo.Cost;                                                                       // コストを設定
+                model.SelectedCharacter = characterHit.collider.gameObject;                                       // キャラクターのUIを設定
+                model.IsDeployActive = true;                                                                      // ユニット配置可能フラグを立てる
+            }
+        }
+
+        // @brief 配置可能マスの上でキャラクターのプレビューを表示する
+        // @param cellHit 配置可能マスのヒット情報
+        private void PreviewCharacterOnDeployLayer(RaycastHit cellHit)
+        {
+            Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up;
+            view.SetPreview(characterDeployPos);
+            model.IsDeployAvailable = true;
+        }
+        
+        // @brief 配置可能マス外でキャラクターのプレビューを表示する
+        // @param ray レイ
+        private void PreviewCharacterOutDeployLayer(Ray ray)
+        {
+            Vector3 previewPos = GetMouseWorldPosition(ray);
+            view.SetPreview(previewPos);
+            model.IsDeployAvailable = false;
+        }
+
+        // @brief キャラクターを配置
+        private void DeployCharacter()
+        {
+            costControllerModel.Cost.Value -= model.Cost;           // コストを減らす
+            view.DeployAlly(view.CursorPreview.transform.position); // ユニットを配置する
+            Destroy(model.SelectedCharacter);                       // 選択中のキャラUIを削除する
+            model.Init();
+            view.Init();
+        }
+        
+        // @brief キャラ配置の処理を初期化する
+        private void InitCharacterDeploy()
+        {
+            model.Init();
+            view.Init();
+        }
+        
+        // @brief 配置可能なレイヤーを変更
         private void SetLayer(LayerMask layer)
         {
             model.DeployLayer = layer;

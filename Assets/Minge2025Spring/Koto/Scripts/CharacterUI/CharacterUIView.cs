@@ -11,6 +11,7 @@ namespace CharacterUI
         [Header("キャラクターの画像")] 
         [SerializeField] private SpriteRenderer spriteRenderer;
 
+        // @brief 初期化処理
         public void Init(string costText, Sprite sprite)
         {
             this.costText.text = "Cost: " + costText;

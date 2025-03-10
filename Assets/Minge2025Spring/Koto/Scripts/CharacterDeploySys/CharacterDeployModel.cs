@@ -11,8 +11,8 @@ namespace CharacterDeploySys
         [SerializeField] private bool isDeployAvailable; // ユニットが配置可能か
 
         [Header("レイヤーマスク")]
-        [SerializeField] private LayerMask deployLayer;
-        [SerializeField] private LayerMask characterUILayer;
+        [SerializeField] private LayerMask deployLayer;      // ユニットが配置可能なレイヤーマスク
+        [SerializeField] private LayerMask characterUILayer; // キャラクターUIのレイヤーマスク
 
         [Header("選択したキャラクター")]
         [SerializeField] private GameObject selectedCharacter;
@@ -20,6 +20,7 @@ namespace CharacterDeploySys
         [Header("減らすコスト")] 
         [SerializeField] private int cost;
          
+        /* getter と setter */
         public bool IsDeployActive          { get => isDeployActive; set => isDeployActive = value; }
         public bool IsDeployAvailable       { get => isDeployAvailable; set => isDeployAvailable = value; }
         public LayerMask DeployLayer        { get => deployLayer; set => deployLayer = value; }
