@@ -1,16 +1,12 @@
+using System;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Vector3 GoalPosition;
+    private GameObject currentPositionCell;
+    private void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GoalPosition = GameManager.Instance.CallRandomGoalPosition();
     }
 }
