@@ -5627,6 +5627,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1906106051}
+  - component: {fileID: 1906106052}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -5643,13 +5644,28 @@ Transform:
   m_GameObject: {fileID: 1906106050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 3.78, y: 1, z: -4.89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1421217847}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1906106052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906106050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1210e0dbaf3dc54d99e48d9cbfe00bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchCurrentPositionCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &1944990920
 GameObject:
   m_ObjectHideFlags: 0
@@ -5694,7 +5710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b1f71aa1b2734aa8957ed1fe4ecc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isdebugMode: 0
+  isdebugMode: 1
   testWalkableCellNumber: 0
 --- !u!1001 &1991978155
 PrefabInstance:

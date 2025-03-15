@@ -114,7 +114,7 @@ public class GameManager : MonoBehaviour
     }
 
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
-    private void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
+    public void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
     {
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
@@ -288,7 +288,7 @@ public class GameManager : MonoBehaviour
     public Vector3 CallRandomGoalPosition()
     {
         Random random = new Random();
-        return enemyGoalPointCells[random.Next(enemyWalkableCells.Length)].transform.position;
+        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].transform.position;
     }
 
     private void DebugUp1PositionY(EnemyWalkableCell enemyWalkableCell)
