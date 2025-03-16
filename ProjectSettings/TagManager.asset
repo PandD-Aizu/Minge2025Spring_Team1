@@ -12,6 +12,7 @@ TagManager:
   - EnemySpawnPlacement
   - EnemyGoalPoint
   - Cost
+  - CharacterPlacementBreak
   layers:
   - Default
   - TransparentFX
@@ -33,7 +34,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - CharacterPlacementBraek
   - 
   - 
   - 
