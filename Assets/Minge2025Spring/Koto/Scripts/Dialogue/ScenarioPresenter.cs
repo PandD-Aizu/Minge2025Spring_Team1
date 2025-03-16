@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks.Triggers;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace Dialogue
         {
             scenarioLoader = new ScenarioLoader();
             model.Init();
+            logWindowView.Initialize();
             LoadScenario();
             SubscribeEvents();
         }
@@ -55,6 +57,13 @@ namespace Dialogue
                 .AddListener(() =>
                 {
                     view.ToggleDialoguePanel();
+                });
+            
+            // ログパネルを閉じる
+            view.CloseButton.onClick
+                .AddListener(() =>
+                {
+                    view.ToggleMenuPanel();
                 });
         }
 
