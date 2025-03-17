@@ -250,6 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c8e01c659b5f043a01b90c372d39d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collect: 0
+  NeedPuzzle: 1
+  CollectRotate_z: 0
 --- !u!114 &123581282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -806,6 +809,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c8e01c659b5f043a01b90c372d39d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collect: 0
+  NeedPuzzle: 1
+  CollectRotate_z: 180
 --- !u!114 &843049103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1031,6 +1037,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c8e01c659b5f043a01b90c372d39d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collect: 0
+  NeedPuzzle: 0
+  CollectRotate_z: 0
 --- !u!114 &1200564895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1452,6 +1461,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64c8e01c659b5f043a01b90c372d39d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Collect: 0
+  NeedPuzzle: 1
+  CollectRotate_z: 0
 --- !u!224 &1716685594 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2353597259475220532, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
@@ -1577,13 +1589,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855678385}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37d196c8e519d114bb4c8a1be4df8e09, type: 3}
+  m_Script: {fileID: 11500000, guid: f605c372a840f82489759983b9d88db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 0}
-  view: {fileID: 0}
 --- !u!1 &1998984703
 GameObject:
   m_ObjectHideFlags: 0
