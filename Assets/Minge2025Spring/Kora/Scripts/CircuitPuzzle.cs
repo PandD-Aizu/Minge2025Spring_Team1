@@ -6,11 +6,11 @@ namespace Puzzle
 {
     public class CuircuitPuzzle : MonoBehaviour, IDisposable
     {
-        [Header("ˆË‘¶ŠÖŒW")]
+        [Header("ï¿½Ë‘ï¿½ï¿½ÖŒW")]
         [SerializeField] private PointClickerModel model;
         [SerializeField] private PointClickerView view;
 
-        // @brief ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
+        // @brief ï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½g
         private void Start()
         {
             model.Init();
@@ -19,18 +19,18 @@ namespace Puzzle
             SubscribeEvents();
         }
 
-        // @brief ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
+        // @brief ï¿½Gï¿½ï¿½ï¿½gï¿½ï¿½ï¿½|ï¿½Cï¿½ï¿½ï¿½g
         private void Update()
         {
         }
 
-        // @brief ƒCƒxƒ“ƒgŒQ‚Ì“o˜^
+        // @brief ï¿½Cï¿½xï¿½ï¿½ï¿½gï¿½Qï¿½Ì“oï¿½^
         private void SubscribeEvents()
         {
 
         }
 
-        // @brief ƒƒ‚ƒŠƒŠ[ƒN‚ğ–h‚®‚½‚ß‚Ìˆ—
+        // @brief ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½Nï¿½ï¿½hï¿½ï¿½ï¿½ï¿½ï¿½ß‚Ìï¿½ï¿½ï¿½
         public void Dispose()
         {
 

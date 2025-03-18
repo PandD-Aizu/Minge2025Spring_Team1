@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class CheckClear : MonoBehaviour
 {
-    //‰Šú‰»
+    //åˆæœŸåŒ–
     private List<GameObject> obj_List = new List<GameObject>();
     private int i;
     GameObject obj;
@@ -13,7 +13,7 @@ public class CheckClear : MonoBehaviour
 
     void Start()
     {
-        //ƒpƒYƒ‹‚Ìƒs[ƒX‚ğæ“¾
+        //ãƒ‘ã‚ºãƒ«ã®ãƒ”ãƒ¼ã‚¹ã‚’å–å¾—
         obj_List.Add(GameObject.Find("RotatablePiece"));
         obj_List.Add(GameObject.Find("RotatablePiece (1)"));
         obj_List.Add(GameObject.Find("RotatablePiece (2)"));
@@ -24,7 +24,7 @@ public class CheckClear : MonoBehaviour
 
     void Update()
     {
-        //ƒpƒYƒ‹‚ğƒNƒŠƒA‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+        //ãƒ‘ã‚ºãƒ«ã‚’ã‚¯ãƒªã‚¢ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
         for (i = 0; i < obj_List.Count; i++)
         {
             obj = obj_List[i];

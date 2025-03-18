@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class RotativePiece : MonoBehaviour
 {
     Transform myTransform;
-    [Header("ó‚¯“n‚µ‚Ì‚½‚ßpublic")][SerializeField] public bool Collect;
-    [Header("ƒNƒŠƒA‚É•K—v‚Èƒs[ƒX‚©‚Ç‚¤‚©")][SerializeField] public bool NeedPuzzle;
-    [Header("³‰ğ‚ÌRotate")][SerializeField] public float CollectRotate_z;
+    [Header("ï¿½ó‚¯“nï¿½ï¿½ï¿½Ì‚ï¿½ï¿½ï¿½public")][SerializeField] public bool Collect;
+    [Header("ï¿½Nï¿½ï¿½ï¿½Aï¿½É•Kï¿½vï¿½Èƒsï¿½[ï¿½Xï¿½ï¿½ï¿½Ç‚ï¿½ï¿½ï¿½")][SerializeField] public bool NeedPuzzle;
+    [Header("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rotate")][SerializeField] public float CollectRotate_z;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,7 +21,7 @@ public class RotativePiece : MonoBehaviour
         Vector3 worldAngle = myTransform.eulerAngles;
         float world_angle_z = worldAngle.z;
 
-        //‚±‚Ìƒs[ƒX‚ª³‰ğ‚µ‚Ä‚¢‚é‚©
+        //ï¿½ï¿½ï¿½Ìƒsï¿½[ï¿½Xï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä‚ï¿½ï¿½é‚©
         Collect = true;
         if (NeedPuzzle == false) Collect = false;
         if (world_angle_z != CollectRotate_z) Collect = false; 

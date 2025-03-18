@@ -3,19 +3,19 @@ using UnityEngine;
 
 namespace Puzzle
 {
-    // ƒTƒ“ƒvƒ‹‚ÌƒpƒYƒ‹
-    // ƒf[ƒ^‚ğŠÇ—‚·‚éƒNƒ‰ƒX(Button‚È‚Ç‚Íg‚¦‚È‚¢)
+    // ï¿½Tï¿½ï¿½ï¿½vï¿½ï¿½ï¿½Ìƒpï¿½Yï¿½ï¿½
+    // ï¿½fï¿½[ï¿½^ï¿½ï¿½ï¿½Ç—ï¿½ï¿½ï¿½ï¿½ï¿½Nï¿½ï¿½ï¿½X(Buttonï¿½È‚Ç‚Ígï¿½ï¿½ï¿½È‚ï¿½)
     [CreateAssetMenu(fileName = "CircuitPuzzle", menuName = "ScriptableObject/CircuitPuzzle")]
     public class Circuit : AbstractPuzzleModel
     {
-        [Header("ƒvƒŒƒCƒ„[‚É—^‚¦‚éƒRƒXƒg")]
-        [SerializeField] private int GIVECOST = 10; // ƒvƒŒƒCƒ„[‚É—^‚¦‚éƒRƒXƒg
+        [Header("ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½É—^ï¿½ï¿½ï¿½ï¿½Rï¿½Xï¿½g")]
+        [SerializeField] private int GIVECOST = 10; // ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½É—^ï¿½ï¿½ï¿½ï¿½Rï¿½Xï¿½g
 
-        /* getter ‚Æ setter */
+        /* getter ï¿½ï¿½ setter */
         public override BoolReactiveProperty IsSolved { get => isSolved; set => isSolved = value; }
 
-        // @brief ƒvƒŒƒCƒ„[‚ÉƒRƒXƒg‚ğ—^‚¦‚é
-        // @return ƒvƒŒƒCƒ„[‚É—^‚¦‚éƒRƒXƒg
+        // @brief ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½ÉƒRï¿½Xï¿½gï¿½ï¿½^ï¿½ï¿½ï¿½ï¿½
+        // @return ï¿½vï¿½ï¿½ï¿½Cï¿½ï¿½ï¿½[ï¿½É—^ï¿½ï¿½ï¿½ï¿½Rï¿½Xï¿½g
         public override int GiveCost()
         {
             return GIVECOST;
