@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: Fighter.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: b0baffff7abaffff52baffff2abaffff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: da964c6bf0189104d930e1d97cb67d01, type: 2}
+  - {fileID: 11400000, guid: 188d9567bd0be774e97cc96863a15c80, type: 2}
+  - {fileID: 11400000, guid: b1d7b008edd5cee45bf4c1218be8b17b, type: 2}
+  - {fileID: 11400000, guid: f2025b2cfe5ded74aa670b6630e2225f, type: 2}
