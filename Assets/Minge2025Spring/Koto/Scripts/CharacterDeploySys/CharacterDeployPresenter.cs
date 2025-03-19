@@ -68,7 +68,7 @@ namespace CharacterDeploySys
             // 設置可能であり、マウスを離したときユニットを配置する
             if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable)
             {
-                DeployCharacter();
+                DeployCharacter(allyInfo);
             }
             
             // 設置可能ではないが、マウスを離したときプレビューを初期化する
@@ -113,11 +113,11 @@ namespace CharacterDeploySys
         }
 
         // @brief キャラクターを配置
-        private void DeployCharacter()
+        private void DeployCharacter(AllyInfo allyInfo)
         {
-            costControllerModel.Cost.Value -= model.Cost;           // コストを減らす
-            view.DeployAlly(view.CursorPreview.transform.position); // ユニットを配置する
-            Destroy(model.SelectedCharacter);                       // 選択中のキャラUIを削除する
+            costControllerModel.Cost.Value -= model.Cost;                                   // コストを減らす
+            view.DeployAlly(allyInfo.CharacterName, view.CursorPreview.transform.position); // ユニットを配置する TODO: modelにPrefabを持たせる
+            Destroy(model.SelectedCharacter);                                               // 選択中のキャラUIを削除する
             model.Init();
             view.Init();
         }

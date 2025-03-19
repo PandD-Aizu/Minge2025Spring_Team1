@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace CharacterDeploySys
@@ -9,13 +10,14 @@ namespace CharacterDeploySys
         [SerializeField] private GameObject parent;
         
         [Header("味方ユニットのプレハブ")]
-        [SerializeField] private GameObject characterPrefab;
+        [SerializeField] private List<GameObject> allyPrefabs;
 
         [Header("プレビュー")] 
         [SerializeField] private GameObject cursorPreview;
         
-        public GameObject CharacterPrefab { get => characterPrefab; }
-        public GameObject CursorPreview { get => cursorPreview; }
+        /* getter と setter */
+        public List<GameObject> AllyPrefabs { get => allyPrefabs; }
+        public GameObject CursorPreview     { get => cursorPreview; }
 
         // @brief 初期化処理
         public void Init()
@@ -39,9 +41,10 @@ namespace CharacterDeploySys
         
         // @brief カーソル位置にキャラクターを配置
         // @param pos カーソルの位置
-        public void DeployAlly(Vector3 pos)
+        public void DeployAlly(string prefabName, Vector3 pos)
         {
-            GameObject newGameObject = Instantiate(characterPrefab, pos, Quaternion.identity);
+            GameObject newGameObject;
+            newGameObject = Instantiate(allyPrefabs.Find(x => x.name == prefabName), pos, Quaternion.identity);
             newGameObject.transform.SetParent(parent.transform, false);
         }
     }

@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -113,8 +114,10 @@ public class GameManager : MonoBehaviour
     }
 
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
-    private void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
+    public void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
     {
+        UpdateEnemyWalkableCells();
+        UpdateEnemyGoalPointCells();
         ResetCell();
         List<EnemyWalkableCell> passedCells = new List<EnemyWalkableCell>();
         List<SearchShortestRootInfo> TerminalCellsInfos = new List<SearchShortestRootInfo>(); /*現在調べたセルの中で末端のセルのリスト*/
@@ -280,6 +283,12 @@ public class GameManager : MonoBehaviour
                 enemyWalkableCell.PreviousCell = null;
             }
         }
+    }
+
+    public Vector3 CallRandomGoalPosition()
+    {
+        Random random = new Random();
+        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].transform.position;
     }
 
     private void DebugUp1PositionY(EnemyWalkableCell enemyWalkableCell)
