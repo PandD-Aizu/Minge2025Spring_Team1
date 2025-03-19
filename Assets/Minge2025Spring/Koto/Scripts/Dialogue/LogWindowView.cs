@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -13,17 +14,20 @@ namespace Dialogue
         [Header("表示させるPrefab")]
         [SerializeField] private GameObject prefab;
 
+        [Header("ボタン")] 
+        [SerializeField] private Button backButton;
+        
         [Header("要素数")]
         [SerializeField] int totalCount = 5;
 
-        private List<Scenario> scenarioData = new List<Scenario>(); // シナリオデータ(ログが表示するデータ)
+        private List<Scenario> scenarioData; // シナリオデータ(ログが表示するデータ)
         private ObjectPool<GameObject> pool; // オブジェクトプール
         
         /* getter と setter */
         public int TotalCount { get => totalCount;     set => totalCount = value; }
 
-        // @brief エントリポイント
-        private void Start()
+        // @brief 初期化処理
+        public void Initialize()
         {
             // オブジェクトプールを作成
             pool = new ObjectPool<GameObject>(
@@ -37,6 +41,8 @@ namespace Dialogue
                     o.transform.SetParent(transform);
                     o.SetActive(false);
                 });
+            
+            scenarioData = new List<Scenario>(); // シナリオデータを初期化
 
             var scrollRect = GetComponent<LoopScrollRect>();
             scrollRect.prefabSource = this;
@@ -46,6 +52,15 @@ namespace Dialogue
             
             transform.localPosition = new Vector3(0, 1100, 0);
             gameObject.SetActive(false);
+            
+            // 戻るボタンのイベント登録
+            backButton.onClick
+                .AddListener(() =>
+                {
+                    transform.DOLocalMoveY(1100, 0.5f)
+                        .SetEase(Ease.OutSine)
+                        .OnComplete(() => gameObject.SetActive(false));
+                });
         }
 
         // @brief シナリオデータを追加
@@ -57,7 +72,9 @@ namespace Dialogue
     
             var scrollRect = GetComponent<LoopScrollRect>();
             scrollRect.totalCount = totalCount;
+            gameObject.SetActive(true);
             scrollRect.RefillCells();                        // ログを更新
+            gameObject.SetActive(false);
         }
         
         // @brief シナリオデータをクリア
@@ -68,7 +85,9 @@ namespace Dialogue
             
             var scrollRect = GetComponent<LoopScrollRect>();
             scrollRect.totalCount = totalCount;
+            gameObject.SetActive(true);
             scrollRect.RefillCells();                        // ログを更新
+            gameObject.SetActive(false);
         }
 
         // @brief 要素が表示される時の処理を書く
