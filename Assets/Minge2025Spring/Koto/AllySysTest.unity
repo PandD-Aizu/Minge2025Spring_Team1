@@ -4243,7 +4243,8 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: f7cf677ce29a1c7439eb5b9fa3cff516, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3900292922314774719, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
@@ -6696,7 +6697,8 @@ PrefabInstance:
       value: Archer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3900292922314774719, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
@@ -6906,11 +6908,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: CharacterPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7844513987733147539, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 7471560171310693089}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+--- !u!114 &7471560171310693089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+  m_PrefabInstance: {fileID: 7471560171310693088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6c5428636249268ebdee6bfc17840d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
