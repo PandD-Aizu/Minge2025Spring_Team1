@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     
     private GameObject[] enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
+    private List<GameObject> enemySpawnPointCells = new List<GameObject>();
     public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
     
     private void Awake()
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
         Instance = this;
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
+        UpdateEnemySpawnPointCells();
     }
 
     private void Start()
@@ -92,6 +94,30 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    //brief シーン上のスポーンポイントを取得する
+    //warning 必ずUpdateEnemyWalkableCells()を使用した後に使う
+    private void UpdateEnemySpawnPointCells()
+    {
+        if (enemyWalkableCells.Length <= 0)
+        {
+            Debug.LogError("Null enemyWalkableCells");
+        }
+        else
+        {
+            foreach (GameObject enemyWalkableCell in enemyWalkableCells)
+            {
+                if (enemyWalkableCell.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellScript))
+                {
+                    if (enemyWalkableCellScript.IsSpawnPointCell == true)
+                    {
+                        enemySpawnPointCells.Add(enemyWalkableCell);
+                    }
+                }
+            }
+        }
+        Debug.Log(enemySpawnPointCells.Count.ToString());
     }
     
     //brief シーン上のエネミーが通れるエリアを取得する
@@ -289,6 +315,12 @@ public class GameManager : MonoBehaviour
     {
         Random random = new Random();
         return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].transform.position;
+    }
+
+    public Vector3 CallRandomSpawnPosition()
+    {
+        Random random = new Random();
+        return enemySpawnPointCells[random.Next(enemySpawnPointCells.Count)].transform.position;
     }
 
     private void DebugUp1PositionY(EnemyWalkableCell enemyWalkableCell)
