@@ -10,9 +10,11 @@ namespace CharacterBehaviour
 {
     public class CharacterBehaviourModel : MonoBehaviour
     {
-        [Header("攻撃範囲内の敵のリスト")]
-        [SerializeField] private ReactiveCollection<GameObject> enemyList = new ReactiveCollection<GameObject>();
+        [Header("ゴールのセル")]
+        [SerializeField] private GameObject goalCell;
         
+        [Header("攻撃範囲内の敵のリスト")] 
+        [SerializeField] private ReactiveCollection<GameObject> enemyList = new ReactiveCollection<GameObject>();
 
         [Header("攻撃中の敵")] 
         [SerializeField] private GameObject targetEnemy;
@@ -34,7 +36,7 @@ namespace CharacterBehaviour
             foreach (var enemy in enemyList)
             {
                 // TODO: 敵とゴールの距離を計算して、最も近い敵を攻撃対象にする
-                if(minDistance > Vector3.Distance(transform.position, enemy.transform.position))
+                if(minDistance > Vector3.Distance(goalCell.transform.position, enemy.transform.position))
                 {
                     minDistance = Vector3.Distance(transform.position, enemy.transform.position);
                     targetEnemy = enemy;
@@ -44,11 +46,12 @@ namespace CharacterBehaviour
 
         // @brief 敵を攻撃
         // @param attackCoolDown　味方の攻撃クールタイム
-        public CharacterState AttackEnemy(float attackCoolDown)
+        public CharacterState AttackEnemy(float attackCoolDown, float attackValue)
         {
             if (enemyList.Count != 0 && attackCoolDown >= attackCoolDownTime)
             {
                 // TODO: 敵の体力を減らす
+                targetEnemy.GetComponent<EnemyStatus>().CurrentHealth -= attackValue;
                 attackCoolDownTime = 0;
             }
             else if (enemyList.Count == 0)

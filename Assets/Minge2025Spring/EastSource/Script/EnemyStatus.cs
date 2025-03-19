@@ -1,7 +1,4 @@
-using System;
-using Unity.Hierarchy;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class EnemyStatus : MonoBehaviour
 {
@@ -13,10 +10,10 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] private float initialMoveSpeed = 1f;
     
     //アクセサ
-    public float CurrentHealth{get{return currentHealth;}}
-    public float CurrentMoveSpeed{get{return currentMoveSpeed;}}
-    public float MaxHealth{get{return maxHealth;}}
-    public float InitialMoveSpeed{get{return initialMoveSpeed;}}
+    public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public float CurrentMoveSpeed {get{return currentMoveSpeed;}}
+    public float MaxHealth {get{return maxHealth;}}
+    public float InitialMoveSpeed {get{return initialMoveSpeed;}}
 
     private void Awake()
     {
@@ -29,9 +26,14 @@ public class EnemyStatus : MonoBehaviour
         
     }
 
+    private void Update()
+    {
+        if(currentHealth <= 0)
+            Destroy(gameObject);
+    }
+
     private void OnDestroy()
     {
         
     }
-    
 }
