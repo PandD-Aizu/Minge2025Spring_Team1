@@ -1,5 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
+using Puzzle;
 
 
 public class CheckClear : MonoBehaviour
@@ -10,6 +11,8 @@ public class CheckClear : MonoBehaviour
     GameObject obj;
     RotativePiece script;
     private bool clear = true;
+    private bool once = true;
+    [SerializeField] private CircuitModel model;
 
     void Start()
     {
@@ -18,20 +21,26 @@ public class CheckClear : MonoBehaviour
         obj_List.Add(GameObject.Find("RotatablePiece (1)"));
         obj_List.Add(GameObject.Find("RotatablePiece (2)"));
         obj_List.Add(GameObject.Find("RotatablePiece (3)"));
-
-        if (clear) Debug.Log("Clear True");
     }
 
     void Update()
     {
         //パズルをクリアしているかどうか
+<<<<<<< HEAD
+=======
+        clear = true;
+>>>>>>> 1afd1afe4bacf805f02fc0eadac5a8332f13ea1f
         for (i = 0; i < obj_List.Count; i++)
         {
             obj = obj_List[i];
             script = obj.GetComponent<RotativePiece>();
-            clear = true;
             if (!script.Collect) clear = false;
         }
-        if (clear) Debug.Log("Clear Puzzle_Curcuit");
+        if (clear && once)
+        {
+            Debug.Log("Clear Puzzle_Curcuit");
+            model.IsSolved.SetValueAndForceNotify(true);
+            once = false;
+        }
     }
 }
