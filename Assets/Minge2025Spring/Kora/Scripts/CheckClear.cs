@@ -1,37 +1,43 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
+using Puzzle;
 
 
 public class CheckClear : MonoBehaviour
 {
-    //‰Šú‰»
+    //åˆæœŸåŒ–
     private List<GameObject> obj_List = new List<GameObject>();
     private int i;
     GameObject obj;
     RotativePiece script;
     private bool clear = true;
+    private bool once = true;
+    [SerializeField] private CircuitModel model;
 
     void Start()
     {
-        //ƒpƒYƒ‹‚Ìƒs[ƒX‚ğæ“¾
+        //ãƒ‘ã‚ºãƒ«ã®ãƒ”ãƒ¼ã‚¹ã‚’å–å¾—
         obj_List.Add(GameObject.Find("RotatablePiece"));
         obj_List.Add(GameObject.Find("RotatablePiece (1)"));
         obj_List.Add(GameObject.Find("RotatablePiece (2)"));
         obj_List.Add(GameObject.Find("RotatablePiece (3)"));
-
-        if (clear) Debug.Log("Clear True");
     }
 
     void Update()
     {
-        //ƒpƒYƒ‹‚ğƒNƒŠƒA‚µ‚Ä‚¢‚é‚©‚Ç‚¤‚©
+        //ãƒ‘ã‚ºãƒ«ã‚’ã‚¯ãƒªã‚¢ã—ã¦ã„ã‚‹ã‹ã©ã†ã‹
+        clear = true;
         for (i = 0; i < obj_List.Count; i++)
         {
             obj = obj_List[i];
             script = obj.GetComponent<RotativePiece>();
-            clear = true;
             if (!script.Collect) clear = false;
         }
-        if (clear) Debug.Log("Clear Puzzle_Curcuit");
+        if (clear && once)
+        {
+            Debug.Log("Clear Puzzle_Curcuit");
+            model.IsSolved.SetValueAndForceNotify(true);
+            once = false;
+        }
     }
 }

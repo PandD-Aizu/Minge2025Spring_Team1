@@ -1,17 +1,16 @@
-using UnityEngine;
-using UnityEngine.UI;
+ï»¿using UnityEngine;
 
 public class RotativePiece : MonoBehaviour
 {
     Transform myTransform;
-    [Header("ó‚¯“n‚µ‚Ì‚½‚ßpublic")][SerializeField] public bool Collect;
-    [Header("ƒNƒŠƒA‚É•K—v‚Èƒs[ƒX‚©‚Ç‚¤‚©")][SerializeField] public bool NeedPuzzle;
-    [Header("³‰ğ‚ÌRotate")][SerializeField] public float CollectRotate_z;
+    [Header("å—ã‘æ¸¡ã—ã®ãŸã‚public")][SerializeField] public bool Collect;
+    [Header("ã‚¯ãƒªã‚¢ã«å¿…è¦ãªãƒ”ãƒ¼ã‚¹ã‹ã©ã†ã‹")][SerializeField] public bool NeedPuzzle;
+    [Header("æ­£è§£ã®Rotate")][SerializeField] public float CollectRotate_z;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,10 +20,13 @@ public class RotativePiece : MonoBehaviour
         Vector3 worldAngle = myTransform.eulerAngles;
         float world_angle_z = worldAngle.z;
 
-        //‚±‚Ìƒs[ƒX‚ª³‰ğ‚µ‚Ä‚¢‚é‚©
+        //ã“ã®ãƒ”ãƒ¼ã‚¹ãŒæ­£è§£ã—ã¦ã„ã‚‹ã‹
         Collect = true;
-        if (NeedPuzzle == false) Collect = false;
-        if (world_angle_z != CollectRotate_z) Collect = false; 
+        if (NeedPuzzle == false) Collect = true;
+        else if (world_angle_z != CollectRotate_z)
+        {
+            Collect = false;
+        }
     }
 
     public void Click()

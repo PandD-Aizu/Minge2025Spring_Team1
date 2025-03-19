@@ -1,36 +1,34 @@
-using System;
+ï»¿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Puzzle
 {
-    public class CuircuitPuzzle : MonoBehaviour, IDisposable
+    public class CircuitPresenter : MonoBehaviour, IDisposable
     {
-        [Header("ˆË‘¶ŠÖŒW")]
-        [SerializeField] private PointClickerModel model;
+        [Header("ä¾å­˜é–¢ä¿‚")]
+        [SerializeField] private CircuitModel CircuitModel;
         [SerializeField] private PointClickerView view;
 
-        // @brief ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
+        // @brief ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆ
         private void Start()
         {
-            model.Init();
-            view.Initialize();
 
             SubscribeEvents();
         }
 
-        // @brief ƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒg
+        // @brief ã‚¨ãƒ³ãƒˆãƒªãƒã‚¤ãƒ³ãƒˆ
         private void Update()
         {
         }
 
-        // @brief ƒCƒxƒ“ƒgŒQ‚Ì“o˜^
+        // @brief ã‚¤ãƒ™ãƒ³ãƒˆç¾¤ã®ç™»éŒ²
         private void SubscribeEvents()
         {
 
         }
 
-        // @brief ƒƒ‚ƒŠƒŠ[ƒN‚ğ–h‚®‚½‚ß‚Ìˆ—
+        // @brief ãƒ¡ãƒ¢ãƒªãƒªãƒ¼ã‚¯ã‚’é˜²ããŸã‚ã®å‡¦ç†
         public void Dispose()
         {
 
