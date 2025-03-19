@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 public class GameSpawnManager : MonoBehaviour
@@ -11,6 +12,9 @@ public class GameSpawnManager : MonoBehaviour
     private float nextSpawnTime;
     private float currentCoolTime;
     private bool isSpawning = true;
+    [SerializeField]private bool isPassedSpawnSpawnTime = true;
+    
+    public bool IsPassedSpawnTime { get => isPassedSpawnSpawnTime; set => isPassedSpawnSpawnTime = value; }
     
     private void Awake()
     {
@@ -26,11 +30,12 @@ public class GameSpawnManager : MonoBehaviour
         UpdateNextSpawn();
         SpawnEnemy();
         UpdateNextSpawn();
+        IsPassedSpawnTime = true;
     }
 
     private void Update()
     {
-        if (isSpawning == false)
+        if (isSpawning == false && isPassedSpawnSpawnTime)
         {
             currentCoolTime += Time.deltaTime;
             if (currentCoolTime > nextSpawnTime)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -10,8 +11,7 @@ public class EnemyMovement : MonoBehaviour
     private GameObject currentPositionCell;
     private RaycastHit currentPositionCellHit;
     private EnemyStatus enemyStatus;
-    
-    private const float MOVW_SPEED_COEFFICIENT = 0.05f;
+    private const float MOVW_SPEED_COEFFICIENT = 0.01f;
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
     private void Start()
@@ -98,4 +98,5 @@ public class EnemyMovement : MonoBehaviour
         float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * MOVW_SPEED_COEFFICIENT) / Distance_two;
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
     }
+    
 }

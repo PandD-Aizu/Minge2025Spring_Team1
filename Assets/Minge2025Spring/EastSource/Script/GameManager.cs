@@ -305,7 +305,7 @@ public class GameManager : MonoBehaviour
         {
             if (enemyWalkableCellObject.TryGetComponent(out EnemyWalkableCell enemyWalkableCell))
             {
-                enemyWalkableCell.NextCell = null;
+                /*enemyWalkableCell.NextCell = null;*/
                 enemyWalkableCell.PreviousCell = null;
             }
         }
