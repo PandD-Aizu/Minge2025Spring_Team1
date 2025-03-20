@@ -26,10 +26,7 @@ public class CheckClear : MonoBehaviour
     void Update()
     {
         //パズルをクリアしているかどうか
-<<<<<<< HEAD
-=======
         clear = true;
->>>>>>> 1afd1afe4bacf805f02fc0eadac5a8332f13ea1f
         for (i = 0; i < obj_List.Count; i++)
         {
             obj = obj_List[i];
