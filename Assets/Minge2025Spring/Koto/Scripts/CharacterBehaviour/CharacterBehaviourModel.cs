@@ -22,11 +22,15 @@ namespace CharacterBehaviour
         [Header("攻撃のクールタイム")] 
         [SerializeField] private float attackCoolDownTime;
 
+        [Header("イベント")] 
+        [SerializeField] private ReactiveProperty<bool> isAttackEnemy = new ReactiveProperty<bool>(false);
+
         /* getter と setter */
         public ReactiveCollection<GameObject> EnemyList                  { get => enemyList; set => enemyList = value; }
         public List<GameObject> EnemyListValue                           { get => enemyList.ToList(); }
         public GameObject TargetEnemy                                    { get => targetEnemy; set => targetEnemy = value; }
         public float AttackCoolDownTime                                  { get => attackCoolDownTime; set => attackCoolDownTime = value; }
+        public ReactiveProperty<bool> IsAttackEnemy                      { get => isAttackEnemy; set => isAttackEnemy = value; }
         
         // @brief 攻撃目標を設定
         public void SetAttackPriority()
@@ -48,10 +52,10 @@ namespace CharacterBehaviour
         // @param attackCoolDown　味方の攻撃クールタイム
         public CharacterState AttackEnemy(float attackCoolDown, float attackValue)
         {
-            if (enemyList.Count != 0 && attackCoolDown >= attackCoolDownTime)
+            if (enemyList.Count != 0 && attackCoolDown <= attackCoolDownTime)
             {
-                // TODO: 敵の体力を減らす
                 targetEnemy.GetComponent<EnemyStatus>().CurrentHealth -= attackValue;
+                isAttackEnemy.SetValueAndForceNotify(true);
                 attackCoolDownTime = 0;
             }
             else if (enemyList.Count == 0)

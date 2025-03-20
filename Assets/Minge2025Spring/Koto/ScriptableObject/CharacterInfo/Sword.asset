@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   characterDeployInfo: 0
-  characterState: 1
+  characterState: 0
   characterDirection: 0
   characterLayer:
     serializedVersion: 2
@@ -24,6 +24,6 @@ MonoBehaviour:
   characterName: "\u5263\u58EB"
   cost: 20
   hp: 500
-  attack: 100
+  attack: 50
   attackCoolDown: 5
   defence: 400

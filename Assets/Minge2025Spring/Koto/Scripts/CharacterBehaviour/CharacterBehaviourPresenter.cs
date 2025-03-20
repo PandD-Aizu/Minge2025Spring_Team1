@@ -43,7 +43,7 @@ namespace CharacterBehaviour
         
         // @brief 衝突判定(Enter)
         // @param other 衝突したオブジェクト
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
             // 敵が攻撃範囲内に侵入した場合、攻撃対象リストに追加して攻撃状態に遷移
             if (other.gameObject.CompareTag("Enemy"))
@@ -57,7 +57,7 @@ namespace CharacterBehaviour
         
         // @brief 衝突判定(Exit)
         // @param other 衝突したオブジェクト
-        private void OnCollisionExit(Collision other)
+        private void OnTriggerExit(Collider other)
         {
             // 敵が攻撃範囲から離れた場合、攻撃対象リストから削除
             if(other.gameObject.CompareTag("Enemy"))
@@ -73,6 +73,11 @@ namespace CharacterBehaviour
             model.EnemyList
                 .ObserveAdd()
                 .Subscribe(_ => model.SetAttackPriority());
+
+            // 攻撃アニメーションを再生
+            model.IsAttackEnemy
+                .Skip(1)
+                .Subscribe(_ => view.AttackEnemy());
         }
     }
 }
