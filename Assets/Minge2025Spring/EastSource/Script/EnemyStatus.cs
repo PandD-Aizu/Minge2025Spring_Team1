@@ -11,12 +11,14 @@ public class EnemyStatus : MonoBehaviour
     [Header("EnemyStatusController")]
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float initialMoveSpeed = 1f;
+    [SerializeField] private float spawnCooltime = 4f;
     
     //アクセサ
     public float CurrentHealth{get{return currentHealth;}}
     public float CurrentMoveSpeed{get{return currentMoveSpeed;}}
     public float MaxHealth{get{return maxHealth;}}
     public float InitialMoveSpeed{get{return initialMoveSpeed;}}
+    public float SpawnCooltime{get{return spawnCooltime;}}
 
     private void Awake()
     {
