@@ -6,7 +6,7 @@ namespace CharacterDeploySys
 {
     public class CharacterDeployView : MonoBehaviour
     {
-        [Header("親オブジェクト")] 
+        [Header("味方のモデルを置く親オブジェクト")] 
         [SerializeField] private GameObject parent;
         
         [Header("味方ユニットのプレハブ")]
