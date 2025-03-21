@@ -6,6 +6,9 @@ namespace CharacterDeploySys
 {
     public class CharacterDeployView : MonoBehaviour
     {
+        [Header("UIを映しているカメラ")]
+        [SerializeField] private Camera uiRenderCamera;
+        
         [Header("味方のモデルを置く親オブジェクト")] 
         [SerializeField] private GameObject parent;
         
@@ -16,6 +19,7 @@ namespace CharacterDeploySys
         [SerializeField] private GameObject cursorPreview;
         
         /* getter と setter */
+        public Camera UIRenderCamera              { get => uiRenderCamera; }
         public List<GameObject> AllyPrefabs { get => allyPrefabs; }
         public GameObject CursorPreview     { get => cursorPreview; }
 

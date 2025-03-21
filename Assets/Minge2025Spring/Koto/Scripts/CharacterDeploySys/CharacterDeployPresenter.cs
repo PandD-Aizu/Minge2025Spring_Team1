@@ -35,14 +35,15 @@ namespace CharacterDeploySys
         private void SetCharacterPos()
         {
             AllyInfo allyInfo = null;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray uiRay = view.UIRenderCamera.ScreenPointToRay(Input.mousePosition);
+            Ray cellRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit characterHit = new RaycastHit();
             RaycastHit cellHit = new RaycastHit();
             RaycastHit previewHit = new RaycastHit();
             
             // キャラクターのUIをクリックしたら、プレビューを表示
             if (Input.GetMouseButton(0) && 
-                Physics.Raycast(ray, out characterHit, Mathf.Infinity, model.CharacterUILayer) &&
+                Physics.Raycast(uiRay, out characterHit, Mathf.Infinity, model.CharacterUILayer) &&
                 !model.IsDeployActive)
             {
                 allyInfo = characterHit.collider.gameObject.GetComponent<CharacterUIPresenter>().Model; // キャラ情報を取得する
@@ -52,7 +53,7 @@ namespace CharacterDeploySys
 
             // マウスを押している間、3D空間上にプレビューを表示する
             if (Input.GetMouseButton(0) && 
-                Physics.Raycast(ray, out cellHit, Mathf.Infinity, model.DeployLayer)
+                Physics.Raycast(cellRay, out cellHit, Mathf.Infinity, model.DeployLayer)
                 && model.IsDeployActive)
             {
                 PreviewCharacterOnDeployLayer(cellHit);
@@ -60,10 +61,10 @@ namespace CharacterDeploySys
             
             // マウスを押している状態で、配置可能マス外にカーソルがある場合、プレビューをカーソルに追従するようにする
             if (Input.GetMouseButton(0) && 
-                !Physics.Raycast(ray, out cellHit, Mathf.Infinity, model.DeployLayer) &&
+                !Physics.Raycast(cellRay, out cellHit, Mathf.Infinity, model.DeployLayer) &&
                 model.IsDeployActive)
             {
-                PreviewCharacterOutDeployLayer(ray);
+                PreviewCharacterOutDeployLayer(cellRay);
             }
 
             // 設置可能であり、マウスを離したときユニットを配置する
@@ -86,8 +87,8 @@ namespace CharacterDeploySys
             // コストが足りていたら、プレビューを表示する
             if(costControllerModel.Cost.Value >= allyInfo.Cost)
             {
-                view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);   // プレビューの画像をキャラの画像に変更
-                SetLayer(allyInfo.CharacterLayer);                          // プレビューのレイヤーを変更
+                //view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);   // プレビューの画像をキャラの画像に変更
+                //SetLayer(allyInfo.CharacterDeployableLayer);                // プレビューのレイヤーを変更
                     
                 model.Cost = allyInfo.Cost;                                 // コストを設定
                 model.SelectedCharacter = characterHit.collider.gameObject; // キャラクターのUIを設定
@@ -116,9 +117,9 @@ namespace CharacterDeploySys
         // @brief キャラクターを配置
         private void DeployCharacter()
         {
-            costControllerModel.Cost.Value -= model.Cost;                                   // コストを減らす
+            costControllerModel.Cost.Value -= model.Cost;                                        // コストを減らす
             view.DeployAlly(model.SelectedCharacterName, view.CursorPreview.transform.position); // ユニットを配置する TODO: modelにPrefabを持たせる
-            Destroy(model.SelectedCharacter);                                               // 選択中のキャラUIを削除する
+            Destroy(model.SelectedCharacter);                                                    // 選択中のキャラUIを削除する
             model.Init();
             view.Init();
         }

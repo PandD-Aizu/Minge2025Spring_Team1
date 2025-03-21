@@ -38,6 +38,8 @@ namespace CharacterBehaviour
                     break;
             }
 
+            CheckRayCast();
+
             model.AttackCoolDownTime += Time.deltaTime; // 攻撃クールタイムを更新
         }
         
@@ -78,6 +80,32 @@ namespace CharacterBehaviour
             model.IsAttackEnemy
                 .Skip(1)
                 .Subscribe(_ => view.AttackEnemy());
+            
+            // キャラクターのステータスを表示
+            model.IsShowCharacterStatus
+                .Skip(1)
+                .Subscribe((isShow) => view.ShowCharacterStatus(isShow));
+        }
+
+        private void CheckRayCast()
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit = new RaycastHit();
+
+            if (Input.GetMouseButtonUp(0) && 
+                Physics.Raycast(ray, out hit, Mathf.Infinity, allyInfo.CharacterRaycastLayer) && 
+                !model.IsShowCharacterStatus.Value)
+            {
+                Debug.Log("クリックされています！");
+                model.IsShowCharacterStatus.Value = true;
+            }
+            
+            if(Input.GetMouseButtonUp(0) && 
+               !Physics.Raycast(ray, out hit, Mathf.Infinity, allyInfo.CharacterRaycastLayer) &&
+               model.IsShowCharacterStatus.Value)
+            {
+                model.IsShowCharacterStatus.Value = false;
+            }
         }
     }
 }

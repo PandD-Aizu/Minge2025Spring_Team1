@@ -16,9 +16,12 @@ MonoBehaviour:
   characterDeployInfo: 1
   characterState: 0
   characterDirection: 0
-  characterLayer:
+  characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 256
+  characterRaycastLayer:
+    serializedVersion: 2
+    m_Bits: 32768
   characterAttackRange: {fileID: 0}
   characterSprite: {fileID: 21300000, guid: a0892d81f5b045747acc29aa1e80d46b, type: 3}
   characterName: "\u5263\u58EB"

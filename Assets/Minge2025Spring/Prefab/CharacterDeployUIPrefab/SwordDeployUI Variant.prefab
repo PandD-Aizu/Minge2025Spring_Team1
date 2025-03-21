@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1711198781994735851, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711198781994735851, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711198781994735851, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 1711198781994735851, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -160
+      objectReference: {fileID: 0}
     - target: {fileID: 3434091571572003833, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
       propertyPath: m_SortingLayer
       value: 0
@@ -105,7 +121,27 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7481252746398385062, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_Size.x
+      value: 20.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481252746398385062, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_Size.y
+      value: 20.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481252746398385062, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 529f12b1bc09dd24387f92d8f497f1fb, type: 3}
+    - target: {fileID: 7481252746398385062, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
       propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481252746398385062, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481252746398385062, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

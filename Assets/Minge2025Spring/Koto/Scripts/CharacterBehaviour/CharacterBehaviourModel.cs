@@ -24,6 +24,7 @@ namespace CharacterBehaviour
 
         [Header("イベント")] 
         [SerializeField] private ReactiveProperty<bool> isAttackEnemy = new ReactiveProperty<bool>(false);
+        [SerializeField] private ReactiveProperty<bool> isShowCharacterStatus = new ReactiveProperty<bool>(false);
 
         /* getter と setter */
         public ReactiveCollection<GameObject> EnemyList                  { get => enemyList; set => enemyList = value; }
@@ -31,6 +32,7 @@ namespace CharacterBehaviour
         public GameObject TargetEnemy                                    { get => targetEnemy; set => targetEnemy = value; }
         public float AttackCoolDownTime                                  { get => attackCoolDownTime; set => attackCoolDownTime = value; }
         public ReactiveProperty<bool> IsAttackEnemy                      { get => isAttackEnemy; set => isAttackEnemy = value; }
+        public ReactiveProperty<bool> IsShowCharacterStatus              { get => isShowCharacterStatus; set => isShowCharacterStatus = value; }
         
         // @brief 攻撃目標を設定
         public void SetAttackPriority()

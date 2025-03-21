@@ -29,8 +29,8 @@ TagManager:
   - EnemySpawnPlacement
   - EnemyGoalPoint
   - CharacterUI
-  - 
-  - 
+  - Character
+  - CharacterUIButton
   - 
   - 
   - 
