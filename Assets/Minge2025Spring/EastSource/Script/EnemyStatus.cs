@@ -14,31 +14,38 @@ public class EnemyStatus : MonoBehaviour
 
     public EnemyState enemyState = EnemyState.Moving;
     
-    private float currentHealth;
+    private int currentHealth;
     private float currentMoveSpeed;
-    private float currentAttack;
+    private int currentAttack;
+    private int currentDefence;
     private Vector3 currentMoveDirection = Vector3.zero;
     
     [Header("EnemyStatusController")]
-    [InspectorName("MaxHealth")][SerializeField] private float maxHealth = 100f;
-    [InspectorName("InitalAttack")][SerializeField] private float initialAttack = 10f;
+    [InspectorName("MaxHealth")][SerializeField] private int maxHealth = 100;
+    [InspectorName("InitalAttack")][SerializeField] private int initialAttack = 10;
     [InspectorName("InitialMoveSpeed")][SerializeField] private float initialMoveSpeed = 1f;
+    [InspectorName("InitialDefence")][SerializeField] private int initialDefence = 10;
     [InspectorName("SpawnCoolTime")][SerializeField] private float spawnCooltime = 4f;
+    [InspectorName("AttackCoolTime")] [SerializeField] private float attackCoolTime = 3f;
     
     //アクセサ
-    public float CurrentHealth{get{return currentHealth;}}
+    public int CurrentHealth{get{return currentHealth;}}
     public float CurrentMoveSpeed{get{return currentMoveSpeed;}}
-    public float MaxHealth{get{return maxHealth;}}
+    public int MaxHealth{get{return maxHealth;}}
     public float InitialMoveSpeed{get{return initialMoveSpeed;}}
     public float SpawnCooltime{get{return spawnCooltime;}}
-    public float InitialAttack{get { return initialAttack; }}
-    public float CurrentAttack{get { return currentAttack; }}
+    public int InitialAttack{get { return initialAttack; }}
+    public int CurrentAttack{get { return currentAttack; }}
+    public int CurrentDefence{get { return currentDefence; }}
+    public float AttackCoolTime{get {return attackCoolTime;}}
     public Vector3 CurrentMoveDirection{get{return currentMoveDirection;} set{currentMoveDirection = value;}}
 
     private void Awake()
     {
         currentHealth = maxHealth;
         currentMoveSpeed = initialMoveSpeed;
+        currentAttack = initialAttack;
+        currentDefence = initialDefence;
     }
 
     private void Start()
@@ -51,7 +58,7 @@ public class EnemyStatus : MonoBehaviour
         
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
         if (currentHealth <= 0)
