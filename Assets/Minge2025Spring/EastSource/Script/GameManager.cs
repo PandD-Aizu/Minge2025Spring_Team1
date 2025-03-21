@@ -121,7 +121,8 @@ public class GameManager : MonoBehaviour
     }
     
     //brief シーン上のエネミーが通れるエリアを取得する
-    private void UpdateEnemyWalkableCells()
+    private void 
+        UpdateEnemyWalkableCells()
     {
         enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
