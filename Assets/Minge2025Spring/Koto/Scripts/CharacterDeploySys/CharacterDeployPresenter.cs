@@ -46,6 +46,7 @@ namespace CharacterDeploySys
                 !model.IsDeployActive)
             {
                 allyInfo = characterHit.collider.gameObject.GetComponent<CharacterUIPresenter>().Model; // キャラ情報を取得する
+                model.SelectedCharacterName = allyInfo.CharacterName;                                   // 選択中のキャラクター名を設定
                 ClickCharacterUI(allyInfo, characterHit);
             }
 
@@ -68,7 +69,7 @@ namespace CharacterDeploySys
             // 設置可能であり、マウスを離したときユニットを配置する
             if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable)
             {
-                DeployCharacter(allyInfo);
+                DeployCharacter();
             }
             
             // 設置可能ではないが、マウスを離したときプレビューを初期化する
@@ -85,12 +86,12 @@ namespace CharacterDeploySys
             // コストが足りていたら、プレビューを表示する
             if(costControllerModel.Cost.Value >= allyInfo.Cost)
             {
-                //view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);                                       // プレビューの画像をキャラの画像に変更
-                SetLayer(allyInfo.CharacterLayer);                                                                // プレビューのレイヤーを変更
+                view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);   // プレビューの画像をキャラの画像に変更
+                SetLayer(allyInfo.CharacterLayer);                          // プレビューのレイヤーを変更
                     
-                model.Cost = allyInfo.Cost;                                                                       // コストを設定
-                model.SelectedCharacter = characterHit.collider.gameObject;                                       // キャラクターのUIを設定
-                model.IsDeployActive = true;                                                                      // ユニット配置可能フラグを立てる
+                model.Cost = allyInfo.Cost;                                 // コストを設定
+                model.SelectedCharacter = characterHit.collider.gameObject; // キャラクターのUIを設定
+                model.IsDeployActive = true;                                // ユニット配置可能フラグを立てる
             }
         }
 
@@ -113,10 +114,10 @@ namespace CharacterDeploySys
         }
 
         // @brief キャラクターを配置
-        private void DeployCharacter(AllyInfo allyInfo)
+        private void DeployCharacter()
         {
             costControllerModel.Cost.Value -= model.Cost;                                   // コストを減らす
-            view.DeployAlly(allyInfo.CharacterName, view.CursorPreview.transform.position); // ユニットを配置する TODO: modelにPrefabを持たせる
+            view.DeployAlly(model.SelectedCharacterName, view.CursorPreview.transform.position); // ユニットを配置する TODO: modelにPrefabを持たせる
             Destroy(model.SelectedCharacter);                                               // 選択中のキャラUIを削除する
             model.Init();
             view.Init();

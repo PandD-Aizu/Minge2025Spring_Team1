@@ -1,7 +1,4 @@
-using System;
-using Unity.Hierarchy;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class EnemyStatus : MonoBehaviour
 {
@@ -29,7 +26,7 @@ public class EnemyStatus : MonoBehaviour
     [InspectorName("AttackCoolTime")] [SerializeField] private float attackCoolTime = 3f;
     
     //アクセサ
-    public int CurrentHealth{get{return currentHealth;}}
+    public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public float CurrentMoveSpeed{get{return currentMoveSpeed;}}
     public int MaxHealth{get{return maxHealth;}}
     public float InitialMoveSpeed{get{return initialMoveSpeed;}}
@@ -51,6 +48,12 @@ public class EnemyStatus : MonoBehaviour
     private void Start()
     {
         
+    }
+
+    private void Update()
+    {
+        if(currentHealth <= 0)
+            Destroy(gameObject);
     }
 
     private void OnDestroy()

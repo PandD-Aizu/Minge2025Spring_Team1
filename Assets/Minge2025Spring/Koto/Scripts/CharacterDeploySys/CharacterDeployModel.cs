@@ -16,6 +16,7 @@ namespace CharacterDeploySys
 
         [Header("選択したキャラクター")]
         [SerializeField] private GameObject selectedCharacter;
+        [SerializeField] private string selectedCharacterName;
         
         [Header("減らすコスト")] 
         [SerializeField] private int cost;
@@ -26,6 +27,7 @@ namespace CharacterDeploySys
         public LayerMask DeployLayer        { get => deployLayer; set => deployLayer = value; }
         public LayerMask CharacterUILayer   { get => characterUILayer; }
         public GameObject SelectedCharacter { get => selectedCharacter; set => selectedCharacter = value; }
+        public string SelectedCharacterName { get => selectedCharacterName; set => selectedCharacterName = value; }
         public int Cost                     { get => cost; set => cost = value; }
 
         // @brief 初期化処理
