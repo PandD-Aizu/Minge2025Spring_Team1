@@ -6,7 +6,10 @@ public class EnemyWalkableCell : MonoBehaviour
     [Header("Property")] [SerializeField] private bool isSpawnPointCell = false;
     
     public bool isWalkable = true;
-    
+    public LayerMask observeTargetLayerMask;
+
+    private float rayDistance = 0.8f;
+    private Ray observeTargetRay;
     private EnemyWalkableCell upCell = null;
     private EnemyWalkableCell downCell = null;
     private EnemyWalkableCell leftCell = null;
@@ -25,6 +28,7 @@ public class EnemyWalkableCell : MonoBehaviour
     
     private void Start()
     {
+        observeTargetRay = new Ray(this.transform.position, this.transform.up);
         InitSurroundingCells();
     }
 
