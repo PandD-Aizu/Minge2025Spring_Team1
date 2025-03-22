@@ -25,6 +25,7 @@ namespace CharacterBehaviour
         [Header("イベント")] 
         [SerializeField] private ReactiveProperty<bool> isAttackEnemy = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isShowCharacterStatus = new ReactiveProperty<bool>(false);
+        [SerializeField] private ReactiveProperty<bool> isWithDraw = new ReactiveProperty<bool>(false);
 
         /* getter と setter */
         public ReactiveCollection<GameObject> EnemyList                  { get => enemyList; set => enemyList = value; }
@@ -33,6 +34,7 @@ namespace CharacterBehaviour
         public float AttackCoolDownTime                                  { get => attackCoolDownTime; set => attackCoolDownTime = value; }
         public ReactiveProperty<bool> IsAttackEnemy                      { get => isAttackEnemy; set => isAttackEnemy = value; }
         public ReactiveProperty<bool> IsShowCharacterStatus              { get => isShowCharacterStatus; set => isShowCharacterStatus = value; }
+        public ReactiveProperty<bool> IsWithDraw                         { get => isWithDraw; set => isWithDraw = value; }
         
         // @brief 攻撃目標を設定
         public void SetAttackPriority()
@@ -42,7 +44,7 @@ namespace CharacterBehaviour
             foreach (var enemy in enemyList)
             {
                 // TODO: 敵とゴールの距離を計算して、最も近い敵を攻撃対象にする
-                if(minDistance > Vector3.Distance(goalCell.transform.position, enemy.transform.position))
+                if(enemy != null && minDistance > Vector3.Distance(goalCell.transform.position, enemy.transform.position))
                 {
                     minDistance = Vector3.Distance(transform.position, enemy.transform.position);
                     targetEnemy = enemy;
@@ -52,20 +54,26 @@ namespace CharacterBehaviour
 
         // @brief 敵を攻撃
         // @param attackCoolDown　味方の攻撃クールタイム
-        public CharacterState AttackEnemy(float attackCoolDown, float attackValue)
+        public CharacterState AttackEnemy(float attackCoolDown)
         {
             if (enemyList.Count != 0 && attackCoolDown <= attackCoolDownTime)
             {
-                targetEnemy.GetComponent<EnemyStatus>().CurrentHealth -= attackValue;
                 isAttackEnemy.SetValueAndForceNotify(true);
                 attackCoolDownTime = 0;
             }
             else if (enemyList.Count == 0)
             {
                 return CharacterState.WAIT;
+                targetEnemy = null;
             }
 
             return CharacterState.ATTACK;
+        }
+
+        public void GiveDamageToEnemy(float attackValue)
+        {
+            if(targetEnemy != null)
+                targetEnemy.GetComponent<EnemyStatus>().CurrentHealth -= attackValue;
         }
     }
 }

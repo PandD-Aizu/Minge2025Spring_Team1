@@ -517,6 +517,8 @@ MonoBehaviour:
     value: 0
   isShowCharacterStatus:
     value: 0
+  isWithDraw:
+    value: 0
 --- !u!114 &7844513987733147539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allyInfo: {fileID: 11400000, guid: f7cf677ce29a1c7439eb5b9fa3cff516, type: 2}
   model: {fileID: 7096342511280225626}
+  characterControllerModel: {fileID: 0}
   view: {fileID: 5479525268530148424}
 --- !u!114 &5479525268530148424
 MonoBehaviour:
@@ -1115,7 +1118,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5171467510066021644, guid: ec758f46ee628c94da9ce9cd0614f33b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8081812931243062383}
   m_SourcePrefab: {fileID: 100100000, guid: ec758f46ee628c94da9ce9cd0614f33b, type: 3}
 --- !u!114 &358706564330944545 stripped
 MonoBehaviour:
@@ -1221,6 +1227,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 308e904e3f33207489a2c15b9b0b297b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2705796573966336776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5171467510066021644, guid: ec758f46ee628c94da9ce9cd0614f33b, type: 3}
+  m_PrefabInstance: {fileID: 7082004872875083268}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &8081812931243062383
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705796573966336776}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Height: 0.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3249376878015337022 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5715154672893219898, guid: ec758f46ee628c94da9ce9cd0614f33b, type: 3}

@@ -15,9 +15,16 @@ namespace CharacterBehaviour
         public Slider HpSlider                  { get => hpSlider; set => hpSlider = value; }
         public Animator Animator                { get => animator; set => animator = value; }
 
-        public void AttackEnemy()
+        // @brief キャラクターの攻撃モーションを再生
+        public void AnimateAttackEnemy()
         {
-            animator.SetTrigger("isAttackEnemy");
+            animator.SetTrigger("IsAttackEnemy");
+        }
+
+        // @brief キャラクターの撤退モーションを再生
+        public void AnimateWithDraw()
+        {
+            animator.SetTrigger("IsWithDraw");
         }
 
         // @brief キャラクターのステータスを表示
@@ -34,6 +41,12 @@ namespace CharacterBehaviour
                 characterStatusPanel.SetActive(false);
                 withDrawButton.SetActive(false);
             }
+        }
+
+        // @brief キャラクターを非表示
+        public void HideCharacter()
+        {
+            gameObject.SetActive(false);
         }
     }
 }

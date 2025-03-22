@@ -88,7 +88,7 @@ namespace CharacterDeploySys
             if(costControllerModel.Cost.Value >= allyInfo.Cost)
             {
                 //view.ChangeCursorPreviewSprite(allyInfo.CharacterSprite);   // プレビューの画像をキャラの画像に変更
-                //SetLayer(allyInfo.CharacterDeployableLayer);                // プレビューのレイヤーを変更
+                SetLayer(allyInfo.CharacterDeployableLayer);                // プレビューのレイヤーを変更
                     
                 model.Cost = allyInfo.Cost;                                 // コストを設定
                 model.SelectedCharacter = characterHit.collider.gameObject; // キャラクターのUIを設定
@@ -119,7 +119,7 @@ namespace CharacterDeploySys
         {
             costControllerModel.Cost.Value -= model.Cost;                                        // コストを減らす
             view.DeployAlly(model.SelectedCharacterName, view.CursorPreview.transform.position); // ユニットを配置する TODO: modelにPrefabを持たせる
-            Destroy(model.SelectedCharacter);                                                    // 選択中のキャラUIを削除する
+            model.SelectedCharacter.SetActive(false);                                            // 選択中のキャラUIを削除する
             model.Init();
             view.Init();
         }

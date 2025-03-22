@@ -9,6 +9,7 @@ namespace CharacterBehaviour
         [Header("依存関係")] 
         [SerializeField] private AllyInfo allyInfo;
         [SerializeField] private CharacterBehaviourModel model;
+        [SerializeField] private StageCharacterControllerModel characterControllerModel;
         [SerializeField] private CharacterBehaviourView view;
         
         // @brief エントリポイント
@@ -24,7 +25,7 @@ namespace CharacterBehaviour
             {
                 // 攻撃時
                 case CharacterState.ATTACK:
-                    allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown, allyInfo.Attack); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
+                    allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
                     break;
                 
                 // 待機時
@@ -79,12 +80,23 @@ namespace CharacterBehaviour
             // 攻撃アニメーションを再生
             model.IsAttackEnemy
                 .Skip(1)
-                .Subscribe(_ => view.AttackEnemy());
+                .Subscribe(_ => view.AnimateAttackEnemy());
             
             // キャラクターのステータスを表示
             model.IsShowCharacterStatus
                 .Skip(1)
                 .Subscribe((isShow) => view.ShowCharacterStatus(isShow));
+
+            model.IsWithDraw
+                .Skip(1)
+                .Subscribe((isWithDraw) =>
+                {
+                    if (isWithDraw)
+                    {
+                        view.AnimateWithDraw();
+                        model.IsWithDraw.Value = false;
+                    }
+                });
         }
 
         private void CheckRayCast()
@@ -96,8 +108,11 @@ namespace CharacterBehaviour
                 Physics.Raycast(ray, out hit, Mathf.Infinity, allyInfo.CharacterRaycastLayer) && 
                 !model.IsShowCharacterStatus.Value)
             {
-                Debug.Log("クリックされています！");
-                model.IsShowCharacterStatus.Value = true;
+                if (hit.collider.gameObject == gameObject && !characterControllerModel.IsShowingCharacterStatus)
+                {
+                    model.IsShowCharacterStatus.Value = true;
+                    characterControllerModel.IsShowingCharacterStatus = true;
+                }
             }
             
             if(Input.GetMouseButtonUp(0) && 
@@ -105,6 +120,7 @@ namespace CharacterBehaviour
                model.IsShowCharacterStatus.Value)
             {
                 model.IsShowCharacterStatus.Value = false;
+                characterControllerModel.IsShowingCharacterStatus = false;
             }
         }
     }

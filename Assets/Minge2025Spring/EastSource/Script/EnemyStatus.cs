@@ -1,9 +1,10 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class EnemyStatus : MonoBehaviour
 {
-    private float currentHealth;
-    private float currentMoveSpeed;
+    [SerializeField] private float currentHealth;
+    [SerializeField] private float currentMoveSpeed;
     
     [Header("EnemyStatusController")]
     [SerializeField] private float maxHealth = 100f;

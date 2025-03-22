@@ -50,6 +50,7 @@ namespace CharacterDeploySys
             GameObject newGameObject;
             newGameObject = Instantiate(allyPrefabs.Find(x => x.name == prefabName), pos, Quaternion.identity);
             newGameObject.transform.SetParent(parent.transform, false);
+            newGameObject.SetActive(true);
         }
     }
 }
