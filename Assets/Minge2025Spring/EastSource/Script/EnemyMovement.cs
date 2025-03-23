@@ -101,7 +101,7 @@ public class EnemyMovement : MonoBehaviour
             target = goalPosition;
         }
         float Distance_two = Vector3.Distance(transform.position, target);
-        target.y = transform.position.y;
+        target.y += 1;
         float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * MOVE_SPEED_COEFFICIENT) / Distance_two;
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
     }

@@ -11,14 +11,14 @@ public class EnemyStatus : MonoBehaviour
 
     public EnemyState enemyState = EnemyState.Moving;
     
-    private int currentHealth;
+    private float currentHealth;
     private float currentMoveSpeed;
     private int currentAttack;
     private int currentDefence;
     private Vector3 currentMoveDirection = Vector3.zero;
     
     [Header("EnemyStatusController")]
-    [InspectorName("MaxHealth")][SerializeField] private int maxHealth = 100;
+    [InspectorName("MaxHealth")][SerializeField] private float maxHealth = 100;
     [InspectorName("InitalAttack")][SerializeField] private int initialAttack = 10;
     [InspectorName("InitialMoveSpeed")][SerializeField] private float initialMoveSpeed = 1f;
     [InspectorName("InitialDefence")][SerializeField] private int initialDefence = 10;
@@ -28,7 +28,7 @@ public class EnemyStatus : MonoBehaviour
     //アクセサ
     public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public float CurrentMoveSpeed{get{return currentMoveSpeed;}}
-    public int MaxHealth{get{return maxHealth;}}
+    public float MaxHealth{get{return maxHealth;}}
     public float InitialMoveSpeed{get{return initialMoveSpeed;}}
     public float SpawnCooltime{get{return spawnCooltime;}}
     public int InitialAttack{get { return initialAttack; }}
