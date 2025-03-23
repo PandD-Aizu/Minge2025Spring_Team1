@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using CharacterInfo;
-using NaughtyAttributes;
 using UniRx;
 using UnityEngine;
 
@@ -36,6 +34,18 @@ namespace CharacterBehaviour
         public ReactiveProperty<bool> IsShowCharacterStatus              { get => isShowCharacterStatus; set => isShowCharacterStatus = value; }
         public ReactiveProperty<bool> IsWithDraw                         { get => isWithDraw; set => isWithDraw = value; }
         
+        // @brief 攻撃対象リスト内の敵がnullでないかチェック
+        public void CheckEnemyList()
+        {
+            // TODO: 重くなりそうなんで処理を考える
+            enemyList = new ReactiveCollection<GameObject>(enemyList.Where(enemy => enemy != null).ToList());
+            
+            // 再度サブスクライブ
+            enemyList
+                .ObserveAdd()
+                .Subscribe(_ => SetAttackPriority());
+        }
+        
         // @brief 攻撃目標を設定
         public void SetAttackPriority()
         {
@@ -56,24 +66,32 @@ namespace CharacterBehaviour
         // @param attackCoolDown　味方の攻撃クールタイム
         public CharacterState AttackEnemy(float attackCoolDown)
         {
-            if (enemyList.Count != 0 && attackCoolDown <= attackCoolDownTime)
+            if (targetEnemy != null && attackCoolDown <= attackCoolDownTime)
             {
                 isAttackEnemy.SetValueAndForceNotify(true);
                 attackCoolDownTime = 0;
             }
-            else if (enemyList.Count == 0)
+            else if (targetEnemy == null)
             {
                 return CharacterState.WAIT;
-                targetEnemy = null;
             }
 
             return CharacterState.ATTACK;
         }
 
+        // @brief 敵にダメージを与える
+        // @param attackValue 攻撃力
         public void GiveDamageToEnemy(float attackValue)
         {
             if(targetEnemy != null)
                 targetEnemy.GetComponent<EnemyStatus>().CurrentHealth -= attackValue;
+        }
+
+        // @brief 味方キャラクターが撤退もしくは死亡した際にScriptableObjectを初期化
+        // @param allyInfo 味方キャラクターの情報
+        public void InitAllyInfo(AllyInfo allyInfo)
+        {
+            allyInfo.Hp = allyInfo.MaxHp;
         }
     }
 }

@@ -14,10 +14,10 @@ namespace CharacterBehaviour
             model.GiveDamageToEnemy(allyInfo.Attack);
         }
 
-        public void WithDraw()
+        public void WithDraw(AllyInfo allyInfo)
         {
-            view.HideCharacter();
+            view.HideCharacter(); // キャラクターを非表示にする
+            model.InitAllyInfo(allyInfo); // 味方キャラクターの一部情報を初期化
         }
-        
     }
 }

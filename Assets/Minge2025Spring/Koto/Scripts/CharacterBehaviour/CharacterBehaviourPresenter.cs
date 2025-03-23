@@ -23,8 +23,11 @@ namespace CharacterBehaviour
         {
             switch(allyInfo.CharacterState)
             {
+                // TODO: allyInfoへの情報の渡し方を修正しておく
+                
                 // 攻撃時
                 case CharacterState.ATTACK:
+                    model.CheckEnemyList();
                     allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
                     break;
                 
@@ -35,7 +38,7 @@ namespace CharacterBehaviour
                 // 死亡時
                 case CharacterState.DEAD:
                     allyInfo.CharacterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED; // ユニットを非配置状態に変更
-                    Destroy(gameObject);　// 味方ユニットを消す
+                    view.AnimateWithDraw();
                     break;
             }
 
@@ -87,6 +90,7 @@ namespace CharacterBehaviour
                 .Skip(1)
                 .Subscribe((isShow) => view.ShowCharacterStatus(isShow));
 
+            // 撤退アニメーションを再生
             model.IsWithDraw
                 .Skip(1)
                 .Subscribe((isWithDraw) =>
@@ -95,10 +99,12 @@ namespace CharacterBehaviour
                     {
                         view.AnimateWithDraw();
                         model.IsWithDraw.Value = false;
+                        characterControllerModel.IsShowingCharacterStatus = false;
                     }
                 });
         }
-
+        
+        // @brief レイキャストを行い、キャラクターのステータスを表示する
         private void CheckRayCast()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

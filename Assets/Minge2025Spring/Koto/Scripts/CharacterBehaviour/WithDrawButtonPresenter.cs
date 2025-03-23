@@ -16,6 +16,7 @@ namespace CharacterBehaviour
             CheckRaycast();
         }
 
+        // @brief 撤退ボタンをクリックした際の処理
         private void CheckRaycast()
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

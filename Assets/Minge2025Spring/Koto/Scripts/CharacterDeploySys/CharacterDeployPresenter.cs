@@ -100,9 +100,9 @@ namespace CharacterDeploySys
         // @param cellHit 配置可能マスのヒット情報
         private void PreviewCharacterOnDeployLayer(RaycastHit cellHit)
         {
-            Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up;
-            view.SetPreview(characterDeployPos);
-            model.IsDeployAvailable = true;
+            Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up; // キャラクターの配置プレビュー = セルの中心座標 + 上方向の単位ベクトル
+            view.SetPreview(characterDeployPos);                                                      // プレビューを表示
+            model.IsDeployAvailable = true;                                                           // ユニット配置可能フラグを立てる
         }
         
         // @brief 配置可能マス外でキャラクターのプレビューを表示する

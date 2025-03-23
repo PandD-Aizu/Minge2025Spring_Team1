@@ -25,6 +25,8 @@ namespace CharacterBehaviour
         public void AnimateWithDraw()
         {
             animator.SetTrigger("IsWithDraw");
+            
+            // アニメーション後、キャラクターを非表示にする
         }
 
         // @brief キャラクターのステータスを表示

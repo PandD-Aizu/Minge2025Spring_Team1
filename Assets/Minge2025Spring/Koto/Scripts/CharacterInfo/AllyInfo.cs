@@ -15,6 +15,7 @@ namespace CharacterInfo
         [SerializeField] private Sprite              characterSprite;
         [SerializeField] private string              characterName;
         [SerializeField] private int                 cost;
+        [SerializeField] private int                 maxHp;
         [SerializeField] private int                 hp;
         [SerializeField] private int                 attack;
         [SerializeField] private float               attackCoolDown;
@@ -30,6 +31,7 @@ namespace CharacterInfo
         public Sprite CharacterSprite                  { get => characterSprite; set => characterSprite = value; }
         public string CharacterName                    { get => characterName; set => characterName = value; }
         public int Cost                                { get => cost; set => cost = value; }
+        public int MaxHp                               { get => maxHp; set => maxHp = value; }
         public int Hp                                  { get => hp; set => hp = value; }
         public int Attack                              { get => attack; set => attack = value; }
         public float AttackCoolDown                    { get => attackCoolDown; set => attackCoolDown = value; }
