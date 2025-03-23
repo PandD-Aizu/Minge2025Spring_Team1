@@ -11,9 +11,16 @@ namespace CharacterBehaviour
         [Header("ゴールのセル")]
         [SerializeField] private GameObject goalCell;
         
+        [Header("攻撃範囲のコライダー")]
+        [SerializeField] private BoxCollider attackRangeCollider;
+        [SerializeField] private List<Vector3> attackRangeSize;
+        [SerializeField] private List<Vector3> attackRangeCenter;
+        [SerializeField] private List<Vector3> attackRangeSpriteSize;
+        [SerializeField] private List<Vector3> attackRangeSpritePosition;
+        
         [Header("攻撃範囲内の敵のリスト")] 
         [SerializeField] private ReactiveCollection<GameObject> enemyList = new ReactiveCollection<GameObject>();
-
+        
         [Header("攻撃中の敵")] 
         [SerializeField] private GameObject targetEnemy;
 
@@ -26,6 +33,11 @@ namespace CharacterBehaviour
         [SerializeField] private ReactiveProperty<bool> isWithDraw = new ReactiveProperty<bool>(false);
 
         /* getter と setter */
+        public BoxCollider AttackRangeCollider                           { get => attackRangeCollider; set => attackRangeCollider = value; }
+        public List<Vector3> AttackRangeSize                             { get => attackRangeSize; }
+        public List<Vector3> AttackRangeCenter                           { get => attackRangeCenter; }
+        public List<Vector3> AttackRangeSpriteSize                       { get => attackRangeSpriteSize; }
+        public List<Vector3> AttackRangeSpritePosition                   { get => attackRangeSpritePosition; }
         public ReactiveCollection<GameObject> EnemyList                  { get => enemyList; set => enemyList = value; }
         public List<GameObject> EnemyListValue                           { get => enemyList.ToList(); }
         public GameObject TargetEnemy                                    { get => targetEnemy; set => targetEnemy = value; }
@@ -91,7 +103,7 @@ namespace CharacterBehaviour
         // @param allyInfo 味方キャラクターの情報
         public void InitAllyInfo(AllyInfo allyInfo)
         {
-            allyInfo.Hp = allyInfo.MaxHp;
+            allyInfo.Init();
         }
     }
 }

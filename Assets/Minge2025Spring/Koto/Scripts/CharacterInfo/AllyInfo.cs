@@ -11,7 +11,6 @@ namespace CharacterInfo
         [SerializeField] private CharacterDirection  characterDirection;
         [SerializeField] private LayerMask           characterDeployableLayer;
         [SerializeField] private LayerMask           characterRaycastLayer;    
-        [SerializeField] private Collider            characterAttackRange;
         [SerializeField] private Sprite              characterSprite;
         [SerializeField] private string              characterName;
         [SerializeField] private int                 cost;
@@ -27,7 +26,6 @@ namespace CharacterInfo
         public CharacterDirection CharacterDirection   { get => characterDirection; set => characterDirection = value; }
         public LayerMask CharacterDeployableLayer      { get => characterDeployableLayer; }
         public LayerMask CharacterRaycastLayer         { get => characterRaycastLayer; }
-        public Collider CharacterAttackRange           { get => characterAttackRange; set => characterAttackRange = value; }
         public Sprite CharacterSprite                  { get => characterSprite; set => characterSprite = value; }
         public string CharacterName                    { get => characterName; set => characterName = value; }
         public int Cost                                { get => cost; set => cost = value; }
@@ -36,5 +34,13 @@ namespace CharacterInfo
         public int Attack                              { get => attack; set => attack = value; }
         public float AttackCoolDown                    { get => attackCoolDown; set => attackCoolDown = value; }
         public int Defence                             { get => defence; set => defence = value; }
+
+        public void Init()
+        {
+            characterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED;
+            characterState = CharacterState.WAIT;
+            characterDirection = CharacterDirection.UP;
+            hp = maxHp;
+        }
     }
 }

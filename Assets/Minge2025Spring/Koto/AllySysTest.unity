@@ -5295,6 +5295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7696022044a47ab4baf7f3375807844f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  currentMoveSpeed: 0
   maxHealth: 100
   initialMoveSpeed: 1
   spawnCooltime: 4

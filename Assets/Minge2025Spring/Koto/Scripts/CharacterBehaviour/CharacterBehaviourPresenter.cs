@@ -1,5 +1,6 @@
 using CharacterInfo;
 using UniRx;
+using Unity.XR.OpenVR;
 using UnityEngine;
 
 namespace CharacterBehaviour
@@ -16,35 +17,78 @@ namespace CharacterBehaviour
         private void Start()
         {
             SubscribeEvents();
+            allyInfo.Init();
         }
         
         // @brief エントリポイント
         private void Update()
         {
-            switch(allyInfo.CharacterState)
+            if(allyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED)
             {
-                // TODO: allyInfoへの情報の渡し方を修正しておく
+                view.HideCharacterAttackRange();
                 
-                // 攻撃時
-                case CharacterState.ATTACK:
-                    model.CheckEnemyList();
-                    allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
-                    break;
+                switch(allyInfo.CharacterState)
+                {
+                    // TODO: allyInfoへの情報の渡し方を修正しておく
                 
-                // 待機時
-                case CharacterState.WAIT:
-                    break;
+                    // 攻撃時
+                    case CharacterState.ATTACK:
+                        model.CheckEnemyList();
+                        allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
+                        break;
                 
-                // 死亡時
-                case CharacterState.DEAD:
-                    allyInfo.CharacterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED; // ユニットを非配置状態に変更
-                    view.AnimateWithDraw();
-                    break;
+                    // 待機時
+                    case CharacterState.WAIT:
+                        break;
+                
+                    // 死亡時
+                    case CharacterState.DEAD:
+                        allyInfo.CharacterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED; // ユニットを非配置状態に変更
+                        view.AnimateWithDraw();
+                        break;
+                }
+                
+                model.AttackCoolDownTime += Time.deltaTime; // 攻撃クールタイムを更新
             }
-
+            
+            if(allyInfo.CharacterDeployInfo == CharacterDeployInfo.NOT_DEPLOYED)
+            {
+                view.ShowCharacterAttackRange();
+                
+                // キャラクターの向きによって攻撃範囲のコライダーを変更
+                switch (allyInfo.CharacterDirection)
+                {
+                    case CharacterDirection.UP:
+                        model.AttackRangeCollider.size = model.AttackRangeSize[0];
+                        model.AttackRangeCollider.center = model.AttackRangeCenter[0];
+                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[0];
+                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[0];
+                        break;
+                
+                    case CharacterDirection.DOWN:
+                        model.AttackRangeCollider.size = model.AttackRangeSize[1];
+                        model.AttackRangeCollider.center = model.AttackRangeCenter[1];
+                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[1];
+                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[1];
+                        break;
+                
+                    case CharacterDirection.LEFT:
+                        model.AttackRangeCollider.size = model.AttackRangeSize[2];
+                        model.AttackRangeCollider.center = model.AttackRangeCenter[2];
+                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[2];
+                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[2];
+                        break;
+                
+                    case CharacterDirection.RIGHT:
+                        model.AttackRangeCollider.size = model.AttackRangeSize[3];
+                        model.AttackRangeCollider.center = model.AttackRangeCenter[3];
+                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[3];
+                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[3];
+                        break;
+                }
+            }
+            
             CheckRayCast();
-
-            model.AttackCoolDownTime += Time.deltaTime; // 攻撃クールタイムを更新
         }
         
         // @brief 衝突判定(Enter)
@@ -112,7 +156,8 @@ namespace CharacterBehaviour
 
             if (Input.GetMouseButtonUp(0) && 
                 Physics.Raycast(ray, out hit, Mathf.Infinity, allyInfo.CharacterRaycastLayer) && 
-                !model.IsShowCharacterStatus.Value)
+                !model.IsShowCharacterStatus.Value &&
+                allyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED)
             {
                 if (hit.collider.gameObject == gameObject && !characterControllerModel.IsShowingCharacterStatus)
                 {
@@ -123,7 +168,8 @@ namespace CharacterBehaviour
             
             if(Input.GetMouseButtonUp(0) && 
                !Physics.Raycast(ray, out hit, Mathf.Infinity, allyInfo.CharacterRaycastLayer) &&
-               model.IsShowCharacterStatus.Value)
+               model.IsShowCharacterStatus.Value &&
+               allyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED)
             {
                 model.IsShowCharacterStatus.Value = false;
                 characterControllerModel.IsShowingCharacterStatus = false;

@@ -19384,7 +19384,7 @@ AnimationClip:
   - time: 2
     functionName: WithDraw
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: d3bee33a15e55484da86d9b1c55d0d9e, type: 2}
+    objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

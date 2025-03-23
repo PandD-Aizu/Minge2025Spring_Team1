@@ -511,6 +511,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalCell: {fileID: 4408745332521850075, guid: 065ffa22207c95b429ce6aea46e6a94c, type: 3}
+  attackRangeCollider: {fileID: 0}
+  attackRangeSize: []
+  attackRangeCenter: []
+  attackRangeSpriteSize: []
+  attackRangeSpritePosition: []
   targetEnemy: {fileID: 0}
   attackCoolDownTime: 0
   isAttackEnemy:

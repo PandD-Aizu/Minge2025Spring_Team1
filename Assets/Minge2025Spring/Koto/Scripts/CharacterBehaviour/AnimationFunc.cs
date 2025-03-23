@@ -16,7 +16,7 @@ namespace CharacterBehaviour
 
         public void WithDraw(AllyInfo allyInfo)
         {
-            view.HideCharacter(); // キャラクターを非表示にする
+            view.HideCharacter();         // キャラクターを非表示にする
             model.InitAllyInfo(allyInfo); // 味方キャラクターの一部情報を初期化
         }
     }
