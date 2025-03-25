@@ -1,6 +1,5 @@
 ﻿using CharacterInfo;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace CharacterBehaviour
 {
@@ -9,11 +8,15 @@ namespace CharacterBehaviour
         [SerializeField] private CharacterBehaviourModel model;
         [SerializeField] private CharacterBehaviourView view;
 
+        // @brief 敵攻撃時の処理
+        // @param allyInfo 味方キャラクターの情報
         public void AttackEnemy(AllyInfo allyInfo)
         {
             model.GiveDamageToEnemy(allyInfo.Attack);
         }
 
+        // @brief キャラクター撤退時の処理
+        // @param allyInfo 味方キャラクターの情報
         public void WithDraw(AllyInfo allyInfo)
         {
             view.HideCharacter();         // キャラクターを非表示にする

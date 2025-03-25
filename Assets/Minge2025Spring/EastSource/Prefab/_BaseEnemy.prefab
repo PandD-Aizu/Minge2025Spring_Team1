@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyAttackType: 1
-  meleeAttackRange: 2
+  meleeAttackRange: 0.2
   longRangeAttackRadius: 4
   observeTargetLayerMask:
     serializedVersion: 2
