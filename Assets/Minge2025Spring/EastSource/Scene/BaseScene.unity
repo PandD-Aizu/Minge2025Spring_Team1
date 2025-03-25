@@ -661,7 +661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &247595366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5672,6 +5672,7 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
   isPassedSpawnSpawnTime: 0
+  limiterSpawnEnemy: 3
 --- !u!1001 &1991978155
 PrefabInstance:
   m_ObjectHideFlags: 0
