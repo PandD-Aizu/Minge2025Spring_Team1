@@ -13,6 +13,9 @@ namespace CharacterBehaviour
         [SerializeField] private StageCharacterControllerModel characterControllerModel;
         [SerializeField] private CharacterBehaviourView view;
         
+        //アクセサ
+        public AllyInfo AllyInfo => allyInfo;
+        
         // @brief エントリポイント
         private void Start()
         {
