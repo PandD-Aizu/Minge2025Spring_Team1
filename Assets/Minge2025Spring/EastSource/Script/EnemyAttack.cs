@@ -1,9 +1,12 @@
 using System;
+using System.Numerics;
 using CharacterBehaviour;
 using CharacterInfo;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -15,9 +18,10 @@ public class EnemyAttack : MonoBehaviour
     }
     
     private float currentAttackCoolTime = 0f;
+    private GameObject longRengeCollider;
+    private LongRengeCollider longRengeColliderScript;
     private EnemyStatus enemyStatus;
-    private GameObject attackTarget;
-    private SphereCollider sphereCollider;
+    public GameObject attackTarget;
 
     [Header("EnemyAttackController")] 
     [SerializeField] private EnemyAttackType enemyAttackType = EnemyAttackType.None;
@@ -35,9 +39,10 @@ public class EnemyAttack : MonoBehaviour
     {
         if (enemyAttackType == EnemyAttackType.LongRange)  // 遠距離攻撃タイプの敵の場合
         {
-            sphereCollider = gameObject.AddComponent<SphereCollider>(); // スフィアコライダーを追加
-            sphereCollider.radius = longRangeAttackRadius;              // スフィアコライダーの半径を設定
-            sphereCollider.isTrigger = true;                            // スフィアコライダーをトリガーに設定
+            longRengeCollider = Instantiate(new GameObject("LongRengeCollider"), this.transform.position, Quaternion.identity, this.transform);
+            longRengeCollider.gameObject.AddComponent<SphereCollider>();
+            longRengeColliderScript = longRengeCollider.AddComponent<LongRengeCollider>();
+            longRengeColliderScript.InitLongRengeCollider(this.gameObject.GetComponent<EnemyAttack>(), enemyStatus, longRangeAttackRadius);
         }
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
@@ -114,17 +119,5 @@ public class EnemyAttack : MonoBehaviour
         }
     }
     
-    // @brief 当たり判定(Enter)
-    // @param other 衝突したオブジェクト
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag(GameTagsManager.Player) // 味方キャラかつ配置済みで攻撃状態でない場合
-            && other.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED
-            && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
-        {
-            Debug.Log("Discover");
-            attackTarget = other.gameObject;                                // 攻撃対象を設定
-            enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking); // 攻撃状態に変更
-        }
-    }
+
 }
