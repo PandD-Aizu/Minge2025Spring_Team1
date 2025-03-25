@@ -9763,7 +9763,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.833
+    m_StopTime: 1.8333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -19270,3 +19270,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: -17798
     messageOptions: 1
+  - time: 1.8333334
+    functionName: AttackEnemy
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: f7cf677ce29a1c7439eb5b9fa3cff516, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

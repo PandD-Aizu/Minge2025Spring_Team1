@@ -14,16 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   characterDeployInfo: 1
-  characterState: 1
+  characterState: 0
   characterDirection: 0
-  characterLayer:
+  characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 512
-  characterAttackRange: {fileID: 0}
+  characterRaycastLayer:
+    serializedVersion: 2
+    m_Bits: 16384
   characterSprite: {fileID: 21300000, guid: 529f12b1bc09dd24387f92d8f497f1fb, type: 3}
   characterName: Sword
   cost: 20
-  hp: 500
-  attack: 50
-  attackCoolDown: 5
+  maxHp: 0
+  hp: 0
+  attack: 25
+  attackCoolDown: 1
   defence: 400
