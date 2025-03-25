@@ -1,13 +1,17 @@
+using System;
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
+using EventHandler = System.EventHandler;
 using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set;}
+    public event EventHandler OnUpdateEnemyWalkableCells;
 
     public struct SearchShortestRootInfo
     {
@@ -121,14 +125,14 @@ public class GameManager : MonoBehaviour
     }
     
     //brief シーン上のエネミーが通れるエリアを取得する
-    private void 
-        UpdateEnemyWalkableCells()
+    private void UpdateEnemyWalkableCells()
     {
         enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
         {
             Debug.Log("position: " + enemyWalkableCell.transform.position + "name: " +enemyWalkableCell.gameObject.name);
-        }
+        } 
+        OnUpdateEnemyWalkableCells?.Invoke(this, EventArgs.Empty);
     }
 
     private void UpdateEnemyGoalPointCells()

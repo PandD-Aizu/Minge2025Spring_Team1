@@ -137,6 +137,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!65 &724005369866880655
 BoxCollider:
   m_ObjectHideFlags: 0
