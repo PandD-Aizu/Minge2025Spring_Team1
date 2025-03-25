@@ -106,7 +106,7 @@ public class EnemyAttack : MonoBehaviour
                 
                 //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
                 
-                characterBehaviourPresenter.AllyInfo.Hp -= (int)(enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence * 0.2); // ダメージを与える
+                characterBehaviourPresenter.AllyInfo.Hp -= enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence; // ダメージを与える
                 Debug.LogWarning(characterBehaviourPresenter.AllyInfo.Hp.ToString());
                 
                 currentAttackCoolTime = 0; // 攻撃クールタイムをリセット

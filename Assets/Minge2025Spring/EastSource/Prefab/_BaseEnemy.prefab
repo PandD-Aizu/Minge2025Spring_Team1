@@ -164,10 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyState: 1
-  maxHealth: 100
-  initialAttack: 10
+  maxHealth: 1000
+  initialAttack: 200
   initialMoveSpeed: 5
-  initialDefence: 10
+  initialDefence: 50
   spawnCooltime: 2
   attackCoolTime: 3
 --- !u!114 &6728233371881681808
