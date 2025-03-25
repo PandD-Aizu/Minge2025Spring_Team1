@@ -21,6 +21,12 @@ namespace CharacterDeploySys
         /* getter と setter */
         public Camera UIRenderCamera        { get => uiRenderCamera; }
         public List<GameObject> AllyPrefabs { get => allyPrefabs; }
+
+        public void InitPreview()
+        {
+            foreach(var allyPrefab in allyPrefabs)
+                allyPrefab.SetActive(false);
+        }
         
         // @brief キャラクターのプレビューを表示する
         // @param previewChar プレビューするキャラクター, previewPos プレビューする位置

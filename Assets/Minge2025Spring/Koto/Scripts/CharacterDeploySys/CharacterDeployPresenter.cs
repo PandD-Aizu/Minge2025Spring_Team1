@@ -148,6 +148,7 @@ namespace CharacterDeploySys
         // @brief キャラ配置の処理を初期化する
         private void InitCharacterDeploy()
         {
+            view.InitPreview(); // プレビューを初期化
             model.Init();
         }
         
