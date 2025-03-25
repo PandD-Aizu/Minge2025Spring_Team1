@@ -59,7 +59,7 @@ public class EnemyStatus : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        GameSpawnManager.Instance.EnemyDestroy();
     }
 
     public void TakeDamage(int damage)

@@ -166,9 +166,9 @@ MonoBehaviour:
   enemyState: 1
   maxHealth: 100
   initialAttack: 10
-  initialMoveSpeed: 1
+  initialMoveSpeed: 5
   initialDefence: 10
-  spawnCooltime: 10
+  spawnCooltime: 2
   attackCoolTime: 3
 --- !u!114 &6728233371881681808
 MonoBehaviour:
