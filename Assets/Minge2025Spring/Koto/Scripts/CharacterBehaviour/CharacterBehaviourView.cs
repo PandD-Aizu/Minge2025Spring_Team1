@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using CharacterInfo;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace CharacterBehaviour
@@ -15,18 +16,32 @@ namespace CharacterBehaviour
         public Slider HpSlider                  { get => hpSlider; set => hpSlider = value; }
         public Animator Animator                { get => animator; set => animator = value; }
 
+        public void UpdateHpSlider(AllyInfo allyInfo)
+        {
+            if(allyInfo.MaxHp != hpSlider.maxValue)
+                hpSlider.maxValue = allyInfo.MaxHp;
+            
+            hpSlider.value = allyInfo.Hp;
+        }
+        
         // @brief キャラクターの攻撃モーションを再生
         public void AnimateAttackEnemy()
         {
             animator.SetTrigger("IsAttackEnemy");
         }
 
+        public void AnimateWait()
+        {
+            if(!animator.GetCurrentAnimatorStateInfo(0).IsName("Wait"))
+            {
+                animator.SetTrigger("IsWait");
+            }
+        }
+
         // @brief キャラクターの撤退モーションを再生
         public void AnimateWithDraw()
         {
             animator.SetTrigger("IsWithDraw");
-            
-            // アニメーション後、キャラクターを非表示にする
         }
 
         // @brief キャラクターの攻撃範囲を表示

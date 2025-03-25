@@ -23,6 +23,7 @@ namespace CharacterDeploySys
         private void Update()
         {
             SetCharacterPos();
+            view.CheckCharacterWithDraw(model.AllyInfos);
         }
 
         // @brief イベント群の登録
