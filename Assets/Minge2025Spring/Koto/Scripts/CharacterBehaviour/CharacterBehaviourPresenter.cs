@@ -29,6 +29,8 @@ namespace CharacterBehaviour
             // 味方キャラが配置状態の場合
             if(allyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED)
             {
+                view.AttackRangeSprite.SetActive(false);
+                
                 switch(allyInfo.CharacterState)
                 {
                     // 攻撃時
