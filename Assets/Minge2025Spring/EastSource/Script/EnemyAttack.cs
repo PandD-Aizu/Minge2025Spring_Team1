@@ -119,8 +119,12 @@ public class EnemyAttack : MonoBehaviour
             {
                 animator.SetTrigger(enemyStatus.attackAnimationParameter);
                 //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
-                
-                characterBehaviourPresenter.AllyInfo.Hp -= enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence; // ダメージを与える
+                int damage = enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence;
+                if (damage < 0)//キャラクターに与えるダメージがマイナスにならないように
+                {
+                    damage = 0;
+                }
+                characterBehaviourPresenter.AllyInfo.Hp -= damage; // ダメージを与える
                 Debug.LogWarning(characterBehaviourPresenter.AllyInfo.Hp.ToString());
                 
                 currentAttackCoolTime = 0; // 攻撃クールタイムをリセット
