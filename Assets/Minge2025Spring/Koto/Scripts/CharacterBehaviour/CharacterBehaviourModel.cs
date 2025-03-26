@@ -83,9 +83,13 @@ namespace CharacterBehaviour
                 isAttackEnemy.SetValueAndForceNotify(true);
                 attackCoolDownTime = 0;
             }
-            else if (targetEnemy == null)
+            else if (targetEnemy == null && enemyList.Count <= 0)
             {
                 return CharacterState.WAIT;
+            }
+            else if (targetEnemy == null && enemyList.Count > 0)
+            {
+                SetAttackPriority();
             }
 
             return CharacterState.ATTACK;
@@ -98,7 +102,13 @@ namespace CharacterBehaviour
             if (targetEnemy != null)
             {
                 EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
-                enemyStatus.CurrentHealth -= attackValue - enemyStatus.CurrentDefence;
+                
+                float damage = attackValue - enemyStatus.CurrentDefence;
+                
+                if(damage <= 0)
+                    enemyStatus.CurrentHealth = attackValue * 5 / 100;
+                else
+                    enemyStatus.CurrentHealth -= damage;
             }
         }
 
