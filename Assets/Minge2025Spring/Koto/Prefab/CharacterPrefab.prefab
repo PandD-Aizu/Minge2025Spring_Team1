@@ -552,6 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805f4268fc2a48e6bbf2610c2e20cc64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 0}
   attackRangeSprite: {fileID: 8065975306841019732}
   hpSlider: {fileID: 643498241932499685}
   withDrawButton: {fileID: 0}

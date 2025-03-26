@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: 
   attackType: 0
-  characterDeployInfo: 0
+  characterDeployInfo: 1
   characterState: 1
-  characterDirection: 3
+  characterDirection: 0
   characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -26,7 +26,7 @@ MonoBehaviour:
   characterName: Sword
   cost: 20
   maxHp: 2000
-  hp: 10
+  hp: 2000
   attack: 300
   attackCoolDown: 1
   defence: 50
