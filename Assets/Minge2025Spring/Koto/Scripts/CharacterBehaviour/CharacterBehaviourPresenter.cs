@@ -89,6 +89,8 @@ namespace CharacterBehaviour
             if(other.gameObject.CompareTag("Enemy"))
             {
                 model.EnemyList.Remove(other.gameObject);　// 攻撃対象リストから削除
+                if (other.gameObject == model.TargetEnemy)
+                    model.TargetEnemy = null;
             }
         }
         
@@ -148,6 +150,7 @@ namespace CharacterBehaviour
                     model.AttackRangeCollider.center = model.AttackRangeCenter[2];
                     view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[2];
                     view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[2];
+                    view.CharacterModel.transform.localScale = new Vector3(-2, 2, 1);
                     break;
                 
                 case CharacterDirection.RIGHT:
@@ -155,6 +158,7 @@ namespace CharacterBehaviour
                     model.AttackRangeCollider.center = model.AttackRangeCenter[3];
                     view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[3];
                     view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[3];
+                    view.CharacterModel.transform.localScale = new Vector3(2, 2, 1);
                     break;
             }
         }
