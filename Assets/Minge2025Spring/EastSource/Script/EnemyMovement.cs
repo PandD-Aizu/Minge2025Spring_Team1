@@ -5,15 +5,18 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private bool isMoving = false;
-    private const float MAX_RAYCAST_DISTANCE = 1f;
     private Vector3 goalPosition;
     private Vector3 directionUnderY = new Vector3(0, -1, 0);
     private Vector3 currentMoveDirection;
     private Vector3 prevPosition = Vector3.zero;
-    private GameObject currentPositionCell;
     private RaycastHit currentPositionCellHit;
+    private Animator animator;
+    private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
+    
+    private const float MAX_RAYCAST_DISTANCE = 1f;
     private const float MOVE_SPEED_COEFFICIENT = 0.01f;
+    
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
     
@@ -24,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log(goalPosition);
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
-            Debug.Log(enemyStatus);
+            animator = enemyStatus.animator;
         }
         else
         {
@@ -85,6 +88,14 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         UpdateMoveDirection();
+        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
+        {
+            animator.SetBool(enemyStatus.movementAnimationParameter, true);
+        }
+        else
+        {
+            animator.SetBool(enemyStatus.movementAnimationParameter, false);
+        }
     }
 
     //brief エネミーを移動させる関数

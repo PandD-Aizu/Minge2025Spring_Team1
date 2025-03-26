@@ -17,6 +17,8 @@ public class EnemyAttack : MonoBehaviour
     private EnemyStatus enemyStatus;
     private GameObject attackTarget;
     private SphereCollider sphereCollider;
+    private Animator animator;
+    
 
     [Header("EnemyAttackController")] 
     [SerializeField] private EnemyAttackType enemyAttackType = EnemyAttackType.None;
@@ -40,7 +42,7 @@ public class EnemyAttack : MonoBehaviour
         }
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
-            
+            animator = enemyStatus.animator;
         }
         else
         {
@@ -96,8 +98,7 @@ public class EnemyAttack : MonoBehaviour
             if (enemyStatus.AttackCoolTime <= currentAttackCoolTime 
                 && attackTarget.gameObject.TryGetComponent<CharacterBehaviourPresenter>(out CharacterBehaviourPresenter characterBehaviourPresenter))
             {
-                Debug.LogWarning("TakeDamage");
-                
+                animator.SetTrigger(enemyStatus.attackAnimationParameter);
                 //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
                 
                 characterBehaviourPresenter.AllyInfo.Hp -= (int)(enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence * 0.2);
