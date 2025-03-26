@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using CharacterInfo;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,6 +15,9 @@ namespace CharacterDeploySys
         
         [Header("味方のモデルを置く親オブジェクト")] 
         [SerializeField] private GameObject parent;
+
+        [Header("味方ユニットのUIプレハブ")]
+        [SerializeField] private List<GameObject> allyUIPrefabs;
         
         [Header("味方ユニットのプレハブ")]
         [SerializeField] private List<GameObject> allyPrefabs;
@@ -22,10 +26,21 @@ namespace CharacterDeploySys
         public Camera UIRenderCamera        { get => uiRenderCamera; }
         public List<GameObject> AllyPrefabs { get => allyPrefabs; }
 
+        // @brief プレビューを初期化
         public void InitPreview()
         {
             foreach(var allyPrefab in allyPrefabs)
                 allyPrefab.SetActive(false);
+        }
+
+        // @brief 撤退したキャラクターを再度表示
+        public void CheckCharacterWithDraw(List<AllyInfo> allyInfos)
+        {
+            allyInfos.ForEach(x =>
+            {
+                if(x.CharacterDeployInfo == CharacterDeployInfo.NOT_DEPLOYED)
+                    allyUIPrefabs.Find(y => y.name == x.CharacterName).SetActive(true);
+            });
         }
         
         // @brief キャラクターのプレビューを表示する

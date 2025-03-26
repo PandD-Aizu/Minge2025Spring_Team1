@@ -26,14 +26,13 @@ namespace CharacterBehaviour
         // @brief エントリポイント
         private void Update()
         {
+            // 味方キャラが配置状態の場合
             if(allyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED)
             {
-                view.HideCharacterAttackRange();
+                view.AttackRangeSprite.SetActive(false);
                 
                 switch(allyInfo.CharacterState)
                 {
-                    // TODO: allyInfoへの情報の渡し方を修正しておく
-                
                     // 攻撃時
                     case CharacterState.ATTACK:
                         model.CheckEnemyList();
@@ -42,6 +41,7 @@ namespace CharacterBehaviour
                 
                     // 待機時
                     case CharacterState.WAIT:
+                        view.AnimateWait();
                         break;
                 
                     // 死亡時
@@ -52,43 +52,16 @@ namespace CharacterBehaviour
                 }
                 
                 model.AttackCoolDownTime += Time.deltaTime; // 攻撃クールタイムを更新
+                view.UpdateHpSlider(allyInfo);
+                model.CheckCharacterHp(allyInfo);
             }
             
+            // 味方キャラが非配置状態の場合
             if(allyInfo.CharacterDeployInfo == CharacterDeployInfo.NOT_DEPLOYED)
             {
+                SetColliderTransform();
+                
                 view.ShowCharacterAttackRange();
-                
-                // キャラクターの向きによって攻撃範囲のコライダーを変更
-                switch (allyInfo.CharacterDirection)
-                {
-                    case CharacterDirection.UP:
-                        model.AttackRangeCollider.size = model.AttackRangeSize[0];
-                        model.AttackRangeCollider.center = model.AttackRangeCenter[0];
-                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[0];
-                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[0];
-                        break;
-                
-                    case CharacterDirection.DOWN:
-                        model.AttackRangeCollider.size = model.AttackRangeSize[1];
-                        model.AttackRangeCollider.center = model.AttackRangeCenter[1];
-                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[1];
-                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[1];
-                        break;
-                
-                    case CharacterDirection.LEFT:
-                        model.AttackRangeCollider.size = model.AttackRangeSize[2];
-                        model.AttackRangeCollider.center = model.AttackRangeCenter[2];
-                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[2];
-                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[2];
-                        break;
-                
-                    case CharacterDirection.RIGHT:
-                        model.AttackRangeCollider.size = model.AttackRangeSize[3];
-                        model.AttackRangeCollider.center = model.AttackRangeCenter[3];
-                        view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[3];
-                        view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[3];
-                        break;
-                }
             }
             
             CheckRayCast();
@@ -149,6 +122,41 @@ namespace CharacterBehaviour
                         characterControllerModel.IsShowingCharacterStatus = false;
                     }
                 });
+        }
+
+        // @brief キャラクターの向きによって攻撃範囲のコライダーを変更
+        private void SetColliderTransform()
+        {
+            switch (allyInfo.CharacterDirection)
+            {
+                case CharacterDirection.UP:
+                    model.AttackRangeCollider.size = model.AttackRangeSize[0];
+                    model.AttackRangeCollider.center = model.AttackRangeCenter[0];
+                    view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[0];
+                    view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[0];
+                    break;
+                
+                case CharacterDirection.DOWN:
+                    model.AttackRangeCollider.size = model.AttackRangeSize[1];
+                    model.AttackRangeCollider.center = model.AttackRangeCenter[1];
+                    view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[1];
+                    view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[1];
+                    break;
+                
+                case CharacterDirection.LEFT:
+                    model.AttackRangeCollider.size = model.AttackRangeSize[2];
+                    model.AttackRangeCollider.center = model.AttackRangeCenter[2];
+                    view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[2];
+                    view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[2];
+                    break;
+                
+                case CharacterDirection.RIGHT:
+                    model.AttackRangeCollider.size = model.AttackRangeSize[3];
+                    model.AttackRangeCollider.center = model.AttackRangeCenter[3];
+                    view.AttackRangeSprite.transform.localScale = model.AttackRangeSpriteSize[3];
+                    view.AttackRangeSprite.transform.localPosition = model.AttackRangeSpritePosition[3];
+                    break;
+            }
         }
         
         // @brief レイキャストを行い、キャラクターのステータスを表示する

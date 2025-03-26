@@ -95,8 +95,17 @@ namespace CharacterBehaviour
         // @param attackValue 攻撃力
         public void GiveDamageToEnemy(float attackValue)
         {
-            if(targetEnemy != null)
-                targetEnemy.GetComponent<EnemyStatus>().CurrentHealth -= attackValue;
+            if (targetEnemy != null)
+            {
+                EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
+                enemyStatus.CurrentHealth -= attackValue - enemyStatus.CurrentDefence;
+            }
+        }
+
+        public void CheckCharacterHp(AllyInfo allyInfo)
+        {
+            if (allyInfo.Hp <= 0)
+                allyInfo.CharacterState = CharacterState.DEAD;
         }
 
         // @brief 味方キャラクターが撤退もしくは死亡した際にScriptableObjectを初期化

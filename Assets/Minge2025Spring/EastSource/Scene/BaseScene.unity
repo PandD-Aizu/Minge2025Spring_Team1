@@ -5672,6 +5672,7 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
   isPassedSpawnSpawnTime: 0
+  limiterSpawnEnemy: 3
 --- !u!1001 &1991978155
 PrefabInstance:
   m_ObjectHideFlags: 0

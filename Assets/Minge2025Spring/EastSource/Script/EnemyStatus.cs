@@ -57,13 +57,13 @@ public class EnemyStatus : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth <= 0)
+        if(currentHealth < 0)
             Destroy(gameObject);
     }
 
     private void OnDestroy()
     {
-        
+        GameSpawnManager.Instance.EnemyDestroy();
     }
 
     public void TakeDamage(int damage)
