@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
     private GameObject longRengeCollider;
     private LongRengeCollider longRengeColliderScript;
     private EnemyStatus enemyStatus;
-    private GameObject attackTarget;
+    public GameObject attackTarget;
     private SphereCollider sphereCollider;
     private Animator animator;
 
