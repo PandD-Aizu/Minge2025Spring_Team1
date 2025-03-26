@@ -7,9 +7,15 @@ public class EnemyWalkableCell : MonoBehaviour
     
     public bool isWalkable = true;
     public LayerMask observeTargetLayerMask;
+    public LayerMask searchCellLayerMask = new LayerMask();
 
+    private float searchCellRayDistance = 0.7f;
     private float rayDistance = 0.8f;
     private Ray observeTargetRay;
+    private Ray searchCellRayUpside;
+    private Ray searchCellRayDownside;
+    private Ray searchCellRayLeftside;
+    private Ray searchCellRayRightside;
     private EnemyWalkableCell upCell = null;
     private EnemyWalkableCell downCell = null;
     private EnemyWalkableCell leftCell = null;
@@ -28,48 +34,101 @@ public class EnemyWalkableCell : MonoBehaviour
     
     private void Start()
     {
+        searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
         observeTargetRay = new Ray(this.transform.position, this.transform.up);
+        searchCellRayUpside = new Ray(this.transform.position, this.transform.forward);
+        searchCellRayDownside = new Ray(this.transform.position, -this.transform.forward);
+        searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
+        searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
+        InitSurroundingCells();
+        GameManager.Instance.OnUpdateEnemyWalkableCells += GameManager_OnUpdateEnemyWalkableCells;
+    }
+
+    private void Update()
+    {
+        Debug.DrawRay(this.transform.position, this.transform.forward * searchCellRayDistance, Color.red);
+        Debug.DrawRay(this.transform.position, this.transform.right * searchCellRayDistance, Color.green);
+        Debug.DrawRay(this.transform.position, -this.transform.forward * searchCellRayDistance, Color.blue);
+        Debug.DrawRay(this.transform.position, -this.transform.right * searchCellRayDistance, Color.black);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnUpdateEnemyWalkableCells -= GameManager_OnUpdateEnemyWalkableCells;
+    }
+    
+    private void GameManager_OnUpdateEnemyWalkableCells(object sender, EventArgs e)
+    {
         InitSurroundingCells();
     }
 
     private void InitSurroundingCells()
     {
-        foreach (GameObject enemyWalkabaleCell in GameManager.Instance.EnemyWalkableCells)
+        Physics.Raycast(searchCellRayUpside, out RaycastHit raycastHitUpside, searchCellRayDistance);
+        Physics.Raycast(searchCellRayDownside, out RaycastHit raycastHitDownside, searchCellRayDistance);
+        Physics.Raycast(searchCellRayLeftside, out RaycastHit raycastHitLeftside, searchCellRayDistance);
+        Physics.Raycast(searchCellRayRightside, out RaycastHit raycastHitRight, searchCellRayDistance);
+        Debug.LogWarning(this.gameObject.name + ": " + raycastHitUpside.collider);
+        Debug.LogWarning(this.gameObject.name + ": " + raycastHitDownside.collider);
+        Debug.LogWarning(this.gameObject.name + ": " + raycastHitLeftside.collider);
+        Debug.LogWarning(this.gameObject.name + ": " + raycastHitRight.collider);
+        if (raycastHitUpside.collider != null 
+            && raycastHitUpside.collider.gameObject != this
+            && raycastHitUpside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellUpside))
         {
-            if (Mathf.Approximately(this.gameObject.transform.position.z - enemyWalkabaleCell.transform.position.z, 1) 
-                && Mathf.Approximately(this.gameObject.transform.position.x - enemyWalkabaleCell.transform.position.x, 0))
+            upCell = enemyWalkableCellUpside;
+        }
+        else if (raycastHitUpside.collider != null 
+                 && raycastHitUpside.collider.gameObject != this)
+        {
+            if (raycastHitUpside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellUpsideParent))
             {
-                if (enemyWalkabaleCell.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell upEnemyWalkableCell))
-                {
-                    upCell = upEnemyWalkableCell;
-                }
+                upCell = enemyWalkableCellUpsideParent;
             }
-            
-            if (Mathf.Approximately(this.gameObject.transform.position.z - enemyWalkabaleCell.transform.position.z, -1) 
-                && Mathf.Approximately(this.gameObject.transform.position.x - enemyWalkabaleCell.transform.position.x, 0))
+        }
+
+        if (raycastHitDownside.collider != null 
+            && raycastHitDownside.collider.gameObject != this
+            && raycastHitDownside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellDownside))
+        {
+            downCell = enemyWalkableCellDownside;
+        }
+        else if (raycastHitDownside.collider != null 
+                  && raycastHitDownside.collider.gameObject != this)
+        {
+            if (raycastHitDownside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellDownsideParent))
             {
-                if (enemyWalkabaleCell.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell downEnemyWalkableCell))
-                {
-                    downCell = downEnemyWalkableCell;
-                }
+                downCell = enemyWalkableCellDownsideParent;
             }
-            
-            if (Mathf.Approximately(this.gameObject.transform.position.x - enemyWalkabaleCell.transform.position.x, -1) 
-                && Mathf.Approximately(this.gameObject.transform.position.z - enemyWalkabaleCell.transform.position.z, 0))
+        }
+
+        if (raycastHitLeftside.collider != null 
+            && raycastHitLeftside.collider.gameObject != this
+            && raycastHitLeftside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellLeftside))
+        {
+            leftCell = enemyWalkableCellLeftside;
+        }
+        else if (raycastHitLeftside.collider != null 
+                 && raycastHitLeftside.collider.gameObject != this)
+        {
+            if (raycastHitLeftside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellLeftsideParent))
             {
-                if (enemyWalkabaleCell.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell leftEnemyWalkableCell))
-                {
-                    leftCell = leftEnemyWalkableCell;
-                }
+                leftCell = enemyWalkableCellLeftsideParent;
             }
-            
-            if (Mathf.Approximately(this.gameObject.transform.position.x - enemyWalkabaleCell.transform.position.x, 1) 
-                && Mathf.Approximately(this.gameObject.transform.position.z - enemyWalkabaleCell.transform.position.z, 0))
+        }
+
+        if (raycastHitRight.collider != null 
+            && raycastHitRight.collider.gameObject != this
+            && raycastHitRight.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellRightside))
+        {
+            rightCell = enemyWalkableCellRightside;
+        }
+        else if (raycastHitLeftside.collider != null 
+                 && raycastHitLeftside.collider.gameObject != this)
+        {
+            if (raycastHitLeftside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellLeftsideParent))
             {
-                if (enemyWalkabaleCell.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell rightEnemyWalkableCell))
-                {
-                    rightCell = rightEnemyWalkableCell;
-                }
+                leftCell = enemyWalkableCellLeftsideParent;
             }
         }
         
