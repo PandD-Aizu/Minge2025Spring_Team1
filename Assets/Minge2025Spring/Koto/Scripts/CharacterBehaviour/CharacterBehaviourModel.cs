@@ -95,10 +95,9 @@ namespace CharacterBehaviour
         // @param attackValue 攻撃力
         public void GiveDamageToEnemy(float attackValue)
         {
-            EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
-            
             if (targetEnemy != null)
             {
+                EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
                 enemyStatus.CurrentHealth -= attackValue - enemyStatus.CurrentDefence;
             }
         }
