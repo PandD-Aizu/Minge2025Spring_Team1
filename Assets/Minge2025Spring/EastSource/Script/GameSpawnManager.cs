@@ -11,12 +11,17 @@ public class GameSpawnManager : MonoBehaviour
     public static GameSpawnManager Instance{get; private set;}
     
     private int numberOfEnemies = 0;
-    private GameObject nextSpawnEnemy;
     private float nextSpawnTime;
     private float currentCoolTime;
     private bool isSpawning = true;
-    [SerializeField]private bool isPassedSpawnSpawnTime = true;
+    private GameObject nextSpawnEnemy;
+    private ReadyTimer readyTimer;
     [SerializeField]private int limiterSpawnEnemy = 5;
+    [SerializeField]private float readyTime = 10f;
+    [SerializeField]private bool isPassedSpawnSpawnTime = true;
+    
+    public float ReadyTime {get => readyTime;}
+    public ReadyTimer ReadyTimer {get => readyTimer; set => readyTimer = value; }
     
     public bool IsPassedSpawnTime { get => isPassedSpawnSpawnTime; set => isPassedSpawnSpawnTime = value; }
     
@@ -33,13 +38,16 @@ public class GameSpawnManager : MonoBehaviour
     {
         currentCoolTime = 0f;
         UpdateNextSpawn();
-        SpawnEnemy();
-        UpdateNextSpawn();
-        IsPassedSpawnTime = true;
+        IsPassedSpawnTime = false;
+        readyTimer = new ReadyTimer();
     }
 
     private void Update()
     {
+        if(readyTimer != null)
+        {
+            readyTimer.UpdateReadyTime();
+        }
         if (isSpawning == false && isPassedSpawnSpawnTime && numberOfEnemies < limiterSpawnEnemy)
         {
             currentCoolTime += Time.deltaTime;
@@ -51,7 +59,7 @@ public class GameSpawnManager : MonoBehaviour
         }
     }
 
-    private void UpdateNextSpawn()
+    public void UpdateNextSpawn()
     {
         Random random = new Random();
         int index = random.Next(enemySpawnOrder.Length);
@@ -66,7 +74,7 @@ public class GameSpawnManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
         if (isSpawning)
         {

@@ -8592,8 +8592,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySpawnOrder:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+  limiterSpawnEnemy: 5
+  readyTime: 10
   isPassedSpawnSpawnTime: 0
-  limiterSpawnEnemy: 1
 --- !u!1 &1163126025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1237059625263938840, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
