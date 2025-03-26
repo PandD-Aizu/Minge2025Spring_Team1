@@ -553,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 0}
+  characterModel: {fileID: 0}
   attackRangeSprite: {fileID: 8065975306841019732}
   hpSlider: {fileID: 643498241932499685}
   withDrawButton: {fileID: 0}
