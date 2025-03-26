@@ -1,4 +1,5 @@
 ﻿using CharacterInfo;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,16 +7,36 @@ namespace CharacterBehaviour
 {
     public class CharacterBehaviourView : MonoBehaviour
     {
+        [Header("カメラ")]
+        [SerializeField] private CinemachineCamera camera;
+        
+        [Header("攻撃範囲のスプライト")]
         [SerializeField] private GameObject attackRangeSprite;
+        
+        [Header("HPスライダー")]
         [SerializeField] private Slider hpSlider;
+        
+        [Header("撤退ボタン")]
         [SerializeField] private GameObject withDrawButton;
+        
+        [Header("キャラクターステータスパネル")]
         [SerializeField] private GameObject characterStatusPanel;
+        
+        [Header("アニメーター")]
         [SerializeField] private Animator animator;
         
         public GameObject AttackRangeSprite     { get => attackRangeSprite; set => attackRangeSprite = value; }
         public Slider HpSlider                  { get => hpSlider; set => hpSlider = value; }
         public Animator Animator                { get => animator; set => animator = value; }
 
+        
+        // @brief カメラの優先度を設定
+        // @param priority カメラの優先度
+        public void SetCameraPriority(int priority)
+        {
+            camera.Priority = priority;
+        }
+        
         public void UpdateHpSlider(AllyInfo allyInfo)
         {
             if(allyInfo.MaxHp != hpSlider.maxValue)
@@ -65,12 +86,14 @@ namespace CharacterBehaviour
                 characterStatusPanel.SetActive(true);
                 withDrawButton.SetActive(true);
                 ShowCharacterAttackRange();
+                SetCameraPriority(10);
             }
             else
             {
                 characterStatusPanel.SetActive(false);
                 withDrawButton.SetActive(false);
                 HideCharacterAttackRange();
+                SetCameraPriority(0);
             }
         }
 
