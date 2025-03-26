@@ -22,6 +22,7 @@ public class EnemyAttack : MonoBehaviour
     private LongRengeCollider longRengeColliderScript;
     private EnemyStatus enemyStatus;
     public GameObject attackTarget;
+    // public Collider attackTargetCollider;
 
     [Header("EnemyAttackController")] 
     [SerializeField] private EnemyAttackType enemyAttackType = EnemyAttackType.None;
@@ -70,6 +71,13 @@ public class EnemyAttack : MonoBehaviour
         {
             enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
         }
+        else
+        {
+            if (!attackTarget.gameObject.activeSelf)
+            {
+                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
+            }
+        }
     }
 
     // @brief TypeがMeleeのときにUpdateで使う, レイキャストで攻撃範囲内に味方キャラがいるか確認
@@ -84,6 +92,7 @@ public class EnemyAttack : MonoBehaviour
                 && hit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED
                 && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
             {
+                // attackTargetCollider  = hit.collider.gameObject.GetComponent<Collider>();
                 attackTarget = hit.collider.gameObject;                         // 攻撃対象を設定
                 enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking); // 攻撃状態に変更
             }
