@@ -10,6 +10,9 @@ namespace CharacterBehaviour
         [Header("カメラ")]
         [SerializeField] private CinemachineCamera camera;
         
+        [Header("キャラクターのモデル")]
+        [SerializeField] private GameObject characterModel;
+        
         [Header("攻撃範囲のスプライト")]
         [SerializeField] private GameObject attackRangeSprite;
         
@@ -25,6 +28,7 @@ namespace CharacterBehaviour
         [Header("アニメーター")]
         [SerializeField] private Animator animator;
         
+        public GameObject CharacterModel        { get => characterModel; set => characterModel = value; }
         public GameObject AttackRangeSprite     { get => attackRangeSprite; set => attackRangeSprite = value; }
         public Slider HpSlider                  { get => hpSlider; set => hpSlider = value; }
         public Animator Animator                { get => animator; set => animator = value; }
@@ -72,7 +76,7 @@ namespace CharacterBehaviour
         }
         
         // @brief キャラクターの攻撃範囲を非表示
-        public void HideCharacterAttackRange()
+        private void HideCharacterAttackRange()
         {
             attackRangeSprite.SetActive(false);
         }
