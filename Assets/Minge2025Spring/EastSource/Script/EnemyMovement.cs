@@ -59,7 +59,11 @@ public class EnemyMovement : MonoBehaviour
             if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyGoalPoint)
             {
                 Debug.Log("Destroy");
+                GameSpawnManager.Instance.EnemyDestroy();
+                GameManager.Instance.ClearJudgement();
+                enemyStatus.IsDead = true;
                 Destroy(this.gameObject);
+                GameManager.Instance.ReachedGoal();
             }
             else if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyWalkable)
             {

@@ -212,7 +212,7 @@ MonoBehaviour:
   animator: {fileID: 5960078689955877118}
   maxHealth: 10000
   initialAttack: 10
-  initialMoveSpeed: 1
+  initialMoveSpeed: 2
   initialDefence: 10
   spawnCooltime: 10
   attackCoolTime: 3

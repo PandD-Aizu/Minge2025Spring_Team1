@@ -20,6 +20,7 @@ public class GameSpawnManager : MonoBehaviour
     [SerializeField]private float readyTime = 10f;
     [SerializeField]private bool isPassedSpawnSpawnTime = true;
     
+    public int NumberOfEnemies { get => numberOfEnemies;}
     public float ReadyTime {get => readyTime;}
     public ReadyTimer ReadyTimer {get => readyTimer; set => readyTimer = value; }
     
@@ -85,6 +86,7 @@ public class GameSpawnManager : MonoBehaviour
             numberOfEnemies++;
             currentCoolTime = 0f;
             UpdateNextSpawn();
+            GameManager.Instance.SpawnEnemy();
         }
     }
 
