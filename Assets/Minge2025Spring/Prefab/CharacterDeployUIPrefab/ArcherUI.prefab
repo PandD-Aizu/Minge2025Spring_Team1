@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4985181996834763141, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
       propertyPath: m_Name
-      value: ArcherDeployUI Variant
+      value: ArcherUI
       objectReference: {fileID: 0}
     - target: {fileID: 5579073120206739669, guid: dad7d8469f3c3d2459225b4a67928a4d, type: 3}
       propertyPath: m_Pivot.x
