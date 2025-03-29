@@ -4,6 +4,9 @@
 		<property name="name">
 			<value>BGM</value>
 		</property>
+		<relationship name="masters">
+			<destination>{090d5f62-3983-403a-8faa-7d6241e4b62c}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{b37dd293-2d8b-41c5-92ea-f545a38b3a8c}</destination>
 		</relationship>
