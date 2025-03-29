@@ -1,4 +1,5 @@
 using CharacterInfo;
+using General;
 using UniRx;
 using Unity.XR.OpenVR;
 using UnityEngine;
@@ -10,8 +11,9 @@ namespace CharacterBehaviour
         [Header("依存関係")] 
         [SerializeField] private AllyInfo allyInfo;
         [SerializeField] private CharacterBehaviourModel model;
-        [SerializeField] private StageCharacterControllerModel characterControllerModel;
         [SerializeField] private CharacterBehaviourView view;
+        [SerializeField] private StageCharacterControllerModel characterControllerModel;
+        [SerializeField] private AudioController audioController;
         
         /* アクセサ */
         public AllyInfo AllyInfo => allyInfo;
@@ -119,6 +121,7 @@ namespace CharacterBehaviour
                 {
                     if (isWithDraw)
                     {
+                        audioController.SEEmitterList[4].Play();
                         view.AnimateWithDraw();
                         model.IsWithDraw.Value = false;
                         characterControllerModel.IsShowingCharacterStatus = false;
