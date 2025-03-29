@@ -538,8 +538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allyInfo: {fileID: 11400000, guid: f7cf677ce29a1c7439eb5b9fa3cff516, type: 2}
   model: {fileID: 7096342511280225626}
-  characterControllerModel: {fileID: 0}
   view: {fileID: 5479525268530148424}
+  listen: {fileID: 0}
+  characterControllerModel: {fileID: 0}
 --- !u!114 &5479525268530148424
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 ﻿using CharacterInfo;
 using CharacterUI;
 using Cost;
+using General;
 using UnityEngine;
 
 namespace CharacterDeploySys
@@ -10,6 +11,7 @@ namespace CharacterDeploySys
         [Header("依存関係")]
         [SerializeField] private CharacterDeployModel model;
         [SerializeField] private CharacterDeployView view;
+        [SerializeField] private CharacterDeployListen listen;
         [SerializeField] private CostControllerModel costControllerModel;
 
         // @brief エントリポイント
@@ -49,6 +51,7 @@ namespace CharacterDeploySys
                 allyInfo = characterHit.collider.gameObject.GetComponent<CharacterUIPresenter>().Model; // キャラ情報を取得する
                 model.SelectedCharacterName = allyInfo.CharacterName;                                   // 選択中のキャラクター名を設定
                 ClickCharacterUI(allyInfo, characterHit);
+                listen.ButtonPushEmitter.Play();
             }
 
             // マウスを押している間、3D空間上にプレビューを表示する
@@ -81,12 +84,14 @@ namespace CharacterDeploySys
             if (Input.GetMouseButtonUp(0) && model.IsSelectCharaAttackRange)
             {
                 SelectCharaAttackRange();
+                listen.SetCharaEmitter.Play();
             }
 
             // 設置可能であり、マウスを離したときユニットを配置する
             if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable && !model.IsSelectCharaAttackRange)
             {
                 DeployCharacter();
+                listen.ButtonPushModernEmitter.Play();
             }
             
             // 設置可能ではないが、マウスを離したときプレビューを初期化する

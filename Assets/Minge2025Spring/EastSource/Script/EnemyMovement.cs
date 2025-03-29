@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using FMODUnity;
+using General;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -19,6 +21,9 @@ public class EnemyMovement : MonoBehaviour
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
+    
+    [Header("SE")]
+    [SerializeField] private StudioEventEmitter goalEmitter;
     
     public bool IsMoving {get => isMoving; set => isMoving = value;}
     private void Start()
@@ -62,6 +67,7 @@ public class EnemyMovement : MonoBehaviour
                 GameSpawnManager.Instance.EnemyDestroy();
                 GameManager.Instance.ClearJudgement();
                 enemyStatus.IsDead = true;
+                goalEmitter.Play();
                 Destroy(this.gameObject);
                 GameManager.Instance.ReachedGoal();
             }

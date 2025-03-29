@@ -1,4 +1,5 @@
 ﻿using System;
+using CharacterBehaviour;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace Puzzle
     {
         [SerializeField] private PuzzleUIView view;   // 描画の依存関係
         [SerializeField] private PuzzleUIModel model; // データの依存関係
+        [SerializeField] private StageCharacterControllerModel characterControllerModel; // キャラクターの依存関係
 
         // @brief エントリポイント
         public void Start()
@@ -21,6 +23,7 @@ namespace Puzzle
             // パズルUIの表示切替
             view.PuzzleOnOffButton.onClick.AddListener(() =>
             {
+                characterControllerModel.IsShowingCharacterStatus = !model.IsShowing;
                 model.IsShowing = !model.IsShowing;
                 view.ShowPuzzleScreen(model.IsShowing);
             });
