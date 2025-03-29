@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: Archer.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: c2c7fdff96c7fdff78c7fdff5ac7fdff
+  MotionInstanceIds: c2c7fdff3ac8000078c7fdff5ac7fdff
   CubismFadeMotionObjects:
   - {fileID: 11400000, guid: badf790abd3dabc429695286c0192717, type: 2}
   - {fileID: 11400000, guid: 77d2097b8a382434f85df0adf2b987f9, type: 2}
