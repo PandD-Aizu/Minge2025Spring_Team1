@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: Tank.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: d6c6ffffa0c6ffff78c6ffff
+  MotionInstanceIds: d6c6ffffa4c7000026c80000
   CubismFadeMotionObjects:
   - {fileID: 11400000, guid: f777792b7ecc5654aa59109708553b16, type: 2}
   - {fileID: 11400000, guid: a28cd439c04dcde46854cf2df776fbae, type: 2}

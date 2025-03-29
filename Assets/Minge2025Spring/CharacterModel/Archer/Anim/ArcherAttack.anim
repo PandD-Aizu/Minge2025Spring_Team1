@@ -23928,6 +23928,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: InstanceId
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 51258
+    messageOptions: 1
   - time: 2.9333334
     functionName: AttackEnemy
     data: 
