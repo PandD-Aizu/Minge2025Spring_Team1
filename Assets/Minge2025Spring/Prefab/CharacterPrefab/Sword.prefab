@@ -1123,11 +1123,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766061339293195760, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4766061339293195760, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4920540184393083285, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: m_Layer
@@ -1177,6 +1177,10 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 8133235696356712277}
+    - target: {fileID: 5479525268530148424, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: characterModel
+      value: 
+      objectReference: {fileID: 4002328880379338541}
     - target: {fileID: 5479525268530148424, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: withDrawButton
       value: 
