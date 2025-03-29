@@ -12,7 +12,7 @@ namespace General
         [Header("SE")]
         [SerializeField] private List<StudioEventEmitter> seEmitterList;
 
-        public List<StudioEventEmitter> BGMEmitterList => BGMEmitterList;
-        public List<StudioEventEmitter> SEEmitterList => SEEmitterList;
+        public List<StudioEventEmitter> BGMEmitterList => bgmEmitterList;
+        public List<StudioEventEmitter> SEEmitterList => seEmitterList;
     }
 }

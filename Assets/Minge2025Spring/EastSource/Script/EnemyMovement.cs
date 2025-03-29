@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using General;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -13,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     private Animator animator;
     private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
+    private AudioController audioController;
     
     private const float MAX_RAYCAST_DISTANCE = 1f;
     private const float MOVE_SPEED_COEFFICIENT = 0.01f;
@@ -23,6 +25,7 @@ public class EnemyMovement : MonoBehaviour
     public bool IsMoving {get => isMoving; set => isMoving = value;}
     private void Start()
     {
+        audioController = FindObjectsByType<AudioController>(FindObjectsSortMode.None)[0];
         goalPosition = GameManager.Instance.CallRandomGoalPosition();
         Debug.Log(goalPosition);
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
@@ -62,6 +65,7 @@ public class EnemyMovement : MonoBehaviour
                 GameSpawnManager.Instance.EnemyDestroy();
                 GameManager.Instance.ClearJudgement();
                 enemyStatus.IsDead = true;
+                audioController.SEEmitterList[2].Play();
                 Destroy(this.gameObject);
                 GameManager.Instance.ReachedGoal();
             }

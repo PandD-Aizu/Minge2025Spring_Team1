@@ -26,8 +26,9 @@ namespace CharacterBehaviour
                 Physics.Raycast(ray, out hit, Mathf.Infinity, allyInfo.CharacterRaycastLayer) &&
                 !model.IsWithDraw.Value)
             {
-                if(hit.collider.gameObject == gameObject)
+                if (hit.collider.gameObject == gameObject)
                     model.IsWithDraw.Value = true;
+                    
             }
         }
     }

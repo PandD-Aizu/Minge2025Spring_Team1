@@ -76,21 +76,24 @@ namespace CharacterDeploySys
             if (Input.GetMouseButton(0) && model.IsSelectCharaAttackRange)
             {
                 Physics.Raycast(cellRay, out cellHit, Mathf.Infinity, model.CellLayer);
-                if(cellHit.point != Vector3.zero)
+                if (cellHit.point != Vector3.zero)
+                {
                     view.ShowCharacterAttackRange(model.SelectedCharacterName, model.AllyInfos, cellHit.transform.position);
+                }
             }
 
             // キャラクターの攻撃範囲を確定する
             if (Input.GetMouseButtonUp(0) && model.IsSelectCharaAttackRange)
             {
                 SelectCharaAttackRange();
-                audioController.SEEmitterList[1].Play();
+                audioController.SEEmitterList[3].Play();
             }
 
             // 設置可能であり、マウスを離したときユニットを配置する
             if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable && !model.IsSelectCharaAttackRange)
             {
                 DeployCharacter();
+                audioController.SEEmitterList[1].Play();
             }
             
             // 設置可能ではないが、マウスを離したときプレビューを初期化する
