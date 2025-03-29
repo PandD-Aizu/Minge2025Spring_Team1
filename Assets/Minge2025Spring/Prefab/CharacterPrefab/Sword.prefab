@@ -1591,6 +1591,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2705796573966336776, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1868290910222429387}
+    - targetCorrespondingSourceObject: {fileID: 2705796573966336776, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5986279659650167466}
   m_SourcePrefab: {fileID: 100100000, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
 --- !u!65 &2040914702070494638 stripped
 BoxCollider:
@@ -1621,6 +1624,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 8105510276225032575}
   view: {fileID: 6777042775754123373}
+--- !u!114 &5986279659650167466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4002328880379338541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1895603394
+      Data2: 1289539429
+      Data3: -527158884
+      Data4: -987285579
+    Path: event:/SE/Stage/SwordAttack
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &6771270499663622120 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5764512863943111629, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}

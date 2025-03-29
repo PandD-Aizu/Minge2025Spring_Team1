@@ -1,6 +1,7 @@
 ﻿using CharacterInfo;
 using CharacterUI;
 using Cost;
+using General;
 using UnityEngine;
 
 namespace CharacterDeploySys
@@ -11,6 +12,7 @@ namespace CharacterDeploySys
         [SerializeField] private CharacterDeployModel model;
         [SerializeField] private CharacterDeployView view;
         [SerializeField] private CostControllerModel costControllerModel;
+        [SerializeField] private AudioController audioController;
 
         // @brief エントリポイント
         private void Start()
@@ -49,6 +51,7 @@ namespace CharacterDeploySys
                 allyInfo = characterHit.collider.gameObject.GetComponent<CharacterUIPresenter>().Model; // キャラ情報を取得する
                 model.SelectedCharacterName = allyInfo.CharacterName;                                   // 選択中のキャラクター名を設定
                 ClickCharacterUI(allyInfo, characterHit);
+                audioController.SEEmitterList[0].Play();
             }
 
             // マウスを押している間、3D空間上にプレビューを表示する
@@ -81,6 +84,7 @@ namespace CharacterDeploySys
             if (Input.GetMouseButtonUp(0) && model.IsSelectCharaAttackRange)
             {
                 SelectCharaAttackRange();
+                audioController.SEEmitterList[1].Play();
             }
 
             // 設置可能であり、マウスを離したときユニットを配置する
