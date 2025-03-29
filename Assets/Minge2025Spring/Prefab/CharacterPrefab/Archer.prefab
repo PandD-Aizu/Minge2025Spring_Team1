@@ -737,7 +737,7 @@ RectTransform:
   m_Father: {fileID: 7513800839265476239}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1336,6 +1336,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8089098593637820896}
     - target: {fileID: 5479525268530148424, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: characterModel
+      value: 
+      objectReference: {fileID: 7987467908380690237}
+    - target: {fileID: 5479525268530148424, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: withDrawButton
       value: 
       objectReference: {fileID: 8865157995818054804}
@@ -1637,6 +1641,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7244409179541723014, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       insertIndex: 3
       addedObject: {fileID: 5095313244998254360}
+    - targetCorrespondingSourceObject: {fileID: 7244409179541723014, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8046331718149359914}
+    - targetCorrespondingSourceObject: {fileID: 7244409179541723014, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3593261659687025544}
   m_SourcePrefab: {fileID: 100100000, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
 --- !u!65 &2939561669100894984 stripped
 BoxCollider:
@@ -1669,6 +1679,50 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8046331718149359914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762317257433548037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 483a10d7747142b5bdd32fc865811476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  withDrawEmitter: {fileID: 3593261659687025544}
+--- !u!114 &3593261659687025544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762317257433548037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -662316478
+      Data2: 1322092841
+      Data3: -1461610065
+      Data4: -2041948820
+    Path: event:/SE/WithDraw
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!114 &4964423083965263833 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}

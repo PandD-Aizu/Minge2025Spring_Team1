@@ -10,12 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 7150892732658973277}
   - component: {fileID: 3982458539198739633}
+  - component: {fileID: 7011219788672685171}
   - component: {fileID: 722734225132151933}
   - component: {fileID: 5121996906579498403}
   - component: {fileID: 4194380404412732150}
-  m_Layer: 0
+  - component: {fileID: 4926918976555518153}
+  m_Layer: 7
   m_Name: FlyEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,6 +60,28 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &7011219788672685171
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702553290804783497}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &722734225132151933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +97,7 @@ MonoBehaviour:
   searchCurrentPositionCellLayerMask:
     serializedVersion: 2
     m_Bits: 9728
+  goalEmitter: {fileID: 4926918976555518153}
 --- !u!114 &5121996906579498403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyState: 1
-  animator: {fileID: 0}
+  animator: {fileID: 7011219788672685171}
   maxHealth: 100
   initialAttack: 10
   initialMoveSpeed: 1
@@ -108,12 +133,43 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTarget: {fileID: 0}
-  enemyAttackType: 0
-  meleeAttackRange: 2
-  longRangeAttackRadius: 4
+  enemyAttackType: 1
+  meleeAttackRange: 0.2
+  longRangeAttackRadius: 3
   observeTargetLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
+--- !u!114 &4926918976555518153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702553290804783497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 242843999
+      Data2: 1076843309
+      Data3: -924254289
+      Data4: -1051568389
+    Path: event:/SE/ReachGoal
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2054467676933009040
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +181,7 @@ GameObject:
   - component: {fileID: 6338342312345323099}
   - component: {fileID: 4853017270421536299}
   - component: {fileID: 6474638263479272780}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttackMotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4960,7 +5016,7 @@ GameObject:
   - component: {fileID: 2724096057326206531}
   - component: {fileID: 2780760724894172976}
   - component: {fileID: 2764346872107861563}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NromalMotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -123,6 +123,9 @@ namespace CharacterBehaviour
         public void InitAllyInfo(AllyInfo allyInfo)
         {
             allyInfo.Init();
+            IsWithDraw.Value = false;
+            IsAttackEnemy.Value = false;
+            IsShowCharacterStatus.Value = false;
         }
     }
 }

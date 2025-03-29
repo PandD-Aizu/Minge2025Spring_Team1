@@ -10,8 +10,9 @@ namespace CharacterBehaviour
         [Header("依存関係")] 
         [SerializeField] private AllyInfo allyInfo;
         [SerializeField] private CharacterBehaviourModel model;
-        [SerializeField] private StageCharacterControllerModel characterControllerModel;
         [SerializeField] private CharacterBehaviourView view;
+        [SerializeField] private CharacterBehaviourListen listen;
+        [SerializeField] private StageCharacterControllerModel characterControllerModel;
         
         /* アクセサ */
         public AllyInfo AllyInfo => allyInfo;
@@ -119,6 +120,7 @@ namespace CharacterBehaviour
                 {
                     if (isWithDraw)
                     {
+                        listen.WithDrawEmitter.Play();
                         view.AnimateWithDraw();
                         model.IsWithDraw.Value = false;
                         characterControllerModel.IsShowingCharacterStatus = false;
