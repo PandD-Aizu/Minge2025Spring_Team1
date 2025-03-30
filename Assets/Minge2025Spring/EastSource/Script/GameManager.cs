@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
         public int weight;
     }
     
-    [FormerlySerializedAs("debugMode")]
     [Header("Debugger Mode")]
     [SerializeField] private bool isdebugMode = false;
     [SerializeField] private int testWalkableCellNumber = 0;
@@ -363,8 +362,13 @@ public class GameManager : MonoBehaviour
     {
         reachedGoalEnemies++;
         StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+    }
+
+    public void JudgeGameClear()
+    {
         if (reachedGoalEnemies >= goalCapasity)
         {
+            StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
             //ゲームオーバー
             GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
             OnGameOver?.Invoke(this, EventArgs.Empty);
