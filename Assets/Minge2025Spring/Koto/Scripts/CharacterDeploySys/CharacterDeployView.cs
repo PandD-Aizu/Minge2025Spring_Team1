@@ -27,10 +27,10 @@ namespace CharacterDeploySys
         public List<GameObject> AllyPrefabs { get => allyPrefabs; }
 
         // @brief プレビューを初期化
-        public void InitPreview()
+        public void InitPreview(string CharName)
         {
-            foreach(var allyPrefab in allyPrefabs)
-                allyPrefab.SetActive(false);
+            GameObject previewChar = allyPrefabs.Find(x => x.name == CharName);
+            previewChar.SetActive(false);
         }
 
         // @brief 撤退したキャラクターを再度表示
