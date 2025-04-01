@@ -70,6 +70,7 @@ public class EnemyMovement : MonoBehaviour
                 goalEmitter.Play();
                 Destroy(this.gameObject);
                 GameManager.Instance.ReachedGoal();
+                GameManager.Instance.JudgeGameClear();
             }
             else if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyWalkable)
             {

@@ -80,7 +80,12 @@ public class EnemyStatus : MonoBehaviour
     {
         if (currentHealth < 0)
         {
+            GameSpawnManager.Instance.EnemyDestroy();
+            GameManager.Instance.ClearJudgement();
+            isDead = true;
             Destroy(gameObject);
+            GameManager.Instance.JudgeGameClear();
+
         }
     }
     
@@ -89,9 +94,6 @@ public class EnemyStatus : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            GameSpawnManager.Instance.EnemyDestroy();
-            GameManager.Instance.ClearJudgement();
-            isDead = true;
             DestroyImmediate(this.gameObject);
         }
     }
