@@ -1,48 +1,94 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using CharacterInfo;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.Splines.ExtrusionShapes;
 using UnityEngine.UI;
 
 namespace CharacterDeploySys
 {
     public class CharacterDeployView : MonoBehaviour
     {
-        [Header("親オブジェクト")] 
+        [Header("UIを映しているカメラ")]
+        [SerializeField] private Camera uiRenderCamera;
+        
+        [Header("味方のモデルを置く親オブジェクト")] 
         [SerializeField] private GameObject parent;
+
+        [Header("味方ユニットのUIプレハブ")]
+        [SerializeField] private List<GameObject> allyUIPrefabs;
         
         [Header("味方ユニットのプレハブ")]
-        [SerializeField] private GameObject characterPrefab;
-
-        [Header("プレビュー")] 
-        [SerializeField] private GameObject cursorPreview;
+        [SerializeField] private List<GameObject> allyPrefabs;
         
-        public GameObject CharacterPrefab { get => characterPrefab; }
-        public GameObject CursorPreview { get => cursorPreview; }
+        /* getter と setter */
+        public Camera UIRenderCamera        { get => uiRenderCamera; }
+        public List<GameObject> AllyPrefabs { get => allyPrefabs; }
 
-        // @brief 初期化処理
-        public void Init()
+        // @brief プレビューを初期化
+        public void InitPreview(string CharName)
         {
-            cursorPreview.SetActive(false);
+            GameObject previewChar = allyPrefabs.Find(x => x.name == CharName);
+            previewChar.SetActive(false);
         }
-        
-        // @brief プレビューの画像を変更
-        // @param sprite 画像
-        public void ChangeCursorPreviewSprite(Sprite sprite)
+
+        // @brief 撤退したキャラクターを再度表示
+        public void CheckCharacterWithDraw(List<AllyInfo> allyInfos)
         {
-            cursorPreview.transform.GetComponent<SpriteRenderer>().sprite = sprite;
+            allyInfos.ForEach(x =>
+            {
+                if(x.CharacterDeployInfo == CharacterDeployInfo.NOT_DEPLOYED)
+                    allyUIPrefabs.Find(y => y.name == x.CharacterName).SetActive(true);
+            });
         }
         
         // @brief キャラクターのプレビューを表示する
-        public void SetPreview(Vector3 previewPos)
+        // @param previewChar プレビューするキャラクター, previewPos プレビューする位置
+        // TODO: string参照をやめたい
+        public void SetPreview(string charName, Vector3 previewPos)
         {
-            cursorPreview.SetActive(true);
-            cursorPreview.transform.position = previewPos;
+            GameObject previewChar = allyPrefabs.Find(x => x.name == charName);
+            previewChar.SetActive(true);
+            previewChar.transform.localPosition = previewPos;
         }
         
         // @brief カーソル位置にキャラクターを配置
         // @param pos カーソルの位置
-        public void DeployAlly(Vector3 pos)
+        public void DeployAlly(string charName)
         {
-            GameObject newGameObject = Instantiate(characterPrefab, pos, Quaternion.identity);
-            newGameObject.transform.SetParent(parent.transform, false);
+            GameObject deployChar = allyPrefabs.Find(x => x.name == charName);
+            deployChar.SetActive(true);
+        }
+
+        // @brief キャラクターの攻撃範囲を表示
+        // @param charName キャラクターの名前, mousePos マウスの位置
+        public void ShowCharacterAttackRange(string charName, List<AllyInfo> allyInfos, Vector3 mousePos)
+        {
+            GameObject deployChar = allyPrefabs.Find(x => x.name == charName);
+            AllyInfo allyInfo = allyInfos.Find(x => x.CharacterName == charName);
+
+            if (deployChar == null || allyInfo == null)
+                return;
+            
+            float dx = mousePos.x - deployChar.transform.position.x;
+            float dy = mousePos.z - deployChar.transform.position.z;
+            
+            float rad = Mathf.Atan2(dy, dx);
+            float deg = rad * Mathf.Rad2Deg;
+            
+            Debug.Log("deg: " + deg);
+            
+            // カーソルの位置によって、キャラクターの攻撃範囲を変更する
+            // Atan2の返り値は-πからπの範囲
+            if(deg <= 45 && deg >= -45)        // 右
+                allyInfo.CharacterDirection = CharacterDirection.RIGHT;
+            else if(deg < 135 && deg > 45)     // 上
+                allyInfo.CharacterDirection = CharacterDirection.UP;
+            else if(deg <= -135 || deg >= 135) // 左
+                allyInfo.CharacterDirection = CharacterDirection.LEFT;
+            else if(deg < -45 && deg > -135)   // 下
+                allyInfo.CharacterDirection = CharacterDirection.DOWN;
         }
     }
 }

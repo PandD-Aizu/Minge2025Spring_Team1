@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
+  m_Name: Archer.fadeMotionList
+  m_EditorClassIdentifier: 
+  MotionInstanceIds: c2c7fdff3ac8000078c7fdff5ac7fdff
+  CubismFadeMotionObjects:
+  - {fileID: 11400000, guid: badf790abd3dabc429695286c0192717, type: 2}
+  - {fileID: 11400000, guid: 77d2097b8a382434f85df0adf2b987f9, type: 2}
+  - {fileID: 11400000, guid: 8ae85db551555894ca972dfbc3d0c3ed, type: 2}
+  - {fileID: 11400000, guid: bb70291fe160f3d44999f58864ab1eb2, type: 2}

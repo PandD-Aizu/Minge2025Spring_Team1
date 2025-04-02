@@ -3,8 +3,13 @@ using UnityEngine;
 
 public class EnemyWalkableCell : MonoBehaviour
 {
+    [Header("Property")] [SerializeField] private bool isSpawnPointCell = false;
+    
     public bool isWalkable = true;
-        
+    public LayerMask observeTargetLayerMask;
+
+    private float rayDistance = 0.8f;
+    private Ray observeTargetRay;
     private EnemyWalkableCell upCell = null;
     private EnemyWalkableCell downCell = null;
     private EnemyWalkableCell leftCell = null;
@@ -13,6 +18,7 @@ public class EnemyWalkableCell : MonoBehaviour
     private EnemyWalkableCell previousCell = null;
 
     //変数のアクセサ
+    public bool IsSpawnPointCell{get{return isSpawnPointCell;}}
     public EnemyWalkableCell UpCell {get{return upCell;}}
     public EnemyWalkableCell DownCell {get{return downCell;}}
     public EnemyWalkableCell LeftCell {get{return leftCell;}}
@@ -22,6 +28,7 @@ public class EnemyWalkableCell : MonoBehaviour
     
     private void Start()
     {
+        observeTargetRay = new Ray(this.transform.position, this.transform.up);
         InitSurroundingCells();
     }
 

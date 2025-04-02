@@ -1,12 +1,16 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
+using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set;}
+    public event EventHandler OnGameOver;
+    public event EventHandler OnGameClear;
 
     public struct SearchShortestRootInfo
     {
@@ -15,13 +19,17 @@ public class GameManager : MonoBehaviour
         public int weight;
     }
     
-    [FormerlySerializedAs("debugMode")]
     [Header("Debugger Mode")]
     [SerializeField] private bool isdebugMode = false;
     [SerializeField] private int testWalkableCellNumber = 0;
+    [SerializeField] private int maxSpawnEnemis = 10;
+    [SerializeField] private int goalCapasity = 5;
     
+    private int reachedGoalEnemies = 0;
+    private int spawndedEnemies = 0;
     private GameObject[] enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
+    private List<GameObject> enemySpawnPointCells = new List<GameObject>();
     public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
     
     private void Awake()
@@ -29,16 +37,14 @@ public class GameManager : MonoBehaviour
         Instance = this;
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
+        UpdateEnemySpawnPointCells();
     }
 
     private void Start()
     {
-        
-    }
-
-    private void OnDestroy()
-    {
-        
+        reachedGoalEnemies = 0;
+        spawndedEnemies = 0;
+        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 
     private void Update()
@@ -92,9 +98,34 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+
+    //brief シーン上のスポーンポイントを取得する
+    //warning 必ずUpdateEnemyWalkableCells()を使用した後に使う
+    private void UpdateEnemySpawnPointCells()
+    {
+        if (enemyWalkableCells.Length <= 0)
+        {
+            Debug.LogError("Null enemyWalkableCells");
+        }
+        else
+        {
+            foreach (GameObject enemyWalkableCell in enemyWalkableCells)
+            {
+                if (enemyWalkableCell.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellScript))
+                {
+                    if (enemyWalkableCellScript.IsSpawnPointCell == true)
+                    {
+                        enemySpawnPointCells.Add(enemyWalkableCell);
+                    }
+                }
+            }
+        }
+        Debug.Log(enemySpawnPointCells.Count.ToString());
+    }
     
     //brief シーン上のエネミーが通れるエリアを取得する
-    private void UpdateEnemyWalkableCells()
+    private void 
+        UpdateEnemyWalkableCells()
     {
         enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
@@ -113,8 +144,10 @@ public class GameManager : MonoBehaviour
     }
 
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
-    private void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
+    public void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
     {
+        UpdateEnemyWalkableCells();
+        UpdateEnemyGoalPointCells();
         ResetCell();
         List<EnemyWalkableCell> passedCells = new List<EnemyWalkableCell>();
         List<SearchShortestRootInfo> TerminalCellsInfos = new List<SearchShortestRootInfo>(); /*現在調べたセルの中で末端のセルのリスト*/
@@ -276,10 +309,22 @@ public class GameManager : MonoBehaviour
         {
             if (enemyWalkableCellObject.TryGetComponent(out EnemyWalkableCell enemyWalkableCell))
             {
-                enemyWalkableCell.NextCell = null;
+                /*enemyWalkableCell.NextCell = null;*/
                 enemyWalkableCell.PreviousCell = null;
             }
         }
+    }
+
+    public Vector3 CallRandomGoalPosition()
+    {
+        Random random = new Random();
+        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].transform.position;
+    }
+
+    public Vector3 CallRandomSpawnPosition()
+    {
+        Random random = new Random();
+        return enemySpawnPointCells[random.Next(enemySpawnPointCells.Count)].transform.position;
     }
 
     private void DebugUp1PositionY(EnemyWalkableCell enemyWalkableCell)
@@ -289,6 +334,44 @@ public class GameManager : MonoBehaviour
             Vector3 temp = enemyWalkableCell.gameObject.transform.position;
             temp.y += 1f;
             enemyWalkableCell.gameObject.transform.position = temp;
+        }
+    }
+    
+    //@brief エネミーがスポーンしたときにカウントする
+    public void SpawnEnemy()
+    {
+        spawndedEnemies++;
+        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+        if (spawndedEnemies >= maxSpawnEnemis)
+        {
+            GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
+        }
+    }
+    
+    //@brief すべてのエネミーが出きったかどうか確認の後ゲームクリア判定
+    public void ClearJudgement()
+    {
+        if (spawndedEnemies >= maxSpawnEnemis && GameSpawnManager.Instance.NumberOfEnemies <= 0 )
+        {
+            OnGameClear?.Invoke(this, EventArgs.Empty);
+        }
+    }
+    
+    //@brief エネミーがゴールに到達したときreachedGoalEnemiesを加算し、GoalCapacity以上かどうか確認する
+    public void ReachedGoal()
+    {
+        reachedGoalEnemies++;
+        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+    }
+
+    public void JudgeGameClear()
+    {
+        if (reachedGoalEnemies >= goalCapasity)
+        {
+            StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+            //ゲームオーバー
+            GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
+            OnGameOver?.Invoke(this, EventArgs.Empty);
         }
     }
 }
