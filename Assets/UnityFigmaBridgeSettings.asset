@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 119c1bd3601648f28a252a6030e067b6, type: 3}
+  m_Name: UnityFigmaBridgeSettings
+  m_EditorClassIdentifier: 
+  DocumentUrl: https://www.figma.com/design/It1x5LObhBDSN0HJdyM6V9/%E4%BC%81%E7%94%BB%E9%96%8B%E7%99%BA2025%E6%98%A5%E3%83%9F%E3%83%B3%E3%82%B2%E3%80%9C?node-id=2-6&t=DVJ8QMxm3J8joPvQ-0
+  BuildPrototypeFlow: 1
+  RunTimeAssetsScenePath: Assets/Minge2025Spring/Tottoko/Pause/Tutorial.unity
+  EnableAutoLayout: 0
+  ScreenBindingNamespace: 
+  ServerRenderImageScale: 3
+  EnableGoogleFontsDownloads: 1
+  CreateScreenNameCSharpFile: 0
+  GenerateNodesMarkedForExport: 1
+  OnlyImportSelectedPages: 0
+  PageDataList: []
