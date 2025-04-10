@@ -70,6 +70,7 @@ public class TextManager : MonoBehaviour
         screen.SetActive(false);
         nextButton.gameObject.SetActive(false);
         GameManager.Instance.ResumeGame();
+        TutorialManager.Instance.ShowPuzzleOnOffButtonArrow();
     }
 
 }
