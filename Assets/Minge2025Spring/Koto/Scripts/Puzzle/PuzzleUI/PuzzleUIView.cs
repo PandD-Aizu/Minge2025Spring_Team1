@@ -30,16 +30,19 @@ namespace Puzzle
                 puzzleScreen.transform.DOLocalMoveY(0, 0.5f)
                     .SetEase(Ease.InSine);
                 
-                //Tutorialの矢印を消すために勝手に追加します.byEastSource
-                TutorialManager.Instance.HidePuzzleOnOffButtonArrow();
+                // Tutorialの矢印を消すために勝手に追加します.byEastSource
+                if(TutorialManager.Instance != null)
+                    TutorialManager.Instance.HidePuzzleOnOffButtonArrow();
             }
             else           // 開いていたら閉じる
             {
                 puzzleBackGround.DOFade(0, 0.5f);
                 puzzleScreen.transform.DOLocalMoveY(800, 0.5f)
                     .SetEase(Ease.OutSine);
-                //Tutorialの矢印をコントロールに勝手に追加します.byEastSource
-                TutorialManager.Instance.ShowCharacterUIButtonArrow();
+                
+                // Tutorialの矢印をコントロールに勝手に追加します.byEastSource
+                if(TutorialManager.Instance != null)
+                    TutorialManager.Instance.ShowPuzzleOnOffButtonArrow();
             }
         }
     }

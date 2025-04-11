@@ -24474,7 +24474,7 @@ MonoBehaviour:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
   limiterSpawnEnemy: 5
-  readyTime: 10
+  readyTime: 20
   isPassedSpawnSpawnTime: 0
 --- !u!43 &1162525395
 Mesh:
