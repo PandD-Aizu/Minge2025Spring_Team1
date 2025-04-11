@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5130211060170740301}
   - component: {fileID: 7196624194231717173}
   - component: {fileID: 1230531650215399889}
+  - component: {fileID: 6709980882718359253}
   m_Layer: 0
   m_Name: Puzzle_Curcuit
   m_TagString: Untagged
@@ -53,6 +54,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f605c372a840f82489759983b9d88db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 0}
 --- !u!222 &7196624194231717173
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -91,6 +93,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6709980882718359253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764929293957752065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64c8e01c659b5f043a01b90c372d39d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collect: 0
+  NeedPuzzle: 0
+  CollectRotate_z: 0
 --- !u!1 &1762231349214763440
 GameObject:
   m_ObjectHideFlags: 0
