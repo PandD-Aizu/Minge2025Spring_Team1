@@ -78,5 +78,11 @@ namespace Dialogue
                     .OnComplete(() => dialoguePanel.SetActive(!dialoguePanel.activeSelf));
             }
         }
+        
+        // @brief ADVパートを終了する
+        public void CloseDialoguePanel()
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Dialogue
+    uniqueID: 2318789285
+    locked: 0
   - name: UI
     uniqueID: 1565897931
     locked: 0

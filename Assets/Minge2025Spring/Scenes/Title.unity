@@ -151,10 +151,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1365452741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -295.23297}
+  m_SizeDelta: {x: 1500, y: 90.194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &52807091
 MonoBehaviour:
@@ -176,11 +176,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25E6  Used                     Source Han Sans    IRASUTOYA\n                                
-    DAYAMA   Pakutaso\n"
+  m_text: "\u25E6  Used                     \u6E90\u306E\u89D2\u30B4\u30B7\u30C3\u30AF   
+    \u3044\u3089\u3059\u3068\u3084    \u30C0\u30FC\u30E4\u30DE    \u3071\u304F\u305F\u305D\n\t\t       
+    Audio Engine: FMOD Studio by Firelight Technologies Pty Ltd."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
+  m_sharedMaterial: {fileID: -7066737264209221117, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -212,7 +213,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -288,10 +289,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1365452741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -33.036995}
+  m_SizeDelta: {x: 1500, y: 66.07399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &80252573
 MonoBehaviour:
@@ -313,10 +314,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credit Screen
+  m_text: "\u30AF\u30EC\u30B8\u30C3\u30C8"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
+  m_sharedMaterial: {fileID: -7066737264209221117, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -348,7 +349,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -972,12 +973,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256554750}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 25, y: 25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2010071918}
+  m_Father: {fileID: 1408560519}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1334,10 +1335,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1365452741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -96.75099}
+  m_SizeDelta: {x: 1500, y: 61.353996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380515495
 MonoBehaviour:
@@ -1359,10 +1360,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25E6  Sound                  EastSource   KOTO\n\n\n\n\n\n\n\n\n\n"
+  m_text: "\u25E6  Sound                    EastSource   \u3053\u3068\n\n\n\n\n\n\n\n\n\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
+  m_sharedMaterial: {fileID: -7066737264209221117, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1394,7 +1395,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3000,10 +3001,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1365452741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -219.45898}
+  m_SizeDelta: {x: 1500, y: 61.353996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1348581595
 MonoBehaviour:
@@ -3025,10 +3026,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25E6  Artist                     ISSI"
+  m_text: "\u25E6  Artist                   \u3044\u3063\u3057\u30FC"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
+  m_sharedMaterial: {fileID: -7066737264209221117, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3060,7 +3061,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -3143,7 +3144,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0.00066376}
-  m_SizeDelta: {x: 734, y: 340.33}
+  m_SizeDelta: {x: 1500, y: 340.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1365452742
 MonoBehaviour:
@@ -3206,6 +3207,7 @@ RectTransform:
   - {fileID: 998580262}
   - {fileID: 1846037749}
   - {fileID: 218953406}
+  - {fileID: 256554751}
   m_Father: {fileID: 2010071918}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4229,10 +4231,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1365452741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 750, y: -158.10498}
+  m_SizeDelta: {x: 1500, y: 61.353996}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1911607149
 MonoBehaviour:
@@ -4254,11 +4256,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u25E6  Programmer         HIKARU   TOTTOKO   kora   MOMIJI\n                               
-    VARUMUNKU"
+  m_text: "\u25E6  Programmer               \u3053\u3068    EastSource    photon  
+    \u3068\u3063\u3068\u3053   kora   \u3082\u307F\u3058    \u30F4\u30A1\u30EB\u30E0\u30F3\u30AF"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
+  m_sharedMaterial: {fileID: -7066737264209221117, guid: 629aed278b8917147b7a4a95740fe467, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4290,7 +4292,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 4096
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -4443,7 +4445,6 @@ RectTransform:
   - {fileID: 1408560519}
   - {fileID: 1778953314}
   - {fileID: 2059956656}
-  - {fileID: 256554751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4531,7 +4532,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2059956656
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5009,9 +5010,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Title
-
-'
+  m_text: Puzzle Nights
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

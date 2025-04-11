@@ -21,10 +21,10 @@ using UnityEngine.SceneManagement;
         switch (stage)
         {
             case 0:
-                SceneManager.LoadScene("Tutorial");
+                SceneManager.LoadSceneAsync("BeforeTutorial");
                 break;
             case 1:
-                SceneManager.LoadScene("Stage01");
+                SceneManager.LoadSceneAsync("Stage01");
                 break;
             case 2:
                 SceneManager.LoadScene("Stage02");
