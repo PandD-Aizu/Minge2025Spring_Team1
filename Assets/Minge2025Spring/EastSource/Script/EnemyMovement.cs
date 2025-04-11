@@ -17,9 +17,10 @@ public class EnemyMovement : MonoBehaviour
     private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
     private EnemyWalkableCell prevEnemyWalkableCell;
-    
+
     private const float MAX_RAYCAST_DISTANCE = 1f;
-    private const float MOVE_SPEED_COEFFICIENT = 0.01f;
+    
+    // private const float MOVE_SPEED_COEFFICIENT = 0.01f;　ほんとはだめだけど念のため速度の定数をコメントアウトで残しておく
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
@@ -140,7 +141,7 @@ public class EnemyMovement : MonoBehaviour
         }
         target.y += 1;
         float Distance_two = Vector3.Distance(transform.position, target);
-        float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * MOVE_SPEED_COEFFICIENT) / Distance_two;
+        float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * Time.deltaTime) / Distance_two;//移動速度のコントロール
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
         if (prevEnemyWalkableCell != null && enemyWalkableCell == prevEnemyWalkableCell)
         {

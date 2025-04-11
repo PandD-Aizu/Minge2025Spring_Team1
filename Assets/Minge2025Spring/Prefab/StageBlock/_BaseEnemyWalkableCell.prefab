@@ -153,3 +153,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSpawnPointCell: 0
+  isWalkable: 1
+  observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchAroundCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 512

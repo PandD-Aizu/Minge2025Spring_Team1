@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {get; private set;}
     public event EventHandler OnGameOver;
     public event EventHandler OnGameClear;
+    
+    public event EventHandler OnUpdateEnemyWalkableCells;
+
 
     public struct SearchShortestRootInfo
     {
@@ -124,8 +127,7 @@ public class GameManager : MonoBehaviour
     }
     
     //brief シーン上のエネミーが通れるエリアを取得する
-    private void 
-        UpdateEnemyWalkableCells()
+    private void UpdateEnemyWalkableCells()
     {
         enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
@@ -141,6 +143,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("position: " + enemyGoalPointCell.transform.position + "name: " +enemyGoalPointCell.gameObject.name);
         }
+        OnUpdateEnemyWalkableCells?.Invoke(this, EventArgs.Empty);
     }
 
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
