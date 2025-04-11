@@ -20,6 +20,9 @@ using UnityEngine.SceneManagement;
     {
         switch (stage)
         {
+            case 0:
+                SceneManager.LoadScene("Tutorial");
+                break;
             case 1:
                 SceneManager.LoadScene("Stage01");
                 break;

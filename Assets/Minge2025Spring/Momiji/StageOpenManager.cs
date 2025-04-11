@@ -3,6 +3,7 @@ using UnityEngine;
 public class StageOpenManager : MonoBehaviour
 {
     public int stage_num;
+    public GameObject ButtonTutorial;
     public GameObject ButtonStage1;
     public GameObject ButtonStage2;
     public GameObject ButtonStage3;
@@ -16,13 +17,19 @@ public class StageOpenManager : MonoBehaviour
         ButtonStage3.SetActive(false);
         ButtonStage4.SetActive(false);
         ButtonStage5.SetActive(false);
-        stage_num = 1;
+        stage_num = 0;
         //PlayerPrefs.GetInt("SCORE", 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (stage_num == 0)
+        {
+            Debug.Log("Current Stage Number: " + stage_num);
+            ButtonTutorial.SetActive(true);
+        }
+        
         if (stage_num >= 1)
         {
             Debug.Log(stage_num);
