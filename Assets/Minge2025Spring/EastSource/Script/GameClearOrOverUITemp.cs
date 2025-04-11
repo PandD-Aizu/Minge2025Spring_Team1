@@ -2,9 +2,11 @@ using System;
 using FMODUnity;
 using TMPro;
 using UnityEngine;
+using Debug = FMOD.Debug;
 
 public class GameClearOrOverUITemp : MonoBehaviour
 {
+    [Header("Binding")] [SerializeField] private GameObject panel;
     [SerializeField]private TextMeshProUGUI GameCleartext;
     [SerializeField]private TextMeshProUGUI GameOverText;
     [SerializeField] private StudioEventEmitter gameOverSE;
@@ -26,30 +28,30 @@ public class GameClearOrOverUITemp : MonoBehaviour
     private void GameManager_OnGameOver(object sender, EventArgs e)
     {
         Show();
-        gameOverSE.Play();
-        bgm.Stop();
         GameCleartext.gameObject.SetActive(false);
         GameOverText.gameObject.SetActive(true);
+        gameOverSE.Play();
+        bgm.Stop();
         Time.timeScale = 0f;
     }
 
     private void GameManager_OnGameClear(object sender, EventArgs e)
     {
         Show();
-        bgm.Stop();
         GameCleartext.gameObject.SetActive(true);
         GameOverText.gameObject.SetActive(false);
+        bgm.Stop();
         Time.timeScale = 0f;
     }
 
     private void Show()
     {
-        gameObject.SetActive(true);
+        panel.gameObject.SetActive(true);
     }
 
     private void Hide()
     {
-        gameObject.SetActive(false);
+        panel.SetActive(false);
         Time.timeScale = 1.0f;
     }
 }

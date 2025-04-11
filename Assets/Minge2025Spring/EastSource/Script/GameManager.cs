@@ -213,6 +213,7 @@ public class GameManager : MonoBehaviour
             
             if (TerminalCellsInfos.Count == 0) // 追加の無限ループ防止策
             {
+                
                 Debug.LogError("No more terminal cells! Breaking loop.");
                 break;
             }
@@ -367,7 +368,7 @@ public class GameManager : MonoBehaviour
         StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 
-    public void JudgeGameClear()
+    public void JudgeGameOver()
     {
         if (reachedGoalEnemies >= goalCapasity)
         {

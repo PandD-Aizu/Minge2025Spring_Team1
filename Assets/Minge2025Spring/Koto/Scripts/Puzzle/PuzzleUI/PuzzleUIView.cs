@@ -42,7 +42,7 @@ namespace Puzzle
                 
                 // Tutorialの矢印をコントロールに勝手に追加します.byEastSource
                 if(TutorialManager.Instance != null)
-                    TutorialManager.Instance.ShowPuzzleOnOffButtonArrow();
+                    TutorialManager.Instance.ShowCharacterUIButtonArrow();
             }
         }
     }

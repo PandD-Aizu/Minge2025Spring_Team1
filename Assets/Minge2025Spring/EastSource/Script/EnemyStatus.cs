@@ -84,7 +84,7 @@ public class EnemyStatus : MonoBehaviour
             GameManager.Instance.ClearJudgement();
             isDead = true;
             Destroy(gameObject);
-            GameManager.Instance.JudgeGameClear();
+            GameManager.Instance.JudgeGameOver();
 
         }
     }
