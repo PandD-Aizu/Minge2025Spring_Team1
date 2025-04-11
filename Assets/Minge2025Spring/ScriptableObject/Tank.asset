@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Tank
   m_EditorClassIdentifier: 
   attackType: 0
-  characterDeployInfo: 1
-  characterState: 1
-  characterDirection: 0
+  characterDeployInfo: 0
+  characterState: 0
+  characterDirection: 3
   characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -25,8 +25,8 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: c9bea9d97d879fa4abd798d11819507d, type: 3}
   characterName: Tank
   cost: 30
-  maxHp: 5000
-  hp: 5000
-  attack: 50
+  maxHp: 3000
+  hp: 3000
+  attack: 200
   attackCoolDown: 2
-  defence: 500
+  defence: 50

@@ -59,6 +59,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        // pause中に敵を止める
+        if (Time.timeScale == 0f) return;
+        
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
         if (currentPositionCellHit.collider != null)

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isSolved:
     value: 1
-  GIVECOST: 5
+  GIVECOST: 1

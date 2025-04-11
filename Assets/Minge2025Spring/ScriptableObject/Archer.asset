@@ -15,7 +15,7 @@ MonoBehaviour:
   attackType: 1
   characterDeployInfo: 0
   characterState: 0
-  characterDirection: 2
+  characterDirection: 3
   characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -27,6 +27,6 @@ MonoBehaviour:
   cost: 30
   maxHp: 1000
   hp: 1000
-  attack: 50
+  attack: 250
   attackCoolDown: 1
   defence: 10

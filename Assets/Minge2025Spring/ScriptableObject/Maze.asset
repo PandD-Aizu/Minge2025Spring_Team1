@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2ebb88e0bcb42299f3a8eb79850f8d3, type: 3}
-  m_Name: Sword
+  m_Name: Maze
   m_EditorClassIdentifier: 
-  attackType: 0
-  characterDeployInfo: 1
+  attackType: 1
+  characterDeployInfo: 0
   characterState: 1
-  characterDirection: 0
+  characterDirection: 1
   characterDeployableLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   characterRaycastLayer:
     serializedVersion: 2
     m_Bits: 16384
-  characterSprite: {fileID: 21300000, guid: 529f12b1bc09dd24387f92d8f497f1fb, type: 3}
-  characterName: Sword
-  cost: 20
-  maxHp: 2000
-  hp: 2000
-  attack: 300
-  attackCoolDown: 1
-  defence: 50
+  characterSprite: {fileID: 21300000, guid: 7572c543c9bf6a8449cc88d8f1a4c2ad, type: 3}
+  characterName: Maze
+  cost: 40
+  maxHp: 1500
+  hp: 1500
+  attack: 350
+  attackCoolDown: 2.5
+  defence: 5
