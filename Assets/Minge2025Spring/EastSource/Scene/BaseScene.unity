@@ -5625,6 +5625,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isdebugMode: 1
   testWalkableCellNumber: 0
+  maxSpawnEnemis: 10
+  goalCapasity: 5
 --- !u!1 &1964812341
 GameObject:
   m_ObjectHideFlags: 0

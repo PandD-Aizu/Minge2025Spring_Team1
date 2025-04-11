@@ -19,9 +19,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f7cf677ce29a1c7439eb5b9fa3cff516, type: 2}
   - {fileID: 11400000, guid: d3bee33a15e55484da86d9b1c55d0d9e, type: 2}
   - {fileID: 11400000, guid: 3a6d686a92dfe6f44922a167fa5f423c, type: 2}
+  - {fileID: 11400000, guid: 8467563e04d2e024bb3d6e68dec425b1, type: 2}
   deployLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   characterUILayer:
     serializedVersion: 2
     m_Bits: 16384
@@ -29,5 +30,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   selectedCharacter: {fileID: 0}
-  selectedCharacterName: Tank
+  selectedCharacterName: Maze
   cost: 0

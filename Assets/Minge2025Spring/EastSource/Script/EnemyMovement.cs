@@ -11,10 +11,12 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 directionUnderY = new Vector3(0, -1, 0);
     private Vector3 currentMoveDirection;
     private Vector3 prevPosition = Vector3.zero;
+    private Vector3 prevTargetCellPosition = Vector3.zero;
     private RaycastHit currentPositionCellHit;
     private Animator animator;
     private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
+    private EnemyWalkableCell prevEnemyWalkableCell;
     
     private const float MAX_RAYCAST_DISTANCE = 1f;
     private const float MOVE_SPEED_COEFFICIENT = 0.01f;
@@ -57,6 +59,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        // pause中に敵を止める
+        if (Time.timeScale == 0f) return;
+        
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
         if (currentPositionCellHit.collider != null)
@@ -113,19 +118,34 @@ public class EnemyMovement : MonoBehaviour
     private void EnemyMove(EnemyWalkableCell enemyWalkableCell)
     {
         Vector3 target;
+        if (prevEnemyWalkableCell == null)
+        {
+            prevEnemyWalkableCell = enemyWalkableCell;
+        }
         if (enemyWalkableCell.NextCell != null)
         {
             target = enemyWalkableCell.NextCell.gameObject.transform.position;
+            if (prevEnemyWalkableCell != null 
+                && enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y >= 0)
+            {
+                target.y += (enemyWalkableCell.gameObject.transform.position.y -
+                             prevEnemyWalkableCell.gameObject.transform.position.y);
+                Debug.LogWarning(enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y);
+            }
         }
         else
         {
             Debug.Log("goal");
             target = goalPosition;
         }
-        float Distance_two = Vector3.Distance(transform.position, target);
         target.y += 1;
+        float Distance_two = Vector3.Distance(transform.position, target);
         float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * MOVE_SPEED_COEFFICIENT) / Distance_two;
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
+        if (prevEnemyWalkableCell != null && enemyWalkableCell == prevEnemyWalkableCell)
+        {
+            prevEnemyWalkableCell = enemyWalkableCell;
+        }
     }
 
     private void UpdateMoveDirection()
