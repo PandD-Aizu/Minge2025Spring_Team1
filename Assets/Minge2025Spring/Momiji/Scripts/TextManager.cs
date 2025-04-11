@@ -17,6 +17,7 @@ public class TextManager : MonoBehaviour
         screen.SetActive(true);
         nextButton.gameObject.SetActive(false);
         textCount = 0;
+        GameManager.Instance.PauseGame();
     }
 
     // Update is called once per frame
@@ -68,6 +69,8 @@ public class TextManager : MonoBehaviour
         text5.gameObject.SetActive(false);
         screen.SetActive(false);
         nextButton.gameObject.SetActive(false);
+        GameManager.Instance.ResumeGame();
+        TutorialManager.Instance.ShowPuzzleOnOffButtonArrow();
     }
 
 }
