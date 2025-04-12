@@ -741,6 +741,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &75313261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2365,6 +2368,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &165719509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3594,6 +3600,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &247026973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4695,6 +4704,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &323503268
@@ -10339,6 +10351,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &616745343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10380,6 +10395,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &619894904
@@ -11929,6 +11947,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &720941735
@@ -14398,6 +14419,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &804539531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15036,6 +15060,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &841311215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15242,6 +15269,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &851872998
@@ -15787,6 +15817,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &865367516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16323,6 +16356,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &897003309
@@ -23107,6 +23143,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1066471263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24474,7 +24513,7 @@ MonoBehaviour:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
   limiterSpawnEnemy: 5
-  readyTime: 20
+  readyTime: 30
   isPassedSpawnSpawnTime: 0
 --- !u!43 &1162525395
 Mesh:
@@ -24663,6 +24702,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1163126028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24704,6 +24746,9 @@ MonoBehaviour:
   isSpawnPointCell: 1
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1186341696
@@ -25485,6 +25530,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1238453839
@@ -28299,6 +28347,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1437203777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29005,6 +29056,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1475558069
@@ -29853,6 +29907,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1509972658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29973,6 +30030,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1526061893
@@ -30647,6 +30707,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1550894955
@@ -31675,10 +31738,10 @@ RectTransform:
   - {fileID: 1983738559}
   m_Father: {fileID: 1916456587}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 1950, y: 1100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1621245423
 MonoBehaviour:
@@ -32434,6 +32497,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1678778945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33112,6 +33178,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1729253772
@@ -33901,6 +33970,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &1848047267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33942,6 +34014,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1856840551
@@ -34629,7 +34704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1916456587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34662,6 +34737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2edadf374aa1a42b3e022bc0062fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 1621245421}
   GameCleartext: {fileID: 1537412681}
   GameOverText: {fileID: 1983738560}
   gameOverSE: {fileID: 1916456589}
@@ -34792,6 +34868,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &1954325791
@@ -42841,6 +42920,9 @@ MonoBehaviour:
   observeTargetLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &2114743299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43249,6 +43331,9 @@ MonoBehaviour:
   isSpawnPointCell: 0
   isWalkable: 1
   observeTargetLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
 --- !u!65 &2127757582

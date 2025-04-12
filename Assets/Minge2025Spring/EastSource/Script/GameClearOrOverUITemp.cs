@@ -1,7 +1,10 @@
 using System;
+using Cysharp.Threading.Tasks;
 using FMODUnity;
+using Static;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Debug = FMOD.Debug;
 
 public class GameClearOrOverUITemp : MonoBehaviour
@@ -25,23 +28,34 @@ public class GameClearOrOverUITemp : MonoBehaviour
         GameManager.Instance.OnGameOver -= GameManager_OnGameOver;
     }
 
-    private void GameManager_OnGameOver(object sender, EventArgs e)
+    private async void GameManager_OnGameOver(object sender, EventArgs e)
     {
         Show();
         GameCleartext.gameObject.SetActive(false);
         GameOverText.gameObject.SetActive(true);
         gameOverSE.Play();
         bgm.Stop();
-        Time.timeScale = 0f;
+        // Time.timeScale = 0f;
+        await UniTask.WaitForSeconds(5.0f)
+            .ContinueWith(() =>
+            {
+                SceneManager.LoadSceneAsync("Title");
+            });
     }
 
-    private void GameManager_OnGameClear(object sender, EventArgs e)
+    private async void GameManager_OnGameClear(object sender, EventArgs e)
     {
         Show();
         GameCleartext.gameObject.SetActive(true);
         GameOverText.gameObject.SetActive(false);
         bgm.Stop();
-        Time.timeScale = 0f;
+        // Time.timeScale = 0f;
+        await UniTask.WaitForSeconds(5.0f)
+            .ContinueWith(() =>
+            {
+                SceneManager.LoadSceneAsync("Title");
+                StageRelease.stage_num++;
+            });
     }
 
     private void Show()
