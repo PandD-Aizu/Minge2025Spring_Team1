@@ -1,7 +1,10 @@
 ﻿using System;
 using Cysharp.Threading.Tasks.Triggers;
 using NaughtyAttributes;
+using SplashScreen;
+using UniRx;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Dialogue
 {
@@ -23,9 +26,22 @@ namespace Dialogue
             SubscribeEvents();
         }
 
+        private void Update()
+        {
+            model.CheckScenarioEnd();
+        }
+
         // @brief イベント群の登録
         private void SubscribeEvents()
         {
+            model.IsScenarioEnd
+                .Skip(1)
+                .Subscribe(isEnd =>
+                {
+                    if (isEnd)
+                        SceneManager.LoadSceneAsync(model.NextScene);
+                });
+            
             // 会話ウィンドウの表示更新
             view.DialogueButton.onClick
                 .AddListener(() =>

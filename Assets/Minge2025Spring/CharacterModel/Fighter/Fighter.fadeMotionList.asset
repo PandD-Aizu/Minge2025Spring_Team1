@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403ae2dd693bb1d4b924f6b8d206b053, type: 3}
   m_Name: Fighter.fadeMotionList
   m_EditorClassIdentifier: 
-  MotionInstanceIds: b0baffff7abaffff52baffff2abaffff
+  MotionInstanceIds: b0baffff1ac8000052baffff2abaffff
   CubismFadeMotionObjects:
   - {fileID: 11400000, guid: da964c6bf0189104d930e1d97cb67d01, type: 2}
   - {fileID: 11400000, guid: 188d9567bd0be774e97cc96863a15c80, type: 2}

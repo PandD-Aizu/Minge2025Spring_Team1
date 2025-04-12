@@ -11620,3 +11620,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: -17838
     messageOptions: 1
+  - time: 1.2666667
+    functionName: WithDraw
+    data: 
+    objectReferenceParameter: {fileID: 11400000, guid: f7cf677ce29a1c7439eb5b9fa3cff516, type: 2}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0

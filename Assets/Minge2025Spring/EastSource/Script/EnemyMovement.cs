@@ -1,21 +1,32 @@
 using System;
 using System.Collections.Generic;
+using FMODUnity;
+using General;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
     private bool isMoving = false;
-    private const float MAX_RAYCAST_DISTANCE = 1f;
     private Vector3 goalPosition;
     private Vector3 directionUnderY = new Vector3(0, -1, 0);
     private Vector3 currentMoveDirection;
     private Vector3 prevPosition = Vector3.zero;
-    private GameObject currentPositionCell;
+    private Vector3 prevTargetCellPosition = Vector3.zero;
     private RaycastHit currentPositionCellHit;
+    private Animator animator;
+    private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
-    private const float MOVE_SPEED_COEFFICIENT = 0.01f;
+    private EnemyWalkableCell prevEnemyWalkableCell;
+
+    private const float MAX_RAYCAST_DISTANCE = 1f;
+    
+    // private const float MOVE_SPEED_COEFFICIENT = 0.01f;　ほんとはだめだけど念のため速度の定数をコメントアウトで残しておく
+    
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
+    
+    [Header("SE")]
+    [SerializeField] private StudioEventEmitter goalEmitter;
     
     public bool IsMoving {get => isMoving; set => isMoving = value;}
     private void Start()
@@ -24,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
         Debug.Log(goalPosition);
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
-            Debug.Log(enemyStatus);
+            animator = enemyStatus.animator;
         }
         else
         {
@@ -49,6 +60,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        // pause中に敵を止める
+        if (Time.timeScale == 0f) return;
+        
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
         if (currentPositionCellHit.collider != null)
@@ -56,7 +70,13 @@ public class EnemyMovement : MonoBehaviour
             if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyGoalPoint)
             {
                 Debug.Log("Destroy");
+                GameSpawnManager.Instance.EnemyDestroy();
+                GameManager.Instance.ClearJudgement();
+                enemyStatus.IsDead = true;
+                goalEmitter.Play();
                 Destroy(this.gameObject);
+                GameManager.Instance.ReachedGoal();
+                GameManager.Instance.JudgeGameOver();
             }
             else if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyWalkable)
             {
@@ -85,25 +105,48 @@ public class EnemyMovement : MonoBehaviour
             }
         }
         UpdateMoveDirection();
+        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
+        {
+            animator.SetBool(enemyStatus.movementAnimationParameter, true);
+        }
+        else
+        {
+            animator.SetBool(enemyStatus.movementAnimationParameter, false);
+        }
     }
 
     //brief エネミーを移動させる関数
     private void EnemyMove(EnemyWalkableCell enemyWalkableCell)
     {
         Vector3 target;
+        if (prevEnemyWalkableCell == null)
+        {
+            prevEnemyWalkableCell = enemyWalkableCell;
+        }
         if (enemyWalkableCell.NextCell != null)
         {
             target = enemyWalkableCell.NextCell.gameObject.transform.position;
+            if (prevEnemyWalkableCell != null 
+                && enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y >= 0)
+            {
+                target.y += (enemyWalkableCell.gameObject.transform.position.y -
+                             prevEnemyWalkableCell.gameObject.transform.position.y);
+                Debug.LogWarning(enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y);
+            }
         }
         else
         {
             Debug.Log("goal");
             target = goalPosition;
         }
+        target.y += 1;
         float Distance_two = Vector3.Distance(transform.position, target);
-        target.y = transform.position.y;
-        float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * MOVE_SPEED_COEFFICIENT) / Distance_two;
+        float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * Time.deltaTime) / Distance_two;//移動速度のコントロール
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
+        if (prevEnemyWalkableCell != null && enemyWalkableCell == prevEnemyWalkableCell)
+        {
+            prevEnemyWalkableCell = enemyWalkableCell;
+        }
     }
 
     private void UpdateMoveDirection()

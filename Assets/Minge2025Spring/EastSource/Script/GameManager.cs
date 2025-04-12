@@ -1,17 +1,19 @@
 using System;
 using System.Collections.Generic;
-using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
-using EventHandler = System.EventHandler;
 using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance {get; private set;}
+    public event EventHandler OnGameOver;
+    public event EventHandler OnGameClear;
+    
     public event EventHandler OnUpdateEnemyWalkableCells;
+
 
     public struct SearchShortestRootInfo
     {
@@ -20,11 +22,14 @@ public class GameManager : MonoBehaviour
         public int weight;
     }
     
-    [FormerlySerializedAs("debugMode")]
     [Header("Debugger Mode")]
     [SerializeField] private bool isdebugMode = false;
     [SerializeField] private int testWalkableCellNumber = 0;
+    [SerializeField] private int maxSpawnEnemis = 10;
+    [SerializeField] private int goalCapasity = 5;
     
+    private int reachedGoalEnemies = 0;
+    private int spawndedEnemies = 0;
     private GameObject[] enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
     private List<GameObject> enemySpawnPointCells = new List<GameObject>();
@@ -40,12 +45,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
-    }
-
-    private void OnDestroy()
-    {
-        
+        reachedGoalEnemies = 0;
+        spawndedEnemies = 0;
+        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 
     private void Update()
@@ -131,8 +133,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
         {
             Debug.Log("position: " + enemyWalkableCell.transform.position + "name: " +enemyWalkableCell.gameObject.name);
-        } 
-        OnUpdateEnemyWalkableCells?.Invoke(this, EventArgs.Empty);
+        }
     }
 
     private void UpdateEnemyGoalPointCells()
@@ -142,6 +143,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("position: " + enemyGoalPointCell.transform.position + "name: " +enemyGoalPointCell.gameObject.name);
         }
+        OnUpdateEnemyWalkableCells?.Invoke(this, EventArgs.Empty);
     }
 
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
@@ -211,6 +213,7 @@ public class GameManager : MonoBehaviour
             
             if (TerminalCellsInfos.Count == 0) // 追加の無限ループ防止策
             {
+                
                 Debug.LogError("No more terminal cells! Breaking loop.");
                 break;
             }
@@ -336,5 +339,53 @@ public class GameManager : MonoBehaviour
             temp.y += 1f;
             enemyWalkableCell.gameObject.transform.position = temp;
         }
+    }
+    
+    //@brief エネミーがスポーンしたときにカウントする
+    public void SpawnEnemy()
+    {
+        spawndedEnemies++;
+        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+        if (spawndedEnemies >= maxSpawnEnemis)
+        {
+            GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
+        }
+    }
+    
+    //@brief すべてのエネミーが出きったかどうか確認の後ゲームクリア判定
+    public void ClearJudgement()
+    {
+        if (spawndedEnemies >= maxSpawnEnemis && GameSpawnManager.Instance.NumberOfEnemies <= 0 )
+        {
+            OnGameClear?.Invoke(this, EventArgs.Empty);
+        }
+    }
+    
+    //@brief エネミーがゴールに到達したときreachedGoalEnemiesを加算し、GoalCapacity以上かどうか確認する
+    public void ReachedGoal()
+    {
+        reachedGoalEnemies++;
+        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+    }
+
+    public void JudgeGameOver()
+    {
+        if (reachedGoalEnemies >= goalCapasity)
+        {
+            StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+            //ゲームオーバー
+            GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
+            OnGameOver?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 }

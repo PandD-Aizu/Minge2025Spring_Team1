@@ -8,16 +8,27 @@ public class GameSpawnManager : MonoBehaviour
     [Header("Binding")]
     [SerializeField] private GameObject[] enemySpawnOrder;
 
-    private GameObject nextSpawnEnemy;
+    public static GameSpawnManager Instance{get; private set;}
+    
+    private int numberOfEnemies = 0;
     private float nextSpawnTime;
     private float currentCoolTime;
     private bool isSpawning = true;
+    private GameObject nextSpawnEnemy;
+    private ReadyTimer readyTimer;
+    [SerializeField]private int limiterSpawnEnemy = 5;
+    [SerializeField]private float readyTime = 10f;
     [SerializeField]private bool isPassedSpawnSpawnTime = true;
+    
+    public int NumberOfEnemies { get => numberOfEnemies;}
+    public float ReadyTime {get => readyTime;}
+    public ReadyTimer ReadyTimer {get => readyTimer; set => readyTimer = value; }
     
     public bool IsPassedSpawnTime { get => isPassedSpawnSpawnTime; set => isPassedSpawnSpawnTime = value; }
     
     private void Awake()
     {
+        Instance = this;
         if (enemySpawnOrder.Length <= 0)
         {
             Debug.LogError("Null enemySpawnOrder");
@@ -28,26 +39,28 @@ public class GameSpawnManager : MonoBehaviour
     {
         currentCoolTime = 0f;
         UpdateNextSpawn();
-        SpawnEnemy();
-        UpdateNextSpawn();
-        IsPassedSpawnTime = true;
+        IsPassedSpawnTime = false;
+        readyTimer = new ReadyTimer();
     }
 
     private void Update()
     {
-        if (isSpawning == false && isPassedSpawnSpawnTime)
+        if(readyTimer != null)
+        {
+            readyTimer.UpdateReadyTime();
+        }
+        if (isSpawning == false && isPassedSpawnSpawnTime && numberOfEnemies < limiterSpawnEnemy)
         {
             currentCoolTime += Time.deltaTime;
             if (currentCoolTime > nextSpawnTime)
             {
                 isSpawning = true;
-                currentCoolTime = 0f;
                 SpawnEnemy();
             }
         }
     }
 
-    private void UpdateNextSpawn()
+    public void UpdateNextSpawn()
     {
         Random random = new Random();
         int index = random.Next(enemySpawnOrder.Length);
@@ -62,15 +75,30 @@ public class GameSpawnManager : MonoBehaviour
         }
     }
 
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
         if (isSpawning)
         {
             Vector3 SpawnPosition = GameManager.Instance.CallRandomSpawnPosition();
             SpawnPosition.y += 1;//このままだとセルに埋まるから
             Instantiate(nextSpawnEnemy, SpawnPosition, Quaternion.identity);
-            isSpawning = false;
+            isSpawning = false; 
+            numberOfEnemies++;
+            currentCoolTime = 0f;
             UpdateNextSpawn();
+            GameManager.Instance.SpawnEnemy();
+        }
+    }
+
+    public void EnemyDestroy()
+    {
+        if (limiterSpawnEnemy <= 0)
+        {
+            Debug.LogError("Can't use EnemyDestory(): GameSpawnManager.");
+        }
+        else
+        {
+            numberOfEnemies--;
         }
     }
 }

@@ -28,9 +28,9 @@ TagManager:
   - EnemyGoalPlacement
   - EnemySpawnPlacement
   - EnemyGoalPoint
+  - Character
   - CharacterUI
-  - 
-  - 
+  - CharacterUIButton
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Dialogue
+    uniqueID: 2318789285
     locked: 0
   - name: UI
     uniqueID: 1565897931

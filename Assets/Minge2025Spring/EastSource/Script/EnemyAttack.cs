@@ -1,8 +1,12 @@
 using System;
+using System.Numerics;
 using CharacterBehaviour;
+using CharacterInfo;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -14,9 +18,12 @@ public class EnemyAttack : MonoBehaviour
     }
     
     private float currentAttackCoolTime = 0f;
+    private GameObject longRengeCollider;
+    private LongRengeCollider longRengeColliderScript;
     private EnemyStatus enemyStatus;
-    private GameObject attackTarget;
+    public GameObject attackTarget;
     private SphereCollider sphereCollider;
+    private Animator animator;
 
     [Header("EnemyAttackController")] 
     [SerializeField] private EnemyAttackType enemyAttackType = EnemyAttackType.None;
@@ -32,15 +39,16 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        if (enemyAttackType == EnemyAttackType.LongRange)
+        if (enemyAttackType == EnemyAttackType.LongRange)  // 遠距離攻撃タイプの敵の場合
         {
-            sphereCollider = gameObject.AddComponent<SphereCollider>();
-            sphereCollider.radius = longRangeAttackRadius;
-            sphereCollider.isTrigger = true;
+            longRengeCollider = Instantiate(new GameObject("LongRengeCollider"), this.transform.position, Quaternion.identity, this.transform);
+            longRengeCollider.gameObject.AddComponent<SphereCollider>();
+            longRengeColliderScript = longRengeCollider.AddComponent<LongRengeCollider>();
+            longRengeColliderScript.InitLongRengeCollider(this.gameObject.GetComponent<EnemyAttack>(), enemyStatus, longRangeAttackRadius);
         }
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
-            
+            animator = enemyStatus.animator;
         }
         else
         {
@@ -50,11 +58,12 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        if (enemyAttackType == EnemyAttackType.Melee)
+        if (enemyAttackType == EnemyAttackType.Melee) // 近接攻撃タイプの敵の場合
         {
             MeleeAttackObserver();
         }
-        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking)
+        
+        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking) // 攻撃状態の場合
         {
             EnemyAttackSystem();
         }
@@ -63,19 +72,30 @@ public class EnemyAttack : MonoBehaviour
         {
             enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
         }
+        else
+        {
+            if (!attackTarget.gameObject.activeSelf)
+            {
+                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
+            }
+        }
     }
 
-    //breif TypeがMeleeのときにUpdateで使う
+    // @brief TypeがMeleeのときにUpdateで使う, レイキャストで攻撃範囲内に味方キャラがいるか確認
     private void MeleeAttackObserver()
     {
+        // レイキャストで自身が向いている方向をもとに攻撃範囲内に味方キャラがいるか確認
         Physics.Raycast(this.transform.position, enemyStatus.CurrentMoveDirection, out RaycastHit hit, meleeAttackRange, observeTargetLayerMask);
+        
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag(GameTagsManager.Player)
+            if (hit.collider.gameObject.CompareTag(GameTagsManager.Player) // 味方キャラかつ配置済みで攻撃していない場合
+                && hit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED
                 && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
             {
-                attackTarget = hit.collider.gameObject;
-                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking);
+                // attackTargetCollider  = hit.collider.gameObject.GetComponent<Collider>();
+                attackTarget = hit.collider.gameObject;                         // 攻撃対象を設定
+                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking); // 攻撃状態に変更
             }
             else
             {
@@ -92,30 +112,23 @@ public class EnemyAttack : MonoBehaviour
     {
         if (attackTarget != null)
         {
-            currentAttackCoolTime += Time.deltaTime;
-            if (enemyStatus.AttackCoolTime <= currentAttackCoolTime 
+            currentAttackCoolTime += Time.deltaTime; // 攻撃のクールタイムを更新
+            
+            if (enemyStatus.AttackCoolTime <= currentAttackCoolTime //　攻撃できてかつ攻撃対象の情報が取得できた場合 
                 && attackTarget.gameObject.TryGetComponent<CharacterBehaviourPresenter>(out CharacterBehaviourPresenter characterBehaviourPresenter))
             {
-                Debug.LogWarning("TakeDamage");
-                
+                animator.SetTrigger(enemyStatus.attackAnimationParameter);
                 //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
-                
-                characterBehaviourPresenter.AllyInfo.Hp -= (int)(enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence * 0.2);
+                int damage = enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence;
+                if (damage < 0)//キャラクターに与えるダメージがマイナスにならないように
+                {
+                    damage = 0;
+                }
+                characterBehaviourPresenter.AllyInfo.Hp -= damage; // ダメージを与える
                 Debug.LogWarning(characterBehaviourPresenter.AllyInfo.Hp.ToString());
                 
-                currentAttackCoolTime = 0;
+                currentAttackCoolTime = 0; // 攻撃クールタイムをリセット
             }
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag(GameTagsManager.Player)
-            && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
-        {
-            Debug.Log("Discover");
-            attackTarget = other.gameObject;
-            enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking);
         }
     }
 }

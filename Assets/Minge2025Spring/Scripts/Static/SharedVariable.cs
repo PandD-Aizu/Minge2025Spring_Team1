@@ -6,4 +6,9 @@
         public static float bgmVolume;
         public static float seVolume;
     }
+
+    public static class StageRelease
+    {
+        public static int stage_num;
+    }
 }

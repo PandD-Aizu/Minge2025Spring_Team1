@@ -12,10 +12,12 @@ public class EnemyWalkableCell : MonoBehaviour
     private float searchCellRayDistance = 0.7f;
     private float rayDistance = 0.8f;
     private Ray observeTargetRay;
+    //以下左右上下のセルを取得するのに用いるRay
     private Ray searchCellRayUpside;
     private Ray searchCellRayDownside;
     private Ray searchCellRayLeftside;
     private Ray searchCellRayRightside;
+    
     private EnemyWalkableCell upCell = null;
     private EnemyWalkableCell downCell = null;
     private EnemyWalkableCell leftCell = null;
@@ -64,6 +66,8 @@ public class EnemyWalkableCell : MonoBehaviour
 
     private void InitSurroundingCells()
     {
+        //各Rayで上下左右のセルを取得して格納する
+        
         Physics.Raycast(searchCellRayUpside, out RaycastHit raycastHitUpside, searchCellRayDistance);
         Physics.Raycast(searchCellRayDownside, out RaycastHit raycastHitDownside, searchCellRayDistance);
         Physics.Raycast(searchCellRayLeftside, out RaycastHit raycastHitLeftside, searchCellRayDistance);

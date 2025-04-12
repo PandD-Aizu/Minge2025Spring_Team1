@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2ebb88e0bcb42299f3a8eb79850f8d3, type: 3}
+  m_Name: Maze
+  m_EditorClassIdentifier: 
+  attackType: 1
+  characterDeployInfo: 0
+  characterState: 1
+  characterDirection: 1
+  characterDeployableLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  characterRaycastLayer:
+    serializedVersion: 2
+    m_Bits: 16384
+  characterSprite: {fileID: 21300000, guid: 7572c543c9bf6a8449cc88d8f1a4c2ad, type: 3}
+  characterName: Maze
+  cost: 40
+  maxHp: 1500
+  hp: 1500
+  attack: 350
+  attackCoolDown: 2.5
+  defence: 5

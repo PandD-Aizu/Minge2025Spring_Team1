@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CircuitModel
   m_EditorClassIdentifier: 
   isSolved:
-    value: 0
-  GIVECOST: 10
+    value: 1
+  GIVECOST: 20

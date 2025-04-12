@@ -20,7 +20,7 @@ namespace Title
         // @brief 次のシーンへの遷移
         public UnityAction OnStartButtonClicked()
         {
-            return () => General.SceneController.LoadSceneAsync("Home");
+            return () => General.SceneController.LoadSceneAsync("StageSelect");
         }
         
         // @brief ゲーム終了
