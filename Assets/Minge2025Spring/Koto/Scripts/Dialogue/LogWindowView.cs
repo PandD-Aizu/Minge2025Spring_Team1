@@ -24,7 +24,7 @@ namespace Dialogue
         private ObjectPool<GameObject> pool; // オブジェクトプール
         
         /* getter と setter */
-        public int TotalCount { get => totalCount;     set => totalCount = value; }
+        public int TotalCount    { get => totalCount; set => totalCount = value; }
 
         // @brief 初期化処理
         public void Initialize()
