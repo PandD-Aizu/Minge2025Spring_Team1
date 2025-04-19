@@ -12,6 +12,7 @@ namespace Dialogue
     {
         [Header("依存関係")] 
         [SerializeField] private ScenarioModel model;
+        [SerializeField] private ButtonFunc buttonFunc;
         [SerializeField] private ScenarioView view;
         [SerializeField] private LogWindowView logWindowView;
         [ReadOnly] private ScenarioLoader scenarioLoader;
@@ -21,6 +22,8 @@ namespace Dialogue
         {
             scenarioLoader = new ScenarioLoader();
             model.Init();
+            buttonFunc.SubscribeEvents();
+            view.UpdateTextBoxUI();
             logWindowView.Initialize();
             LoadScenario();
             SubscribeEvents();
@@ -29,6 +32,7 @@ namespace Dialogue
         private void Update()
         {
             model.CheckScenarioEnd();
+            CheckScenarioNextButtonActive();
         }
 
         // @brief イベント群の登録
@@ -90,6 +94,14 @@ namespace Dialogue
             
             view.UpdateText(model.ScenarioData, model.CurrentSceneIndex++);
             logWindowView.AddScenario(model.ScenarioData.scenes[model.CurrentSceneIndex - 1]);
+        }
+
+        private void CheckScenarioNextButtonActive()
+        {
+            if(view.MenuPanel.activeSelf)
+                view.DialogueButton.interactable = false;
+            else 
+                view.DialogueButton.interactable = true;
         }
 
         // @brief メモリリークを防ぐための処理

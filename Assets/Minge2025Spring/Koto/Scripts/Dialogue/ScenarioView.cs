@@ -25,11 +25,15 @@ namespace Dialogue
         [SerializeField] private Button skipButton;     // スキップボタン
         [SerializeField] private Button closeButton;    // ログパネルを閉じるボタン
 
+        [Header("UI")] 
+        [SerializeField] private GameObject textBoxSendUI; // テキストボックスの右下のUI
+        
         [Header("背景")] 
         [SerializeField] private SpriteRenderer background;
         
         /* getter と setter */
-        public TextMeshProUGUI NameText     { get => nameText; set => nameText = value; }
+        public GameObject MenuPanel         { get => menuPanel;    set => menuPanel = value; }
+        public TextMeshProUGUI NameText     { get => nameText;     set => nameText = value; }
         public TextMeshProUGUI SentenceText { get => sentenceText; set => sentenceText = value; }
         public Button DialogueButton        { get => dialogueButton; }
         public Button MenuButton            { get => menuButton; }
@@ -79,10 +83,11 @@ namespace Dialogue
             }
         }
         
-        // @brief ADVパートを終了する
-        public void CloseDialoguePanel()
+        // @brief テキストボックスの右下のUIを更新
+        public void UpdateTextBoxUI()
         {
-            gameObject.SetActive(false);
+            textBoxSendUI.transform.DOLocalMoveY(-470, 0.5f)
+                .SetLoops(-1, LoopType.Yoyo);
         }
     }
 }
