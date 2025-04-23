@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class EnemyWalkableCell : MonoBehaviour
 {
-    [Header("Property")] [SerializeField] private bool isSpawnPointCell = false;
+    [Header("Property")] 
+    [SerializeField] private bool isSpawnPointCell = false;
     
     public bool isWalkable = true;
+    
     public LayerMask observeTargetLayerMask;
     public LayerMask searchCellLayerMask = new LayerMask();
 
     private float searchCellRayDistance = 0.7f;
     private float rayDistance = 0.8f;
+    
     private Ray observeTargetRay;
-    //以下左右上下のセルを取得するのに用いるRay
     private Ray searchCellRayUpside;
     private Ray searchCellRayDownside;
     private Ray searchCellRayLeftside;
@@ -24,15 +26,14 @@ public class EnemyWalkableCell : MonoBehaviour
     private EnemyWalkableCell rightCell = null;
     private EnemyWalkableCell nextCell = null;
     private EnemyWalkableCell previousCell = null;
-
-    //変数のアクセサ
-    public bool IsSpawnPointCell{get{return isSpawnPointCell;}}
-    public EnemyWalkableCell UpCell {get{return upCell;}}
-    public EnemyWalkableCell DownCell {get{return downCell;}}
-    public EnemyWalkableCell LeftCell {get{return leftCell;}}
-    public EnemyWalkableCell RightCell {get{return rightCell;}}
-    public EnemyWalkableCell NextCell {get{return nextCell;} set{nextCell = value;}}
-    public EnemyWalkableCell PreviousCell {get{return previousCell;} set{previousCell = value;}}
+    
+    public bool IsSpawnPointCell          { get => isSpawnPointCell;}
+    public EnemyWalkableCell UpCell       { get => upCell; }
+    public EnemyWalkableCell DownCell     { get => downCell; }
+    public EnemyWalkableCell LeftCell     { get => leftCell; }
+    public EnemyWalkableCell RightCell    { get => rightCell; }
+    public EnemyWalkableCell NextCell     { get => nextCell; set => nextCell = value; }
+    public EnemyWalkableCell PreviousCell { get => previousCell; set => previousCell = value; }
     
     private void Start()
     {
@@ -76,6 +77,7 @@ public class EnemyWalkableCell : MonoBehaviour
         Debug.LogWarning(this.gameObject.name + ": " + raycastHitDownside.collider);
         Debug.LogWarning(this.gameObject.name + ": " + raycastHitLeftside.collider);
         Debug.LogWarning(this.gameObject.name + ": " + raycastHitRight.collider);
+        
         if (raycastHitUpside.collider != null 
             && raycastHitUpside.collider.gameObject != this
             && raycastHitUpside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellUpside))

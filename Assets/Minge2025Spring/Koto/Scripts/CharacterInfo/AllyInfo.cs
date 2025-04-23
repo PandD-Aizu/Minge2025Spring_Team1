@@ -19,6 +19,7 @@ namespace CharacterInfo
         [SerializeField] private int                 attack;
         [SerializeField] private float               attackCoolDown;
         [SerializeField] private int                 defence;
+        [SerializeField] private int                 blockNum;
         
         public AttackType AttackType                   { get => attackType; set => attackType = value; }
         public CharacterDeployInfo CharacterDeployInfo { get => characterDeployInfo; set => characterDeployInfo = value; }
@@ -34,7 +35,8 @@ namespace CharacterInfo
         public int Attack                              { get => attack; set => attack = value; }
         public float AttackCoolDown                    { get => attackCoolDown; set => attackCoolDown = value; }
         public int Defence                             { get => defence; set => defence = value; }
-
+        public int BlockNum                            { get => blockNum; set => blockNum = value; }
+        
         public void Init()
         {
             characterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED;

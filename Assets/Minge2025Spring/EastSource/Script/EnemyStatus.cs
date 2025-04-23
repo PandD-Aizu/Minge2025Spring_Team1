@@ -24,7 +24,7 @@ public class EnemyStatus : MonoBehaviour
     [Header("EnemyStatusController")]
     [SerializeField]public Animator animator;
     [InspectorName("MaxHealth")][SerializeField] private float maxHealth = 100;
-    [InspectorName("InitalAttack")][SerializeField] private int initialAttack = 10;
+    [InspectorName("InitialAttack")][SerializeField] private int initialAttack = 10;
     [InspectorName("InitialMoveSpeed")][SerializeField] private float initialMoveSpeed = 1f;
     [InspectorName("InitialDefence")][SerializeField] private int initialDefence = 10;
     [InspectorName("SpawnCoolTime")][SerializeField] private float spawnCooltime = 4f;
@@ -32,19 +32,17 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] public string movementAnimationParameter = "Moving";
     [SerializeField] public string attackAnimationParameter = "Attacking";
     
-    //アクセサ
-    public int InitialAttack{get { return initialAttack; }}
-    public int CurrentAttack{get { return currentAttack; }}
-    public int CurrentDefence{get { return currentDefence; }}
-    public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
-    public float CurrentMoveSpeed{get{return currentMoveSpeed;}}
-    public float MaxHealth{get{return maxHealth;}}
-    public float InitialMoveSpeed{get{return initialMoveSpeed;}}
-    public float SpawnCooltime{get{return spawnCooltime;}}
-    public float AttackCoolTime{get {return attackCoolTime;}}
-    
-    public bool IsDead { get => isDead; set => isDead = value; }
-    public Vector3 CurrentMoveDirection{get{return currentMoveDirection;} set{currentMoveDirection = value;}}
+    public int InitialAttack            { get => initialAttack; }
+    public int CurrentAttack            { get => currentAttack; }
+    public int CurrentDefence           { get => currentDefence; }
+    public float CurrentHealth          { get => currentHealth;        set => currentHealth = value; }
+    public float CurrentMoveSpeed       { get => currentMoveSpeed; }
+    public float MaxHealth              { get => maxHealth;}
+    public float InitialMoveSpeed       { get => initialMoveSpeed; }
+    public float SpawnCooltime          { get => spawnCooltime; }
+    public float AttackCoolTime         { get => attackCoolTime; }
+    public bool IsDead                  { get => isDead;               set => isDead = value; }
+    public Vector3 CurrentMoveDirection { get => currentMoveDirection; set => currentMoveDirection = value; }
 
     private void Awake()
     {
