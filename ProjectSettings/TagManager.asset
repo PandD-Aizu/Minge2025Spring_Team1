@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3429092319
+    locked: 0
   - name: Dialogue
     uniqueID: 2318789285
     locked: 0

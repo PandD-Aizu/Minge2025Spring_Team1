@@ -1,4 +1,6 @@
-﻿namespace Static
+﻿using System.Collections.Generic;
+
+namespace Static
 {
     public static class Volume
     {
