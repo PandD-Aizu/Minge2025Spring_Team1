@@ -150,8 +150,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Panel: {fileID: 1003343776}
   text: {fileID: 1103260097}
-  speed: 0.01
-  victory: 0
+  panelSpeed: 0.01
+  textSpeed: 0.1
+  victory: 1
+  fadeout: 0
 --- !u!4 &736319754
 Transform:
   m_ObjectHideFlags: 0
@@ -217,7 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -293,7 +295,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAME  CLEAR
+  m_Text: text
 --- !u!222 &1103260098
 CanvasRenderer:
   m_ObjectHideFlags: 0
