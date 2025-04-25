@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1140601511677387632, guid: 9d32885e7b9abe942835511ae2046442, type: 3}
       propertyPath: m_Name
-      value: _BaseEnemyWalkableCell
+      value: walkable
       objectReference: {fileID: 0}
     - target: {fileID: 5512419370644802674, guid: 9d32885e7b9abe942835511ae2046442, type: 3}
       propertyPath: m_LocalPosition.x
@@ -55,5 +55,26 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 497223390088846278, guid: 9d32885e7b9abe942835511ae2046442, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 963600725896844825}
   m_SourcePrefab: {fileID: 100100000, guid: 9d32885e7b9abe942835511ae2046442, type: 3}
+--- !u!1 &2249388652597449864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 497223390088846278, guid: 9d32885e7b9abe942835511ae2046442, type: 3}
+  m_PrefabInstance: {fileID: 1860286839548497742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &963600725896844825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2249388652597449864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ff660d14d94b8ab4933cb0c43181e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials: []
