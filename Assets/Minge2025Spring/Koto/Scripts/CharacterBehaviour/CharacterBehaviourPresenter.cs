@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Transactions;
 using CharacterInfo;
 using UniRx;
 using Unity.XR.OpenVR;
@@ -36,8 +38,8 @@ namespace CharacterBehaviour
                 {
                     // 攻撃時
                     case CharacterState.ATTACK:
-                        model.CheckEnemyList();
-                        allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
+                        model.CheckEnemyList(allyInfo);
+                        allyInfo.CharacterState = model.AttackEnemy(allyInfo); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
                         break;
                 
                     // 待機時
@@ -76,7 +78,7 @@ namespace CharacterBehaviour
             if (other.gameObject.CompareTag("Enemy"))
             {
                 Debug.Log("Enter Enemy");
-                model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
+                model.EnemyList.Add(other.gameObject);           // 攻撃範囲内の敵リストに追加
                 allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
             }
         }
@@ -88,9 +90,10 @@ namespace CharacterBehaviour
             // 敵が攻撃範囲から離れた場合、攻撃対象リストから削除
             if(other.gameObject.CompareTag("Enemy"))
             {
-                model.EnemyList.Remove(other.gameObject);　// 攻撃対象リストから削除
-                if (other.gameObject == model.TargetEnemy)
-                    model.TargetEnemy = null;
+                model.EnemyList.Remove(other.gameObject);　// 攻撃範囲内の敵リストから削除
+                model.TargetEnemies = model.TargetEnemies // 攻撃対象のリストから削除
+                    .Where(x => x != other.gameObject)
+                    .ToList();
             }
         }
         
@@ -100,31 +103,12 @@ namespace CharacterBehaviour
             // 攻撃対象リストに攻撃対象が追加されたら、攻撃対象を再設定
             model.EnemyList
                 .ObserveAdd()
-                .Subscribe(_ => model.SetAttackPriority());
+                .Subscribe(_ => model.SetAttackPriority(AllyInfo));
 
             // 攻撃アニメーションを再生
             model.IsAttackEnemy
                 .Skip(1)
                 .Subscribe(_ => view.AnimateAttackEnemy());
-
-            model.IsUpdateEnemyList
-                .Skip(1)
-                .Subscribe(isUpdate =>
-                {
-                    if (isUpdate && 
-                        allyInfo.AttackType == AttackType.CLOSE_RANGE_SINGLE ||
-                        allyInfo.AttackType == AttackType.LONG_RANGE_SINGLE)
-                    {
-                        // TODO: 攻撃対象を設定
-                        
-                    }
-                    else if (isUpdate &&
-                             allyInfo.AttackType == AttackType.CLOSE_RANGE_MULTIPLE ||
-                             allyInfo.AttackType == AttackType.LONG_RANGE_MULTIPLE)
-                    {
-                        
-                    }
-                });
 
             // キャラクターのステータスを表示
             model.IsShowCharacterStatus

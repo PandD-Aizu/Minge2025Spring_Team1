@@ -19,23 +19,21 @@ namespace CharacterBehaviour
             switch (allyInfo.AttackType)
             {
                 case AttackType.CLOSE_RANGE_SINGLE:
-                    model.AllyAttack.AttackSingleCloseRange(targets[0], damage);
+                    model.AllyAttackManager.AttackSingleCloseRange(targets[0], damage);
                     break;
                 
                 case AttackType.CLOSE_RANGE_MULTIPLE:
-                    model.AllyAttack.AttackMultipleCloseRange(targets, damage);
+                    model.AllyAttackManager.AttackMultipleCloseRange(targets, damage);
                     break;
                 
                 case AttackType.LONG_RANGE_SINGLE:
-                    model.AllyAttack.AttackSingleLongRange(targets[0], damage);
+                    model.AllyAttackManager.AttackSingleLongRange(targets[0], damage);
                     break;
                 
                 case AttackType.LONG_RANGE_MULTIPLE:
-                    model.AllyAttack.AttackMultipleLongRange(targets, damage);
+                    model.AllyAttackManager.AttackMultipleLongRange(targets, damage);
                     break;
             }
-            
-            model.GiveDamageToEnemy(allyInfo.Attack);
         }
 
         // @brief キャラクター撤退時の処理

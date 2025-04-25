@@ -8484,6 +8484,10 @@ PrefabInstance:
       propertyPath: goalCell
       value: 
       objectReference: {fileID: 1228993227}
+    - target: {fileID: 7093192891453809901, guid: 43acacffcad432c44b44433bd3ee92aa, type: 3}
+      propertyPath: targetEnemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7242385734598626865, guid: 43acacffcad432c44b44433bd3ee92aa, type: 3}
       propertyPath: m_Name
       value: Maze
@@ -16465,7 +16469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &920255792
 Transform:
   m_ObjectHideFlags: 0
@@ -34832,7 +34836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1956054818
 Transform:
   m_ObjectHideFlags: 0
@@ -43013,6 +43017,10 @@ PrefabInstance:
       propertyPath: goalCell
       value: 
       objectReference: {fileID: 1228993227}
+    - target: {fileID: 8105510276225032575, guid: 4d400cb5f505acb49995e5549b44f64c, type: 3}
+      propertyPath: targetEnemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8474682262844232189, guid: 4d400cb5f505acb49995e5549b44f64c, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -44112,6 +44120,18 @@ PrefabInstance:
       propertyPath: goalCell
       value: 
       objectReference: {fileID: 1228993227}
+    - target: {fileID: 4964423083965263833, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
+      propertyPath: allyAttack
+      value: 
+      objectReference: {fileID: 195963610570529821}
+    - target: {fileID: 4964423083965263833, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
+      propertyPath: allyTargetManager
+      value: 
+      objectReference: {fileID: 195963610570529820}
+    - target: {fileID: 4964423083965263833, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
+      propertyPath: targetEnemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4974872185224378636, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -44229,6 +44249,28 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
+--- !u!114 &195963610570529820 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9199663728365328645, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
+  m_PrefabInstance: {fileID: 195963610570529819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185848316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99e0f26afcd543ef9d1118a782e0f2b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &195963610570529821 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5654771114609772653, guid: ab1828bb6403de14fbdce199a2ff9347, type: 3}
+  m_PrefabInstance: {fileID: 195963610570529819}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185848316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ab64e406e24099a1fa2e841098ce13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &650777837389047137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44421,6 +44463,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1413343995}
+    - target: {fileID: 7471010465680522814, guid: f9d458bb3621f634e993c7c5676bb334, type: 3}
+      propertyPath: targetEnemies.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7568394203960069367, guid: f9d458bb3621f634e993c7c5676bb334, type: 3}
       propertyPath: characterControllerModel
       value: 

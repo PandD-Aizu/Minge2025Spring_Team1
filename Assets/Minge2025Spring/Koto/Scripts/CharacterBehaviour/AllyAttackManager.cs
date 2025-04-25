@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CharacterBehaviour
 {
-    public class AllyAttack : MonoBehaviour, ICharacterAttack
+    public class AllyAttackManager : MonoBehaviour, ICharacterAttack
     {
         // @brief 単体近接攻撃
         // @param targetEnemy 攻撃対象, @param attackValue 攻撃力
@@ -27,13 +27,16 @@ namespace CharacterBehaviour
         {
             foreach (var targetEnemy in targetEnemies)
             {
-                EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
-                float damage = attackValue - enemyStatus.CurrentDefence;
+                if (targetEnemy != null)
+                {
+                    EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
+                    float damage = attackValue - enemyStatus.CurrentDefence;
 
-                if (damage <= 0)
-                    enemyStatus.CurrentHealth = attackValue * 5 / 100;
-                else
-                    enemyStatus.CurrentHealth -= damage;
+                    if (damage <= 0)
+                        enemyStatus.CurrentHealth = attackValue * 5 / 100;
+                    else
+                        enemyStatus.CurrentHealth -= damage; 
+                }
             }
         }
 
@@ -59,13 +62,16 @@ namespace CharacterBehaviour
         {
             foreach (var targetEnemy in targetEnemies)
             {
-                EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
-                float damage = attackValue - enemyStatus.CurrentDefence;
+                if (targetEnemy != null)
+                {
+                    EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
+                    float damage = attackValue - enemyStatus.CurrentDefence;
 
-                if (damage <= 0)
-                    enemyStatus.CurrentHealth = attackValue * 5 / 100;
-                else
-                    enemyStatus.CurrentHealth -= damage;
+                    if (damage <= 0)
+                        enemyStatus.CurrentHealth = attackValue * 5 / 100;
+                    else
+                        enemyStatus.CurrentHealth -= damage;
+                }
             }
         }
     }

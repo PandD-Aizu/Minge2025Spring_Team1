@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2ebb88e0bcb42299f3a8eb79850f8d3, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  attackType: 1
+  attackType: 2
   characterDeployInfo: 0
   characterState: 0
   characterDirection: 3
@@ -25,8 +25,11 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: a0892d81f5b045747acc29aa1e80d46b, type: 3}
   characterName: Archer
   cost: 30
+  maxBlockNum: 1
+  maxAttackNum: 1
   maxHp: 1000
   hp: 1000
   attack: 250
   attackCoolDown: 1
   defence: 10
+  blockNum: 0

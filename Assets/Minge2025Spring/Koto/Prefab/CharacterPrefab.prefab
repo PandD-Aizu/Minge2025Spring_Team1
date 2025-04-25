@@ -510,13 +510,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa6c5428636249268ebdee6bfc17840d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  allyAttackManager: {fileID: 0}
+  allyTargetManager: {fileID: 0}
   goalCell: {fileID: 4408745332521850075, guid: 065ffa22207c95b429ce6aea46e6a94c, type: 3}
   attackRangeCollider: {fileID: 0}
   attackRangeSize: []
   attackRangeCenter: []
   attackRangeSpriteSize: []
   attackRangeSpritePosition: []
-  targetEnemy: {fileID: 0}
+  targetEnemies: []
   attackCoolDownTime: 0
   isAttackEnemy:
     value: 0

@@ -4,13 +4,15 @@ using System.Linq;
 using CharacterInfo;
 using UniRx;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CharacterBehaviour
 {
     public class CharacterBehaviourModel : MonoBehaviour
     {
+        [FormerlySerializedAs("allyAttack")]
         [Header("依存関係")] 
-        [SerializeField] private AllyAttack allyAttack;
+        [SerializeField] private AllyAttackManager allyAttackManager;
         [SerializeField] private AllyTargetManager allyTargetManager;
         
         [Header("ゴールのセル")]
@@ -27,19 +29,18 @@ namespace CharacterBehaviour
         [SerializeField] private ReactiveCollection<GameObject> enemyList = new ReactiveCollection<GameObject>();
         
         [Header("攻撃中の敵")] 
-        [SerializeField] private List<GameObject> targetEnemies;
+        [SerializeField] private List<GameObject> targetEnemies = new List<GameObject>();
 
         [Header("攻撃のクールタイム")] 
         [SerializeField] private float attackCoolDownTime;
 
         [Header("イベント")] 
         [SerializeField] private ReactiveProperty<bool> isAttackEnemy = new ReactiveProperty<bool>(false);
-        [SerializeField] private ReactiveProperty<bool> isUpdateEnemyList = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isShowCharacterStatus = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isWithDraw = new ReactiveProperty<bool>(false);
 
         /* getter と setter */
-        public AllyAttack AllyAttack                                     { get => allyAttack; }
+        public AllyAttackManager AllyAttackManager                                     { get => allyAttackManager; }
         public AllyTargetManager AllyTargetManager                       { get => allyTargetManager; }
         public BoxCollider AttackRangeCollider                           { get => attackRangeCollider; set => attackRangeCollider = value; }
         public List<Vector3> AttackRangeSize                             { get => attackRangeSize; }
@@ -51,12 +52,28 @@ namespace CharacterBehaviour
         public List<GameObject> TargetEnemies                            { get => targetEnemies; set => targetEnemies = value; }
         public float AttackCoolDownTime                                  { get => attackCoolDownTime; set => attackCoolDownTime = value; }
         public ReactiveProperty<bool> IsAttackEnemy                      { get => isAttackEnemy; set => isAttackEnemy = value; }
-        public IObservable<bool> IsUpdateEnemyList                       { get => isUpdateEnemyList; }
         public ReactiveProperty<bool> IsShowCharacterStatus              { get => isShowCharacterStatus; set => isShowCharacterStatus = value; }
         public ReactiveProperty<bool> IsWithDraw                         { get => isWithDraw; set => isWithDraw = value; }
         
+        // @brief 攻撃優先度を設定
+        // @param allyInfo 味方キャラクターの情報
+        public void SetAttackPriority(AllyInfo allyInfo)
+        {
+            if (allyInfo.AttackType == AttackType.CLOSE_RANGE_SINGLE ||
+                allyInfo.AttackType == AttackType.LONG_RANGE_SINGLE)
+            {
+                targetEnemies = new List<GameObject>(1){allyTargetManager.SetAttackPrioritySingle(EnemyListValue, goalCell.transform.position)};
+            }
+            else if (allyInfo.AttackType == AttackType.CLOSE_RANGE_MULTIPLE ||
+                     allyInfo.AttackType == AttackType.LONG_RANGE_MULTIPLE)
+            {
+                targetEnemies = allyTargetManager.SetAttackPriorityMultiple(EnemyListValue, goalCell.transform.position, allyInfo.MaxAttackNum);
+            }
+        }
+        
         // @brief 攻撃対象リスト内の敵がnullでないかチェック
-        public void CheckEnemyList()
+        // @param allyInfo 味方キャラクターの情報
+        public void CheckEnemyList(AllyInfo allyInfo)
         {
             // TODO: 重くなりそうなんで処理を考える
             enemyList = new ReactiveCollection<GameObject>(enemyList.Where(enemy => enemy != null).ToList());
@@ -64,45 +81,28 @@ namespace CharacterBehaviour
             // 再度サブスクライブ
             enemyList
                 .ObserveAdd()
-                .Subscribe(_ => SetAttackPriority());
+                .Subscribe(_ => SetAttackPriority(allyInfo));
         }
 
         // @brief 敵を攻撃
-        // @param attackCoolDown　味方の攻撃クールタイム
-        public CharacterState AttackEnemy(float attackCoolDown)
+        // @param allyInfo 味方キャラクターの情報
+        public CharacterState AttackEnemy(AllyInfo allyInfo)
         {
-            if (targetEnemy != null && attackCoolDown <= attackCoolDownTime)
+            if (targetEnemies.Count != 0 && allyInfo.AttackCoolDown <= attackCoolDownTime)
             {
                 isAttackEnemy.SetValueAndForceNotify(true);
                 attackCoolDownTime = 0;
             }
-            else if (targetEnemy == null && enemyList.Count <= 0)
+            else if (targetEnemies.Count == 0 && enemyList.Count <= 0)
             {
                 return CharacterState.WAIT;
             }
-            else if (targetEnemy == null && enemyList.Count > 0)
+            else if (targetEnemies.Count == 0 && enemyList.Count > 0)
             {
-                SetAttackPriority();
+                SetAttackPriority(allyInfo);
             }
 
             return CharacterState.ATTACK;
-        }
-
-        // @brief 敵にダメージを与える
-        // @param attackValue 攻撃力
-        public void GiveDamageToEnemy(float attackValue)
-        {
-            if (targetEnemy != null)
-            {
-                EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
-                
-                float damage = attackValue - enemyStatus.CurrentDefence;
-                
-                if(damage <= 0)
-                    enemyStatus.CurrentHealth = attackValue * 5 / 100;
-                else
-                    enemyStatus.CurrentHealth -= damage;
-            }
         }
 
         public void CheckCharacterHp(AllyInfo allyInfo)
