@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.SceneManagement;
+using UnityEngine;
 
 namespace StageBlock
 {
@@ -14,7 +15,14 @@ namespace StageBlock
 	            + "6: Bottom(0, -1, 0)\n")]
 		[SerializeField] private Material[] materials;
 
-		void Awake()
+	    private void Awake()
+	    {
+		    // テスト用に表示されているメッシュを破棄
+		    DestroyImmediate(GetComponent<MeshRenderer>());
+		    DestroyImmediate(GetComponent<MeshFilter>());   
+	    }
+	    
+		void Start()
 		{
 			float size = 1f;
 			Vector2[] uv = new Vector2[24];
