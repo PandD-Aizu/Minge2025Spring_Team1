@@ -79,7 +79,6 @@ namespace CharacterBehaviour
                 model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
                 allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
             }
-                
         }
         
         // @brief 衝突判定(Exit)
@@ -107,7 +106,26 @@ namespace CharacterBehaviour
             model.IsAttackEnemy
                 .Skip(1)
                 .Subscribe(_ => view.AnimateAttackEnemy());
-            
+
+            model.IsUpdateEnemyList
+                .Skip(1)
+                .Subscribe(isUpdate =>
+                {
+                    if (isUpdate && 
+                        allyInfo.AttackType == AttackType.CLOSE_RANGE_SINGLE ||
+                        allyInfo.AttackType == AttackType.LONG_RANGE_SINGLE)
+                    {
+                        // TODO: 攻撃対象を設定
+                        
+                    }
+                    else if (isUpdate &&
+                             allyInfo.AttackType == AttackType.CLOSE_RANGE_MULTIPLE ||
+                             allyInfo.AttackType == AttackType.LONG_RANGE_MULTIPLE)
+                    {
+                        
+                    }
+                });
+
             // キャラクターのステータスを表示
             model.IsShowCharacterStatus
                 .Skip(1)

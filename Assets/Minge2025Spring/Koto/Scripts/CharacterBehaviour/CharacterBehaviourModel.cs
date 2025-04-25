@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CharacterInfo;
 using UniRx;
@@ -8,6 +9,10 @@ namespace CharacterBehaviour
 {
     public class CharacterBehaviourModel : MonoBehaviour
     {
+        [Header("依存関係")] 
+        [SerializeField] private AllyAttack allyAttack;
+        [SerializeField] private AllyTargetManager allyTargetManager;
+        
         [Header("ゴールのセル")]
         [SerializeField] private GameObject goalCell;
         
@@ -22,17 +27,20 @@ namespace CharacterBehaviour
         [SerializeField] private ReactiveCollection<GameObject> enemyList = new ReactiveCollection<GameObject>();
         
         [Header("攻撃中の敵")] 
-        [SerializeField] private GameObject targetEnemy;
+        [SerializeField] private List<GameObject> targetEnemies;
 
         [Header("攻撃のクールタイム")] 
         [SerializeField] private float attackCoolDownTime;
 
         [Header("イベント")] 
         [SerializeField] private ReactiveProperty<bool> isAttackEnemy = new ReactiveProperty<bool>(false);
+        [SerializeField] private ReactiveProperty<bool> isUpdateEnemyList = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isShowCharacterStatus = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isWithDraw = new ReactiveProperty<bool>(false);
 
         /* getter と setter */
+        public AllyAttack AllyAttack                                     { get => allyAttack; }
+        public AllyTargetManager AllyTargetManager                       { get => allyTargetManager; }
         public BoxCollider AttackRangeCollider                           { get => attackRangeCollider; set => attackRangeCollider = value; }
         public List<Vector3> AttackRangeSize                             { get => attackRangeSize; }
         public List<Vector3> AttackRangeCenter                           { get => attackRangeCenter; }
@@ -40,9 +48,10 @@ namespace CharacterBehaviour
         public List<Vector3> AttackRangeSpritePosition                   { get => attackRangeSpritePosition; }
         public ReactiveCollection<GameObject> EnemyList                  { get => enemyList; set => enemyList = value; }
         public List<GameObject> EnemyListValue                           { get => enemyList.ToList(); }
-        public GameObject TargetEnemy                                    { get => targetEnemy; set => targetEnemy = value; }
+        public List<GameObject> TargetEnemies                            { get => targetEnemies; set => targetEnemies = value; }
         public float AttackCoolDownTime                                  { get => attackCoolDownTime; set => attackCoolDownTime = value; }
         public ReactiveProperty<bool> IsAttackEnemy                      { get => isAttackEnemy; set => isAttackEnemy = value; }
+        public IObservable<bool> IsUpdateEnemyList                       { get => isUpdateEnemyList; }
         public ReactiveProperty<bool> IsShowCharacterStatus              { get => isShowCharacterStatus; set => isShowCharacterStatus = value; }
         public ReactiveProperty<bool> IsWithDraw                         { get => isWithDraw; set => isWithDraw = value; }
         
@@ -56,22 +65,6 @@ namespace CharacterBehaviour
             enemyList
                 .ObserveAdd()
                 .Subscribe(_ => SetAttackPriority());
-        }
-        
-        // @brief 攻撃目標を設定
-        public void SetAttackPriority()
-        {
-            float minDistance = float.MaxValue;
-
-            foreach (var enemy in enemyList)
-            {
-                // TODO: 敵とゴールの距離を計算して、最も近い敵を攻撃対象にする
-                if(enemy != null && minDistance > Vector3.Distance(goalCell.transform.position, enemy.transform.position))
-                {
-                    minDistance = Vector3.Distance(transform.position, enemy.transform.position);
-                    targetEnemy = enemy;
-                }
-            }
         }
 
         // @brief 敵を攻撃
