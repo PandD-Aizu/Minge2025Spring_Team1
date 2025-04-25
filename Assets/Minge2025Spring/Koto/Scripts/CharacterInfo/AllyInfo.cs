@@ -15,13 +15,13 @@ namespace CharacterInfo
         [SerializeField] private string              characterName;
         [SerializeField] private int                 cost;
         [SerializeField] private int                 maxBlockNum;
+        [SerializeField] private int                 blockNum;
         [SerializeField] private int                 maxAttackNum;
         [SerializeField] private int                 maxHp;
         [SerializeField] private int                 hp;
         [SerializeField] private int                 attack;
         [SerializeField] private float               attackCoolDown;
         [SerializeField] private int                 defence;
-        [SerializeField] private int                 blockNum;
         
         public AttackType AttackType                   { get => attackType; set => attackType = value; }
         public CharacterDeployInfo CharacterDeployInfo { get => characterDeployInfo; set => characterDeployInfo = value; }

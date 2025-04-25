@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CharacterBehaviour
 {
-    public class AllyBlockManager : MonoBehaviour
+    public class AllyBlockManager : MonoBehaviour, IBlockManagement
     {
         
     }

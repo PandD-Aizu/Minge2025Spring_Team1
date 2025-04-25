@@ -14,6 +14,7 @@ namespace CharacterBehaviour
         [Header("依存関係")] 
         [SerializeField] private AllyAttackManager allyAttackManager;
         [SerializeField] private AllyTargetManager allyTargetManager;
+        [SerializeField] private AllyBlockManager allyBlockManager;
         
         [Header("ゴールのセル")]
         [SerializeField] private GameObject goalCell;
@@ -40,8 +41,9 @@ namespace CharacterBehaviour
         [SerializeField] private ReactiveProperty<bool> isWithDraw = new ReactiveProperty<bool>(false);
 
         /* getter と setter */
-        public AllyAttackManager AllyAttackManager                                     { get => allyAttackManager; }
+        public AllyAttackManager AllyAttackManager                       { get => allyAttackManager; }
         public AllyTargetManager AllyTargetManager                       { get => allyTargetManager; }
+        public AllyBlockManager AllyBlockManager                         { get => allyBlockManager; }
         public BoxCollider AttackRangeCollider                           { get => attackRangeCollider; set => attackRangeCollider = value; }
         public List<Vector3> AttackRangeSize                             { get => attackRangeSize; }
         public List<Vector3> AttackRangeCenter                           { get => attackRangeCenter; }
