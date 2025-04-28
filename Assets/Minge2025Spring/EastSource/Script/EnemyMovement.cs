@@ -6,21 +6,19 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private bool isMoving = false;
-    private Vector3 goalPosition;
-    private Vector3 directionUnderY = new Vector3(0, -1, 0);
-    private Vector3 currentMoveDirection;
-    private Vector3 prevPosition = Vector3.zero;
-    private Vector3 prevTargetCellPosition = Vector3.zero;
-    private RaycastHit currentPositionCellHit;
-    private Animator animator;
-    private GameObject currentPositionCell;
-    private EnemyStatus enemyStatus;
-    private EnemyWalkableCell prevEnemyWalkableCell;
+    private bool isMoving;                                 // 移動できるか
+    private Vector3 goalPosition;　　　　　　　　　　　　　　　// ゴールの方向
+    private Vector3 directionUnderY = new (0, -1, 0);      // Y軸の方向
+    private Vector3 currentMoveDirection;                  // 現在の移動方向
+    private Vector3 prevPosition = Vector3.zero;           // 敵の以前の位置
+    private Vector3 prevTargetCellPosition = Vector3.zero; // 敵の以前の移動先のセル位置
+    private RaycastHit currentPositionCellHit;             // レイキャストの衝突位置
+    private Animator animator;　　　　　　　　　　　　　　　　　// アニメーター
+    private GameObject currentPositionCell;                // 現在の位置のセル
+    private EnemyStatus enemyStatus;                       // 敵のステータスを管理するクラス
+    private EnemyWalkableCell prevEnemyWalkableCell;       // 敵の以前のセル
 
-    private const float MAX_RAYCAST_DISTANCE = 1f;
-    
-    // private const float MOVE_SPEED_COEFFICIENT = 0.01f;　ほんとはだめだけど念のため速度の定数をコメントアウトで残しておく
+    private const float MAX_RAYCAST_DISTANCE = 1f;         // レイキャストの最大距離
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
@@ -28,32 +26,31 @@ public class EnemyMovement : MonoBehaviour
     [Header("SE")]
     [SerializeField] private StudioEventEmitter goalEmitter;
     
-    public bool IsMoving {get => isMoving; set => isMoving = value;}
+    /* プロパティ */
+    public bool IsMoving { get => isMoving; set => isMoving = value; }
+    
     private void Start()
     {
+        // ゴールの位置を取得
         goalPosition = GameManager.Instance.CallRandomGoalPosition();
-        Debug.Log(goalPosition);
-        if (TryGetComponent<EnemyStatus>(out enemyStatus))
-        {
-            animator = enemyStatus.animator;
-        }
-        else
-        {
-            Debug.LogError("Not Found EnemyStatusComponent : EnemyComponent Start()");
-        }
+        
+        // 敵のステータスを管理するクラスを取得する
+        if (TryGetComponent(out enemyStatus))
+            animator = enemyStatus.animator; // アニメーターを取得する
+        
+        // レイキャストを使用して、現在位置のセルを取得
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
+        
+        // レイキャストがコライダーに当たった場合
         if (currentPositionCellHit.collider != null)
         {
-            Debug.Log("Start: " + currentPositionCellHit.transform.gameObject.name);
-            if (currentPositionCellHit.transform.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell)
-                && !isMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
+            // 歩行可能なセルにいて、移動可能でなくて、敵の状態が移動中なら
+            if (currentPositionCellHit.transform.gameObject.TryGetComponent(out EnemyWalkableCell enemyWalkableCell)
+                && !isMoving 
+                && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
             {
-                GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition);
-                if (enemyWalkableCell.NextCell != null)
-                {
-                    Debug.Log(enemyWalkableCell.NextCell.transform.position);
-                }
-                EnemyMove(enemyWalkableCell);
+                GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition); // 最短経路を探索
+                EnemyMove(enemyWalkableCell);                                             // 移動させる
             }
         }
     }

@@ -17,13 +17,13 @@ public class EnemyAttack : MonoBehaviour
         LongRange,
     }
     
-    private float currentAttackCoolTime = 0f;
-    private GameObject longRengeCollider;
-    private LongRengeCollider longRengeColliderScript;
-    private EnemyStatus enemyStatus;
-    public GameObject attackTarget;
-    private SphereCollider sphereCollider;
-    private Animator animator;
+    private float currentAttackCoolTime;               // 攻撃のクールタイム
+    private GameObject longRengeCollider;              // 遠距離攻撃の攻撃範囲
+    private LongRangeCollider longRangeColliderScript; // 遠距離攻撃の攻撃範囲を管理するクラス
+    private EnemyStatus enemyStatus;                   // 敵のステータスを管理するクラス
+    public GameObject attackTarget;                    // 攻撃対象
+    private SphereCollider sphereCollider;             // 球コライダー
+    private Animator animator;                         // アニメーター
 
     [Header("EnemyAttackController")] 
     [SerializeField] private EnemyAttackType enemyAttackType = EnemyAttackType.None;
@@ -39,45 +39,40 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        if (enemyAttackType == EnemyAttackType.LongRange)  // 遠距離攻撃タイプの敵の場合
+        // 遠距離攻撃タイプの敵の場合
+        if (enemyAttackType == EnemyAttackType.LongRange)
         {
-            longRengeCollider = Instantiate(new GameObject("LongRengeCollider"), this.transform.position, Quaternion.identity, this.transform);
-            longRengeCollider.gameObject.AddComponent<SphereCollider>();
-            longRengeColliderScript = longRengeCollider.AddComponent<LongRengeCollider>();
-            longRengeColliderScript.InitLongRengeCollider(this.gameObject.GetComponent<EnemyAttack>(), enemyStatus, longRangeAttackRadius);
+            longRengeCollider = Instantiate(new GameObject("LongRangeCollider"), transform.position, Quaternion.identity, transform);        // 子オブジェクトとして新しいオブジェクトを追加
+            longRengeCollider.gameObject.AddComponent<SphereCollider>();                                                                          // 球コライダーをコンポーネントで追加
+            longRangeColliderScript = longRengeCollider.AddComponent<LongRangeCollider>();                                                        // 遠距離攻撃を管理するクラスをコンポーネントで追加
+            longRangeColliderScript.InitLongRangeCollider(gameObject.GetComponent<EnemyAttack>(), enemyStatus, longRangeAttackRadius); // 遠距離攻撃を管理するクラスを初期化
         }
-        if (TryGetComponent<EnemyStatus>(out enemyStatus))
-        {
-            animator = enemyStatus.animator;
-        }
-        else
-        {
-            Debug.LogError("NOT FOUND ENEMYSTATUS COMPONENT : EnemyAttack Start()");
-        }
+        
+        // 敵のステータスを管理するクラスを取得する
+        if (TryGetComponent(out enemyStatus))
+            animator = enemyStatus.animator; // アニメーターを取得する
     }
 
     private void Update()
     {
-        if (enemyAttackType == EnemyAttackType.Melee) // 近接攻撃タイプの敵の場合
-        {
+        // 近接攻撃タイプの敵の場合
+        if (enemyAttackType == EnemyAttackType.Melee)
             MeleeAttackObserver();
-        }
         
-        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking) // 攻撃状態の場合
-        {
+        // 敵が攻撃状態の場合
+        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking)
             EnemyAttackSystem();
-        }
 
+        // 攻撃対象がいない場合
         if (attackTarget == null)
         {
-            enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
+            enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving); // 移動状態に遷移
         }
         else
         {
+            // 攻撃対象がアクティブではない場合
             if (!attackTarget.gameObject.activeSelf)
-            {
-                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
-            }
+                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving); // 移動状態に遷移
         }
     }
 
@@ -89,45 +84,36 @@ public class EnemyAttack : MonoBehaviour
         
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag(GameTagsManager.Player) // 味方キャラかつ配置済みで攻撃していない場合
+            // 味方キャラかつ配置済みで攻撃していない場合
+            if (hit.collider.gameObject.CompareTag(GameTagsManager.Player) 
                 && hit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED
                 && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
             {
-                // attackTargetCollider  = hit.collider.gameObject.GetComponent<Collider>();
                 attackTarget = hit.collider.gameObject;                         // 攻撃対象を設定
                 enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking); // 攻撃状態に変更
             }
-            else
-            {
-                // enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
-            }
-        }
-        else
-        {
-            // enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving );
         }
     }
 
+    // @brief 敵の攻撃システム
     private void EnemyAttackSystem()
     {
         if (attackTarget != null)
         {
             currentAttackCoolTime += Time.deltaTime; // 攻撃のクールタイムを更新
             
-            if (enemyStatus.AttackCoolTime <= currentAttackCoolTime //　攻撃できてかつ攻撃対象の情報が取得できた場合 
-                && attackTarget.gameObject.TryGetComponent<CharacterBehaviourPresenter>(out CharacterBehaviourPresenter characterBehaviourPresenter))
+            // 攻撃可能でかつ攻撃対象の情報が取得できた場合
+            if (enemyStatus.AttackCoolTime <= currentAttackCoolTime 
+                && attackTarget.gameObject.TryGetComponent(out CharacterBehaviourPresenter characterBehaviourPresenter))
             {
-                animator.SetTrigger(enemyStatus.attackAnimationParameter);
-                //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
-                int damage = enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence;
-                if (damage < 0)//キャラクターに与えるダメージがマイナスにならないように
-                {
-                    damage = 0;
-                }
-                characterBehaviourPresenter.AllyInfo.Hp -= damage; // ダメージを与える
-                Debug.LogWarning(characterBehaviourPresenter.AllyInfo.Hp.ToString());
+                animator.SetTrigger(enemyStatus.attackAnimationParameter);                             // 攻撃アニメーションをトリガー
+                int damage = enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence; // 与えるダメージを計算
                 
-                currentAttackCoolTime = 0; // 攻撃クールタイムをリセット
+                if (damage < 0)
+                    damage = enemyStatus.CurrentAttack * 5 / 100;                                      // ダメージの最低保障
+                
+                characterBehaviourPresenter.AllyInfo.Hp -= damage;                                     // ダメージを与える
+                currentAttackCoolTime = 0;                                                             // 攻撃クールタイムをリセット
             }
         }
     }
