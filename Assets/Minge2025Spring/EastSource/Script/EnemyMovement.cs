@@ -48,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
             if (currentPositionCellHit.transform.gameObject.TryGetComponent(out EnemyWalkableCell enemyWalkableCell)
                 && !isMoving 
                 && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
-            {
+           {
                 GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition); // 最短経路を探索
                 EnemyMove(enemyWalkableCell);                                             // 移動させる
             }

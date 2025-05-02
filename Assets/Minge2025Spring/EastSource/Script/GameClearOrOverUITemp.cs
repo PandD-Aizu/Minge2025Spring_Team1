@@ -9,9 +9,10 @@ using Debug = FMOD.Debug;
 
 public class GameClearOrOverUITemp : MonoBehaviour
 {
-    [Header("Binding")] [SerializeField] private GameObject panel;
-    [SerializeField]private TextMeshProUGUI GameCleartext;
-    [SerializeField]private TextMeshProUGUI GameOverText;
+    [Header("Binding")] 
+    [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI GameCleartext;
+    [SerializeField] private TextMeshProUGUI GameOverText;
     [SerializeField] private StudioEventEmitter gameOverSE;
     [SerializeField] private StudioEventEmitter bgm;
 
@@ -35,7 +36,6 @@ public class GameClearOrOverUITemp : MonoBehaviour
         GameOverText.gameObject.SetActive(true);
         gameOverSE.Play();
         bgm.Stop();
-        // Time.timeScale = 0f;
         await UniTask.WaitForSeconds(5.0f)
             .ContinueWith(() =>
             {
