@@ -5306,7 +5306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80475d8a0098544eca02249181aaa2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CenterEnemyWalk: {fileID: 7708004372433238985, guid: a9f05a24508b647b6889281f96721365, type: 3}
   CenterCannotWalk: {fileID: 951143770}
 --- !u!4 &1683737021
 Transform:
@@ -7186,9 +7185,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2231591929818471501, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3828700357765221772, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
       propertyPath: m_Name
       value: CenterCannotWalk
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828700357765221772, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828700357765221772, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_TagString
+      value: EnemyUnWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 4271772695108516160, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7229,6 +7240,22 @@ PrefabInstance:
     - target: {fileID: 4271772695108516160, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4564156941058243826, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7252029432344991590, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7507317837905603972, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9107275667525618281, guid: 274469d6a6046479a8f4501f5716b752, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
