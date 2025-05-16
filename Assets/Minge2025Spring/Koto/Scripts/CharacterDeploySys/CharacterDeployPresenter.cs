@@ -88,9 +88,11 @@ namespace CharacterDeploySys
             }
 
             // 設置可能であり、マウスを離したときユニットを配置する
-            if (Input.GetMouseButtonUp(0) && model.IsDeployActive && model.IsDeployAvailable && !model.IsSelectCharaAttackRange)
+            if (Input.GetMouseButtonUp(0) &&
+                Physics.Raycast(cellRay, out cellHit, Mathf.Infinity, model.DeployLayer) &&
+                model.IsDeployActive && model.IsDeployAvailable && !model.IsSelectCharaAttackRange)
             {
-                DeployCharacter();
+                DeployCharacter(cellHit);
                 listen.ButtonPushModernEmitter.Play();
             }
             
@@ -121,9 +123,15 @@ namespace CharacterDeploySys
         // @param cellHit 配置可能マスのヒット情報
         private void PreviewCharacterOnDeployLayer(RaycastHit cellHit)
         {
-            Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up; // キャラクターの配置プレビュー = セルの中心座標 + y軸上方向の単位ベクトル
-            view.SetPreview(model.SelectedCharacterName, characterDeployPos);                         // プレビューを表示
-            model.IsDeployAvailable = true;                                                           // ユニット配置可能フラグを立てる
+            CellDeployInfo cellDeployInfo = cellHit.collider.gameObject.GetComponent<CellDeployInfo>();
+            
+            // セル上に味方キャラが配置されていない場合
+            if (cellDeployInfo != null && !cellDeployInfo.IsDeployed)
+            {
+                Vector3 characterDeployPos = cellHit.collider.gameObject.transform.position + Vector3.up; // キャラクターの配置プレビュー = セルの中心座標 + y軸上方向の単位ベクトル
+                view.SetPreview(model.SelectedCharacterName, characterDeployPos);                         // プレビューを表示
+                model.IsDeployAvailable = true;                                                           // ユニット配置可能フラグを立てる
+            }
         }
         
         // @brief 配置可能マス外でキャラクターのプレビューを表示する
@@ -136,10 +144,15 @@ namespace CharacterDeploySys
         }
 
         // @brief キャラクターを配置
-        private void DeployCharacter()
+        private void DeployCharacter(RaycastHit cellHit)
         {
-            view.DeployAlly(model.SelectedCharacterName); // ユニットを配置する
-            model.IsSelectCharaAttackRange = true;
+            CellDeployInfo cellDeployInfo = cellHit.collider.gameObject.GetComponent<CellDeployInfo>();
+            if (cellDeployInfo != null)
+            {
+                cellDeployInfo.IsDeployed = true;             // セルの配置フラグを立てる
+                view.DeployAlly(model.SelectedCharacterName); // ユニットを配置する
+                model.IsSelectCharaAttackRange = true;
+            }
         }
 
         // @brief キャラクターの攻撃範囲を確定する
