@@ -13,4 +13,10 @@ namespace Static
     {
         public static int stage_num;
     }
+
+    public static class Particle
+    {
+        public static bool ambientFlag;
+        public static bool fogFlag;
+    }
 }
