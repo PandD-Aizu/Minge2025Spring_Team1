@@ -28,19 +28,18 @@ public class EnemyMovement : MonoBehaviour
     [Header("SE")]
     [SerializeField] private StudioEventEmitter goalEmitter;
     
-    public bool IsMoving {get => isMoving; set => isMoving = value;}
+    public bool IsMoving { get => isMoving; set => isMoving = value; }
+    
     private void Start()
     {
         goalPosition = GameManager.Instance.CallRandomGoalPosition();
         Debug.Log(goalPosition);
-        if (TryGetComponent<EnemyStatus>(out enemyStatus))
-        {
+        
+        if (TryGetComponent(out enemyStatus))
             animator = enemyStatus.animator;
-        }
         else
-        {
             Debug.LogError("Not Found EnemyStatusComponent : EnemyComponent Start()");
-        }
+        
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         if (currentPositionCellHit.collider != null)
         {
@@ -50,9 +49,8 @@ public class EnemyMovement : MonoBehaviour
             {
                 GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition);
                 if (enemyWalkableCell.NextCell != null)
-                {
                     Debug.Log(enemyWalkableCell.NextCell.transform.position);
-                }
+                
                 EnemyMove(enemyWalkableCell);
             }
         }
@@ -81,6 +79,7 @@ public class EnemyMovement : MonoBehaviour
             else if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyWalkable)
             {
                 Debug.Log(currentPositionCellHit.transform.gameObject.name);
+                
                 if (currentPositionCellHit.transform.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell) 
                     && !isMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
                 {
@@ -90,7 +89,8 @@ public class EnemyMovement : MonoBehaviour
                         Debug.Log(enemyWalkableCell.NextCell.transform.position);
                     } 
                     EnemyMove(enemyWalkableCell);
-                }else if (!(enemyStatus.enemyState == EnemyStatus.EnemyState.Moving))
+                }
+                else if (!(enemyStatus.enemyState == EnemyStatus.EnemyState.Moving))
                 {
                     Debug.Log("Stop");
                 }
@@ -104,15 +104,13 @@ public class EnemyMovement : MonoBehaviour
                 Debug.LogWarning("No WalkableCell");
             }
         }
+        
         UpdateMoveDirection();
+        
         if (enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
-        {
             animator.SetBool(enemyStatus.movementAnimationParameter, true);
-        }
         else
-        {
             animator.SetBool(enemyStatus.movementAnimationParameter, false);
-        }
     }
 
     //brief エネミーを移動させる関数
@@ -120,12 +118,12 @@ public class EnemyMovement : MonoBehaviour
     {
         Vector3 target;
         if (prevEnemyWalkableCell == null)
-        {
             prevEnemyWalkableCell = enemyWalkableCell;
-        }
+        
         if (enemyWalkableCell.NextCell != null)
         {
             target = enemyWalkableCell.NextCell.gameObject.transform.position;
+            
             if (prevEnemyWalkableCell != null 
                 && enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y >= 0)
             {
@@ -139,14 +137,14 @@ public class EnemyMovement : MonoBehaviour
             Debug.Log("goal");
             target = goalPosition;
         }
+        
         target.y += 1;
         float Distance_two = Vector3.Distance(transform.position, target);
         float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * Time.deltaTime) / Distance_two;//移動速度のコントロール
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
+        
         if (prevEnemyWalkableCell != null && enemyWalkableCell == prevEnemyWalkableCell)
-        {
             prevEnemyWalkableCell = enemyWalkableCell;
-        }
     }
 
     private void UpdateMoveDirection()

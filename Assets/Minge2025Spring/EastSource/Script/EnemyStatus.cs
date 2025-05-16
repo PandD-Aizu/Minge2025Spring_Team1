@@ -24,7 +24,7 @@ public class EnemyStatus : MonoBehaviour
     [Header("EnemyStatusController")]
     [SerializeField]public Animator animator;
     [InspectorName("MaxHealth")][SerializeField] private float maxHealth = 100;
-    [InspectorName("InitalAttack")][SerializeField] private int initialAttack = 10;
+    [InspectorName("InitialAttack")][SerializeField] private int initialAttack = 10;
     [InspectorName("InitialMoveSpeed")][SerializeField] private float initialMoveSpeed = 1f;
     [InspectorName("InitialDefence")][SerializeField] private int initialDefence = 10;
     [InspectorName("SpawnCoolTime")][SerializeField] private float spawnCooltime = 4f;

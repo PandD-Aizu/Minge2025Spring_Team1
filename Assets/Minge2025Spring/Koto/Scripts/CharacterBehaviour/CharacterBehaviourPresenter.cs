@@ -75,9 +75,11 @@ namespace CharacterBehaviour
             // 敵が攻撃範囲内に侵入した場合、攻撃対象リストに追加して攻撃状態に遷移
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Enter Enemy");
-                model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
-                allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
+                if (model.EnemyListValue.Count <= allyInfo.MaxBlockCount)
+                {
+                    model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
+                    allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
+                }
             }
                 
         }
@@ -90,6 +92,7 @@ namespace CharacterBehaviour
             if(other.gameObject.CompareTag("Enemy"))
             {
                 model.EnemyList.Remove(other.gameObject);　// 攻撃対象リストから削除
+                
                 if (other.gameObject == model.TargetEnemy)
                     model.TargetEnemy = null;
             }
@@ -101,7 +104,12 @@ namespace CharacterBehaviour
             // 攻撃対象リストに攻撃対象が追加されたら、攻撃対象を再設定
             model.EnemyList
                 .ObserveAdd()
-                .Subscribe(_ => model.SetAttackPriority());
+                .Subscribe(_ =>
+                {
+                    model.SetAttackPriority();
+                    Debug.LogError(model.EnemyListValue.Count);
+                    allyInfo.CurrentBlockCount = model.EnemyListValue.Count;
+                });
 
             // 攻撃アニメーションを再生
             model.IsAttackEnemy

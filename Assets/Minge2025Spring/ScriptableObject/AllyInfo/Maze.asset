@@ -25,6 +25,8 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: 7572c543c9bf6a8449cc88d8f1a4c2ad, type: 3}
   characterName: Maze
   cost: 40
+  maxBlockCount: 1
+  currentBlockCount: 0
   maxHp: 1500
   hp: 1500
   attack: 350
