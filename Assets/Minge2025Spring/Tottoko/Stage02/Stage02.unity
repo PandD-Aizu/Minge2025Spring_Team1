@@ -2871,6 +2871,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6071933843841926476, guid: 4d400cb5f505acb49995e5549b44f64c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6191198325640263481, guid: 4d400cb5f505acb49995e5549b44f64c, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2961,7 +2965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8542911265349979043, guid: 4d400cb5f505acb49995e5549b44f64c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8816275839697068900, guid: 4d400cb5f505acb49995e5549b44f64c, type: 3}
       propertyPath: m_Mesh
@@ -4370,7 +4374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2097186620
 RectTransform:
   m_ObjectHideFlags: 0
