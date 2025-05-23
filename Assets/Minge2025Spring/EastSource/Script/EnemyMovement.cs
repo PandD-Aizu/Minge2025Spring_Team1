@@ -33,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
     {
         goalPosition = GameManager.Instance.CallRandomGoalPosition();
         Debug.Log(goalPosition);
+        
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
             animator = enemyStatus.animator;
@@ -41,18 +42,22 @@ public class EnemyMovement : MonoBehaviour
         {
             Debug.LogError("Not Found EnemyStatusComponent : EnemyComponent Start()");
         }
+        
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         if (currentPositionCellHit.collider != null)
         {
             Debug.Log("Start: " + currentPositionCellHit.transform.gameObject.name);
+            
             if (currentPositionCellHit.transform.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell)
                 && !isMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
             {
                 GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition);
+                
                 if (enemyWalkableCell.NextCell != null)
                 {
                     Debug.Log(enemyWalkableCell.NextCell.transform.position);
                 }
+                
                 EnemyMove(enemyWalkableCell);
             }
         }
@@ -65,6 +70,7 @@ public class EnemyMovement : MonoBehaviour
         
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
+        
         if (currentPositionCellHit.collider != null)
         {
             if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyGoalPoint)
@@ -81,6 +87,7 @@ public class EnemyMovement : MonoBehaviour
             else if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyWalkable)
             {
                 Debug.Log(currentPositionCellHit.transform.gameObject.name);
+                
                 if (currentPositionCellHit.transform.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell) 
                     && !isMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
                 {
@@ -89,6 +96,7 @@ public class EnemyMovement : MonoBehaviour
                         GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition);
                         Debug.Log(enemyWalkableCell.NextCell.transform.position);
                     } 
+                    
                     EnemyMove(enemyWalkableCell);
                 }else if (!(enemyStatus.enemyState == EnemyStatus.EnemyState.Moving))
                 {
@@ -104,15 +112,12 @@ public class EnemyMovement : MonoBehaviour
                 Debug.LogWarning("No WalkableCell");
             }
         }
+        
         UpdateMoveDirection();
         if (enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
-        {
             animator.SetBool(enemyStatus.movementAnimationParameter, true);
-        }
         else
-        {
             animator.SetBool(enemyStatus.movementAnimationParameter, false);
-        }
     }
 
     //brief エネミーを移動させる関数
@@ -123,9 +128,11 @@ public class EnemyMovement : MonoBehaviour
         {
             prevEnemyWalkableCell = enemyWalkableCell;
         }
+        
         if (enemyWalkableCell.NextCell != null)
         {
             target = enemyWalkableCell.NextCell.gameObject.transform.position;
+            
             if (prevEnemyWalkableCell != null 
                 && enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y >= 0)
             {
@@ -139,16 +146,19 @@ public class EnemyMovement : MonoBehaviour
             Debug.Log("goal");
             target = goalPosition;
         }
+        
         target.y += 1;
         float Distance_two = Vector3.Distance(transform.position, target);
         float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * Time.deltaTime) / Distance_two;//移動速度のコントロール
         transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
+        
         if (prevEnemyWalkableCell != null && enemyWalkableCell == prevEnemyWalkableCell)
         {
             prevEnemyWalkableCell = enemyWalkableCell;
         }
     }
 
+    // @brief 移動方向を更新する
     private void UpdateMoveDirection()
     {
         Vector3 position = transform.position;
