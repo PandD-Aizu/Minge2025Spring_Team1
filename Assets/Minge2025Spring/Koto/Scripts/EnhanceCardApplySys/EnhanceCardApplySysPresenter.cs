@@ -23,22 +23,22 @@ namespace EnhanceCardApplySys
         private void Update()
         {
             EnhanceCard.EnhanceCard card;
-            Ray uiRay = view.UIRenderCamera.ScreenPointTORay(Input.mousePosition);
+            Ray uiRay = view.UIRenderCamera.ScreenPointToRay(Input.mousePosition);
             Ray charaRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit uiHit = new RaycastHit();
             RaycastHit charaHit = new RaycastHit();
 
             if (Input.GetMouseButton(0) &&
                 Physics.Raycast(uiRay, out uiHit, Mathf.Infinity, model.EnhanceCardUILayer) &&
-                !model.IsDeployActive)
+                !model.IsDeployActiveValue)
             {
                 card = uiHit.collider.gameObject.GetComponent<EnhanceCard.EnhanceCard>();
-                model.IsDeployActive = true;
+                model.IsDeployActiveValue = true;
             }
 
             if (Input.GetMouseButtonUp(0) &&
                 Physics.Raycast(charaRay, out charaHit, Mathf.Infinity, model.CharacterLayer) &&
-                model.IsDeployActive)
+                model.IsDeployActiveValue)
             {
                 AllyInfo allyInfo = charaHit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo;
             }
