@@ -33,7 +33,10 @@ public class GameManager : MonoBehaviour
     private GameObject[] enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
     private List<GameObject> enemySpawnPointCells = new List<GameObject>();
+    private List<EnemyWalkableCell> movementRootList;
+    
     public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
+    public List<EnemyWalkableCell> MovementRootList {get{return movementRootList;}}
     
     private void Awake()
     {
@@ -127,7 +130,7 @@ public class GameManager : MonoBehaviour
     }
     
     //brief シーン上のエネミーが通れるエリアを取得する
-    private void UpdateEnemyWalkableCells()
+    public void UpdateEnemyWalkableCells()
     {
         enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
@@ -136,7 +139,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void UpdateEnemyGoalPointCells()
+    public void UpdateEnemyGoalPointCells()
     {
         enemyGoalPointCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyGoalPoint);
         foreach (GameObject enemyGoalPointCell in enemyGoalPointCells)
@@ -147,7 +150,7 @@ public class GameManager : MonoBehaviour
     }
 
     //brief Enemyがゴールにたどり着くまでの最短距離を計算する
-    public void SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
+    public List<EnemyWalkableCell> SearchShortestRoot(EnemyWalkableCell currentCell, Vector3 goalPosition)
     {
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
@@ -244,7 +247,10 @@ public class GameManager : MonoBehaviour
         else
         {
             ToGoalfromStart(connectGoalCell);
+            SetMovementRootList();
         }
+        
+        return movementRootList;
     }
 
     //brief 新しい末端セルを作る関数
@@ -300,6 +306,7 @@ public class GameManager : MonoBehaviour
                 break;
             }
             currentConnectGoalCell.PreviousCell.NextCell = currentConnectGoalCell;
+            this.movementRootList.Add(currentConnectGoalCell);
             currentConnectGoalCell = currentConnectGoalCell.PreviousCell;
             number++;
         }
@@ -317,6 +324,11 @@ public class GameManager : MonoBehaviour
                 enemyWalkableCell.PreviousCell = null;
             }
         }
+    }
+
+    private void SetMovementRootList()
+    {
+        this.movementRootList.Reverse();
     }
 
     public Vector3 CallRandomGoalPosition()
