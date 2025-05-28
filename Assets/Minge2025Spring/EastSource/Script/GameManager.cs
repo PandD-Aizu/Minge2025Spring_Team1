@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
         {
-            Debug.Log("position: " + enemyWalkableCell.transform.position + "name: " +enemyWalkableCell.gameObject.name);
+            Debug.Log("position: "   + enemyWalkableCell.transform.position + "name: " +enemyWalkableCell.gameObject.name);
         }
     }
 
