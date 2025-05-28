@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     
     public event EventHandler OnUpdateEnemyWalkableCells;
 
-
     public struct SearchShortestRootInfo
     {
         public EnemyWalkableCell enemyWalkableCell;
