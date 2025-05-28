@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     public bool IsMoving {get => isMoving; set => isMoving = value;}
     private void Start()
     {
-        goalPosition = GameManager.Instance.CallRandomGoalPosition();
+        // goalPosition = GameManager.Instance.CallRandomGoalPosition();
         Debug.Log(goalPosition);
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {

@@ -53,58 +53,6 @@ public class GameManager : MonoBehaviour
         StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemis, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 
-    private void Update()
-    {
-        if (testWalkableCellNumber >= enemyWalkableCells.Length)
-        {
-            isdebugMode = false;
-            testWalkableCellNumber = 0;
-            Debug.Log("testWalkableCellNumber overflow");
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) && isdebugMode)
-        {
-            foreach (GameObject enemyWalkableCell in enemyWalkableCells)
-            {
-                Vector3 temp = enemyWalkableCell.transform.position;
-                temp.y = 0;
-                enemyWalkableCell.transform.position = temp;
-            }
-        }
-        
-        if (Input.GetKeyDown(KeyCode.Space) && isdebugMode)
-        {
-            Debug.Log("get Key space");
-            SearchShortestRoot(enemyWalkableCells[testWalkableCellNumber].gameObject.GetComponent<EnemyWalkableCell>(), enemyGoalPointCells[1].transform.position);
-            Debug.Log("finish");
-
-            EnemyWalkableCell currentEnemyWalkableCell = enemyWalkableCells[testWalkableCellNumber].GetComponent<EnemyWalkableCell>();
-            int number = 0;
-            while (true)
-            {
-                DebugUp1PositionY(currentEnemyWalkableCell);
-                if (currentEnemyWalkableCell.NextCell == null)
-                {
-                    break;
-                }
-                
-                if (currentEnemyWalkableCell.NextCell == currentEnemyWalkableCell)  // 自己ループを防ぐ
-                {
-                    Debug.LogError("NextCell is pointing to itself! Breaking loop.");
-                    break;
-                }
-                
-                currentEnemyWalkableCell = currentEnemyWalkableCell.NextCell;
-                number++;
-                if (number > 100)
-                {
-                    Debug.LogWarning("number overflow");
-                    break;
-                }
-            }
-        }
-    }
-
     //brief シーン上のスポーンポイントを取得する
     //warning 必ずUpdateEnemyWalkableCells()を使用した後に使う
     private void UpdateEnemySpawnPointCells()
@@ -331,10 +279,10 @@ public class GameManager : MonoBehaviour
         this.movementRootList.Reverse();
     }
 
-    public Vector3 CallRandomGoalPosition()
+    public GoalPositionCell CallRandomGoalPosition()
     {
         Random random = new Random();
-        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].transform.position;
+        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].gameObject.GetComponent<GoalPositionCell>();
     }
 
     public Vector3 CallRandomSpawnPosition()
