@@ -3,6 +3,5 @@
     public enum EnhanceTrigger
     {
         ON_USE,
-        
     }
 }

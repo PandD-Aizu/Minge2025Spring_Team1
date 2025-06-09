@@ -13,6 +13,7 @@ namespace EnhanceCard
         private Dictionary<EnhanceTrigger, List<ICardEffect>> enhances 
             = new Dictionary<EnhanceTrigger, List<ICardEffect>>();
         
+        public int GetCost => cost;
         public Dictionary<EnhanceTrigger, List<ICardEffect>> Enhances => enhances;
 
         private void Start()
