@@ -2,33 +2,22 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWalkableCell : MonoBehaviour
+public class EnemyGoalPointCell : MonoBehaviour
 {
-    [Header("Property")] [SerializeField] private bool isSpawnPointCell = false;
-    
-    public float weight = 1f;
-    public bool isWalkable = true;
-    public LayerMask observeTargetLayerMask;
     public LayerMask searchCellLayerMask = new LayerMask();
-
+    
     private float searchCellRayDistance = 0.7f;
     private float rayDistance = 0.8f;
     private Ray observeTargetRay;
+    private List<EnemyWalkableCell> connectEnemyWalkableCells = new List<EnemyWalkableCell>(4);
     //以下左右上下のセルを取得するのに用いるRay
     private Ray searchCellRayUpside;
     private Ray searchCellRayDownside;
     private Ray searchCellRayLeftside;
     private Ray searchCellRayRightside;
-
-    private List<EnemyWalkableCell> aroundCells = new List<EnemyWalkableCell>(4);
-    private EnemyWalkableCell nextCell = null;
-    private EnemyWalkableCell previousCell = null;
-
-    //変数のアクセサ
-    public bool IsSpawnPointCell{get => isSpawnPointCell;}
-    public List<EnemyWalkableCell> AroundCells{get => aroundCells;}
-    // public EnemyWalkableCell NextCell {get{return nextCell;} set{nextCell = value;}}
-    // public EnemyWalkableCell PreviousCell {get{return previousCell;} set{previousCell = value;}}
+    
+    //アクセサ
+    public List<EnemyWalkableCell> ConnectEnemyWalkableCells {get => connectEnemyWalkableCells;}
     
     private void Start()
     {
@@ -39,19 +28,14 @@ public class EnemyWalkableCell : MonoBehaviour
         searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
         searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
         InitSurroundingCells();
-        GameManager.Instance.OnUpdateEnemyWalkableCells += GameManager_OnUpdateEnemyWalkableCells;
+        GameManager.Instance.OnUpdateEnemyWalkableCells += GameManger_OnUpdateEnemyWalkableCells;
     }
 
-    private void OnDestroy()
-    {
-        GameManager.Instance.OnUpdateEnemyWalkableCells -= GameManager_OnUpdateEnemyWalkableCells;
-    }
-    
-    private void GameManager_OnUpdateEnemyWalkableCells(object sender, EventArgs e)
+    private void GameManger_OnUpdateEnemyWalkableCells(object sender, EventArgs e)
     {
         InitSurroundingCells();
     }
-
+    
     private void InitSurroundingCells()
     {
         //各Rayで上下左右のセルを取得して格納する
@@ -67,22 +51,22 @@ public class EnemyWalkableCell : MonoBehaviour
         
         if (TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
         {
-            aroundCells.Add(enemyWalkableCellUpside);
+            connectEnemyWalkableCells.Add(enemyWalkableCellUpside);
         }
 
         if (TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
         {
-            aroundCells.Add(enemyWalkableCellDownside);
+            connectEnemyWalkableCells.Add(enemyWalkableCellDownside);
         }
 
         if (TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
         {
-            aroundCells.Add(enemyWalkableCellLeftside);
+            connectEnemyWalkableCells.Add(enemyWalkableCellLeftside);
         }
 
         if (TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
         {
-            aroundCells.Add(enemyWalkableCellRightside);
+            connectEnemyWalkableCells.Add(enemyWalkableCellRightside);
         }
     }
     
@@ -109,5 +93,4 @@ public class EnemyWalkableCell : MonoBehaviour
 
         return false;
     }
-
 }
