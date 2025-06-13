@@ -24,6 +24,10 @@ public class EnemyAttack : MonoBehaviour
     public GameObject attackTarget;
     private SphereCollider sphereCollider;
     private Animator animator;
+    private CharacterType _attackerType;
+    private CharacterType _defenderType;
+    [Header("TypeChartData")]
+    [SerializeField] private TypeChartData typeChartData;
 
     [Header("EnemyAttackController")] 
     [SerializeField] private EnemyAttackType enemyAttackType = EnemyAttackType.None;
@@ -65,7 +69,7 @@ public class EnemyAttack : MonoBehaviour
         
         if (enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking) // 攻撃状態の場合
         {
-            EnemyAttackSystem();
+            EnemyAttackSystem(enemyStatus.CharacterType);
         }
 
         if (attackTarget == null)
@@ -108,7 +112,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    private void EnemyAttackSystem()
+    private void EnemyAttackSystem(CharacterType characterType)
     {
         if (attackTarget != null)
         {
@@ -120,6 +124,16 @@ public class EnemyAttack : MonoBehaviour
                 animator.SetTrigger(enemyStatus.attackAnimationParameter);
                 //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
                 int damage = enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence;
+                
+                // 属性の相性を考慮してダメージを計算
+                _defenderType = characterBehaviourPresenter.AllyInfo.CharacterType;
+                float multiplier = typeChartData.GetMultiplier(_attackerType, _defenderType);
+                if (multiplier > 1.0f)
+                {
+                    damage *= (int)multiplier; // 効果倍率を適用
+                }
+                
+                
                 if (damage < 0)//キャラクターに与えるダメージがマイナスにならないように
                 {
                     damage = 0;

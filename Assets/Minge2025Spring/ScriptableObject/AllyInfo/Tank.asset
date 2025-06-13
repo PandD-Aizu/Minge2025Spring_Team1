@@ -30,3 +30,4 @@ MonoBehaviour:
   attack: 200
   attackCoolDown: 2
   defence: 50
+  characterType: 2

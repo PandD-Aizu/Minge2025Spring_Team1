@@ -31,6 +31,10 @@ namespace CharacterBehaviour
         [SerializeField] private ReactiveProperty<bool> isAttackEnemy = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isShowCharacterStatus = new ReactiveProperty<bool>(false);
         [SerializeField] private ReactiveProperty<bool> isWithDraw = new ReactiveProperty<bool>(false);
+        
+        private CharacterType _attackerType;
+        private CharacterType _defenderType;
+        [SerializeField] private TypeChartData typeChartData;
 
         /* getter と setter */
         public BoxCollider AttackRangeCollider                           { get => attackRangeCollider; set => attackRangeCollider = value; }
@@ -97,13 +101,22 @@ namespace CharacterBehaviour
 
         // @brief 敵にダメージを与える
         // @param attackValue 攻撃力
-        public void GiveDamageToEnemy(float attackValue)
+        public void GiveDamageToEnemy(float attackValue, CharacterType attackerType)
         {
             if (targetEnemy != null)
             {
                 EnemyStatus enemyStatus = targetEnemy.GetComponent<EnemyStatus>();
-                
+                CharacterType defenderType = enemyStatus.CharacterType;
+
                 float damage = attackValue - enemyStatus.CurrentDefence;
+                float multiplier = typeChartData.GetMultiplier(attackerType, defenderType);
+                // 自分の属性と敵の属性を見てダメージを計算
+                if (multiplier > 0)
+                {
+                    damage *= multiplier;
+                }
+                
+                // Debug.LogError("ダメージ:"+damage);
                 
                 if(damage <= 0)
                     enemyStatus.CurrentHealth = attackValue * 5 / 100;
@@ -127,5 +140,6 @@ namespace CharacterBehaviour
             IsAttackEnemy.Value = false;
             IsShowCharacterStatus.Value = false;
         }
+        
     }
 }
