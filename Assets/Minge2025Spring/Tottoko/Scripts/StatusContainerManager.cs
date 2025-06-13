@@ -11,6 +11,8 @@ public class StatusContainerManager : MonoBehaviour
     [SerializeField] private TMPro.TextMeshProUGUI attackPowerText;
     [Header("防御力テキスト")]
     [SerializeField] private TMPro.TextMeshProUGUI defencePowerText;
+    [Header("属性テキスト")]
+    [SerializeField] private TMPro.TextMeshProUGUI typeText;
     [Header("HPテキスト")]
     [SerializeField] private TMPro.TextMeshProUGUI hpText;
     [Header("HPスライダー")]
@@ -33,6 +35,7 @@ public class StatusContainerManager : MonoBehaviour
     {
         attackPowerText.text = "ATK: " + allyInfo.Attack.ToString();
         defencePowerText.text = "DEF: " + allyInfo.Defence.ToString();
+        typeText.text = "Type: " + allyInfo.CharacterType.ToString();
         hpText.text = "HP: " + AllyInfo.Hp.ToString() + "/" + AllyInfo.MaxHp.ToString();
         // Hpのスライダーを表示
         hpSlider.value = allyInfo.Hp;

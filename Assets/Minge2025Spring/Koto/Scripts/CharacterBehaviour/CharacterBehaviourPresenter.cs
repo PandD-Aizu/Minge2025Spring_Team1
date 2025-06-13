@@ -13,6 +13,9 @@ namespace CharacterBehaviour
         [SerializeField] private CharacterBehaviourView view;
         [SerializeField] private CharacterBehaviourListen listen;
         [SerializeField] private StageCharacterControllerModel characterControllerModel;
+        [Header("キャラクターの相性データ")]
+        [SerializeField] private TypeChartData typeChartData;
+
         
         /* アクセサ */
         public AllyInfo AllyInfo => allyInfo;

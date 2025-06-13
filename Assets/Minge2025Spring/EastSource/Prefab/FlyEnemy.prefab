@@ -158,6 +158,7 @@ MonoBehaviour:
   attackCoolTime: 3
   movementAnimationParameter: Moving
   attackAnimationParameter: Attacking
+  attackerType: 2
 --- !u!114 &4194380404412732150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackTarget: {fileID: 0}
+  typeChartData: {fileID: 11400000, guid: 83d0ae55820e5462d9cb13a2693d46c0, type: 2}
   enemyAttackType: 1
   meleeAttackRange: 0.2
   longRangeAttackRadius: 3

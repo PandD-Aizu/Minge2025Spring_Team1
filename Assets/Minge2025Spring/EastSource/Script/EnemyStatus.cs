@@ -31,6 +31,7 @@ public class EnemyStatus : MonoBehaviour
     [InspectorName("AttackCoolTime")] [SerializeField] private float attackCoolTime = 3f;
     [SerializeField] public string movementAnimationParameter = "Moving";
     [SerializeField] public string attackAnimationParameter = "Attacking";
+    [SerializeField] CharacterType attackerType; // 敵側の属性
     
     //アクセサ
     public int InitialAttack{get { return initialAttack; }}
@@ -45,7 +46,9 @@ public class EnemyStatus : MonoBehaviour
     
     public bool IsDead { get => isDead; set => isDead = value; }
     public Vector3 CurrentMoveDirection{get{return currentMoveDirection;} set{currentMoveDirection = value;}}
-
+    public CharacterType CharacterType { get => attackerType; set => attackerType = value; }
+    
+    
     private void Awake()
     {
         currentHealth = maxHealth;
@@ -97,6 +100,7 @@ public class EnemyStatus : MonoBehaviour
             DestroyImmediate(this.gameObject);
         }
     }
+    
 
     public void ChangeEnemyState(EnemyState state)
     {

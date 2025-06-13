@@ -524,6 +524,7 @@ MonoBehaviour:
     value: 0
   isWithDraw:
     value: 0
+  typeChartData: {fileID: 0}
 --- !u!114 &7844513987733147539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +542,7 @@ MonoBehaviour:
   view: {fileID: 5479525268530148424}
   listen: {fileID: 0}
   characterControllerModel: {fileID: 0}
+  typeChartData: {fileID: 0}
 --- !u!114 &5479525268530148424
 MonoBehaviour:
   m_ObjectHideFlags: 0

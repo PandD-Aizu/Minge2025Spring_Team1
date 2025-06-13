@@ -12,7 +12,7 @@ namespace CharacterBehaviour
         // @param allyInfo 味方キャラクターの情報
         public void AttackEnemy(AllyInfo allyInfo)
         {
-            model.GiveDamageToEnemy(allyInfo.Attack);
+            model.GiveDamageToEnemy(allyInfo.Attack, allyInfo.CharacterType);
         }
 
         // @brief キャラクター撤退時の処理
