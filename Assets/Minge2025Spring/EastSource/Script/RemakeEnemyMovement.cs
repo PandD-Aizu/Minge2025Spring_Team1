@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+/*using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 
@@ -65,7 +65,7 @@ public class RemakeEnemyMovement : MonoBehaviour
 
     }
     
-    /*ここからはSearchMovement関数内で使用する関数*/
+    /*ここからはSearchMovement関数内で使用する関数#1#
     
     //新しくterminalデータを作る
     private void InitTerminalCells(Dictionary<List<EnemyWalkableCell>, float> terminalCellDatas, EnemyWalkableCell operatingCell)
@@ -130,4 +130,4 @@ public class RemakeEnemyMovement : MonoBehaviour
         }
         return false;
     }
-}
+}*/

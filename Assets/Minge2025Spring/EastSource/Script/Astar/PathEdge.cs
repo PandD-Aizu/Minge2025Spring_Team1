@@ -4,19 +4,19 @@ public class PathEdge : MonoBehaviour
 {
     private float weight;
     private string destinationId;
-    private string childNodeId;
+    private string _childNodeIdId;
     
     //アクセサ
     public float Weight{get => weight;}
     public string DestinationId{get => destinationId;}
-    public string ChildNode{get => childNodeId;}
+    public string ChildNodeId{get => _childNodeIdId;}
 
     //コンストラクタ
     //destinationId: EnemyWalkableCellのオブジェクト名, position: EnemyWalkableCellのposition, gCost: 今までに掛かってきたコスト
-    public PathEdge(string destinationId, float weight, string childNodeId)
+    public PathEdge(string destinationId, float weight, string childNodeIdId)
     {
         this.destinationId = destinationId;
         this.weight = weight;
-        this.childNodeId = childNodeId;
+        this._childNodeIdId = childNodeIdId;
     }
 }

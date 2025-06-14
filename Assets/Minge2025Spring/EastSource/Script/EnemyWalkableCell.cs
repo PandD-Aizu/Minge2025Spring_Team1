@@ -65,22 +65,22 @@ public class EnemyWalkableCell : MonoBehaviour
         Debug.Log(this.gameObject.name + ": " + raycastHitLeftside.collider);
         Debug.Log(this.gameObject.name + ": " + raycastHitRight.collider);
         
-        if (TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
+        if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
         {
             aroundCells.Add(enemyWalkableCellUpside);
         }
 
-        if (TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
+        if (raycastHitDownside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
         {
             aroundCells.Add(enemyWalkableCellDownside);
         }
 
-        if (TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
+        if (raycastHitLeftside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
         {
             aroundCells.Add(enemyWalkableCellLeftside);
         }
 
-        if (TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
+        if (raycastHitRight.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
         {
             aroundCells.Add(enemyWalkableCellRightside);
         }

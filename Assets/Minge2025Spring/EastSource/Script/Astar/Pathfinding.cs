@@ -40,9 +40,19 @@ public class Pathfinding : MonoBehaviour
     }
     
     //隣接しているノードを探す
-    private void OpenNeighborNode(string currentId, PriorityQueue<string, float> openQueue, List<string> closedList, EnemyGoalPointCell goalCell)
+    private void OpenNeighborNode(string parentId, PriorityQueue<string, float> openQueue, List<string> closedList, EnemyGoalPointCell goalCell)
     {
-        List<PathEdge> currentEdgeList = graph.GetPathEdge(currentId);
-        
+        List<PathEdge> currentEdgeList = graph.GetPathEdge(parentId);
+        foreach (PathEdge currentEdge in currentEdgeList)
+        {
+            //隣接しているノードを取り出す
+            PathNode currentNode = graph.GetPathNode(currentEdge.ChildNodeId);
+            
+            //Totalのコストを計算してみて今までの方がスコアが低ければ
+            if (currentNode.UpdateFCost(graph.GetPathNode(parentId), goalCell))
+            {
+                openQueue.Enqueue(currentNode.NodeId, currentNode.FCost);
+            }
+        }
     }
 }

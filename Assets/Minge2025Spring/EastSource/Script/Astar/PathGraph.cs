@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ public class PathGraph : MonoBehaviour
     Dictionary<string, List<PathEdge>> edgeDict = new Dictionary<string, List<PathEdge>>();
     
     //コンストラクタ
-    public PathGraph()
+    public void Start()
     {
         CreateGraph();
     }

@@ -1,3 +1,4 @@
+/*
 using System;
 using System.Collections.Generic;
 using FMODUnity;
@@ -140,3 +141,4 @@ public class NewEnemyMovement : MonoBehaviour
     }
     
 }
+*/
