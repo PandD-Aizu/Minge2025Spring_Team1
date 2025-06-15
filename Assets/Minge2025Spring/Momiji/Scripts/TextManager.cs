@@ -11,6 +11,8 @@ public class TextManager : MonoBehaviour
     private int textCount;
     [SerializeField] private GameObject screen;
     [SerializeField] private Button nextButton;
+    [SerializeField] private Button RightButton;
+    [SerializeField] private Button LeftButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,12 +26,8 @@ public class TextManager : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            textCount++;
-        }
-
-        if (textCount > 2) textCount = 0;
+        if (textCount > 2) textCount = 2;
+        if (textCount < 0) textCount = 0;
 
         switch (textCount)
         {
@@ -40,6 +38,7 @@ public class TextManager : MonoBehaviour
                 text4.text = "パズルを解いてコストを貯めよう！";
                 text5.text = " ";
                 nextButton.gameObject.SetActive(false);
+                LeftButton.gameObject.SetActive(false);
                 break;
             case 1:
                 text1.text = "右下のキャラクターをドラッグ&ドロップで好きな位置に配置しよう！！";
@@ -47,6 +46,9 @@ public class TextManager : MonoBehaviour
                 text3.text = "必要な分のコストを消費することでキャラクターを配置できるよ！";
                 text4.text = " ";
                 text5.text = " ";
+                nextButton.gameObject.SetActive(false);
+                LeftButton.gameObject.SetActive(true);
+                RightButton.gameObject.SetActive(true);
                 break;
             case 2:
                 text1.text = "敵の情報は画面左中央に表示されているよ。上から順に";
@@ -55,9 +57,20 @@ public class TextManager : MonoBehaviour
                 text4.text = "③　ゴールポイントに到達した敵の数";
                 text5.text = "④　③がこの数に達したらゲームオーバーになる";
                 nextButton.gameObject.SetActive(true);
+                RightButton.gameObject.SetActive(false);
                 break;
         }
 
+    }
+
+    public void RightText()
+    {
+        textCount++;
+    }
+
+    public void LeftText()
+    {
+        textCount--;
     }
 
     public void NextClick()
