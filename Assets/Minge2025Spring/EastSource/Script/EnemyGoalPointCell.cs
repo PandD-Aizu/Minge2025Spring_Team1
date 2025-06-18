@@ -9,7 +9,7 @@ public class EnemyGoalPointCell : MonoBehaviour
     private float searchCellRayDistance = 0.7f;
     private float rayDistance = 0.8f;
     private Ray observeTargetRay;
-    private List<EnemyWalkableCell> connectEnemyWalkableCells = new List<EnemyWalkableCell>(4);
+    [SerializeField]private List<EnemyWalkableCell> connectEnemyWalkableCells = new List<EnemyWalkableCell>(4);
     //以下左右上下のセルを取得するのに用いるRay
     private Ray searchCellRayUpside;
     private Ray searchCellRayDownside;
@@ -18,8 +18,8 @@ public class EnemyGoalPointCell : MonoBehaviour
     
     //アクセサ
     public List<EnemyWalkableCell> ConnectEnemyWalkableCells {get => connectEnemyWalkableCells;}
-    
-    private void Start()
+
+    private void Awake()
     {
         searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
         observeTargetRay = new Ray(this.transform.position, this.transform.up);
@@ -28,6 +28,10 @@ public class EnemyGoalPointCell : MonoBehaviour
         searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
         searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
         InitSurroundingCells();
+    }
+
+    private void Start()
+    {
         GameManager.Instance.OnUpdateEnemyWalkableCells += GameManger_OnUpdateEnemyWalkableCells;
     }
 
@@ -44,29 +48,34 @@ public class EnemyGoalPointCell : MonoBehaviour
         Physics.Raycast(searchCellRayDownside, out RaycastHit raycastHitDownside, searchCellRayDistance);
         Physics.Raycast(searchCellRayLeftside, out RaycastHit raycastHitLeftside, searchCellRayDistance);
         Physics.Raycast(searchCellRayRightside, out RaycastHit raycastHitRight, searchCellRayDistance);
-        Debug.Log(this.gameObject.name + ": " + raycastHitUpside.collider);
-        Debug.Log(this.gameObject.name + ": " + raycastHitDownside.collider);
-        Debug.Log(this.gameObject.name + ": " + raycastHitLeftside.collider);
-        Debug.Log(this.gameObject.name + ": " + raycastHitRight.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitUpside.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitDownside.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitLeftside.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitRight.collider);
         
-        if (TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
+        if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellUpside);
         }
 
-        if (TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
+        if (raycastHitDownside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellDownside);
         }
 
-        if (TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
+        if (raycastHitLeftside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellLeftside);
         }
 
-        if (TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
+        if (raycastHitRight.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellRightside);
+        }
+
+        foreach (var connectEnemyWalkableCell in ConnectEnemyWalkableCells)
+        {
+            Debug.Log(connectEnemyWalkableCell.gameObject.name);
         }
     }
     

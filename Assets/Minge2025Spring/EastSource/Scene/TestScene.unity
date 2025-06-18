@@ -2589,10 +2589,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 951598820}
-  - component: {fileID: 951598819}
-  - component: {fileID: 951598818}
-  - component: {fileID: 951598817}
-  - component: {fileID: 951598816}
+  - component: {fileID: 951598821}
+  - component: {fileID: 951598822}
+  - component: {fileID: 951598823}
   m_Layer: 0
   m_Name: TestManager
   m_TagString: Untagged
@@ -2600,55 +2599,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &951598816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951598815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667e19e8fa665cf4bb8858226226e24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentNodeId: 
---- !u!114 &951598817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951598815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad04eb42dd56763468d9d3f69f24b600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &951598818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951598815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38dadbd67dcaa854bb2ac05b27366396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &951598819
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951598815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fdc2c5284686d4ab1bc2db9645084f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &951598820
 Transform:
   m_ObjectHideFlags: 0
@@ -2664,6 +2614,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &951598821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951598815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9472c2b43dedd6c46bc5ef847cd260d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathfinding: {fileID: 951598822}
+  startCell: {fileID: 1348968839}
+  goalCell: {fileID: 1622264116}
+--- !u!114 &951598822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951598815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38dadbd67dcaa854bb2ac05b27366396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graph: {fileID: 951598823}
+--- !u!114 &951598823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951598815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad04eb42dd56763468d9d3f69f24b600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &962231482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3274,6 +3264,8 @@ MonoBehaviour:
   maxSpawnEnemies: 10
   goalCapasity: 5
   isdebugMode: 0
+  enemyWalkableCells: []
+  testObject: {fileID: 951598821}
 --- !u!4 &1454282083
 Transform:
   m_ObjectHideFlags: 0
@@ -3289,6 +3281,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1490782057 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+  m_PrefabInstance: {fileID: 1622264114}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1494709354
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3453,13 +3450,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1622264116}
   m_SourcePrefab: {fileID: 100100000, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
 --- !u!4 &1622264115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9072407048864935593, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
   m_PrefabInstance: {fileID: 1622264114}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1622264116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490782057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea725f61fb9ca0b458edd8a5397fcc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  connectEnemyWalkableCells: []
 --- !u!65 &1636177560
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3540,7 +3556,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1799603325}
   m_SourcePrefab: {fileID: 100100000, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
 --- !u!4 &1647001312 stripped
 Transform:
@@ -3694,6 +3713,27 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!1 &1799603324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+  m_PrefabInstance: {fileID: 1647001311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1799603325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799603324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea725f61fb9ca0b458edd8a5397fcc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  connectEnemyWalkableCells: []
 --- !u!65 &1837613237
 BoxCollider:
   m_ObjectHideFlags: 0

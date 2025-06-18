@@ -1,13 +1,14 @@
 using UnityEngine;
 
-public class PathNode : MonoBehaviour
+public class PathNode
 {
-    public string parentNodeId;
+    public PathNode parentNode;
 
     private string nodeId;
     private float gCost;
     private float hCost;
     private float fCost;
+    private Vector3 surfacePosition;
     private EnemyWalkableCell enemyWalkableCell;
 
     //アクセサ
@@ -26,9 +27,9 @@ public class PathNode : MonoBehaviour
         get => fCost;
     }
 
-    public Vector3 Position
+    public Vector3 SurfacePosition
     {
-        get => enemyWalkableCell.gameObject.transform.position;
+        get => surfacePosition;
     }
 
     public EnemyWalkableCell EnemyWalkableCell
@@ -42,6 +43,10 @@ public class PathNode : MonoBehaviour
     {
         this.enemyWalkableCell = enemyWalkableCell;
         this.nodeId = nodeId;
+        Vector3 tempPos = enemyWalkableCell.gameObject.transform.position;
+        Vector3 tempScale = enemyWalkableCell.gameObject.transform.localScale;
+        tempPos.y += tempScale.y / 2;
+        this.surfacePosition = tempPos;
     }
     
     //引数: 親ノード
@@ -59,16 +64,17 @@ public class PathNode : MonoBehaviour
 
     public void CalcHuricCost(EnemyGoalPointCell goalCell)
     {
-        hCost = Vector3.Distance(goalCell.gameObject.transform.position, Position);
+        hCost = Vector3.Distance(goalCell.gameObject.transform.position, SurfacePosition);
     }
 
     public bool TryUpdateGCost(PathNode parentNode)
     {
         //トータル移動コストが既存ノード以上なら差し替え不要
-        float totalCost = Vector3.Distance(Position, parentNode.Position) + parentNode.GCost;
-        if (GCost == 0 && totalCost < GCost)//トータルコストが既存コスト以下の時
+        float totalCost = Vector3.Distance(SurfacePosition, parentNode.SurfacePosition) + parentNode.GCost;
+        if (GCost == 0 || totalCost < GCost)//トータルコストが既存コスト以下の時
         {
             gCost = totalCost;  
+            this.parentNode = parentNode;
             return true;
         }
 

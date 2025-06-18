@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using PathFinder;
+using Unity.VisualScripting;
 
-public class Pathfinding : MonoBehaviour
+public class Pathfinding: MonoBehaviour
 {
-    PathGraph graph;
+    [SerializeField]private PathGraph graph;
+    
     public List<PathNode> FindPath(EnemyWalkableCell startCell, EnemyGoalPointCell goalCell)
     {
         //初期化
@@ -14,12 +16,21 @@ public class Pathfinding : MonoBehaviour
         PriorityQueue<string, float> openQueue = new PriorityQueue<string, float>(); //<ID, TotalCost> //現在調査中のノード(ID管理)
         List<string> closedList = new List<string>(); //調査が完了したノード(ID管理)
         
-        openQueue.Enqueue(startCell.gameObject.name, 0f);
+        openQueue.Enqueue(startCell.gameObject.name, Math.Abs(Vector3.Distance(startCell.gameObject.transform.position, goalCell.gameObject.transform.position)));
+
+        foreach (var nodeKey in graph.GetNodeDict().Keys)
+        {
+            foreach (var edge in graph.GetPathEdge(nodeKey))
+            {
+                Debug.Log(nodeKey + " connect" + edge.ChildNodeId);
+            }
+        }
 
         while (openQueue.Count > 0)
         {
             //最小のノードのIDを取り出す
             string currentId = openQueue.Dequeue();
+            Debug.Log("FromOpenQueue" + currentId);
             currentCell = graph.GetEnemyWalkableCell(currentId);
             //closedListに移動
             closedList.Add(currentId);
@@ -29,13 +40,22 @@ public class Pathfinding : MonoBehaviour
             {
                 if (currentCell == connectEnemyWalkableCell)
                 {
-                    //経路探索を終了してPathリストを返す
+                    foreach (var pathNodeValue in graph.GetNodeDict().Values)
+                    {
+                        if (pathNodeValue.parentNode != null)
+                        {
+                            Debug.Log(pathNodeValue.NodeId + "`aparentNode is" + pathNodeValue.parentNode.NodeId);
+                        }
+                    }
+                    
+                    // 経路探索を終了してPathリストを返す
+                    return ResultPath(graph.GetPathNode(currentId));
                 }
             }
             
             OpenNeighborNode(currentId, openQueue, closedList, goalCell);
         }
-
+        Debug.Log("Stupid");
         return null;
     }
     
@@ -47,6 +67,11 @@ public class Pathfinding : MonoBehaviour
         {
             //隣接しているノードを取り出す
             PathNode currentNode = graph.GetPathNode(currentEdge.ChildNodeId);
+
+            if (closedList.Contains(currentNode.NodeId))
+            {
+                continue;
+            }
             
             //Totalのコストを計算してみて今までの方がスコアが低ければ
             if (currentNode.UpdateFCost(graph.GetPathNode(parentId), goalCell))
@@ -55,4 +80,20 @@ public class Pathfinding : MonoBehaviour
             }
         }
     }
+
+    
+    private List<PathNode> ResultPath(PathNode goalNode)
+    {
+        List<PathNode> result = new List<PathNode>();
+        PathNode currentNode = goalNode;
+        while (currentNode.parentNode != null)
+        {
+            result.Add(currentNode);
+            currentNode = currentNode.parentNode;
+        }
+        result.Reverse();
+        return result;
+    }
+    
+    //Debug
 }

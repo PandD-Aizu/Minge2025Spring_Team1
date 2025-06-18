@@ -10,6 +10,7 @@ public class PathGraph : MonoBehaviour
     //コンストラクタ
     public void Start()
     {
+        Debug.LogWarning("CreateGraph");
         CreateGraph();
     }
 
@@ -17,14 +18,20 @@ public class PathGraph : MonoBehaviour
     {
         foreach (GameObject enemyWalkableCell in GameManager.Instance.EnemyWalkableCells)
         {
-            if (TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell currentCell))
+            if (enemyWalkableCell.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell currentCell))
             {
-                nodeDict.Add(currentCell.gameObject.name, new PathNode(currentCell.gameObject.name, currentCell));
+                if (currentCell == null)
+                {
+                    continue;
+                }
+                nodeDict.Add(currentCell.gameObject.name, new PathNode(currentCell.gameObject.name, currentCell));//Dictionaryに登録する
                 edgeDict.Add(currentCell.gameObject.name, CreateEdgeList(currentCell));
+                Debug.Log(currentCell.gameObject.name);
             }
-        }
+        } 
     }
 
+    //edgeを新しく作る関数
     private List<PathEdge> CreateEdgeList(EnemyWalkableCell currentCell)
     {
         List<PathEdge> edgeList = new List<PathEdge>(4);
@@ -34,23 +41,6 @@ public class PathGraph : MonoBehaviour
             edgeList.Add(new PathEdge(currentCell.gameObject.name, weight, aroundCell.gameObject.name));
         }
         return edgeList;
-    }
-
-    public void Add(string dictionaryId, PathNode node, List<PathEdge> edge)
-    {
-        nodeDict.Add(dictionaryId, node);
-        edgeDict.Add(dictionaryId, edge);
-    }
-
-    public bool TryGetGraph(string dictionaryId, out PathNode node, out List<PathEdge> edge)
-    {
-        node = nodeDict[dictionaryId];
-        edge = edgeDict[dictionaryId];
-        if (node == null && edge == null)
-        {
-            return false;
-        }
-        return true;
     }
     
     public PathNode GetPathNode(string deictionryId)
@@ -68,24 +58,8 @@ public class PathGraph : MonoBehaviour
         return nodeDict[deictionryId].EnemyWalkableCell;
     }
 
-    public void Remove(string dictionaryId)
+    public Dictionary<string, PathNode> GetNodeDict()
     {
-        nodeDict.Remove(dictionaryId);
-        edgeDict.Remove(dictionaryId);
-    }
-
-    public void Clear()
-    {
-        nodeDict.Clear();
-        edgeDict.Clear();
-    }
-
-    public bool Equel(string deictionryId, Vector3 goalPosition)
-    {
-        if (nodeDict[deictionryId].Position == goalPosition)
-        {
-            return true;
-        }
-        return false;
+        return nodeDict;
     }
  }

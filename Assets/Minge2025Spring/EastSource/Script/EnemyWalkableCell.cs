@@ -29,8 +29,8 @@ public class EnemyWalkableCell : MonoBehaviour
     public List<EnemyWalkableCell> AroundCells{get => aroundCells;}
     // public EnemyWalkableCell NextCell {get{return nextCell;} set{nextCell = value;}}
     // public EnemyWalkableCell PreviousCell {get{return previousCell;} set{previousCell = value;}}
-    
-    private void Start()
+
+    private void Awake()
     {
         searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
         observeTargetRay = new Ray(this.transform.position, this.transform.up);
@@ -39,6 +39,10 @@ public class EnemyWalkableCell : MonoBehaviour
         searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
         searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
         InitSurroundingCells();
+    }
+    
+    private void Start()
+    {
         GameManager.Instance.OnUpdateEnemyWalkableCells += GameManager_OnUpdateEnemyWalkableCells;
     }
 
@@ -60,10 +64,10 @@ public class EnemyWalkableCell : MonoBehaviour
         Physics.Raycast(searchCellRayDownside, out RaycastHit raycastHitDownside, searchCellRayDistance);
         Physics.Raycast(searchCellRayLeftside, out RaycastHit raycastHitLeftside, searchCellRayDistance);
         Physics.Raycast(searchCellRayRightside, out RaycastHit raycastHitRight, searchCellRayDistance);
-        Debug.Log(this.gameObject.name + ": " + raycastHitUpside.collider);
-        Debug.Log(this.gameObject.name + ": " + raycastHitDownside.collider);
-        Debug.Log(this.gameObject.name + ": " + raycastHitLeftside.collider);
-        Debug.Log(this.gameObject.name + ": " + raycastHitRight.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitUpside.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitDownside.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitLeftside.collider);
+        // Debug.Log(this.gameObject.name + ": " + raycastHitRight.collider);
         
         if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
         {
@@ -83,6 +87,11 @@ public class EnemyWalkableCell : MonoBehaviour
         if (raycastHitRight.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
         {
             aroundCells.Add(enemyWalkableCellRightside);
+        }
+
+        foreach (var aroundCell in aroundCells)
+        {
+            Debug.Log(this.gameObject.name + ": connect" + aroundCell.gameObject.name);
         }
     }
     
@@ -109,5 +118,6 @@ public class EnemyWalkableCell : MonoBehaviour
 
         return false;
     }
-
+    
+    
 }

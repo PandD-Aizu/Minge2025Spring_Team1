@@ -11800,7 +11800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667e19e8fa665cf4bb8858226226e24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentNodeId: 
 --- !u!114 &713014315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11825,6 +11824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38dadbd67dcaa854bb2ac05b27366396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  graph: {fileID: 0}
 --- !u!114 &713014317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42992,6 +42992,8 @@ MonoBehaviour:
   maxSpawnEnemies: 10
   goalCapasity: 5
   isdebugMode: 0
+  enemyWalkableCells: []
+  testObject: {fileID: 0}
 --- !u!1 &2114743296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3680520714124980132, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}

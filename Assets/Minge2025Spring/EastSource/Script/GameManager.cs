@@ -21,10 +21,12 @@ public class GameManager : MonoBehaviour
     
     private int reachedGoalEnemies = 0;
     private int spawndedEnemies = 0;
-    private GameObject[] enemyWalkableCells;
+    [SerializeField]private GameObject[] enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
     private List<GameObject> enemySpawnPointCells = new List<GameObject>();
     private List<EnemyWalkableCell> movementRootList;
+    //Debug
+    [SerializeField]TestObject testObject;
     
     public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
     public List<EnemyWalkableCell> MovementRootList {get{return movementRootList;}}
@@ -35,12 +37,14 @@ public class GameManager : MonoBehaviour
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
         UpdateEnemySpawnPointCells();
+        
     }
 
     private void Start()
     {
         reachedGoalEnemies = 0;
         spawndedEnemies = 0;
+        testObject.StartPath();
         StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemies, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 

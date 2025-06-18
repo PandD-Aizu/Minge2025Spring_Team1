@@ -737,6 +737,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -2364,6 +2365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -3596,6 +3598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -4702,6 +4705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -10347,6 +10351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -10393,6 +10398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -11945,6 +11951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -14415,6 +14422,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -15056,6 +15064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -15267,6 +15276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -15813,6 +15823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -16354,6 +16365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -23147,6 +23159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -24706,6 +24719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -24752,6 +24766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 1
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -25512,6 +25527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -28327,6 +28343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -29038,6 +29055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -29887,6 +29905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -30012,6 +30031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -30689,6 +30709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -32477,6 +32498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -33160,6 +33182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -33950,6 +33973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -33996,6 +34020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -34850,6 +34875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -42878,10 +42904,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b1f71aa1b2734aa8957ed1fe4ecc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isdebugMode: 0
   testWalkableCellNumber: 0
-  maxSpawnEnemis: 10
+  maxSpawnEnemies: 10
   goalCapasity: 5
+  isdebugMode: 0
+  enemyWalkableCells: []
+  testObject: {fileID: 0}
 --- !u!1 &2114743296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3680520714124980132, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
@@ -42900,6 +42928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 1
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -43313,6 +43342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2

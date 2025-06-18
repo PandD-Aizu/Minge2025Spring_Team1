@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PathEdge : MonoBehaviour
+public class PathEdge
 {
     private float weight;
     private string destinationId;
