@@ -5,17 +5,21 @@ using UnityEngine;
 using PathFinder;
 using Unity.VisualScripting;
 
-public class Pathfinding: MonoBehaviour
-{
-    [SerializeField]private PathGraph graph;
+public class Pathfinding
+{ 
+    private PathGraph graph;
     
     public List<PathNode> FindPath(EnemyWalkableCell startCell, EnemyGoalPointCell goalCell)
     {
+        graph = new PathGraph();
         //初期化
         EnemyWalkableCell currentCell;
         PriorityQueue<string, float> openQueue = new PriorityQueue<string, float>(); //<ID, TotalCost> //現在調査中のノード(ID管理)
-        List<string> closedList = new List<string>(); //調査が完了したノード(ID管理)
-        
+        List<string> closedList = new List<string>(); //
+        if (goalCell == null)
+        {
+            Debug.LogError("No goal cell found");
+        }
         openQueue.Enqueue(startCell.gameObject.name, Math.Abs(Vector3.Distance(startCell.gameObject.transform.position, goalCell.gameObject.transform.position)));
 
         foreach (var nodeKey in graph.GetNodeDict().Keys)

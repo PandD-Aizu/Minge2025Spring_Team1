@@ -745,6 +745,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &75313261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2373,6 +2374,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &165719509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3606,6 +3608,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &247026973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4713,6 +4716,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &323503268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10359,6 +10363,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &616745343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10406,6 +10411,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &619894904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11768,90 +11774,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &713014313
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 713014318}
-  - component: {fileID: 713014317}
-  - component: {fileID: 713014316}
-  - component: {fileID: 713014315}
-  - component: {fileID: 713014314}
-  m_Layer: 0
-  m_Name: TestObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &713014314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713014313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 667e19e8fa665cf4bb8858226226e24c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &713014315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713014313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad04eb42dd56763468d9d3f69f24b600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &713014316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713014313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38dadbd67dcaa854bb2ac05b27366396, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  graph: {fileID: 0}
---- !u!114 &713014317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713014313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73fdc2c5284686d4ab1bc2db9645084f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &713014318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 713014313}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.34040236, y: -8.554819, z: -9.260864}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &716681636
 Mesh:
   m_ObjectHideFlags: 0
@@ -12043,6 +11965,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &720941735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13710,9 +13633,6 @@ PrefabInstance:
       addedObject: {fileID: 1226003169}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1498301589}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 920255792}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       insertIndex: -1
@@ -14514,6 +14434,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &804539531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15156,6 +15077,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &841311215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15368,6 +15290,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &851872998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15915,6 +15838,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &865367516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16457,6 +16381,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &897003309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21904,7 +21829,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1854538744}
   m_SourcePrefab: {fileID: 100100000, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
 --- !u!43 &963367667
 Mesh:
@@ -22516,7 +22444,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2050144142}
   m_SourcePrefab: {fileID: 100100000, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
 --- !u!43 &1007036018
 Mesh:
@@ -23251,6 +23182,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1066471263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24615,10 +24547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnOrder:
-  - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
-  - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
+  - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   limiterSpawnEnemy: 5
-  readyTime: 20
+  readyTime: 5
   isPassedSpawnSpawnTime: 0
 --- !u!43 &1162525395
 Mesh:
@@ -24811,6 +24742,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1163126028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24858,6 +24790,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1186341696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25619,6 +25552,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1238453839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28435,6 +28369,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1437203777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29147,6 +29082,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1475558069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29676,115 +29612,6 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
---- !u!1 &1498301588
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1498301589}
-  - component: {fileID: 1498301592}
-  - component: {fileID: 1498301591}
-  - component: {fileID: 1498301590}
-  m_Layer: 0
-  m_Name: Plane
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1498301589
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498301588}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 1, z: 3}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 863163708}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1498301590
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498301588}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1498301591
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498301588}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5616e615c4e469e4ba8b0f74f2baf61b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1498301592
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1498301588}
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &1498577701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29997,6 +29824,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1509972658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30123,6 +29951,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1526061893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30801,6 +30630,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1550894955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32590,6 +32420,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1678778945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33274,6 +33105,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1729253772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34065,6 +33897,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1848047267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34086,6 +33919,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1854538743 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4408745332521850075, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
+  m_PrefabInstance: {fileID: 940131741}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1854538744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854538743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea725f61fb9ca0b458edd8a5397fcc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  connectEnemyWalkableCells: []
 --- !u!1 &1856840548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -846953375059098573, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
@@ -34112,6 +33966,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1856840551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34967,6 +34822,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &1954325791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42190,6 +42046,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9072407048864935593, guid: fe4089ce9b56d97419db19faa38b9f57, type: 3}
   m_PrefabInstance: {fileID: 1000578098}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2050144142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228993227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea725f61fb9ca0b458edd8a5397fcc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  connectEnemyWalkableCells: []
 --- !u!65 &2054696177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43020,6 +42892,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &2114743299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43434,6 +43307,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!65 &2127757582
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45131,4 +45005,3 @@ SceneRoots:
   - {fileID: 935321800}
   - {fileID: 11688386}
   - {fileID: 7446469415642353276}
-  - {fileID: 713014318}

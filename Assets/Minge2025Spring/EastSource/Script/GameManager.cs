@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     {
         reachedGoalEnemies = 0;
         spawndedEnemies = 0;
-        testObject.StartPath();
+        
         StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemies, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 
@@ -99,16 +99,16 @@ public class GameManager : MonoBehaviour
         this.movementRootList.Reverse();
     }
 
-    public GoalPositionCell CallRandomGoalPosition()
+    public EnemyGoalPointCell CallRandomEnemyGoalPoint()
     {
         Random random = new Random();
-        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].gameObject.GetComponent<GoalPositionCell>();
+        return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].gameObject.GetComponent<EnemyGoalPointCell>();
     }
 
-    public Vector3 CallRandomSpawnPosition()
+    public EnemyWalkableCell CallRandomSpawnPositionCell()
     {
         Random random = new Random();
-        return enemySpawnPointCells[random.Next(enemySpawnPointCells.Count)].transform.position;
+        return enemySpawnPointCells[random.Next(enemySpawnPointCells.Count)].GetComponent<EnemyWalkableCell>();
     }
     
     //@brief エネミーがスポーンしたときにカウントする

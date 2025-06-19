@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class TestObject : MonoBehaviour
 {
-    [SerializeField]private Pathfinding pathfinding;
     public EnemyWalkableCell startCell;
     public EnemyGoalPointCell goalCell;
 
-    public void StartPath()
+    public void Start()
     {
+        Pathfinding pathfinding = new Pathfinding();
         Debug.Log("StartPath");
         // Debug.Log("maybe: return null" + pathfinding.FindPath(startCell, goalCell));
         List<PathNode> RootPathes = pathfinding.FindPath(startCell, goalCell);

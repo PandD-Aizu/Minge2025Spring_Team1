@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
       propertyPath: m_Name
-      value: _BaseEnemy
+      value: _BaseEnemyExample
+      objectReference: {fileID: 0}
+    - target: {fileID: 4872288816490602836, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: initialMoveSpeed
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6441230574175583780, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
       propertyPath: m_LocalPosition.x
