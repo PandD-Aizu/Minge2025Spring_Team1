@@ -8,6 +8,7 @@ public class PathNode
     private float gCost;
     private float hCost;
     private float fCost;
+    
     private Vector3 surfacePosition;
     private EnemyWalkableCell enemyWalkableCell;
 
@@ -62,11 +63,14 @@ public class PathNode
         return false; //トータルコストが既存のコスト以上の時
     }
 
+    //ヒューリスティックコストを計算しhCostを更新する
     public void CalcHuricCost(EnemyGoalPointCell goalCell)
     {
         hCost = Vector3.Distance(goalCell.gameObject.transform.position, SurfacePosition);
     }
 
+    //新しい経路のCostと古いコストを計算し適切に更新する
+    //新しい経路のコストのほうが小さければＴｒｕｅ、古いコストのほうが小さければＦａｌｓｅを返す
     public bool TryUpdateGCost(PathNode parentNode)
     {
         //トータル移動コストが既存ノード以上なら差し替え不要

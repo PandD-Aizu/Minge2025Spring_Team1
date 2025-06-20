@@ -12,7 +12,7 @@ public class PathEdge
     public string ChildNodeId{get => _childNodeIdId;}
 
     //コンストラクタ
-    //destinationId: EnemyWalkableCellのオブジェクト名, position: EnemyWalkableCellのposition, gCost: 今までに掛かってきたコスト
+    //destinationId: EnemyWalkableCellのオブジェクト名, weight: 子と親をノーマライズした値, childNodeIdId: 子ノードのEnemyWalkableCellのオブジェクト名
     public PathEdge(string destinationId, float weight, string childNodeIdId)
     {
         this.destinationId = destinationId;

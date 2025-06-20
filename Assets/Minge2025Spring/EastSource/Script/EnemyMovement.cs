@@ -11,23 +11,18 @@ public class EnemyMovement : MonoBehaviour
     
     private bool isMoving = true;
     private RaycastHit currentPositionCellHit;
-    private Vector3 directionUnderY = new Vector3(0, -1, 0);
-    private Vector3 currentMoveDirection;
-    private Vector3 nextPosition;
+    private Vector3 directionUnderY = new Vector3(0, -1, 0);//足元の方向にRayを飛ばすための単位ベクトル
+    private Vector3 nextPosition;//移動先のポジション
     private Vector3 goalSurfacePosition;
     private Animator animator;
-    private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
-    private EnemyWalkableCell prevEnemyWalkableCell;
-    [SerializeField]private EnemyGoalPointCell goalPointCell;
+    private EnemyGoalPointCell goalPointCell;
     private List<PathNode> pathList = new List<PathNode>();
     private Pathfinding pathfinding = new Pathfinding();
 
     private const float MAX_RAYCAST_DISTANCE = 1f;
-    private const float MOVE_SPEED_COEF = 3f;
-    private const float DIFFERENCE_WITH_THE_GROUND = 0.5f;
-    
-    // private const float MOVE_SPEED_COEFFICIENT = 0.01f;　ほんとはだめだけど念のため速度の定数をコメントアウトで残しておく
+    private const float MOVE_SPEED_COEF = 3f;　//移動速度の係数
+    private const float DIFFERENCE_WITH_THE_GROUND = 0.5f;　//ゲームオブジェクトと地面との表面との差
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
@@ -39,11 +34,13 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 GoalPosition {get => goalPointCell.transform.position;}
     
     public bool IsMoving {get => isMoving; set => isMoving = value;}
+    
+    //EnemyStatusの初期化、goalPoint、pathListを取得
     private void Start()
     {
         if (this.gameObject.TryGetComponent<EnemyStatus>(out enemyStatus))
         {
-               
+            Debug.Log("can get");
         }
         else
         {
@@ -61,17 +58,20 @@ public class EnemyMovement : MonoBehaviour
         // pause中に敵を止める
         if (Time.timeScale == 0f) return;
         
+        //次のセルまで移動
         if (nextPosition == this.gameObject.transform.position && IsMoving)
         {
             EnemyMove();
         }
 
+        //ゴールにたどり着いたら
         if (goalSurfacePosition == this.gameObject.transform.position)
         {
             Destroy(gameObject);
         }
     }
 
+    //pathListを新しく計算しなおす関数
     private void UpdateRootPath()
     {
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);

@@ -79,6 +79,8 @@ public class EnemyGoalPointCell : MonoBehaviour
         }
     }
     
+    
+    //隣接しているゲームオブジェクトからEnemyWalkableCellを取得
     private bool TryGetNeighborEnemyWalkableCell(RaycastHit raycastHit, out EnemyWalkableCell resultEnemyWalkableCell)
     {
         resultEnemyWalkableCell = null;

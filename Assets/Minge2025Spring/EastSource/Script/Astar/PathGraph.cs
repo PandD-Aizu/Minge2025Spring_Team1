@@ -14,6 +14,7 @@ public class PathGraph
         CreateGraph();
     }
 
+    //Graphを更新できる関数
     private void CreateGraph()
     {
         foreach (GameObject enemyWalkableCell in GameManager.Instance.EnemyWalkableCells)
@@ -43,21 +44,25 @@ public class PathGraph
         return edgeList;
     }
     
+    //引数のIdのノードのみを返す
     public PathNode GetPathNode(string deictionryId)
     {
         return nodeDict[deictionryId];
     }
-
+    
+    //引数のIdのEdgeListのみを返す
     public List<PathEdge> GetPathEdge(string deictionryId)
     {
         return edgeDict[deictionryId];
     }
 
+    //引数のIdのEnemyWalkableCellを返す
     public EnemyWalkableCell GetEnemyWalkableCell(string deictionryId)
     {
         return nodeDict[deictionryId].EnemyWalkableCell;
     }
 
+    //このGraphのNodeDictを返す
     public Dictionary<string, PathNode> GetNodeDict()
     {
         return nodeDict;

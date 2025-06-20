@@ -9,27 +9,19 @@ public class Pathfinding
 { 
     private PathGraph graph;
     
+    //PathListを計算する関数
+    //引数: StartCell: 経路探索を開始するときのRootになるCell　goalCell:最終目的地
     public List<PathNode> FindPath(EnemyWalkableCell startCell, EnemyGoalPointCell goalCell)
     {
         graph = new PathGraph();
         //初期化
         EnemyWalkableCell currentCell;
         PriorityQueue<string, float> openQueue = new PriorityQueue<string, float>(); //<ID, TotalCost> //現在調査中のノード(ID管理)
-        List<string> closedList = new List<string>(); //
-        if (goalCell == null)
-        {
-            Debug.LogError("No goal cell found");
-        }
+        List<string> closedList = new List<string>(); //調査し終えたノード(ID管理)
+        
         openQueue.Enqueue(startCell.gameObject.name, Math.Abs(Vector3.Distance(startCell.gameObject.transform.position, goalCell.gameObject.transform.position)));
 
-        foreach (var nodeKey in graph.GetNodeDict().Keys)
-        {
-            foreach (var edge in graph.GetPathEdge(nodeKey))
-            {
-                Debug.Log(nodeKey + " connect" + edge.ChildNodeId);
-            }
-        }
-
+        //ここからがAstar本体
         while (openQueue.Count > 0)
         {
             //最小のノードのIDを取り出す
@@ -57,6 +49,7 @@ public class Pathfinding
                 }
             }
             
+            //Goalに隣接していなければ周囲のノードを調べてOpenQueueに追加
             OpenNeighborNode(currentId, openQueue, closedList, goalCell);
         }
         Debug.Log("Stupid");
@@ -85,7 +78,8 @@ public class Pathfinding
         }
     }
 
-    
+    //親ノードをさかのぼる
+    //経路のListを返す
     private List<PathNode> ResultPath(PathNode goalNode)
     {
         List<PathNode> result = new List<PathNode>();
