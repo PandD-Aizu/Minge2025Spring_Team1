@@ -79,9 +79,11 @@ public class GameSpawnManager : MonoBehaviour
     {
         if (isSpawning)
         {
-            Vector3 SpawnPosition = GameManager.Instance.CallRandomSpawnPosition();
+            EnemyWalkableCell spawnPositionCell = GameManager.Instance.CallRandomSpawnPositionCell();
+            Vector3 SpawnPosition = spawnPositionCell.transform.position;
             SpawnPosition.y += 1;//このままだとセルに埋まるから
-            Instantiate(nextSpawnEnemy, SpawnPosition, Quaternion.identity);
+            GameObject enemy = Instantiate(nextSpawnEnemy, SpawnPosition, Quaternion.identity);
+            enemy.GetComponent<EnemyMovement>().startCell = spawnPositionCell;
             isSpawning = false; 
             numberOfEnemies++;
             currentCoolTime = 0f;

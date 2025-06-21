@@ -6,6 +6,6 @@ public class EnemyAnimation : MonoBehaviour
     [SerializeField]private Animator animator;
     void Start()
     {
-        
+         
     }
 }

@@ -1,3 +1,4 @@
+/*
 using System;
 using System.Collections.Generic;
 using FMODUnity;
@@ -28,7 +29,7 @@ public class NewEnemyMovement : MonoBehaviour
     public bool IsMoving {get => isMoving; set => isMoving = value;}
     private void Start()
     {
-        goalPosition = GameManager.Instance.CallRandomGoalPosition();
+        // goalPosition = GameManager.Instance.CallRandomGoalPosition();
         Debug.Log(goalPosition);
         if (TryGetComponent<EnemyStatus>(out enemyStatus))
         {
@@ -140,3 +141,4 @@ public class NewEnemyMovement : MonoBehaviour
     }
     
 }
+*/

@@ -1,10 +1,12 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyWalkableCell : MonoBehaviour
 {
     [Header("Property")] [SerializeField] private bool isSpawnPointCell = false;
     
+    public float weight = 1f;
     public bool isWalkable = true;
     public LayerMask observeTargetLayerMask;
     public LayerMask searchCellLayerMask = new LayerMask();
@@ -17,24 +19,16 @@ public class EnemyWalkableCell : MonoBehaviour
     private Ray searchCellRayDownside;
     private Ray searchCellRayLeftside;
     private Ray searchCellRayRightside;
-    
-    private EnemyWalkableCell upCell = null;
-    private EnemyWalkableCell downCell = null;
-    private EnemyWalkableCell leftCell = null;
-    private EnemyWalkableCell rightCell = null;
+
+    [SerializeField]private List<EnemyWalkableCell> aroundCells = new List<EnemyWalkableCell>(4);
     private EnemyWalkableCell nextCell = null;
     private EnemyWalkableCell previousCell = null;
 
     //変数のアクセサ
-    public bool IsSpawnPointCell{get{return isSpawnPointCell;}}
-    public EnemyWalkableCell UpCell {get{return upCell;}}
-    public EnemyWalkableCell DownCell {get{return downCell;}}
-    public EnemyWalkableCell LeftCell {get{return leftCell;}}
-    public EnemyWalkableCell RightCell {get{return rightCell;}}
-    public EnemyWalkableCell NextCell {get{return nextCell;} set{nextCell = value;}}
-    public EnemyWalkableCell PreviousCell {get{return previousCell;} set{previousCell = value;}}
-    
-    private void Start()
+    public bool IsSpawnPointCell{get => isSpawnPointCell;}
+    public List<EnemyWalkableCell> AroundCells{get => aroundCells;}
+
+    private void Awake()
     {
         searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
         observeTargetRay = new Ray(this.transform.position, this.transform.up);
@@ -43,17 +37,19 @@ public class EnemyWalkableCell : MonoBehaviour
         searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
         searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
         InitSurroundingCells();
+    }
+    
+    private void Start()
+    {
         GameManager.Instance.OnUpdateEnemyWalkableCells += GameManager_OnUpdateEnemyWalkableCells;
     }
 
     private void Update()
     {
-        Debug.DrawRay(this.transform.position, this.transform.forward * searchCellRayDistance, Color.red);
-        Debug.DrawRay(this.transform.position, this.transform.right * searchCellRayDistance, Color.green);
-        Debug.DrawRay(this.transform.position, -this.transform.forward * searchCellRayDistance, Color.blue);
-        Debug.DrawRay(this.transform.position, -this.transform.right * searchCellRayDistance, Color.black);
+        Debug.DrawRay(this.transform.position, this.transform.forward, Color.red, 1f);
+        Debug.DrawRay(this.transform.position, -this.transform.forward, Color.green, 1f);
     }
-
+    
     private void OnDestroy()
     {
         GameManager.Instance.OnUpdateEnemyWalkableCells -= GameManager_OnUpdateEnemyWalkableCells;
@@ -76,100 +72,56 @@ public class EnemyWalkableCell : MonoBehaviour
         Debug.LogWarning(this.gameObject.name + ": " + raycastHitDownside.collider);
         Debug.LogWarning(this.gameObject.name + ": " + raycastHitLeftside.collider);
         Debug.LogWarning(this.gameObject.name + ": " + raycastHitRight.collider);
-        if (raycastHitUpside.collider != null 
-            && raycastHitUpside.collider.gameObject != this
-            && raycastHitUpside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellUpside))
-        {
-            upCell = enemyWalkableCellUpside;
-        }
-        else if (raycastHitUpside.collider != null 
-                 && raycastHitUpside.collider.gameObject != this)
-        {
-            if (raycastHitUpside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellUpsideParent))
-            {
-                upCell = enemyWalkableCellUpsideParent;
-            }
-        }
-
-        if (raycastHitDownside.collider != null 
-            && raycastHitDownside.collider.gameObject != this
-            && raycastHitDownside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellDownside))
-        {
-            downCell = enemyWalkableCellDownside;
-        }
-        else if (raycastHitDownside.collider != null 
-                  && raycastHitDownside.collider.gameObject != this)
-        {
-            if (raycastHitDownside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellDownsideParent))
-            {
-                downCell = enemyWalkableCellDownsideParent;
-            }
-        }
-
-        if (raycastHitLeftside.collider != null 
-            && raycastHitLeftside.collider.gameObject != this
-            && raycastHitLeftside.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellLeftside))
-        {
-            leftCell = enemyWalkableCellLeftside;
-        }
-        else if (raycastHitLeftside.collider != null 
-                 && raycastHitLeftside.collider.gameObject != this)
-        {
-            if (raycastHitLeftside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellLeftsideParent))
-            {
-                leftCell = enemyWalkableCellLeftsideParent;
-            }
-        }
-
-        if (raycastHitRight.collider != null 
-            && raycastHitRight.collider.gameObject != this
-            && raycastHitRight.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellRightside))
-        {
-            rightCell = enemyWalkableCellRightside;
-        }
-        else if (raycastHitLeftside.collider != null 
-                 && raycastHitLeftside.collider.gameObject != this)
-        {
-            if (raycastHitLeftside.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellLeftsideParent))
-            {
-                leftCell = enemyWalkableCellLeftsideParent;
-            }
-        }
         
-        if (upCell != null)
+        if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
         {
-            Debug.Log(this.gameObject.name + ": upside is " + upCell.gameObject.name);
-        }
-        else
-        {
-            Debug.Log(this.gameObject.name + ": upside is null.");
+            aroundCells.Add(enemyWalkableCellUpside);
         }
 
-        if (downCell != null)
+        if (raycastHitDownside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
         {
-            Debug.Log(this.gameObject.name + ": downside is " + downCell.gameObject.name);
-        }
-        else
-        {
-            Debug.Log(this.gameObject.name + ": downside is null.");
+            aroundCells.Add(enemyWalkableCellDownside);
         }
 
-        if (rightCell != null)
+        if (raycastHitLeftside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
         {
-            Debug.Log(this.gameObject.name + ": rightside is " + rightCell.gameObject.name);
-        }
-        else
-        {
-            Debug.Log(this.gameObject.name + ": rightside is null.");
+            aroundCells.Add(enemyWalkableCellLeftside);
         }
 
-        if (leftCell)
+        if (raycastHitRight.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
         {
-            Debug.Log(this.gameObject.name + ": leftside is " + leftCell.gameObject.name);
+            aroundCells.Add(enemyWalkableCellRightside);
         }
-        else
+
+        foreach (var aroundCell in aroundCells)
         {
-            Debug.Log(this.gameObject.name + ": leftside is null.");
+            Debug.Log(this.gameObject.name + ": connect" + aroundCell.gameObject.name);
         }
     }
+    
+    private bool TryGetNeighborEnemyWalkableCell(RaycastHit raycastHit, out EnemyWalkableCell resultEnemyWalkableCell)
+    {
+        resultEnemyWalkableCell = null;
+        
+        if (raycastHit.collider.gameObject != this 
+            && raycastHit.collider.gameObject != this
+            && raycastHit.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell))
+        {
+            resultEnemyWalkableCell = enemyWalkableCell;
+            return true;
+        }
+        else if (raycastHit.collider.gameObject != this 
+                  && raycastHit.collider.gameObject != this)
+        {
+            if (raycastHit.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellParent))
+            {
+                resultEnemyWalkableCell = enemyWalkableCellParent;
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+    
 }

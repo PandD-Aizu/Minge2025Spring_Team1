@@ -3,24 +3,26 @@ using System.Collections.Generic;
 using FMODUnity;
 using General;
 using UnityEngine;
+using DG.Tweening;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private bool isMoving = false;
-    private Vector3 goalPosition;
-    private Vector3 directionUnderY = new Vector3(0, -1, 0);
-    private Vector3 currentMoveDirection;
-    private Vector3 prevPosition = Vector3.zero;
-    private Vector3 prevTargetCellPosition = Vector3.zero;
+    public EnemyWalkableCell startCell;
+    
+    private bool isMoving = true;
     private RaycastHit currentPositionCellHit;
+    private Vector3 directionUnderY = new Vector3(0, -1, 0);//足元の方向にRayを飛ばすための単位ベクトル
+    private Vector3 nextPosition;//移動先のポジション
+    private Vector3 goalSurfacePosition;
     private Animator animator;
-    private GameObject currentPositionCell;
     private EnemyStatus enemyStatus;
-    private EnemyWalkableCell prevEnemyWalkableCell;
+    private EnemyGoalPointCell goalPointCell;
+    private List<PathNode> pathList = new List<PathNode>();
+    private Pathfinding pathfinding = new Pathfinding();
 
     private const float MAX_RAYCAST_DISTANCE = 1f;
-    
-    // private const float MOVE_SPEED_COEFFICIENT = 0.01f;　ほんとはだめだけど念のため速度の定数をコメントアウトで残しておく
+    private const float MOVE_SPEED_COEF = 3f;　//移動速度の係数
+    private const float DIFFERENCE_WITH_THE_GROUND = 0.5f;　//ゲームオブジェクトと地面との表面との差
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
@@ -28,34 +30,27 @@ public class EnemyMovement : MonoBehaviour
     [Header("SE")]
     [SerializeField] private StudioEventEmitter goalEmitter;
     
+    //アクセサ
+    private Vector3 GoalPosition {get => goalPointCell.transform.position;}
+    
     public bool IsMoving {get => isMoving; set => isMoving = value;}
+    
+    //EnemyStatusの初期化、goalPoint、pathListを取得
     private void Start()
     {
-        goalPosition = GameManager.Instance.CallRandomGoalPosition();
-        Debug.Log(goalPosition);
-        if (TryGetComponent<EnemyStatus>(out enemyStatus))
+        if (this.gameObject.TryGetComponent<EnemyStatus>(out enemyStatus))
         {
-            animator = enemyStatus.animator;
+            Debug.Log("can get");
         }
         else
         {
-            Debug.LogError("Not Found EnemyStatusComponent : EnemyComponent Start()");
+            Debug.LogError("Cannot Get EnemyStatus");
         }
-        Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
-        if (currentPositionCellHit.collider != null)
-        {
-            Debug.Log("Start: " + currentPositionCellHit.transform.gameObject.name);
-            if (currentPositionCellHit.transform.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell)
-                && !isMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
-            {
-                GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition);
-                if (enemyWalkableCell.NextCell != null)
-                {
-                    Debug.Log(enemyWalkableCell.NextCell.transform.position);
-                }
-                EnemyMove(enemyWalkableCell);
-            }
-        }
+        goalPointCell = GameManager.Instance.CallRandomEnemyGoalPoint();
+        goalSurfacePosition = GoalPosition;
+        goalSurfacePosition.y += 1;
+        UpdateRootPath();
+        EnemyMove();
     }
 
     private void Update()
@@ -63,98 +58,53 @@ public class EnemyMovement : MonoBehaviour
         // pause中に敵を止める
         if (Time.timeScale == 0f) return;
         
+        //次のセルまで移動
+        if (nextPosition == this.gameObject.transform.position && IsMoving)
+        {
+            EnemyMove();
+        }
+
+        //ゴールにたどり着いたら
+        if (goalSurfacePosition == this.gameObject.transform.position)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    //pathListを新しく計算しなおす関数
+    private void UpdateRootPath()
+    {
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
-        if (currentPositionCellHit.collider != null)
+        if (currentPositionCellHit.collider.gameObject != null)
         {
-            if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyGoalPoint)
-            {
-                Debug.Log("Destroy");
-                GameSpawnManager.Instance.EnemyDestroy();
-                GameManager.Instance.ClearJudgement();
-                enemyStatus.IsDead = true;
-                goalEmitter.Play();
-                Destroy(this.gameObject);
-                GameManager.Instance.ReachedGoal();
-                GameManager.Instance.JudgeGameOver();
-            }
-            else if (currentPositionCellHit.collider.gameObject.tag == GameTagsManager.EnemyWalkable)
-            {
-                Debug.Log(currentPositionCellHit.transform.gameObject.name);
-                if (currentPositionCellHit.transform.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell) 
-                    && !isMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
-                {
-                    if (enemyWalkableCell.NextCell != null)
-                    {
-                        GameManager.Instance.SearchShortestRoot(enemyWalkableCell, goalPosition);
-                        Debug.Log(enemyWalkableCell.NextCell.transform.position);
-                    } 
-                    EnemyMove(enemyWalkableCell);
-                }else if (!(enemyStatus.enemyState == EnemyStatus.EnemyState.Moving))
-                {
-                    Debug.Log("Stop");
-                }
-                else
-                {
-                    Debug.LogError("Not Found EnemyWalkableCell Component : EnemyMovement Update()");
-                }
-            }
-            else
-            {
-                Debug.LogWarning("No WalkableCell");
-            }
+            Debug.Log("not null");
+            startCell = currentPositionCellHit.collider.gameObject.GetComponent<EnemyWalkableCell>();
         }
-        UpdateMoveDirection();
-        if (enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
+        pathList = pathfinding.FindPath(startCell, goalPointCell);
+        foreach (PathNode node in pathList)
         {
-            animator.SetBool(enemyStatus.movementAnimationParameter, true);
-        }
-        else
-        {
-            animator.SetBool(enemyStatus.movementAnimationParameter, false);
+            Debug.Log("Root " + ": " + node.NodeId);
         }
     }
 
     //brief エネミーを移動させる関数
-    private void EnemyMove(EnemyWalkableCell enemyWalkableCell)
+    private void EnemyMove()
     {
-        Vector3 target;
-        if (prevEnemyWalkableCell == null)
-        {
-            prevEnemyWalkableCell = enemyWalkableCell;
-        }
-        if (enemyWalkableCell.NextCell != null)
-        {
-            target = enemyWalkableCell.NextCell.gameObject.transform.position;
-            if (prevEnemyWalkableCell != null 
-                && enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y >= 0)
-            {
-                target.y += (enemyWalkableCell.gameObject.transform.position.y -
-                             prevEnemyWalkableCell.gameObject.transform.position.y);
-                Debug.LogWarning(enemyWalkableCell.transform.position.y - prevEnemyWalkableCell.transform.position.y);
-            }
-        }
-        else
-        {
-            Debug.Log("goal");
-            target = goalPosition;
-        }
-        target.y += 1;
-        float Distance_two = Vector3.Distance(transform.position, target);
-        float presentDistance_Location = (enemyStatus.CurrentMoveSpeed * Time.deltaTime) / Distance_two;//移動速度のコントロール
-        transform.position = Vector3.Lerp(this.transform.position, target, presentDistance_Location);
-        if (prevEnemyWalkableCell != null && enemyWalkableCell == prevEnemyWalkableCell)
-        {
-            prevEnemyWalkableCell = enemyWalkableCell;
-        }
-    }
+        if (pathList == null) return;
 
-    private void UpdateMoveDirection()
-    {
-        Vector3 position = transform.position;
-        currentMoveDirection = position - prevPosition;
-        prevPosition = position;
-        enemyStatus.CurrentMoveDirection = currentMoveDirection;
+        if (pathList.Count <= 0)
+        {
+            nextPosition = goalSurfacePosition;
+            this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
+            return;
+        }
+
+        nextPosition = pathList[0].SurfacePosition;
+        nextPosition.y += DIFFERENCE_WITH_THE_GROUND;
+        pathList.RemoveAt(0);
+        this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
     }
+    
     
 }
