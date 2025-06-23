@@ -78,9 +78,13 @@ namespace CharacterBehaviour
             // 敵が攻撃範囲内に侵入した場合、攻撃対象リストに追加して攻撃状態に遷移
             if (other.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Enter Enemy");
-                model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
-                allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
+                // ブロック数が足りていたら、攻撃対象のリストに追加
+                if (model.EnemyListValue.Count <= allyInfo.MaxBlockCount)
+                {
+                    model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
+                    allyInfo.BlockCount++;
+                    allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
+                }
             }
                 
         }

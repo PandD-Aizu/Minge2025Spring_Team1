@@ -46,6 +46,7 @@ public class EnemyMovement : MonoBehaviour
         {
             Debug.LogError("Cannot Get EnemyStatus");
         }
+        
         goalPointCell = GameManager.Instance.CallRandomEnemyGoalPoint();
         goalSurfacePosition = GoalPosition;
         goalSurfacePosition.y += 1;
@@ -81,6 +82,7 @@ public class EnemyMovement : MonoBehaviour
             Debug.Log("not null");
             startCell = currentPositionCellHit.collider.gameObject.GetComponent<EnemyWalkableCell>();
         }
+        
         pathList = pathfinding.FindPath(startCell, goalPointCell);
         foreach (PathNode node in pathList)
         {

@@ -93,8 +93,9 @@ public class EnemyAttack : MonoBehaviour
         
         if (hit.collider != null)
         {
-            if (hit.collider.gameObject.CompareTag(GameTagsManager.Player) // 味方キャラかつ配置済みで攻撃していない場合
+            if (hit.collider.gameObject.CompareTag(GameTagsManager.Player) // 味方キャラかつ配置済みで攻撃していないかつ対象が自身をブロックできる場合
                 && hit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.CharacterDeployInfo == CharacterDeployInfo.DEPLOYED
+                && hit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.BlockCount < hit.collider.GetComponent<CharacterBehaviourPresenter>().AllyInfo.MaxBlockCount
                 && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
             {
                 // attackTargetCollider  = hit.collider.gameObject.GetComponent<Collider>();
@@ -132,7 +133,6 @@ public class EnemyAttack : MonoBehaviour
                 {
                     damage *= (int)multiplier; // 効果倍率を適用
                 }
-                
                 
                 if (damage < 0)//キャラクターに与えるダメージがマイナスにならないように
                 {

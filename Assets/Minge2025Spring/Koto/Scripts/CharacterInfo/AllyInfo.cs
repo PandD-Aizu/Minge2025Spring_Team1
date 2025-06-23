@@ -16,6 +16,8 @@ namespace CharacterInfo
         [SerializeField] private int                 cost;
         [SerializeField] private int                 maxHp;
         [SerializeField] private int                 hp;
+        [SerializeField] private int                 maxBlockCount;
+        [SerializeField] private int                 blockCount;
         [SerializeField] private int                 attack;
         [SerializeField] private float               attackCoolDown;
         [SerializeField] private int                 defence;
@@ -32,6 +34,8 @@ namespace CharacterInfo
         public int Cost                                { get => cost; set => cost = value; }
         public int MaxHp                               { get => maxHp; set => maxHp = value; }
         public int Hp                                  { get => hp; set => hp = value; }
+        public int MaxBlockCount                       { get => maxBlockCount; set => maxBlockCount = value; }
+        public int BlockCount                          { get => blockCount; set => blockCount = value; }
         public int Attack                              { get => attack; set => attack = value; }
         public float AttackCoolDown                    { get => attackCoolDown; set => attackCoolDown = value; }
         public int Defence                             { get => defence; set => defence = value; }
@@ -43,6 +47,7 @@ namespace CharacterInfo
             characterState = CharacterState.WAIT;
             characterDirection = CharacterDirection.UP;
             hp = maxHp;
+            blockCount = 0;
         }
     }
 }
