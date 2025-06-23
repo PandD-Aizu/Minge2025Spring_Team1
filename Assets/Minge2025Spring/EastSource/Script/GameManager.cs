@@ -102,6 +102,7 @@ public class GameManager : MonoBehaviour
     public EnemyGoalPointCell CallRandomEnemyGoalPoint()
     {
         Random random = new Random();
+        Debug.LogWarning(enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].gameObject.GetComponent<EnemyGoalPointCell>().name);
         return enemyGoalPointCells[random.Next(enemyGoalPointCells.Length)].gameObject.GetComponent<EnemyGoalPointCell>();
     }
 
