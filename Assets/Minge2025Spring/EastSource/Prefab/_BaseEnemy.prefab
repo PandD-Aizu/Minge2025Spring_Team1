@@ -223,7 +223,6 @@ MonoBehaviour:
   movementAnimationParameter: Moving
   attackAnimationParameter: Attacking
   attackerType: 1
-  ExpManager: {fileID: 0}
 --- !u!114 &750999535647488853
 MonoBehaviour:
   m_ObjectHideFlags: 0

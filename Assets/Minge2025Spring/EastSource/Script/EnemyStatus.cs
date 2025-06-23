@@ -32,7 +32,6 @@ public class EnemyStatus : MonoBehaviour
     [SerializeField] public string movementAnimationParameter = "Moving";
     [SerializeField] public string attackAnimationParameter = "Attacking";
     [SerializeField] CharacterType attackerType; // 敵側の属性
-    [SerializeField] private ExpManager ExpManager;
     
     //アクセサ
     public int InitialAttack{get { return initialAttack; }}
@@ -89,7 +88,6 @@ public class EnemyStatus : MonoBehaviour
             isDead = true;
             Destroy(gameObject);
             GameManager.Instance.JudgeGameOver();
-            ExpManager.AddExp(this.gameObject);
 
         }
     }
