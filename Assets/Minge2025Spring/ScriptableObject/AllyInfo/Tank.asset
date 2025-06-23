@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackType: 0
   characterDeployInfo: 0
-  characterState: 0
+  characterState: 1
   characterDirection: 3
   characterDeployableLayer:
     serializedVersion: 2
@@ -27,6 +27,8 @@ MonoBehaviour:
   cost: 30
   maxHp: 3000
   hp: 3000
+  maxBlockCount: 4
+  blockCount: 2
   attack: 200
   attackCoolDown: 2
   defence: 50
