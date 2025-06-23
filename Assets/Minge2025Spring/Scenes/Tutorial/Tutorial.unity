@@ -24425,7 +24425,7 @@ MonoBehaviour:
   - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
   limiterSpawnEnemy: 5
-  readyTime: 30
+  readyTime: 3
   isPassedSpawnSpawnTime: 0
 --- !u!1 &1163126025 stripped
 GameObject:
@@ -29428,7 +29428,7 @@ Transform:
   m_GameObject: {fileID: 1498301588}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -16.65, z: 0}
+  m_LocalPosition: {x: 0, y: -0.54, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
