@@ -21,9 +21,6 @@ public class EnemyGoalPointCell : MonoBehaviour
 
     private void Awake()
     {
-        this.gameObject.tag = "EnemyWalkable";
-        this.gameObject.layer = LayerMask.NameToLayer("EnemyWalkable");
-        this.
         searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
         observeTargetRay = new Ray(this.transform.position, this.transform.up);
         searchCellRayUpside = new Ray(this.transform.position, this.transform.forward);
