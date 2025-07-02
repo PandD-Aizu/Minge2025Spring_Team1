@@ -109,6 +109,10 @@ public class GameManager : MonoBehaviour
     public EnemyWalkableCell CallRandomSpawnPositionCell()
     {
         Random random = new Random();
+        if (TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkable))
+        {
+            
+        }
         return enemySpawnPointCells[random.Next(enemySpawnPointCells.Count)].GetComponent<EnemyWalkableCell>();
     }
     

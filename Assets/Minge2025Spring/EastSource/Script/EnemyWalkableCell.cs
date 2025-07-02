@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWalkableCell : MonoBehaviour
+public class EnemyWalkableCell : IEnemyWalkableCell
 {
     [Header("Property")] [SerializeField] private bool isSpawnPointCell = false;
     
@@ -30,13 +30,7 @@ public class EnemyWalkableCell : MonoBehaviour
 
     private void Awake()
     {
-        searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
-        observeTargetRay = new Ray(this.transform.position, this.transform.up);
-        searchCellRayUpside = new Ray(this.transform.position, this.transform.forward);
-        searchCellRayDownside = new Ray(this.transform.position, -this.transform.forward);
-        searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
-        searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
-        InitSurroundingCells();
+        Initialize();
     }
     
     private void Start()
@@ -60,7 +54,18 @@ public class EnemyWalkableCell : MonoBehaviour
         InitSurroundingCells();
     }
 
-    private void InitSurroundingCells()
+    public override void Initialize()
+    {
+        searchCellLayerMask = LayerMask.GetMask("EnemyWalkable");
+        observeTargetRay = new Ray(this.transform.position, this.transform.up);
+        searchCellRayUpside = new Ray(this.transform.position, this.transform.forward);
+        searchCellRayDownside = new Ray(this.transform.position, -this.transform.forward);
+        searchCellRayLeftside = new Ray(this.transform.position, -this.transform.right);
+        searchCellRayRightside = new Ray(this.transform.position, this.transform.right);
+        InitSurroundingCells();
+    }
+
+    public override void InitSurroundingCells()
     {
         //各Rayで上下左右のセルを取得して格納する
         
@@ -99,7 +104,7 @@ public class EnemyWalkableCell : MonoBehaviour
         }
     }
     
-    private bool TryGetNeighborEnemyWalkableCell(RaycastHit raycastHit, out EnemyWalkableCell resultEnemyWalkableCell)
+    public override bool TryGetNeighborEnemyWalkableCell(RaycastHit raycastHit, out EnemyWalkableCell resultEnemyWalkableCell)
     {
         resultEnemyWalkableCell = null;
         

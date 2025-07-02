@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -165,6 +166,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &6897032
 Mesh:
   m_ObjectHideFlags: 0
@@ -5738,6 +5740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -5745,6 +5748,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &225524633 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2248860218959783158, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -5784,6 +5788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -5791,6 +5796,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &229086050
 Mesh:
   m_ObjectHideFlags: 0
@@ -6308,6 +6314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -6315,6 +6322,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &316541155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 131147563801051693, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -6350,9 +6358,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 325770208}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Goal
-  m_TagString: EnemyGoalPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6647,6 +6655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -6654,6 +6663,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &366406737
 Mesh:
   m_ObjectHideFlags: 0
@@ -7101,13 +7111,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 13
       objectReference: {fileID: 0}
+    - target: {fileID: 4352388226730536277, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
+      propertyPath: m_TagString
+      value: EnemyGoalPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 7597539726285194352, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7597539726285194352, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
       propertyPath: m_TagString
-      value: EnemyGoalPoint
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 8984226787150386983, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7152,7 +7166,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4352388226730536277, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1549210410}
   m_SourcePrefab: {fileID: 100100000, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
 --- !u!4 &412969093 stripped
 Transform:
@@ -7264,6 +7281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -7271,6 +7289,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &428116757
 GameObject:
   m_ObjectHideFlags: 0
@@ -9077,6 +9096,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -9084,6 +9104,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1001 &563545022
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10325,7 +10346,7 @@ Transform:
   m_GameObject: {fileID: 693809248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10610,6 +10631,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -10617,6 +10639,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &743261020
 GameObject:
   m_ObjectHideFlags: 0
@@ -16061,6 +16084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -16068,6 +16092,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &987100247
 Mesh:
   m_ObjectHideFlags: 0
@@ -16845,6 +16870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -16852,6 +16878,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &1074760268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8909551893222818508, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -16917,6 +16944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 1
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -16924,6 +16952,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &1115024946
 GameObject:
   m_ObjectHideFlags: 0
@@ -16968,10 +16997,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe0b1f71aa1b2734aa8957ed1fe4ecc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isdebugMode: 0
   testWalkableCellNumber: 0
-  maxSpawnEnemis: 10
+  maxSpawnEnemies: 10
   goalCapasity: 5
+  isdebugMode: 0
+  enemyWalkableCells: []
+  testObject: {fileID: 0}
 --- !u!1 &1132244082 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1135724063733350489, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -17037,6 +17068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -17044,6 +17076,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &1144162795
 Mesh:
   m_ObjectHideFlags: 0
@@ -17694,6 +17727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -17701,6 +17735,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &1312614553
 Mesh:
   m_ObjectHideFlags: 0
@@ -19841,6 +19876,22 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4352388226730536277, guid: 23a94fd2177e247438f587fb98c99974, type: 3}
   m_PrefabInstance: {fileID: 412969092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1549210410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549210409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea725f61fb9ca0b458edd8a5397fcc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  searchCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  connectEnemyWalkableCells: []
 --- !u!1001 &1564293211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21106,6 +21157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 1
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -21113,6 +21165,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &1690795526 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2114882964212017062, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -21699,6 +21752,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -21706,6 +21760,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1001 &1745459169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22433,6 +22488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -22440,6 +22496,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &1784534781 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6130204527394621546, guid: fca70de7ff0e74c659533379467dcce5, type: 3}
@@ -23181,6 +23238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -23188,6 +23246,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!1 &1844326020 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1243006356186555492, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -23253,6 +23312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -23260,6 +23320,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &1872337810
 Mesh:
   m_ObjectHideFlags: 0
@@ -24331,6 +24392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b2edadf374aa1a42b3e022bc0062fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  panel: {fileID: 0}
   GameCleartext: {fileID: 533124171}
   GameOverText: {fileID: 114666976}
   gameOverSE: {fileID: 1953556445}
@@ -25285,6 +25347,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawnPointCell: 0
+  weight: 1
   isWalkable: 1
   observeTargetLayerMask:
     serializedVersion: 2
@@ -25292,6 +25355,7 @@ MonoBehaviour:
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  aroundCells: []
 --- !u!43 &2055887377
 Mesh:
   m_ObjectHideFlags: 0
