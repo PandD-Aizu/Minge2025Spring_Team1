@@ -9,7 +9,7 @@ public class StageOpenManager : MonoBehaviour
     public GameObject ButtonStage3;
     public GameObject ButtonStage4;
     public GameObject ButtonStage5;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         ButtonStage1.SetActive(false);
@@ -18,10 +18,8 @@ public class StageOpenManager : MonoBehaviour
         ButtonStage4.SetActive(false);
         ButtonStage5.SetActive(false);
         stage_num = 0;
-        //PlayerPrefs.GetInt("SCORE", 0);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (stage_num == 0)
