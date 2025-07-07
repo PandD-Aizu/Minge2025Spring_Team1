@@ -16,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     private Vector3 goalSurfacePosition;
     private Animator animator;
     private EnemyStatus enemyStatus;
-    private EnemyGoalPointCell goalPointCell;
+    [SerializeField]private EnemyGoalPointCell goalPointCell;
     private List<PathNode> pathList = new List<PathNode>();
     private Pathfinding pathfinding = new Pathfinding();
 
@@ -48,6 +48,14 @@ public class EnemyMovement : MonoBehaviour
         }
         
         goalPointCell = GameManager.Instance.CallRandomEnemyGoalPoint();
+        if (goalPointCell != null)
+        {
+            Debug.LogWarning("GoalGet");
+        }
+        else
+        {
+            Debug.LogWarning("Goal Do not Get");
+        }
         goalSurfacePosition = GoalPosition;
         goalSurfacePosition.y += 1;
         UpdateRootPath();

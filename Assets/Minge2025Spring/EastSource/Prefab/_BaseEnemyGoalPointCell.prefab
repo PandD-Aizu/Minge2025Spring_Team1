@@ -61,9 +61,9 @@ GameObject:
   - component: {fileID: 7333378495246209640}
   - component: {fileID: 1492780532948945057}
   - component: {fileID: 2064579918099791185}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Cube
-  m_TagString: EnemyGoalPoint
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

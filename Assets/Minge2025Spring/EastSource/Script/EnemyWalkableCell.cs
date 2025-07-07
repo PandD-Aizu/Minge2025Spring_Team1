@@ -68,10 +68,10 @@ public class EnemyWalkableCell : MonoBehaviour
         Physics.Raycast(searchCellRayDownside, out RaycastHit raycastHitDownside, searchCellRayDistance);
         Physics.Raycast(searchCellRayLeftside, out RaycastHit raycastHitLeftside, searchCellRayDistance);
         Physics.Raycast(searchCellRayRightside, out RaycastHit raycastHitRight, searchCellRayDistance);
-        Debug.LogWarning(this.gameObject.name + ": " + raycastHitUpside.collider);
-        Debug.LogWarning(this.gameObject.name + ": " + raycastHitDownside.collider);
-        Debug.LogWarning(this.gameObject.name + ": " + raycastHitLeftside.collider);
-        Debug.LogWarning(this.gameObject.name + ": " + raycastHitRight.collider);
+        // Debug.LogWarning(this.gameObject.name + ": " + raycastHitUpside.collider);
+        // Debug.LogWarning(this.gameObject.name + ": " + raycastHitDownside.collider);
+        // Debug.LogWarning(this.gameObject.name + ": " + raycastHitLeftside.collider);
+        // Debug.LogWarning(this.gameObject.name + ": " + raycastHitRight.collider);
         
         if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
         {
