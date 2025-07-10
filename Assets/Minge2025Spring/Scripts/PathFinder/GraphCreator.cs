@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using FMOD;
 using UnityEngine;
 
@@ -20,6 +21,10 @@ namespace PathFinder
         private void Awake()
         {
             graph = new Graph();
+            
+            blockGameObjects.AddRange(GameObject.FindGameObjectsWithTag("START_BLOCK").ToList());
+            blockGameObjects.AddRange(GameObject.FindGameObjectsWithTag("NORMAL_BLOCK").ToList());
+            blockGameObjects.AddRange(GameObject.FindGameObjectsWithTag("GOAL_BLOCK").ToList());
 
             if (blockGameObjects == null || blockGameObjects.Count == 0)
                 throw new Exception("GraphCreator: blockGameObjectsリストが空またはnullです。");

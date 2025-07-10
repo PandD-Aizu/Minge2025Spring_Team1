@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.Rendering;
 
-namespace PathFinder
+namespace PathFinder.PriorityQueue
 {
     public class PriorityQueue<TElement, TPriority> where TPriority : IComparable<TPriority>
     {

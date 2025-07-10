@@ -49,7 +49,6 @@ namespace PathFinder
             {
                 Debug.Log($"経路が見つかりました。コスト: {cost}");
                 Debug.Log("経路: " + string.Join(" -> ", pathResult));
-                Debug.Log("こんなもの見てる暇があったらはよ経路探索実装しろ！");
             }
             else
             {
