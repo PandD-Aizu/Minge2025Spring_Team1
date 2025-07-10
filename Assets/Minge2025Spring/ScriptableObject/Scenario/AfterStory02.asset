@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 283d2cbe96d945b8bd45ab7aec6f75ab, type: 3}
-  m_Name: Story02
+  m_Name: AfterStory02
   m_EditorClassIdentifier: 
   filePath:
-  - Story02.json
+  - AfterStory02.json
   currentFilePathIndex: 2
   scenarioData:
     scenes:

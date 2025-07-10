@@ -596,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 2199335123813373244, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 65c9c649dc338344689f86ec45b281d2, type: 3}
+      objectReference: {fileID: 21300000, guid: 26af747fe2fca8a4caa96e6736706458, type: 3}
     - target: {fileID: 2363660303875306370, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -626,12 +626,20 @@ PrefabInstance:
       value: Stage01
       objectReference: {fileID: 0}
     - target: {fileID: 7161959603812360959, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
+      propertyPath: model
+      value: 
+      objectReference: {fileID: 11400000, guid: 7903b0d82116e67428bde4a7a18385f4, type: 2}
+    - target: {fileID: 7161959603812360959, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: buttonFunc
       value: 
       objectReference: {fileID: 1677130524}
     - target: {fileID: 7563513879106998476, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7729775805564734740, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 8254465276197963769, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_Pivot.x
