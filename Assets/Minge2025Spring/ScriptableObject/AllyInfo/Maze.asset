@@ -27,6 +27,8 @@ MonoBehaviour:
   cost: 40
   maxHp: 1500
   hp: 1500
+  maxBlockCount: 1
+  blockCount: 0
   attack: 350
   attackCoolDown: 2.5
   defence: 5
