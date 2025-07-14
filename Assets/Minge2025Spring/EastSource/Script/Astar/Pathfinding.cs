@@ -11,11 +11,11 @@ public class Pathfinding
     
     //PathListを計算する関数
     //引数: StartCell: 経路探索を開始するときのRootになるCell　goalCell:最終目的地
-    public List<PathNode> FindPath(EnemyWalkableCell startCell, EnemyGoalPointCell goalCell)
+    public List<PathNode> FindPath(BaseEnemyWalkable startCell, EnemyGoalPointCell goalCell)
     {
         graph = new PathGraph();
         //初期化
-        EnemyWalkableCell currentCell;
+        BaseEnemyWalkable currentCell;
         PriorityQueue<string, float> openQueue = new PriorityQueue<string, float>(); //<ID, TotalCost> //現在調査中のノード(ID管理)
         List<string> closedList = new List<string>(); //調査し終えたノード(ID管理)
         
@@ -32,7 +32,7 @@ public class Pathfinding
             closedList.Add(currentId);
             
             //Goalに隣接していれば終了
-            foreach (EnemyWalkableCell connectEnemyWalkableCell in goalCell.ConnectEnemyWalkableCells)
+            foreach (BaseEnemyWalkable connectEnemyWalkableCell in goalCell.ConnectEnemyWalkableCells)
             {
                 if (currentCell == connectEnemyWalkableCell)
                 {

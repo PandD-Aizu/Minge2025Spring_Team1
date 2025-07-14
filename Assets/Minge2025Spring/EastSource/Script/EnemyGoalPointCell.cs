@@ -9,7 +9,7 @@ public class EnemyGoalPointCell : MonoBehaviour
     private float searchCellRayDistance = 0.7f;
     private float rayDistance = 0.8f;
     private Ray observeTargetRay;
-    [SerializeField]private List<EnemyWalkableCell> connectEnemyWalkableCells = new List<EnemyWalkableCell>(4);
+    [SerializeField]private List<BaseEnemyWalkable> connectEnemyWalkableCells = new List<BaseEnemyWalkable>(4);
     //以下左右上下のセルを取得するのに用いるRay
     private Ray searchCellRayUpside;
     private Ray searchCellRayDownside;
@@ -17,7 +17,7 @@ public class EnemyGoalPointCell : MonoBehaviour
     private Ray searchCellRayRightside;
     
     //アクセサ
-    public List<EnemyWalkableCell> ConnectEnemyWalkableCells {get => connectEnemyWalkableCells;}
+    public List<BaseEnemyWalkable> ConnectEnemyWalkableCells {get => connectEnemyWalkableCells;}
 
     private void Awake()
     {
@@ -53,22 +53,22 @@ public class EnemyGoalPointCell : MonoBehaviour
         // Debug.Log(this.gameObject.name + ": " + raycastHitLeftside.collider);
         // Debug.Log(this.gameObject.name + ": " + raycastHitRight.collider);
         
-        if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out EnemyWalkableCell enemyWalkableCellUpside))
+        if (raycastHitUpside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitUpside, out BaseEnemyWalkable enemyWalkableCellUpside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellUpside);
         }
 
-        if (raycastHitDownside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitDownside, out EnemyWalkableCell enemyWalkableCellDownside))
+        if (raycastHitDownside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitDownside, out BaseEnemyWalkable enemyWalkableCellDownside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellDownside);
         }
 
-        if (raycastHitLeftside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out EnemyWalkableCell enemyWalkableCellLeftside))
+        if (raycastHitLeftside.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitLeftside, out BaseEnemyWalkable enemyWalkableCellLeftside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellLeftside);
         }
 
-        if (raycastHitRight.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitRight, out EnemyWalkableCell enemyWalkableCellRightside))
+        if (raycastHitRight.collider != null && TryGetNeighborEnemyWalkableCell(raycastHitRight, out BaseEnemyWalkable enemyWalkableCellRightside))
         {
             connectEnemyWalkableCells.Add(enemyWalkableCellRightside);
         }
@@ -81,13 +81,13 @@ public class EnemyGoalPointCell : MonoBehaviour
     
     
     //隣接しているゲームオブジェクトからEnemyWalkableCellを取得
-    private bool TryGetNeighborEnemyWalkableCell(RaycastHit raycastHit, out EnemyWalkableCell resultEnemyWalkableCell)
+    private bool TryGetNeighborEnemyWalkableCell(RaycastHit raycastHit, out BaseEnemyWalkable resultEnemyWalkableCell)
     {
         resultEnemyWalkableCell = null;
         
         if (raycastHit.collider.gameObject != this 
             && raycastHit.collider.gameObject != this
-            && raycastHit.collider.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCell))
+            && raycastHit.collider.gameObject.TryGetComponent<BaseEnemyWalkable>(out BaseEnemyWalkable enemyWalkableCell))
         {
             resultEnemyWalkableCell = enemyWalkableCell;
             return true;
@@ -95,7 +95,7 @@ public class EnemyGoalPointCell : MonoBehaviour
         else if (raycastHit.collider.gameObject != this 
                   && raycastHit.collider.gameObject != this)
         {
-            if (raycastHit.collider.gameObject.transform.parent.gameObject.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell enemyWalkableCellParent))
+            if (raycastHit.collider.gameObject.transform.parent.gameObject.TryGetComponent<BaseEnemyWalkable>(out BaseEnemyWalkable enemyWalkableCellParent))
             {
                 resultEnemyWalkableCell = enemyWalkableCellParent;
                 return true;
