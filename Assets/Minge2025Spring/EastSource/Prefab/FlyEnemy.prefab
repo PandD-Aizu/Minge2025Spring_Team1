@@ -132,9 +132,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1210e0dbaf3dc54d99e48d9cbfe00bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startCell: {fileID: 0}
+  goalPointCell: {fileID: 0}
   searchCurrentPositionCellLayerMask:
     serializedVersion: 2
-    m_Bits: 9728
+    m_Bits: 8960
   goalEmitter: {fileID: 4926918976555518153}
 --- !u!114 &5121996906579498403
 MonoBehaviour:

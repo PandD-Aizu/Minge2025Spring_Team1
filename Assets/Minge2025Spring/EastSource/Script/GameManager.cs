@@ -21,14 +21,15 @@ public class GameManager : MonoBehaviour
     
     private int reachedGoalEnemies = 0;
     private int spawndedEnemies = 0;
-    [SerializeField]private GameObject[] enemyWalkableCells;
+    [SerializeField]private List<GameObject>enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
+    private GameObject[] characterPlacementCells;
     private List<GameObject> enemySpawnPointCells = new List<GameObject>();
     private List<EnemyWalkableCell> movementRootList;
     //Debug
     [SerializeField]TestObject testObject;
     
-    public GameObject[] EnemyWalkableCells {get{return enemyWalkableCells;}}
+    public List<GameObject> EnemyWalkableCells {get{return enemyWalkableCells;}}
     public List<EnemyWalkableCell> MovementRootList {get{return movementRootList;}}
     
     private void Awake()
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
     //warning 必ずUpdateEnemyWalkableCells()を使用した後に使う
     private void UpdateEnemySpawnPointCells()
     {
-        if (enemyWalkableCells.Length <= 0)
+        if (enemyWalkableCells.Count <= 0)
         {
             Debug.LogError("Null enemyWalkableCells");
         }
@@ -75,7 +76,16 @@ public class GameManager : MonoBehaviour
     //brief シーン上のエネミーが通れるエリアを取得する
     public void UpdateEnemyWalkableCells()
     {
-        enemyWalkableCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable);
+        enemyWalkableCells = new List<GameObject>(GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyWalkable));
+        GameObject[] tempCharacterPlacementCells = GameObject.FindGameObjectsWithTag(GameTagsManager.CharacterPlacement);
+        foreach (GameObject tempCharacterPlacementCell in tempCharacterPlacementCells)
+        {
+            if (tempCharacterPlacementCell.gameObject.TryGetComponent<BaseEnemyWalkable>(out BaseEnemyWalkable baseEnemyWalkable))
+            {
+                enemyWalkableCells.Add(tempCharacterPlacementCell);
+            }
+
+        }
         foreach (GameObject enemyWalkableCell in enemyWalkableCells)
         {
             Debug.Log("position: "   + enemyWalkableCell.transform.position + "name: " +enemyWalkableCell.gameObject.name);
@@ -90,13 +100,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("position: " + enemyGoalPointCell.transform.position + "name: " +enemyGoalPointCell.gameObject.name);
         }
         OnUpdateEnemyWalkableCells?.Invoke(this, EventArgs.Empty);
-    }
-
-    //brief Enemyがゴールにたどり着くまでの最短距離を計算する
-
-    private void SetMovementRootList()
-    {
-        this.movementRootList.Reverse();
     }
 
     public EnemyGoalPointCell CallRandomEnemyGoalPoint()

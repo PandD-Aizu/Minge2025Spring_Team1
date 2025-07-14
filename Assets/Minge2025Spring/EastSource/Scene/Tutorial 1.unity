@@ -736,16 +736,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &75313261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2365,16 +2361,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &165719509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3599,16 +3591,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &247026973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4707,16 +4695,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &323503268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10354,16 +10338,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &616745343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10402,16 +10382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &619894904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11956,16 +11932,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &720941735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14425,16 +14397,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &804539531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15068,16 +15036,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &841311215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15281,16 +15245,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &851872998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15829,16 +15789,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &865367516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16372,16 +16328,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &897003309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23173,16 +23125,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1066471263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24733,16 +24681,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1163126028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24781,16 +24725,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 1
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 1
 --- !u!65 &1186341696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25543,16 +25483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1238453839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28360,16 +28296,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1437203777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29073,16 +29005,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1475558069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29815,16 +29743,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1509972658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29942,16 +29866,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1526061893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30621,16 +30541,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1550894955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32411,16 +32327,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1678778945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33096,16 +33008,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1729253772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33888,16 +33796,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1848047267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33957,16 +33861,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1856840551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34813,16 +34713,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1954325791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42883,16 +42779,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 1
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 1
 --- !u!65 &2114743299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43298,16 +43190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &2127757582
 BoxCollider:
   m_ObjectHideFlags: 0

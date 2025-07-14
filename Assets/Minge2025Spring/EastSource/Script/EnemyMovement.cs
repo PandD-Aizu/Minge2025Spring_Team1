@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public EnemyWalkableCell startCell;
+    public BaseEnemyWalkable startCell;
     
     private bool isMoving = true;
     private RaycastHit currentPositionCellHit;
@@ -84,10 +84,10 @@ public class EnemyMovement : MonoBehaviour
     {
         Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
         Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
-        if (currentPositionCellHit.collider.gameObject != null)
+        if (currentPositionCellHit.collider != null)
         {
             Debug.Log("not null");
-            startCell = currentPositionCellHit.collider.gameObject.GetComponent<EnemyWalkableCell>();
+            startCell = currentPositionCellHit.collider.gameObject.GetComponent<BaseEnemyWalkable>();
         }
         pathList = pathfinding.FindPath(startCell, goalPointCell);
         foreach (PathNode node in pathList)
