@@ -10,7 +10,7 @@ public class PathNode
     private float fCost;
     
     private Vector3 surfacePosition;
-    private EnemyWalkableCell enemyWalkableCell;
+    private BaseEnemyWalkable baseEnemyWalkable;
 
     //アクセサ
     public string NodeId
@@ -33,19 +33,19 @@ public class PathNode
         get => surfacePosition;
     }
 
-    public EnemyWalkableCell EnemyWalkableCell
+    public BaseEnemyWalkable BaseEnemyWalkable
     {
-        get => enemyWalkableCell;
+        get => baseEnemyWalkable;
     }
 
     //コンストラクタ
     //引数　nodeId: EnemyWalkableCellのオブジェクト名, position: EnemyWalkableCellのposition, Node: 親のnode
-    public PathNode(string nodeId, EnemyWalkableCell enemyWalkableCell)
+    public PathNode(string nodeId, BaseEnemyWalkable baseEnemyWalkable)
     {
-        this.enemyWalkableCell = enemyWalkableCell;
+        this.baseEnemyWalkable = baseEnemyWalkable;
         this.nodeId = nodeId;
-        Vector3 tempPos = enemyWalkableCell.gameObject.transform.position;
-        Vector3 tempScale = enemyWalkableCell.gameObject.transform.localScale;
+        Vector3 tempPos = baseEnemyWalkable.gameObject.transform.position;
+        Vector3 tempScale = baseEnemyWalkable.gameObject.transform.localScale;
         tempPos.y += tempScale.y / 2;
         this.surfacePosition = tempPos;
     }

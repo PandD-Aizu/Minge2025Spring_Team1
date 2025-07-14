@@ -19,7 +19,7 @@ public class PathGraph
     {
         foreach (GameObject enemyWalkableCell in GameManager.Instance.EnemyWalkableCells)
         {
-            if (enemyWalkableCell.TryGetComponent<EnemyWalkableCell>(out EnemyWalkableCell currentCell))
+            if (enemyWalkableCell.TryGetComponent<BaseEnemyWalkable>(out BaseEnemyWalkable currentCell))
             {
                 if (currentCell == null)
                 {
@@ -33,10 +33,10 @@ public class PathGraph
     }
 
     //edgeを新しく作る関数
-    private List<PathEdge> CreateEdgeList(EnemyWalkableCell currentCell)
+    private List<PathEdge> CreateEdgeList(BaseEnemyWalkable currentCell)
     {
         List<PathEdge> edgeList = new List<PathEdge>(4);
-        foreach (EnemyWalkableCell aroundCell in currentCell.AroundCells)
+        foreach (BaseEnemyWalkable aroundCell in currentCell.AroundCells)
         {
             float weight = Vector3.Distance(aroundCell.gameObject.transform.position, currentCell.gameObject.transform.position);
             edgeList.Add(new PathEdge(currentCell.gameObject.name, weight, aroundCell.gameObject.name));
@@ -57,9 +57,9 @@ public class PathGraph
     }
 
     //引数のIdのEnemyWalkableCellを返す
-    public EnemyWalkableCell GetEnemyWalkableCell(string deictionryId)
+    public BaseEnemyWalkable GetEnemyWalkableCell(string deictionryId)
     {
-        return nodeDict[deictionryId].EnemyWalkableCell;
+        return nodeDict[deictionryId].BaseEnemyWalkable;
     }
 
     //このGraphのNodeDictを返す
