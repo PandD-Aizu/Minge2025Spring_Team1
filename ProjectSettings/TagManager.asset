@@ -13,6 +13,9 @@ TagManager:
   - EnemyGoalPoint
   - Cost
   - CharacterPlacementBreak
+  - START_BLOCK
+  - GOAL_BLOCK
+  - NORMAL_BLOCK
   layers:
   - Default
   - TransparentFX
