@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 66d7a100c6894244b81ad284e50008dc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -196,6 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1210e0dbaf3dc54d99e48d9cbfe00bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startCell: {fileID: 0}
+  goalPointCell: {fileID: 0}
   searchCurrentPositionCellLayerMask:
     serializedVersion: 2
     m_Bits: 8704
@@ -216,7 +218,7 @@ MonoBehaviour:
   animator: {fileID: 5960078689955877118}
   maxHealth: 1250
   initialAttack: 100
-  initialMoveSpeed: 0.5
+  initialMoveSpeed: 1
   initialDefence: 100
   spawnCooltime: 10
   attackCoolTime: 3

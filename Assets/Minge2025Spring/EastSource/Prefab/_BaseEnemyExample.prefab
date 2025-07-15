@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: _BaseEnemyExample
       objectReference: {fileID: 0}
+    - target: {fileID: 3222190762932508913, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 66d7a100c6894244b81ad284e50008dc, type: 2}
     - target: {fileID: 4872288816490602836, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
       propertyPath: initialMoveSpeed
       value: 1.5

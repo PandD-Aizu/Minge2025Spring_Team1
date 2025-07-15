@@ -4,8 +4,8 @@ Shader "My Shaders/Unlit Fade Near Camera Textured"
     // Inspectorに表示されるプロパティを定義
     Properties
     {
-        [MainTexture] _BaseMap("Base Map (Texture)", 2D) = "white" {} // --- 追加: テクスチャ ---
-        [MainColor] _Color("Color Tint", Color) = (1, 1, 1, 1)        // --- 変更: テクスチャの色を調整するTintに ---
+        [MainTexture] _BaseMap("Base Map (Texture)", 2D) = "white" {}
+        [MainColor] _Color("Color Tint", Color) = (1, 1, 1, 1)
         _FadeStartDistance("Fade Start Distance", Range(0.0, 50.0)) = 5.0
         _FadeEndDistance("Fade End Distance", Range(0.0, 50.0)) = 1.0
     }
@@ -46,11 +46,9 @@ Shader "My Shaders/Unlit Fade Near Camera Textured"
                 half4 _Color;
                 float _FadeStartDistance;
                 float _FadeEndDistance;
-                // --- 追加: テクスチャのタイリングとオフセット情報 ---
                 float4 _BaseMap_ST; 
             CBUFFER_END
             
-            // --- 追加: テクスチャとサンプラーを宣言 ---
             TEXTURE2D(_BaseMap);
             SAMPLER(sampler_BaseMap);
 
@@ -58,15 +56,15 @@ Shader "My Shaders/Unlit Fade Near Camera Textured"
             struct Attributes
             {
                 float4 positionOS   : POSITION;
-                float2 uv           : TEXCOORD0; // --- 追加: UV座標 ---
+                float2 uv           : TEXCOORD0;
             };
 
             // 頂点シェーダーからフラグメントシェーダーへ渡すデータ構造
             struct Varyings
             {
                 float4 positionCS     : SV_POSITION;
-                float3 positionWS     : TEXCOORD0; // ワールド座標
-                float2 uv             : TEXCOORD1; // --- 追加: UV座標 ---
+                float3 positionWS     : TEXCOORD0;
+                float2 uv             : TEXCOORD1;
             };
 
             // 頂点シェーダー
@@ -75,7 +73,6 @@ Shader "My Shaders/Unlit Fade Near Camera Textured"
                 Varyings OUT;
                 OUT.positionWS = TransformObjectToWorld(IN.positionOS.xyz);
                 OUT.positionCS = TransformWorldToHClip(OUT.positionWS);
-                // --- 追加: UV座標を計算してVaryingsに渡す ---
                 OUT.uv = TRANSFORM_TEX(IN.uv, _BaseMap);
                 return OUT;
             }
@@ -83,7 +80,6 @@ Shader "My Shaders/Unlit Fade Near Camera Textured"
             // フラグメントシェーダー
             half4 frag(Varyings IN) : SV_Target
             {
-                // --- 変更: テクスチャから色を取得し、Colorで色付けする ---
                 half4 baseColor = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv) * _Color;
 
                 // カメラからピクセルまでの距離を計算
