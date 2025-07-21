@@ -15,7 +15,7 @@ public class ReadyTimer
         if (isPassedReadyTime)
         {
             timePassed += Time.deltaTime;
-            Debug.Log(timePassed);
+            Debug.Log(timePassed + "Timescale" +Time.timeScale);
             if (timePassed > GameSpawnManager.Instance.ReadyTime)
             {
                 GameSpawnManager.Instance.UpdateNextSpawn();

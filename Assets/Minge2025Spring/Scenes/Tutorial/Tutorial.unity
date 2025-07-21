@@ -736,16 +736,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &75313261
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1919,16 +1915,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &165719509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3122,16 +3114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &247026973
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3748,16 +3736,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &323503268
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4469,7 +4453,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &348638726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8746,16 +8730,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &616745343
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8972,16 +8952,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &619894904
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10410,16 +10386,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &720941735
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11816,7 +11788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552741358721440685, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -7522949619377120957, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11824,7 +11796,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7522949619377120957, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -7335665439492973281, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11864,7 +11836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6693278737471163964, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -6554619477082555305, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11896,7 +11868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6228367000907003384, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -6157368309156509560, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11912,7 +11884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5465591439777812455, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -5403398090455698469, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11936,7 +11908,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4788575382630290965, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -4426859494184937860, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11944,7 +11916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4426859494184937860, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -4022017152831168428, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11952,7 +11924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4022017152831168428, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: START_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -3161209487492683453, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -11992,7 +11964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2793387996823989436, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -2057816197762493010, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12016,7 +11988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1527666590825787531, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -1237059625263938840, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12024,7 +11996,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1237059625263938840, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -1173939841276260178, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12032,7 +12004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1173939841276260178, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -1058241695984305547, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12040,7 +12012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1058241695984305547, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -1000103031600632637, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -12052,7 +12024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -945089486412923024, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -896156162331473425, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12076,7 +12048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -846953375059098573, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: -830491170641730263, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12168,7 +12140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2201101985999601884, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 2244527311809087016, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12212,7 +12184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3409858597619839296, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 3580065472968743037, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12228,7 +12200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3680520714124980132, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 3860753658163222619, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12236,7 +12208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3860753658163222619, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 4048656385501116173, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12252,7 +12224,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4137017490388071973, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 4221403607092306679, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12268,7 +12240,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5128737248332475202, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 5231513462174686901, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12276,7 +12248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5231513462174686901, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 5275381452828959995, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12356,7 +12328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7740906040778389831, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 8147987638341932268, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12364,7 +12336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8147987638341932268, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 8279413059033207136, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12372,7 +12344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8279413059033207136, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 8290389492207028235, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12380,7 +12352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8290389492207028235, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 8351464432634388540, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12388,7 +12360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8351464432634388540, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 8435261336920485980, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -12396,7 +12368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8435261336920485980, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_TagString
-      value: NORMAL_BLOCK
+      value: EnemyWalkable
       objectReference: {fileID: 0}
     - target: {fileID: 8587223934664259074, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
       propertyPath: m_Layer
@@ -13525,16 +13497,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &804539531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14194,16 +14162,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &841311215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14273,16 +14237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &851872998
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14669,16 +14629,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &865367516
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14913,16 +14869,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &897003309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22937,16 +22889,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1066471263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24491,7 +24439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1161548345
 Transform:
   m_ObjectHideFlags: 0
@@ -24542,16 +24490,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1163126028
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24616,16 +24560,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 1
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 1
 --- !u!65 &1186341696
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24920,16 +24860,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1238453839
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25397,7 +25333,6 @@ Transform:
   - {fileID: 1161548345}
   - {fileID: 788451611}
   - {fileID: 605719552}
-  - {fileID: 1971005996}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1279218679
@@ -27725,16 +27660,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1437203777
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28616,16 +28547,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1475558069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29526,7 +29453,7 @@ Transform:
   m_GameObject: {fileID: 1498301588}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.54, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29658,16 +29585,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1509972658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29963,16 +29886,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1526061893
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30490,16 +30409,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1550894955
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33697,16 +33612,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1678778945
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34279,16 +34190,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1729253772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35814,16 +35721,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1848047267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35875,16 +35778,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1856840551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -36579,16 +36478,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &1954325791
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41655,37 +41550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDeployed: 0
---- !u!1 &1971005995
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1971005996}
-  m_Layer: 0
-  m_Name: PathFinder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1971005996
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1971005995}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5, y: 0, z: -1.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1275343592}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1974557200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -44587,7 +44451,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2103365128
 Transform:
   m_ObjectHideFlags: 0
@@ -44803,16 +44667,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 1
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 1
 --- !u!65 &2114743299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45091,16 +44951,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8438f5bbf9b71ab4cb93f2b48e471d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawnPointCell: 0
-  weight: 1
   isWalkable: 1
-  observeTargetLayerMask:
-    serializedVersion: 2
-    m_Bits: 0
   searchCellLayerMask:
     serializedVersion: 2
     m_Bits: 0
   aroundCells: []
+  isSpawnPointCell: 0
 --- !u!65 &2127757582
 BoxCollider:
   m_ObjectHideFlags: 0
