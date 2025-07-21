@@ -10,16 +10,19 @@ namespace StageObject
 
         public void Update()
         {
+            // ターゲットが設定されている場合、敵の方向に向ける
             if (model.TargetEnemy != null)
             {
                 view.RotateToEnemy(model.TargetEnemy.transform);
+                view.PlayMoveAnimation();
             }
             
+            // クールダウンが完了している場合、攻撃を実行
             if (model.TargetEnemy != null && model.CurrentCoolDown >= model.AttackCoolDown)
             {
-                // クールタイムをリセット
-                model.CurrentCoolDown = 0.0f;
+                model.CurrentCoolDown = 0.0f; // クールタイムをリセット
                 
+                view.PlayAttackAnimation();
                 model.TargetEnemy.GetComponent<EnemyStatus>()?.TakeDamage(150); // ターゲットの敵にダメージを与える
             }
             
@@ -29,8 +32,6 @@ namespace StageObject
 
         public void OnTriggerStay(Collider other)
         {
-            Debug.Log("OnTriggerStay");
-            
             if (other.gameObject.CompareTag("Enemy") && model.TargetEnemy == null)
             {
                 model.TargetEnemy = other.gameObject;

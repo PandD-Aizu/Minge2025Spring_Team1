@@ -4,6 +4,7 @@ namespace StageObject
 {
     public class BallistaView : MonoBehaviour
     {
+        [SerializeField] private Animator ballistaAnimController;
         [SerializeField] private GameObject ballistaObject;
 
         /// <summary>
@@ -21,6 +22,22 @@ namespace StageObject
                 rotation,
                 Time.deltaTime * 2f
             );
+        }
+        
+        /// <summary>
+        /// 攻撃アニメーションを再生する
+        /// </summary>
+        public void PlayAttackAnimation()
+        {
+            ballistaAnimController.SetTrigger("IsAttack");
+        }
+
+        /// <summary>
+        /// 回転アニメーションを再生する
+        /// </summary>
+        public void PlayMoveAnimation()
+        {
+            ballistaAnimController.SetTrigger("IsMove");
         }
     }
 }
