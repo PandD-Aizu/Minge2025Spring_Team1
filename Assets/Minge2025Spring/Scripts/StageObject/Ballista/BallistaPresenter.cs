@@ -10,12 +10,15 @@ namespace StageObject
 
         public void Update()
         {
+            if (model.TargetEnemy != null)
+            {
+                view.RotateToEnemy(model.TargetEnemy.transform);
+            }
+            
             if (model.TargetEnemy != null && model.CurrentCoolDown >= model.AttackCoolDown)
             {
                 // クールタイムをリセット
                 model.CurrentCoolDown = 0.0f;
-                
-                view.RotateToEnemy(model.TargetEnemy.transform);
                 
                 model.TargetEnemy.GetComponent<EnemyStatus>()?.TakeDamage(150); // ターゲットの敵にダメージを与える
             }
