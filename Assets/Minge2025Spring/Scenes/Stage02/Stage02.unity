@@ -117016,6 +117016,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/BGM/Stage5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 1582184900
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1224145661
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: -484244307
+      objectReference: {fileID: 0}
+    - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: -1375219605
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
