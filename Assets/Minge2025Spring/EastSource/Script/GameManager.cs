@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         enemyGoalPointCells = GameObject.FindGameObjectsWithTag(GameTagsManager.EnemyGoalPoint);
         foreach (GameObject enemyGoalPointCell in enemyGoalPointCells)
         {
-            Debug.Log("Goalposition: " + enemyGoalPointCell.transform.position + "name: " +enemyGoalPointCell.gameObject.name);
+            Debug.Log("position: " + enemyGoalPointCell.transform.position + "name: " +enemyGoalPointCell.gameObject.name);
         }
         OnUpdateEnemyWalkableCells?.Invoke(this, EventArgs.Empty);
     }

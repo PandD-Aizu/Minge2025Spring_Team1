@@ -76,7 +76,6 @@ public class EnemyMovement : MonoBehaviour
         //ゴールにたどり着いたら
         if (goalSurfacePosition == this.gameObject.transform.position)
         {
-            GameManager.Instance.ReachedGoal();
             Destroy(gameObject);
         }
     }

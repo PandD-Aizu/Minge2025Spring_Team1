@@ -49,9 +49,7 @@ public class GameSpawnManager : MonoBehaviour
         {
             readyTimer.UpdateReadyTime();
         }
-        if (isSpawning == false 
-            && isPassedSpawnSpawnTime 
-            && numberOfEnemies < limiterSpawnEnemy)
+        if (isSpawning == false && isPassedSpawnSpawnTime && numberOfEnemies < limiterSpawnEnemy)
         {
             currentCoolTime += Time.deltaTime;
             if (currentCoolTime > nextSpawnTime)
@@ -96,8 +94,6 @@ public class GameSpawnManager : MonoBehaviour
 
     public void EnemyDestroy()
     {
-        GameManager.Instance.JudgeGameOver();
-        GameManager.Instance.ClearJudgement();
         if (limiterSpawnEnemy <= 0)
         {
             Debug.LogError("Can't use EnemyDestory(): GameSpawnManager.");

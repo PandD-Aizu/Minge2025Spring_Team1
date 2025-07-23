@@ -14,7 +14,7 @@ public class EnemyWalkableCell : BaseEnemyWalkable
         base.Awake();
     }
 
-    /*private void Start()
+    private void Start()
     {
         GameManager.Instance.OnUpdateEnemyWalkableCells += GameManager_OnUpdateEnemyWalkableCells;
     }
@@ -22,7 +22,7 @@ public class EnemyWalkableCell : BaseEnemyWalkable
     private void OnDestroy()
     {
         GameManager.Instance.OnUpdateEnemyWalkableCells -= GameManager_OnUpdateEnemyWalkableCells;
-    }*/
+    }
 
     private void GameManager_OnUpdateEnemyWalkableCells(object sender, EventArgs e)
     {
