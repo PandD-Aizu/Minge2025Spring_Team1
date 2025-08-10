@@ -117018,23 +117018,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
       propertyPath: EventReference.Path
-      value: event:/BGM/Stage5
+      value: event:/BGM/Stage2
       objectReference: {fileID: 0}
     - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
       propertyPath: EventReference.Guid.Data1
-      value: 1582184900
+      value: 580388907
       objectReference: {fileID: 0}
     - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
       propertyPath: EventReference.Guid.Data2
-      value: 1224145661
+      value: 1162783078
       objectReference: {fileID: 0}
     - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
       propertyPath: EventReference.Guid.Data3
-      value: -484244307
+      value: 1648792714
       objectReference: {fileID: 0}
     - target: {fileID: 3968572747085511423, guid: 022913ed80094bb47aab7866f3cbc354, type: 3}
       propertyPath: EventReference.Guid.Data4
-      value: -1375219605
+      value: -159301723
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -144388,7 +144388,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &1528207032
 Rigidbody:
