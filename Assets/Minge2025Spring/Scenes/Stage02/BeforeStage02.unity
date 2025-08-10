@@ -609,6 +609,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4137195746196602580, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1600
+      objectReference: {fileID: 0}
     - target: {fileID: 4619753968926659408, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_Name
       value: Dialogue
@@ -623,7 +627,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708777785173428622, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: nextScene
-      value: Stage01
+      value: Stage02
       objectReference: {fileID: 0}
     - target: {fileID: 7161959603812360959, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: model
