@@ -168,6 +168,6 @@ MonoBehaviour:
       sentence: "\u6700\u5F8C\u306E\u4EF2\u9593\u304C\u3001\u6700\u5F37\u306E\u6575\u3068\u3057\u3066\u3001\u79C1\u306E\u524D\u306B\u7ACB\u3061\u306F\u3060\u304B\u3063\u305F\u3002"
       background: 
   currentSceneIndex: 0
-  nextScene: Stage04
+  nextScene: StageSelect
   isScenarioEnd:
     value: 0

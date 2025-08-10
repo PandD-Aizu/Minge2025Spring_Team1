@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: d1355dd04ea8d314595583c652336b74, type: 2}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: edcbfe8d5baa539499fadb011c48572f, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -29950,10 +29950,10 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 34075357}
+      addedObject: {fileID: 693809249}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 693809249}
+      addedObject: {fileID: 34075357}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 743261021}
@@ -29962,19 +29962,7 @@ PrefabInstance:
       addedObject: {fileID: 412969093}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1558080311}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1093603651}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1183322716}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1082127809}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1851680336}
+      addedObject: {fileID: 922404133}
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 507749741}
@@ -35855,7 +35843,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e43a9f60349cd459e81d80dd65310a, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -36855,8 +36843,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 1
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -47652,7 +47640,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -47959,8 +47947,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.1
+      scalar: 0.1
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -58375,6 +58363,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5761503981567076986, guid: 43acacffcad432c44b44433bd3ee92aa, type: 3}
   m_PrefabInstance: {fileID: 3374200881885751469}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &922404132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 922404133}
+  m_Layer: 0
+  m_Name: Walls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &922404133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922404132}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1558080311}
+  - {fileID: 1093603651}
+  - {fileID: 1183322716}
+  - {fileID: 1082127809}
+  - {fileID: 1851680336}
+  m_Father: {fileID: 478596744}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947398876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5549569070554693961, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -59247,7 +59271,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e43a9f60349cd459e81d80dd65310a, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -60247,8 +60271,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 1
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -64502,12 +64526,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082127808}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 1.8, z: -3.75}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -2, y: 1.8, z: -3.750001}
   m_LocalScale: {x: 1, y: 5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 478596744}
+  m_Father: {fileID: 922404133}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1082127810
 BoxCollider:
@@ -64610,12 +64634,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093603650}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2, y: 1.8, z: 8.25}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -2, y: 1.8, z: 8.250002}
   m_LocalScale: {x: 1, y: 5, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 478596744}
+  m_Father: {fileID: 922404133}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1093603652
 BoxCollider:
@@ -69631,7 +69655,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e43a9f60349cd459e81d80dd65310a, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -70631,8 +70655,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 1
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -74464,7 +74488,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e43a9f60349cd459e81d80dd65310a, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75464,8 +75488,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 1
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -79336,7 +79360,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e43a9f60349cd459e81d80dd65310a, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80336,8 +80360,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 1
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -83291,7 +83315,7 @@ ParticleSystem:
     maxLights: 20
   TrailModule:
     enabled: 0
-    mode: 0
+    mode: 1
     ratio: 1
     lifetime:
       serializedVersion: 2
@@ -84395,12 +84419,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1183322715}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.5, y: 1.8, z: 8.25}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.5000002, y: 1.8, z: 8.250002}
   m_LocalScale: {x: 1, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 478596744}
+  m_Father: {fileID: 922404133}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1183322717
 BoxCollider:
@@ -97443,12 +97467,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558080310}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3, y: 1.8, z: 2.26}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: 1.8, z: 2.2600007}
   m_LocalScale: {x: 1, y: 5, z: 11}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 478596744}
+  m_Father: {fileID: 922404133}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1558080312
 BoxCollider:
@@ -110309,7 +110333,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 05e43a9f60349cd459e81d80dd65310a, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111309,8 +111333,8 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 1
+      scalar: 0.1
+      minScalar: 0.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -120800,12 +120824,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851680335}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.5, y: 1.8, z: -3.75}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 1.5000001, y: 1.8, z: -3.7500014}
   m_LocalScale: {x: 1, y: 5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 478596744}
+  m_Father: {fileID: 922404133}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1851680337
 BoxCollider:
@@ -122120,6 +122144,7 @@ MonoBehaviour:
   GameOverText: {fileID: 114666976}
   gameOverSE: {fileID: 1953556445}
   bgm: {fileID: 1387629618}
+  nextSceneName: StageSelect
 --- !u!1001 &1966493122
 PrefabInstance:
   m_ObjectHideFlags: 0

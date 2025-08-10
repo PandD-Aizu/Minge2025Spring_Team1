@@ -139,7 +139,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &10671250
 Transform:
@@ -299,7 +299,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &13673566
 Transform:
@@ -620,7 +620,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &38395045
 Transform:
@@ -743,7 +743,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &39289531
 Transform:
@@ -873,7 +873,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &42720383
 Transform:
@@ -1031,7 +1031,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &43344865
 Transform:
@@ -1159,7 +1159,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &48747779
 Transform:
@@ -1333,6 +1333,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch08
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1442,7 +1446,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &54071635
 Transform:
@@ -1566,7 +1570,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &57295858
 Transform:
@@ -1623,7 +1627,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &64793513
 Transform:
@@ -1753,7 +1757,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &65766006
 Transform:
@@ -1921,7 +1925,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &81493585
 Transform:
@@ -2051,7 +2055,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &85891989
 Transform:
@@ -2211,7 +2215,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &94943433
 Transform:
@@ -2371,7 +2375,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &110317972
 Transform:
@@ -2580,6 +2584,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2774,7 +2782,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &128222954
 Transform:
@@ -2935,7 +2943,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &133814256
 Transform:
@@ -3089,7 +3097,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &134013003
 Transform:
@@ -3141,7 +3149,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &135091344
 Transform:
@@ -3271,7 +3279,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &136781082
 Transform:
@@ -3762,7 +3770,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &144943066
 Transform:
@@ -3954,7 +3962,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &151928650
 Transform:
@@ -4113,7 +4121,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &152343422
 Transform:
@@ -4241,7 +4249,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &156164977
 Transform:
@@ -4371,7 +4379,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &157096052
 Transform:
@@ -4531,7 +4539,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &162657742
 Transform:
@@ -4736,6 +4744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4765,7 +4777,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &173108076
 Transform:
@@ -4940,7 +4952,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &184715931
 Transform:
@@ -5065,7 +5077,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &199172691
 Transform:
@@ -5222,7 +5234,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &207776331
 Transform:
@@ -5510,7 +5522,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &232296726
 Transform:
@@ -5640,7 +5652,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &233427489
 Transform:
@@ -5800,7 +5812,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &234644943
 Transform:
@@ -5959,7 +5971,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &240335499
 Transform:
@@ -6085,7 +6097,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &247034039
 Transform:
@@ -10922,7 +10934,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &251416270
 Transform:
@@ -11081,7 +11093,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &255354958
 Transform:
@@ -11211,7 +11223,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &256564629
 Transform:
@@ -11372,7 +11384,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &259737527
 Transform:
@@ -11868,7 +11880,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &274903143
 Transform:
@@ -12029,7 +12041,7 @@ GameObject:
   m_TagString: EnemyGoalPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &275095580
 Transform:
@@ -12188,7 +12200,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &275267377
 Transform:
@@ -13386,7 +13398,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 1
+      scalar: 0.01
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -17468,7 +17480,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &288338392
 Transform:
@@ -17676,6 +17688,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -17701,7 +17717,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &289169098
 Transform:
@@ -17755,7 +17771,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &289594430
 Transform:
@@ -17913,7 +17929,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &289630925
 Transform:
@@ -18048,7 +18064,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &298654770
 Transform:
@@ -18545,6 +18561,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: -7146521406498821007, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -6774545901631321879, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
       value: 20
@@ -18588,6 +18608,10 @@ PrefabInstance:
     - target: {fileID: -6774545901631321879, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: -6151790170757695873, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: -5259800226233126171, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
@@ -18661,6 +18685,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.39
       objectReference: {fileID: 0}
+    - target: {fileID: -2671296794865387225, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: -2045257923548263128, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: -1255605710908113952, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
       value: 20
@@ -18684,6 +18716,14 @@ PrefabInstance:
     - target: {fileID: -1255605710908113952, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalPosition.z
       value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -516098083770646512, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 711622831289341141, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 724567806671248357, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
@@ -18712,6 +18752,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_Name
       value: HD_asset
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1502877291743220047, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2988889743828573197, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
@@ -18760,6 +18808,10 @@ PrefabInstance:
     - target: {fileID: 3110463120429098062, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3368936980246044556, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 3377885514793123377, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
@@ -18949,6 +19001,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.9
       objectReference: {fileID: 0}
+    - target: {fileID: 6014503084441653313, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6804191043073457727, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6830945432629781959, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalScale.x
       value: 30
@@ -18992,6 +19052,30 @@ PrefabInstance:
     - target: {fileID: 6830945432629781959, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6875008432885391913, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114876710871129749, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8009987137999418058, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376635561669383200, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8485173162082002552, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810250586161956629, guid: b7ec08adb5f8aea4da4b8a291fe89459, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19189,7 +19273,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &308303262
 Transform:
@@ -19314,7 +19398,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &310783524
 Transform:
@@ -19470,7 +19554,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &318078836
 Transform:
@@ -19595,7 +19679,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &328819918
 Transform:
@@ -20268,7 +20352,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &334348879
 Transform:
@@ -20429,7 +20513,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &334818197
 Transform:
@@ -20706,7 +20790,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &336251051
 Transform:
@@ -20836,7 +20920,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &340279386
 Transform:
@@ -20993,7 +21077,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &346915211
 Transform:
@@ -25828,7 +25912,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &351201699
 Transform:
@@ -26123,7 +26207,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &353127644
 Transform:
@@ -26284,7 +26368,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &363995426
 Transform:
@@ -26498,6 +26582,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -26577,6 +26665,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -26602,7 +26694,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &380301222
 Transform:
@@ -26656,7 +26748,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &380406449
 Transform:
@@ -26982,7 +27074,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &388091271
 Transform:
@@ -27308,7 +27400,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &389405799
 Transform:
@@ -27468,7 +27560,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &406941844
 Transform:
@@ -27627,7 +27719,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &409703639
 Transform:
@@ -28088,7 +28180,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &419909640
 Transform:
@@ -28211,7 +28303,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &420024012
 Transform:
@@ -28351,7 +28443,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &426885819
 Transform:
@@ -28509,7 +28601,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &433693197
 Transform:
@@ -28644,7 +28736,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &435749083
 Transform:
@@ -28806,7 +28898,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &439103949
 Transform:
@@ -28927,7 +29019,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &442498531
 Transform:
@@ -33807,7 +33899,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &465495658
 Transform:
@@ -38805,7 +38897,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &470561757
 Transform:
@@ -43671,7 +43763,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &482959458
 Transform:
@@ -43966,7 +44058,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &490387853
 Transform:
@@ -44127,7 +44219,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &512756552
 Transform:
@@ -44288,7 +44380,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &517460384
 Transform:
@@ -44727,7 +44819,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &526559139
 Transform:
@@ -44885,7 +44977,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &530706012
 Transform:
@@ -45013,7 +45105,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &532380930
 Transform:
@@ -45141,7 +45233,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &542955412
 Transform:
@@ -45271,7 +45363,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &547611598
 Transform:
@@ -45432,7 +45524,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &547954459
 Transform:
@@ -45590,7 +45682,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &552407398
 Transform:
@@ -45720,7 +45812,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &553911720
 Transform:
@@ -46046,7 +46138,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &560414197
 Transform:
@@ -46206,7 +46298,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &562277898
 Transform:
@@ -46363,7 +46455,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &577035289
 Transform:
@@ -51363,7 +51455,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &594487321
 Transform:
@@ -51489,7 +51581,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &596532793
 Transform:
@@ -51614,7 +51706,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &600424936
 Transform:
@@ -51775,7 +51867,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &601819999
 Transform:
@@ -51936,7 +52028,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &608903872
 Transform:
@@ -52094,7 +52186,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &615793097
 Transform:
@@ -52220,7 +52312,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &625976834
 Transform:
@@ -57053,7 +57145,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &626394736
 Transform:
@@ -57226,6 +57318,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -57257,7 +57353,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &628830635
 Transform:
@@ -57411,7 +57507,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &630897608
 Transform:
@@ -57461,7 +57557,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &632003776
 Transform:
@@ -57693,7 +57789,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &640374887
 Transform:
@@ -57848,7 +57944,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &649079971
 Transform:
@@ -57902,7 +57998,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &657625064
 Transform:
@@ -58058,7 +58154,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &661357802
 Transform:
@@ -58183,7 +58279,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &662114287
 Transform:
@@ -58352,7 +58448,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &673689815
 Transform:
@@ -58482,7 +58578,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &687286661
 Transform:
@@ -58643,7 +58739,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &691791891
 Transform:
@@ -58801,7 +58897,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &692698707
 Transform:
@@ -58931,7 +59027,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &697214605
 Transform:
@@ -59086,7 +59182,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &698829746
 Transform:
@@ -59140,7 +59236,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &700154160
 Transform:
@@ -59301,7 +59397,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &704752093
 Transform:
@@ -59579,7 +59675,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &706120996
 Transform:
@@ -64634,6 +64730,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -64662,7 +64762,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &743372126
 Transform:
@@ -64770,7 +64870,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &744131119
 Transform:
@@ -69784,7 +69884,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &752816080
 Transform:
@@ -69941,7 +70041,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &756910715
 Transform:
@@ -70066,7 +70166,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &762777295
 Transform:
@@ -70223,7 +70323,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &773089047
 Transform:
@@ -75221,7 +75321,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &790424954
 Transform:
@@ -75346,7 +75446,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &793509656
 Transform:
@@ -75598,7 +75698,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &795295307
 Transform:
@@ -75652,7 +75752,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &795850125
 Transform:
@@ -75934,7 +76034,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &805921606
 Transform:
@@ -76092,7 +76192,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &806071310
 Transform:
@@ -76301,7 +76401,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &820895248
 Transform:
@@ -76457,7 +76557,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &822339900
 Transform:
@@ -81294,7 +81394,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &824414172
 Transform:
@@ -81460,7 +81560,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &831513080
 Transform:
@@ -81785,7 +81885,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &838020022
 Transform:
@@ -81946,7 +82046,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &838257653
 Transform:
@@ -82107,7 +82207,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &848355427
 Transform:
@@ -82265,7 +82365,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &850600779
 Transform:
@@ -82558,7 +82658,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &858015095
 Transform:
@@ -82883,7 +82983,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &864490762
 Transform:
@@ -87720,7 +87820,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &868331081
 Transform:
@@ -87878,7 +87978,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &872482553
 Transform:
@@ -88169,7 +88269,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &875858385
 Transform:
@@ -88507,6 +88607,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -88538,7 +88642,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &892370450
 Transform:
@@ -88694,7 +88798,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &905727809
 Transform:
@@ -93529,7 +93633,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &908257129
 Transform:
@@ -93659,7 +93763,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &908739328
 Transform:
@@ -93819,7 +93923,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &911683022
 Transform:
@@ -94035,6 +94139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch05
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -94066,7 +94174,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &917462103
 Transform:
@@ -94224,7 +94332,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &919105934
 Transform:
@@ -94348,7 +94456,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &919389168
 Transform:
@@ -94402,7 +94510,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &929157545
 Transform:
@@ -94563,7 +94671,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &930570712
 Transform:
@@ -94728,7 +94836,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &932105045
 Transform:
@@ -94887,7 +94995,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &937262125
 Transform:
@@ -95027,7 +95135,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &946114397
 Transform:
@@ -95191,7 +95299,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &971222473
 Transform:
@@ -95788,6 +95896,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -95819,7 +95931,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &992639101
 Transform:
@@ -95980,7 +96092,7 @@ GameObject:
   m_TagString: EnemyGoalPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &994790298
 Transform:
@@ -96214,7 +96326,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1000410632
 Transform:
@@ -96372,7 +96484,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1001501195
 Transform:
@@ -96661,7 +96773,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1007682277
 Transform:
@@ -101498,7 +101610,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1018465113
 Transform:
@@ -101658,7 +101770,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1030586526
 Transform:
@@ -101821,7 +101933,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1034251450
 Transform:
@@ -102116,7 +102228,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1040375801
 Transform:
@@ -102276,7 +102388,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1041032954
 Transform:
@@ -102613,7 +102725,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1048720342
 Transform:
@@ -102821,6 +102933,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -103079,7 +103195,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1072901888
 Transform:
@@ -103208,6 +103324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FrontWall
       objectReference: {fileID: 0}
+    - target: {fileID: 5806397662313899216, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 6620193894675037802, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
       propertyPath: m_LocalScale.z
       value: 7.5
@@ -103317,6 +103437,10 @@ PrefabInstance:
     - target: {fileID: 916462449611749986, guid: 08f53cfd9d1fde342b8d4e8a7516e935, type: 3}
       propertyPath: m_Name
       value: RearWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 916462449611749986, guid: 08f53cfd9d1fde342b8d4e8a7516e935, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1708854160905477047, guid: 08f53cfd9d1fde342b8d4e8a7516e935, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -103517,7 +103641,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1097413805
 Transform:
@@ -103676,7 +103800,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1100094870
 Transform:
@@ -104011,6 +104135,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1445378371}
     m_Modifications:
+    - target: {fileID: -9070950213548686342, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32233746930263b43928c8381c4067dc, type: 3}
       propertyPath: m_LocalScale.x
       value: 6
@@ -104063,9 +104191,81 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7723028845008340362, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6362061569866095686, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6263313043352320161, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5715813595237736785, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5568371526223589888, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5122592780935219720, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3499738598048237296, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3464160953330329357, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1532564363159676506, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -276675520113110390, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 32233746930263b43928c8381c4067dc, type: 3}
       propertyPath: m_Name
       value: Ballista_Anim
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1567638746400842025, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2855581272115965362, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4706498039192543307, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004308442550266759, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845397871923295185, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6905609870639353253, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7036213049465896255, guid: 32233746930263b43928c8381c4067dc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -104300,7 +104500,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1104750741
 Transform:
@@ -104460,7 +104660,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1116478916
 Transform:
@@ -104616,7 +104816,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1124303540
 Transform:
@@ -109449,7 +109649,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1130151190
 Transform:
@@ -109858,7 +110058,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1148762586
 Transform:
@@ -109988,7 +110188,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1162618727
 Transform:
@@ -110149,7 +110349,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1164104879
 Transform:
@@ -110306,7 +110506,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1172645908
 Transform:
@@ -110431,7 +110631,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1175582770
 Transform:
@@ -110587,7 +110787,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1183074245
 Transform:
@@ -115719,6 +115919,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -115750,7 +115954,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1195768629
 Transform:
@@ -115910,7 +116114,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1196752897
 Transform:
@@ -116071,7 +116275,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1197522869
 Transform:
@@ -116229,7 +116433,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1198948816
 Transform:
@@ -116355,7 +116559,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1205330875
 Transform:
@@ -116528,6 +116732,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -116557,7 +116765,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1215795872
 Transform:
@@ -116685,7 +116893,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1218891008
 Transform:
@@ -117202,7 +117410,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1224482069
 Transform:
@@ -117363,7 +117571,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1235325683
 Transform:
@@ -117520,7 +117728,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1236538326
 Transform:
@@ -117688,6 +117896,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
       propertyPath: m_Name
       value: torch02
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -117881,7 +118093,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1254426615
 Transform:
@@ -122718,7 +122930,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1259485370
 Transform:
@@ -122881,7 +123093,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1266860166
 Transform:
@@ -123009,7 +123221,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1268748150
 Transform:
@@ -123414,7 +123626,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1277971694
 Transform:
@@ -123535,7 +123747,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1287259677
 Transform:
@@ -123713,6 +123925,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -123744,7 +123960,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1292425416
 Transform:
@@ -123953,6 +124169,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -123984,7 +124204,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1303968202
 Transform:
@@ -124140,7 +124360,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1307652356
 Transform:
@@ -124266,7 +124486,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1313593005
 Transform:
@@ -124385,7 +124605,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1315417745
 Transform:
@@ -124483,6 +124703,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch09
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -124566,6 +124790,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -124928,7 +125156,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1351753027
 Transform:
@@ -125254,7 +125482,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1363172970
 Transform:
@@ -125415,7 +125643,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1375124095
 Transform:
@@ -125629,6 +125857,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -125656,7 +125888,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1383789066
 Transform:
@@ -130489,7 +130721,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1387799678
 Transform:
@@ -135326,7 +135558,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1392266477
 Transform:
@@ -135483,7 +135715,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1392619094
 Transform:
@@ -135651,6 +135883,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
       propertyPath: m_Name
       value: torch03
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -136016,7 +136252,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1405452062
 Transform:
@@ -136146,7 +136382,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1411626439
 Transform:
@@ -136306,7 +136542,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1414037136
 Transform:
@@ -136467,7 +136703,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1419031257
 Transform:
@@ -136626,7 +136862,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1420104570
 Transform:
@@ -136748,7 +136984,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1420225713
 Transform:
@@ -136881,7 +137117,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1427008887
 Transform:
@@ -137049,7 +137285,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1428840111
 Transform:
@@ -137207,7 +137443,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1435936963
 Transform:
@@ -137366,7 +137602,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1445378371
 Transform:
@@ -137401,7 +137637,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1446892898
 Transform:
@@ -137448,7 +137684,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1455404910
 Transform:
@@ -137573,7 +137809,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1460016314
 Transform:
@@ -137733,7 +137969,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1460703053
 Transform:
@@ -137894,6 +138130,10 @@ PrefabInstance:
     - target: {fileID: 5806397662313899216, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
       propertyPath: m_Name
       value: RightWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806397662313899216, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6620193894675037802, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
       propertyPath: m_LocalScale.z
@@ -138508,6 +138748,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch07
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -138542,7 +138786,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1490431065
 Transform:
@@ -138833,7 +139077,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1507610234
 Transform:
@@ -143670,7 +143914,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1510957527
 Transform:
@@ -144042,6 +144286,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -144920,7 +145168,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1559373911
 Transform:
@@ -145081,7 +145329,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1561362418
 Transform:
@@ -145237,6 +145485,10 @@ PrefabInstance:
     - target: {fileID: 5806397662313899216, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
       propertyPath: m_Name
       value: LeftWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5806397662313899216, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 6620193894675037802, guid: 177ce76d2e4ba3c459c7ab2ba160c5d8, type: 3}
       propertyPath: m_LocalScale.z
@@ -145477,7 +145729,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1564385168
 Transform:
@@ -145967,7 +146219,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1585913836
 Transform:
@@ -146126,7 +146378,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1585968495
 Transform:
@@ -146261,7 +146513,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1590466763
 Transform:
@@ -146422,7 +146674,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1593202520
 Transform:
@@ -146582,7 +146834,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1596222425
 Transform:
@@ -146737,7 +146989,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1609736368
 Transform:
@@ -146791,7 +147043,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1609881238
 Transform:
@@ -147112,7 +147364,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1612118727
 Transform:
@@ -147501,7 +147753,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1629180858
 Transform:
@@ -148003,7 +148255,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1639736521
 Transform:
@@ -148164,7 +148416,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1639927438
 Transform:
@@ -148336,7 +148588,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1646599113
 Transform:
@@ -148495,7 +148747,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1651939749
 Transform:
@@ -148625,7 +148877,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1653466577
 Transform:
@@ -148833,6 +149085,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -148860,7 +149116,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1658757307
 Transform:
@@ -153697,7 +153953,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1660527587
 Transform:
@@ -153853,7 +154109,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1665622663
 Transform:
@@ -158851,7 +159107,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1671228480
 Transform:
@@ -163682,7 +163938,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1676872596
 Transform:
@@ -163734,7 +163990,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1693594993
 Transform:
@@ -163864,7 +164120,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1694439496
 Transform:
@@ -164021,7 +164277,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1704619761
 Transform:
@@ -169153,7 +169409,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1716803924
 Transform:
@@ -169310,7 +169566,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1730511096
 Transform:
@@ -174195,6 +174451,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -174226,7 +174486,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1741786933
 Transform:
@@ -174435,6 +174695,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -174510,6 +174774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch01
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -174546,7 +174814,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1754452785
 Transform:
@@ -174705,7 +174973,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1760162892
 Transform:
@@ -174838,7 +175106,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1767128557
 Transform:
@@ -175005,7 +175273,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: c87649b4c52e5d04f904d7bd30e78a9b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -175045,8 +175313,8 @@ ParticleSystemRenderer:
   m_AllowRoll: 1
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
-  m_UseCustomVertexStreams: 0
-  m_VertexStreams: 00010304
+  m_UseCustomVertexStreams: 1
+  m_VertexStreams: 000304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
   m_Mesh: {fileID: 0}
@@ -175312,8 +175580,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.1
+      scalar: 0.1
+      minScalar: 0.05
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -179801,7 +180069,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1775444970
 Transform:
@@ -179960,7 +180228,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1788092247
 Transform:
@@ -180089,7 +180357,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1792734925
 Transform:
@@ -180143,7 +180411,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1795203041
 Transform:
@@ -180301,7 +180569,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1797047243
 Transform:
@@ -180431,7 +180699,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1797871553
 Transform:
@@ -180587,7 +180855,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1808184347
 Transform:
@@ -185468,6 +185736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: torch06
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e5fcaa212ea2feb4991b215c810f3c83, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -185499,7 +185771,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1818315377
 Transform:
@@ -185659,7 +185931,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1818392578
 Transform:
@@ -185817,7 +186089,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1823531426
 Transform:
@@ -186108,7 +186380,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1827548302
 Transform:
@@ -190945,7 +191217,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1828625241
 Transform:
@@ -191102,7 +191374,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1829846953
 Transform:
@@ -195939,7 +196211,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1830324305
 Transform:
@@ -196269,6 +196541,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -196348,6 +196624,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -196379,7 +196659,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1833508690
 Transform:
@@ -196540,7 +196820,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1844637502
 Transform:
@@ -196695,7 +196975,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1846676023
 Transform:
@@ -197156,7 +197436,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1861655163
 Transform:
@@ -197316,7 +197596,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1864194606
 Transform:
@@ -197789,7 +198069,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1885772423
 Transform:
@@ -197948,7 +198228,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1891851811
 Transform:
@@ -198078,7 +198358,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1905119991
 Transform:
@@ -198450,7 +198730,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1919500334
 Transform:
@@ -198573,7 +198853,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1927236003
 Transform:
@@ -198751,6 +199031,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 06b56b8fe0aff484b993dd1ff8dfefaa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -198778,7 +199062,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1942000488
 Transform:
@@ -198899,7 +199183,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1947811910
 Transform:
@@ -203736,7 +204020,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1948712105
 Transform:
@@ -204060,7 +204344,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1956724270
 Transform:
@@ -204190,7 +204474,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1959050148
 Transform:
@@ -204351,7 +204635,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1992701085
 Transform:
@@ -204512,7 +204796,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1998117270
 Transform:
@@ -204673,7 +204957,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2000243426
 Transform:
@@ -204829,7 +205113,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2010115544
 Transform:
@@ -205243,7 +205527,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2038644154
 Transform:
@@ -205454,7 +205738,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2045711940
 Transform:
@@ -205613,7 +205897,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2046832890
 Transform:
@@ -205739,7 +206023,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2051062499
 Transform:
@@ -210576,7 +210860,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2052589682
 Transform:
@@ -210733,7 +211017,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2053852395
 Transform:
@@ -215900,7 +216184,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2068387485
 Transform:
@@ -216061,7 +216345,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2075703273
 Transform:
@@ -216222,7 +216506,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2083066268
 Transform:
@@ -216479,7 +216763,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2093590227
 Transform:
@@ -216604,7 +216888,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2094672910
 Transform:
@@ -216830,6 +217114,7 @@ MonoBehaviour:
   GameOverText: {fileID: 1885428734}
   gameOverSE: {fileID: 2097186621}
   bgm: {fileID: 1645258532}
+  nextSceneName: AfterStage02
 --- !u!1001 &2102079771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -217017,7 +217302,7 @@ GameObject:
   m_TagString: EnemyUnWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2102807478
 Transform:
@@ -217147,7 +217432,7 @@ GameObject:
   m_TagString: CharacterPlacement
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2117354058
 Transform:
@@ -217477,7 +217762,7 @@ GameObject:
   m_TagString: EnemyWalkable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2138475518
 Transform:

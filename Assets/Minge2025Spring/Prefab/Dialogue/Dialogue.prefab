@@ -486,7 +486,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30AA\u30D7\u30B7\u30E7\u30F3"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aa6af1e58fe9c8948972224020051de8, type: 2}
   m_sharedMaterial: {fileID: 9042801924410266546, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &647876795716850536
@@ -630,7 +630,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1565897931
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.20754719, g: 0.20754719, b: 0.20754719, a: 0.9411765}
@@ -1380,7 +1380,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1565897931
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 4f90f7153b4ee7443b73fd2ce36993ae, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -1582,7 +1582,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1565897931
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2135,6 +2135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 11400000, guid: ad82c2358eb3eb543a5636a2c5cc35d0, type: 2}
+  buttonFunc: {fileID: 0}
   view: {fileID: 8970282282745738252}
   logWindowView: {fileID: 5482163286433360103}
 --- !u!114 &8970282282745738252
@@ -2531,7 +2532,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u623B\u308B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aa6af1e58fe9c8948972224020051de8, type: 2}
   m_sharedMaterial: {fileID: 9042801924410266546, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2597,7 +2598,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5392306631319856511
@@ -3015,7 +3016,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30ED\u30B0"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aa6af1e58fe9c8948972224020051de8, type: 2}
   m_sharedMaterial: {fileID: 9042801924410266546, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3081,7 +3082,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5753671015544824063
@@ -3801,7 +3802,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1565897931
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 6d5c524e2bd185942ad76f8d8453a0af, type: 3}
   m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
@@ -3888,7 +3889,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1565897931
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 14737a02726e0404aa292fee9e98bcae, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
@@ -4514,7 +4515,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u30B9\u30AD\u30C3\u30D7"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: aa6af1e58fe9c8948972224020051de8, type: 2}
   m_sharedMaterial: {fileID: 9042801924410266546, guid: 466c3ac57c46d1f4e84d0eea324c6de4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4580,7 +4581,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &8842785258147736461
@@ -4968,7 +4969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8526573257591895220, guid: a2d96e63c00f4724a84afc4c0aa254b4, type: 3}
       propertyPath: m_SortingLayer
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

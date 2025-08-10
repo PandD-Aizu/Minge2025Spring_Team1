@@ -14,6 +14,7 @@ public class GameClearOrOverUITemp : MonoBehaviour
     [SerializeField]private TextMeshProUGUI GameOverText;
     [SerializeField] private StudioEventEmitter gameOverSE;
     [SerializeField] private StudioEventEmitter bgm;
+    [SerializeField] private String nextSceneName;
 
     private void Start()
     {
@@ -53,7 +54,7 @@ public class GameClearOrOverUITemp : MonoBehaviour
         await UniTask.WaitForSeconds(5.0f)
             .ContinueWith(() =>
             {
-                SceneManager.LoadSceneAsync("Title");
+                SceneManager.LoadSceneAsync(nextSceneName);
                 StageRelease.stage_num++;
             });
     }
