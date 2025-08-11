@@ -72,12 +72,14 @@ public class EnemyAttack : MonoBehaviour
             EnemyAttackSystem(enemyStatus.CharacterType);
         }
 
+        // 攻撃対象がいない場合、移動を再開する
         if (attackTarget == null)
         {
             enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
         }
         else
         {
+            // 攻撃対象が非アクティブの場合、無視して移動を再開する
             if (!attackTarget.gameObject.activeSelf)
             {
                 enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
@@ -89,7 +91,8 @@ public class EnemyAttack : MonoBehaviour
     private void MeleeAttackObserver()
     {
         // レイキャストで自身が向いている方向をもとに攻撃範囲内に味方キャラがいるか確認
-        Physics.Raycast(this.transform.position, enemyStatus.CurrentMoveDirection, out RaycastHit hit, meleeAttackRange, observeTargetLayerMask);
+        Physics.Raycast(transform.position, enemyStatus.CurrentMoveDirection, out RaycastHit hit, meleeAttackRange, observeTargetLayerMask);
+        Debug.DrawRay(transform.position, enemyStatus.CurrentMoveDirection, Color.red, 1.0f); // レイキャストの可視化
         
         if (hit.collider != null)
         {
@@ -98,18 +101,14 @@ public class EnemyAttack : MonoBehaviour
                 && hit.collider.gameObject.GetComponent<CharacterBehaviourPresenter>().AllyInfo.BlockCount < hit.collider.GetComponent<CharacterBehaviourPresenter>().AllyInfo.MaxBlockCount
                 && enemyStatus.enemyState != EnemyStatus.EnemyState.Attacking)
             {
-                // attackTargetCollider  = hit.collider.gameObject.GetComponent<Collider>();
                 attackTarget = hit.collider.gameObject;                         // 攻撃対象を設定
                 enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Attacking); // 攻撃状態に変更
+                
             }
             else
             {
-                // enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
+                enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving);
             }
-        }
-        else
-        {
-            // enemyStatus.ChangeEnemyState(EnemyStatus.EnemyState.Moving );
         }
     }
 

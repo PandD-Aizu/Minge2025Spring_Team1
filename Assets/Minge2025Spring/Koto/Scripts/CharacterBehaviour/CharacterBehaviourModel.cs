@@ -53,13 +53,17 @@ namespace CharacterBehaviour
         // @brief 攻撃対象リスト内の敵がnullでないかチェック
         public void CheckEnemyList()
         {
-            // TODO: 重くなりそうなんで処理を考える
-            enemyList = new ReactiveCollection<GameObject>(enemyList.Where(enemy => enemy != null).ToList());
-            
-            // 再度サブスクライブ
-            enemyList
-                .ObserveAdd()
-                .Subscribe(_ => SetAttackPriority());
+            var seen = new HashSet<GameObject>();
+            // リストを後ろからループして、nullや重複した要素を安全に削除します
+            for (int i = enemyList.Count - 1; i >= 0; i--)
+            {
+                var enemy = enemyList[i];
+                // 要素がnullであるか、または既に追加済みの場合はリストから削除
+                if (enemy == null || !seen.Add(enemy))
+                {
+                    enemyList.RemoveAt(i);
+                }
+            }
         }
         
         // @brief 攻撃目標を設定

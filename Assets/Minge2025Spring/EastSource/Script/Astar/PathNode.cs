@@ -50,6 +50,14 @@ public class PathNode
         this.surfacePosition = tempPos;
     }
     
+    // 行先だけの空ノード
+    public PathNode(string nodeId, Vector3 position)
+    {
+        baseEnemyWalkable = null;
+        this.nodeId = nodeId;
+        surfacePosition = position;
+    }
+    
     //引数: 親ノード
     public bool UpdateFCost(PathNode parentNode, EnemyGoalPointCell goalCell)
     {
