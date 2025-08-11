@@ -1,5 +1,7 @@
 ﻿using CharacterInfo;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace CharacterBehaviour
 {

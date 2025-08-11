@@ -53,8 +53,30 @@ namespace CharacterDeploySys
         // @brief キャラクターの配置情報を配置済みに設定
         public void SetCharacterDeployInfo()
         {
-            allyInfos
-                .Find(x => x.CharacterName == selectedCharacterName).CharacterDeployInfo = CharacterDeployInfo.DEPLOYED;
+            Debug.Log($"[SetCharacterDeployInfo] 選択キャラ名: {selectedCharacterName}");
+
+            foreach (var ally in allyInfos)
+            {
+                if (ally == null)
+                {
+                    Debug.LogWarning("[SetCharacterDeployInfo] nullな要素があります");
+                    continue;
+                }
+
+                Debug.Log($"[SetCharacterDeployInfo] 登録キャラ名: {ally.CharacterName}");
+            }
+
+            var info = allyInfos.Find(x =>
+                x != null && x.CharacterName == selectedCharacterName);
+
+            if (info == null)
+            {
+                Debug.LogWarning($"[SetCharacterDeployInfo] '{selectedCharacterName}' に一致する AllyInfo が見つかりません");
+                return;
+            }
+
+            info.CharacterDeployInfo = CharacterDeployInfo.DEPLOYED;
         }
+
     }
 }

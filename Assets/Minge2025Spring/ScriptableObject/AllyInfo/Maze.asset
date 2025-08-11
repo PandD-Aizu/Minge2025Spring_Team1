@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Maze
   m_EditorClassIdentifier: 
   attackType: 1
-  characterDeployInfo: 0
+  characterDeployInfo: 1
   characterState: 1
   characterDirection: 1
   characterDeployableLayer:

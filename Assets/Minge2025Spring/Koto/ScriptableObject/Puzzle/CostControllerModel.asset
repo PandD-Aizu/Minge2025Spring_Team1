@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: CostControllerModel
   m_EditorClassIdentifier: 
   initCost: 0
-  cost: 550
+  cost:
+    value: 68

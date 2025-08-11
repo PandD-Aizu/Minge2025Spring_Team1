@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace CharacterInfo
 {
@@ -35,12 +35,14 @@ namespace CharacterInfo
         public float AttackCoolDown                    { get => attackCoolDown; set => attackCoolDown = value; }
         public int Defence                             { get => defence; set => defence = value; }
 
-        public void Init()
+        public void Init(bool resetDirection = false)
         {
             characterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED;
             characterState = CharacterState.WAIT;
-            characterDirection = CharacterDirection.UP;
+            if (resetDirection)
+                characterDirection = CharacterDirection.UP;
             hp = maxHp;
         }
+
     }
 }

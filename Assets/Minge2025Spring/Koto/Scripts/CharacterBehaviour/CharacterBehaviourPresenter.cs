@@ -1,4 +1,4 @@
-using CharacterInfo;
+﻿using CharacterInfo;
 using UniRx;
 using Unity.XR.OpenVR;
 using UnityEngine;
@@ -21,7 +21,7 @@ namespace CharacterBehaviour
         private void Start()
         {
             SubscribeEvents();
-            allyInfo.Init();
+            allyInfo.Init(false);
         }
         
         // @brief エントリポイント

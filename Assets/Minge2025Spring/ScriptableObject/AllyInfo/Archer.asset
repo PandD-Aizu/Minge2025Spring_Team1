@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   attackType: 1
-  characterDeployInfo: 0
-  characterState: 0
+  characterDeployInfo: 1
+  characterState: 1
   characterDirection: 3
   characterDeployableLayer:
     serializedVersion: 2

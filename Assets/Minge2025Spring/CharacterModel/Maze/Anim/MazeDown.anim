@@ -13011,7 +13011,7 @@ AnimationClip:
   - time: 0
     functionName: InstanceId
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11400000, guid: 8467563e04d2e024bb3d6e68dec425b1, type: 2}
     floatParameter: 0
     intParameter: -295714
     messageOptions: 1
