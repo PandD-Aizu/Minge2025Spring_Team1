@@ -13,6 +13,7 @@ namespace CharacterBehaviour
         [SerializeField] private CharacterBehaviourView view;
         [SerializeField] private CharacterBehaviourListen listen;
         [SerializeField] private StageCharacterControllerModel characterControllerModel;
+        [SerializeField] private ExpManager expManager;
         [Header("キャラクターの相性データ")]
         [SerializeField] private TypeChartData typeChartData;
 
@@ -40,7 +41,7 @@ namespace CharacterBehaviour
                     // 攻撃時
                     case CharacterState.ATTACK:
                         model.CheckEnemyList();
-                        allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
+                        allyInfo.CharacterState = model.AttackEnemy(allyInfo.AttackCoolDown, expManager); // 攻撃対象がいる場合は敵を攻撃、いない場合は待機状態に遷移
                         break;
                 
                     // 待機時

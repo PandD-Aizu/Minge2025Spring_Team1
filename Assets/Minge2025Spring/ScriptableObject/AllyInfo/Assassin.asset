@@ -30,6 +30,8 @@ MonoBehaviour:
   maxBlockCount: 2
   blockCount: 3
   attack: 300
+  maxAttack: 300
   attackCoolDown: 1
   defence: 0
+  maxDefence: 0
   characterType: 0

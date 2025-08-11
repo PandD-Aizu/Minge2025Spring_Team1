@@ -19,8 +19,10 @@ namespace CharacterInfo
         [SerializeField] private int                 maxBlockCount;
         [SerializeField] private int                 blockCount;
         [SerializeField] private int                 attack;
+        [SerializeField] private int                 maxAttack;
         [SerializeField] private float               attackCoolDown;
         [SerializeField] private int                 defence;
+        [SerializeField] private int                 maxDefence;
         [SerializeField] private CharacterType       characterType;
         
         public AttackType AttackType                   { get => attackType; set => attackType = value; }
@@ -46,6 +48,8 @@ namespace CharacterInfo
             characterDeployInfo = CharacterDeployInfo.NOT_DEPLOYED;
             characterState = CharacterState.WAIT;
             characterDirection = CharacterDirection.UP;
+            attack = maxAttack;
+            defence = maxDefence;
             hp = maxHp;
             blockCount = 0;
         }
