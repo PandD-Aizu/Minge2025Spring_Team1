@@ -68,9 +68,13 @@ public class EnemyMovement : MonoBehaviour
         if (Time.timeScale == 0f) return;
         
         //次のセルまで移動
-        if (nextPosition == this.gameObject.transform.position && IsMoving)
+        if (nextPosition == this.gameObject.transform.position && IsMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
         {
             EnemyMove();
+        }
+        else if (enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking)
+        {
+            StopEnemyMovement();
         }
 
         //ゴールにたどり着いたら
@@ -109,12 +113,20 @@ public class EnemyMovement : MonoBehaviour
             this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
             return;
         }
-
+        
         nextPosition = pathList[0].SurfacePosition;
         nextPosition.y += DIFFERENCE_WITH_THE_GROUND;
+        enemyStatus.CurrentMoveDirection = nextPosition - transform.position; // 敵の向きを設定
         pathList.RemoveAt(0);
         this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
     }
     
-    
+    // @brief 敵の移動を一時停止する
+    private void StopEnemyMovement()
+    {
+        PathNode tempNode = new PathNode("-1", nextPosition);
+        pathList.Insert(0, tempNode);
+        IsMoving = false;
+        transform.DOKill();
+    }
 }

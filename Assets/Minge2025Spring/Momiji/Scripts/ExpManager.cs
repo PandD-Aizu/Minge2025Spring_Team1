@@ -23,7 +23,7 @@ public class ExpManager : MonoBehaviour
 
     void levelUp()
     {
-        for (int i = 0; i < 4; i++) characters[i].Attack += upAttack;
+        for (int i = 0; i < characters.Length; i++) characters[i].Attack += upAttack;
         level++;
     }
 
@@ -31,11 +31,11 @@ public class ExpManager : MonoBehaviour
     {
         if (Equals(enemy.gameObject.name, "_BaseEnemyExample"))
         {
-            playerExp += addExp;
+            playerExp += 10;
         }
         else if (Equals(enemy.gameObject.name, "FlyEnemy"))
         {
-            playerExp += addExp;
+            playerExp += 15;
         }
     }
 }

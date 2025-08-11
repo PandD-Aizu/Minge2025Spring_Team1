@@ -56,6 +56,7 @@ namespace CharacterBehaviour
                 }
                 
                 model.AttackCoolDownTime += Time.deltaTime; // 攻撃クールタイムを更新
+                allyInfo.BlockCount = model.EnemyListValue.Count; // ブロック数を更新
                 view.UpdateHpSlider(allyInfo);
                 model.CheckCharacterHp(allyInfo);
             }
@@ -81,9 +82,8 @@ namespace CharacterBehaviour
                 // ブロック数が足りていたら、攻撃対象のリストに追加
                 if (model.EnemyListValue.Count <= allyInfo.MaxBlockCount)
                 {
-                    model.EnemyList.Add(other.gameObject);           // 攻撃対象リストに追加
-                    allyInfo.BlockCount++;
-                    allyInfo.CharacterState = CharacterState.ATTACK; // 攻撃状態に遷移
+                    model.EnemyList.Add(other.gameObject);            // 攻撃対象リストに追加
+                    allyInfo.CharacterState = CharacterState.ATTACK;  // 攻撃状態に遷移
                 }
             }
                 
