@@ -542,6 +542,7 @@ MonoBehaviour:
   view: {fileID: 5479525268530148424}
   listen: {fileID: 0}
   characterControllerModel: {fileID: 0}
+  expManager: {fileID: 0}
   typeChartData: {fileID: 0}
 --- !u!114 &5479525268530148424
 MonoBehaviour:

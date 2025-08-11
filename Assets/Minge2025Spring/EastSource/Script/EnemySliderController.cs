@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DG.Tweening;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Minge2025Spring.EastSource.Script
@@ -29,7 +30,7 @@ namespace Minge2025Spring.EastSource.Script
         // @brief スライダーの値を変更する
         private void ChangeSliderValue()
         {
-            hpSlider.value = enemyStatus.CurrentHealth;
+            hpSlider.DOValue(enemyStatus.CurrentHealth, 0.5f);
         }
     }
 }

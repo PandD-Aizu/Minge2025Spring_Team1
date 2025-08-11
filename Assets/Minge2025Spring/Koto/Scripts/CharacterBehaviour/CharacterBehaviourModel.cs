@@ -84,12 +84,13 @@ namespace CharacterBehaviour
 
         // @brief 敵を攻撃
         // @param attackCoolDown　味方の攻撃クールタイム
-        public CharacterState AttackEnemy(float attackCoolDown)
+        public CharacterState AttackEnemy(float attackCoolDown, ExpManager expManager)
         {
             if (targetEnemy != null && attackCoolDown <= attackCoolDownTime)
             {
                 isAttackEnemy.SetValueAndForceNotify(true);
                 attackCoolDownTime = 0;
+                expManager.AddExp(targetEnemy);
             }
             else if (targetEnemy == null && enemyList.Count <= 0)
             {

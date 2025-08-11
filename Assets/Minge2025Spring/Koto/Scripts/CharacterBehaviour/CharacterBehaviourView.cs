@@ -1,4 +1,5 @@
 ﻿using CharacterInfo;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.UI;
@@ -45,8 +46,8 @@ namespace CharacterBehaviour
         {
             if(allyInfo.MaxHp != hpSlider.maxValue)
                 hpSlider.maxValue = allyInfo.MaxHp;
-            
-            hpSlider.value = allyInfo.Hp;
+
+            hpSlider.DOValue(allyInfo.Hp, 0.5f);
         }
         
         // @brief キャラクターの攻撃モーションを再生

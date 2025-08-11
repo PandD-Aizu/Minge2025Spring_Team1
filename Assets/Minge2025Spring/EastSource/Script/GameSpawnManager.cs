@@ -7,6 +7,7 @@ public class GameSpawnManager : MonoBehaviour
 {
     [Header("Binding")]
     [SerializeField] private GameObject[] enemySpawnOrder;
+    [SerializeField] private GameObject pathTrailParticle;
 
     public static GameSpawnManager Instance{get; private set;}
     
