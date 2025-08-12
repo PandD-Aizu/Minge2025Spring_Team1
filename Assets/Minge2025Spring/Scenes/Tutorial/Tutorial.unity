@@ -83089,38 +83089,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2882064226949903804, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3967072235129397019, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5512119326700277137, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
       propertyPath: m_Name
       value: PuzzleScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 5931561469842819366, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118326973733677142, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
-      propertyPath: InitialModule.startSize.scalar
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8177301671660210019, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8357516557468517012, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
       propertyPath: characterControllerModel
       value: 
       objectReference: {fileID: 1121711192}
-    - target: {fileID: 8403044777796260106, guid: 8d8cd7f48ebddb64aa656c7257bec16b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -139259,7 +139235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1916456587
 RectTransform:
   m_ObjectHideFlags: 0
