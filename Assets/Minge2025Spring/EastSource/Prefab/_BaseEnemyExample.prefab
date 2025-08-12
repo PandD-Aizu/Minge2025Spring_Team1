@@ -109,6 +109,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100066128937522787, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: m_Size.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100066128937522787, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: m_Size.z
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 234545073808148964, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 234545073808148964, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
     - target: {fileID: 963924307749914469, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
       propertyPath: m_Name
       value: EnemySpriteOccluded
@@ -164,6 +180,10 @@ PrefabInstance:
     - target: {fileID: 6441230574175583780, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016330414015009586, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+      propertyPath: m_Sprite
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
