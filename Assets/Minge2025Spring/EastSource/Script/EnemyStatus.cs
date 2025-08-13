@@ -62,6 +62,12 @@ public class EnemyStatus : MonoBehaviour
         GameManager.Instance.OnGameClear += GameManager_OnGameClear;
         GameManager.Instance.OnGameOver += GameManager_OnGameOver;
     }
+    
+    private void OnDestroy()
+    {
+        GameManager.Instance.OnGameClear -= GameManager_OnGameClear;
+        GameManager.Instance.OnGameOver -= GameManager_OnGameOver;
+    }
 
     private void GameManager_OnGameOver(object sender, EventArgs e)
     {

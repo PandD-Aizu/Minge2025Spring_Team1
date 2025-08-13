@@ -10,8 +10,8 @@ using Debug = FMOD.Debug;
 public class GameClearOrOverUITemp : MonoBehaviour
 {
     [Header("Binding")] [SerializeField] private GameObject panel;
-    [SerializeField]private TextMeshProUGUI GameCleartext;
-    [SerializeField]private TextMeshProUGUI GameOverText;
+    [SerializeField] private TextMeshProUGUI GameCleartext;
+    [SerializeField] private TextMeshProUGUI GameOverText;
     [SerializeField] private StudioEventEmitter gameOverSE;
     [SerializeField] private StudioEventEmitter bgm;
     [SerializeField] private String nextSceneName;
