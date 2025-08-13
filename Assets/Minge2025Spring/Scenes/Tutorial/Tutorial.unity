@@ -76895,7 +76895,6 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
-  - {fileID: 4290129022170508900, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
   limiterSpawnEnemy: 5
   readyTime: 3
   isPassedSpawnSpawnTime: 0
