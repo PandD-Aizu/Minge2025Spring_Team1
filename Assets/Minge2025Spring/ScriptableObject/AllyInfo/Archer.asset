@@ -28,10 +28,10 @@ MonoBehaviour:
   maxHp: 1000
   hp: 1000
   maxBlockCount: 1
-  blockCount: 0
+  blockCount: 2
   attack: 250
   maxAttack: 250
-  attackCoolDown: 1
+  attackCoolDown: 2.28
   defence: 10
   maxDefence: 10
   characterType: 3

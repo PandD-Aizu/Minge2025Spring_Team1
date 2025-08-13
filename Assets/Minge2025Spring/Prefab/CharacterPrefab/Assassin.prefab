@@ -918,7 +918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.7}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022935041785986481
@@ -2920,11 +2920,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[0].x
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[0].y
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[0].z
@@ -2932,11 +2932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[1].x
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[1].y
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[1].z
@@ -2948,11 +2948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[2].y
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[2].z
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[3].x
@@ -2960,11 +2960,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[3].y
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[3].z
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSpriteSize.Array.size
@@ -3863,7 +3863,7 @@ PrefabInstance:
     - target: {fileID: 7589637715637355267, guid: 0ac3b106e282647b392a308747188735, type: 3}
       propertyPath: CubismFadeMotionList
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e3e65befe1a2f47caa4ea358800b68df, type: 2}
     - target: {fileID: 8261500189692526947, guid: 0ac3b106e282647b392a308747188735, type: 3}
       propertyPath: '_childParts.Array.data[0]'
       value: 

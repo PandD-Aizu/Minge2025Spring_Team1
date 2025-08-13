@@ -97190,7 +97190,6 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
-  pathTrailParticle: {fileID: 0}
   limiterSpawnEnemy: 10
   readyTime: 5
   isPassedSpawnSpawnTime: 0
@@ -123910,7 +123909,7 @@ RectTransform:
   m_GameObject: {fileID: 1270259017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1187575826}
@@ -123969,9 +123968,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1565897931
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 58250907a7f08154686fd9469c3bcd2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198456,7 +198455,7 @@ RectTransform:
   m_GameObject: {fileID: 1885428732}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1187575826}
@@ -198515,9 +198514,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1565897931
+  m_SortingLayer: 3
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: b7e96b1b953a64643afbe3ae65d45cd7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -217641,8 +217640,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1187575825}
-  GameClearSprite: {fileID: 0}
-  GameOverSprite: {fileID: 0}
+  GameClearSprite: {fileID: 1270259021}
+  GameOverSprite: {fileID: 1885428736}
   gameOverSE: {fileID: 2097186621}
   bgm: {fileID: 1645258532}
   nextSceneName: AfterStage02

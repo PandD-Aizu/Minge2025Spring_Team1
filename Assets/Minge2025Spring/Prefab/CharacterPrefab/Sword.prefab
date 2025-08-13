@@ -1407,7 +1407,7 @@ RectTransform:
   m_Father: {fileID: 7799847404530485531}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2222,6 +2222,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 528197351205795361, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: CubismFadeMotionList
+      value: 
+      objectReference: {fileID: 11400000, guid: ee3b332fb37a98447a64116e2167270a, type: 2}
     - target: {fileID: 643498241932499685, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: m_Value
       value: 1
