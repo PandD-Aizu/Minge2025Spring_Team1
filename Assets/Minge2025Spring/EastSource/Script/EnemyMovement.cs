@@ -4,6 +4,7 @@ using FMODUnity;
 using General;
 using UnityEngine;
 using DG.Tweening;
+using Random = System.Random;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]private EnemyGoalPointCell goalPointCell;
     private List<PathNode> pathList = new List<PathNode>();
     private Pathfinding pathfinding = new Pathfinding();
+
+    private Random random = new ();
 
     private const float MAX_RAYCAST_DISTANCE = 1f;
     private const float MOVE_SPEED_COEF = 3f;　//移動速度の係数
@@ -116,6 +119,11 @@ public class EnemyMovement : MonoBehaviour
         
         nextPosition = pathList[0].SurfacePosition;
         nextPosition.y += DIFFERENCE_WITH_THE_GROUND;
+        
+        // 次の移動地点にランダムなオフセットを追加
+        Vector3 randomPos = new Vector3((float)(random.NextDouble() * (0.2f - (-0.2f)) + (-0.2f)), 0, (float)(random.NextDouble() * (0.2f - (-0.2f)) + (-0.2f)));
+        nextPosition += randomPos;
+        
         enemyStatus.CurrentMoveDirection = nextPosition - transform.position; // 敵の向きを設定
         pathList.RemoveAt(0);
         this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
