@@ -755,8 +755,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 702295858}
-  GameCleartext: {fileID: 1703999718}
-  GameOverText: {fileID: 652024074}
+  GameClearSprite: {fileID: 0}
+  GameOverSprite: {fileID: 0}
+  gameClearSE: {fileID: 0}
   gameOverSE: {fileID: 36036087}
   bgm: {fileID: 1882371160}
   nextSceneName: AfterStage05
@@ -9166,7 +9167,6 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
-  pathTrailParticle: {fileID: 0}
   limiterSpawnEnemy: 5
   readyTime: 3
   isPassedSpawnSpawnTime: 0
@@ -48137,7 +48137,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
