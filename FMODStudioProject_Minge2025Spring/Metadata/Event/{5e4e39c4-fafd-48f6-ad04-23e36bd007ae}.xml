@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{2f8cca31-e636-42e2-8a5a-6378907d9fd8}">
+		<relationship name="masters">
+			<destination>{090d5f62-3983-403a-8faa-7d6241e4b62c}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{273c3f72-0d83-4eac-8451-eef691f0eea0}</destination>
 		</relationship>
@@ -53,7 +56,7 @@
 			<destination>{105c651f-35ab-405c-aebb-fc645f08fe54}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{a7b91a52-4e75-4fcb-b68a-84dd6c0f3ac8}</destination>
+			<destination>{5f1d684e-1f0d-4894-a35f-a057fca4c6ac}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{f7825d87-82d0-4c8d-b28a-03268612b6dc}" />
@@ -121,10 +124,10 @@
 	</object>
 	<object class="LoopRegion" id="{c40b15ed-7e71-490b-af8a-d616af28df0d}">
 		<property name="position">
-			<value>0</value>
+			<value>25.350000000000001</value>
 		</property>
 		<property name="length">
-			<value>96.894399092970616</value>
+			<value>71.54439909297065</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{62db15fa-6ba3-41e9-90a8-94050dd0d5a2}</destination>

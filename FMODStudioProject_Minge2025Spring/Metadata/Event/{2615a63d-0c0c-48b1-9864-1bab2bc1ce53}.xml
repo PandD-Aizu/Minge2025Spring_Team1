@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{2615a63d-0c0c-48b1-9864-1bab2bc1ce53}">
 		<property name="name">
-			<value>SampleAudio</value>
+			<value>Stage1Story</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
 		</property>
 		<relationship name="folder">
-			<destination>{f43e1673-360a-490f-97bc-711b7d3959ee}</destination>
+			<destination>{ed791181-5a87-4c45-8ada-5f1f2c4489cd}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{e38e0976-e4dc-4793-a8f7-1e861a0c0771}</destination>
@@ -100,6 +100,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{bc75879e-c6f1-41fd-85d6-b88938aa3cab}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>

@@ -11,7 +11,10 @@ public class TextManager : MonoBehaviour
     private int textCount;
     [SerializeField] private GameObject screen;
     [SerializeField] private Button nextButton;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    [Header("UIを描画するカメラ")] 
+    [SerializeField] private Camera UIRenderCamera;
+    
     void Start()
     {
         screen.SetActive(true);
@@ -23,12 +26,26 @@ public class TextManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Space))
+        // マウスの左ボタンが離されたフレームでのみ処理を実行
+        if (Input.GetMouseButtonUp(0))
         {
-            textCount++;
-        }
+            // マウスポインタの下にあるUI要素をすべて取得
+            var pointerEventData = new UnityEngine.EventSystems.PointerEventData(UnityEngine.EventSystems.EventSystem.current);
+            pointerEventData.position = Input.mousePosition;
+            var results = new System.Collections.Generic.List<UnityEngine.EventSystems.RaycastResult>();
+            UnityEngine.EventSystems.EventSystem.current.RaycastAll(pointerEventData, results);
 
+            // ヒットしたUI要素の中に "Touchable" タグを持つものがあるかチェック
+            foreach (var result in results)
+            {
+                if (result.gameObject.CompareTag("Touchable"))
+                {
+                    textCount++;
+                    break; // "Touchable"な要素を1つ見つけたらループを抜ける
+                }
+            }
+        }
+        
         if (textCount > 2) textCount = 0;
 
         switch (textCount)

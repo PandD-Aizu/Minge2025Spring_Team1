@@ -54397,6 +54397,7 @@ MonoBehaviour:
   text5: {fileID: 490845845}
   screen: {fileID: 2147429448}
   nextButton: {fileID: 1585361757}
+  UIRenderCamera: {fileID: 231513319}
 --- !u!1 &789887886 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -764048737813328473, guid: 2990fbfc2656f4fac9847e8938748fce, type: 3}
@@ -76895,8 +76896,8 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
-  limiterSpawnEnemy: 5
-  readyTime: 3
+  limiterSpawnEnemy: 99
+  readyTime: 15
   isPassedSpawnSpawnTime: 0
 --- !u!1 &1162866885
 GameObject:
@@ -100619,11 +100620,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -100639,8 +100640,8 @@ Canvas:
   m_GameObject: {fileID: 1400848643}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 231513319}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -100650,8 +100651,8 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1565897931
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!1 &1406503181
 GameObject:
@@ -117207,8 +117208,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 870, y: -149}
-  m_SizeDelta: {x: 200, y: 70}
+  m_AnchoredPosition: {x: 839.8136, y: -149}
+  m_SizeDelta: {x: 260.3728, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517033957
 MonoBehaviour:
@@ -117243,7 +117244,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Space\u2192"
+  m_Text: Touch here
 --- !u!222 &1517033958
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -124004,6 +124005,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 378042280}
     m_Modifications:
+    - target: {fileID: 5781963230907002753, guid: 9769ecf0c36f5ab4097d17c746336b31, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8269167252665474466, guid: 9769ecf0c36f5ab4097d17c746336b31, type: 3}
       propertyPath: m_Name
       value: Maze
@@ -139228,6 +139233,7 @@ GameObject:
   - component: {fileID: 1916456587}
   - component: {fileID: 1916456588}
   - component: {fileID: 1916456589}
+  - component: {fileID: 1916456590}
   m_Layer: 5
   m_Name: GameClearOrOverUI(temp)
   m_TagString: Untagged
@@ -139270,6 +139276,7 @@ MonoBehaviour:
   panel: {fileID: 1621245421}
   GameClearSprite: {fileID: 1537412683}
   GameOverSprite: {fileID: 1983738562}
+  gameClearSE: {fileID: 1916456590}
   gameOverSE: {fileID: 1916456589}
   bgm: {fileID: 18018846}
   nextSceneName: StageSelect
@@ -139293,6 +139300,37 @@ MonoBehaviour:
       Data3: 1343437980
       Data4: 1006446462
     Path: event:/SE/GameOver
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1916456590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916456586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 611398474
+      Data2: 1214314226
+      Data3: 588357562
+      Data4: 1714392832
+    Path: event:/SE/StageClear
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -162227,7 +162265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
   maxSpawnEnemies: 10
-  goalCapasity: 5
+  goalCapasity: 1
   isdebugMode: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}
@@ -167730,9 +167768,10 @@ GameObject:
   - component: {fileID: 2147429449}
   - component: {fileID: 2147429451}
   - component: {fileID: 2147429450}
+  - component: {fileID: 2147429452}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: Touchable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167777,7 +167816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -167801,6 +167840,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2147429448}
   m_CullTransparentMesh: 1
+--- !u!65 &2147429452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2147429448}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &195963610570529819
 PrefabInstance:
   m_ObjectHideFlags: 0

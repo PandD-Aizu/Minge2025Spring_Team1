@@ -16,6 +16,7 @@ TagManager:
   - START_BLOCK
   - GOAL_BLOCK
   - NORMAL_BLOCK
+  - Touchable
   layers:
   - Default
   - TransparentFX

@@ -55,7 +55,10 @@ namespace PathTrail
                 // 1セグメントあたり0.2秒で移動し、ループさせる
                 pathTrail.transform.DOPath(waypoints, 0.2f * waypoints.Length, PathType.Linear)
                     .SetEase(Ease.Linear)
-                    .OnComplete(() => pathTrail.transform.GetComponent<ParticleSystem>().Stop());
+                    .OnComplete(() =>
+                    {
+                        Destroy(pathTrail, 5.0f); // 5秒後にパーティクルを削除
+                    });
             }
         }
     }
