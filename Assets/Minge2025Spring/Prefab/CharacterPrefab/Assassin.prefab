@@ -918,7 +918,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.705}
+  m_AnchoredPosition: {x: 0, y: -0.7}
   m_SizeDelta: {x: 80, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022935041785986481
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2165,14 +2165,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41568628, g: 0.41568628, b: 0.41568628, a: 1}
+  m_Color: {r: 0.41568628, g: 0.41568628, b: 0.41568628, a: 0.19607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2535,6 +2535,10 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4535724851899141899, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4535724851899141899, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
@@ -2851,6 +2855,14 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6951412983617275840, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951412983617275840, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
+      propertyPath: m_Color.a
+      value: 0.19607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6951412983617275840, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: m_Color.b
       value: 0.41568628
       objectReference: {fileID: 0}
@@ -2916,7 +2928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[0].z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[1].x
@@ -2928,11 +2940,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[1].z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[2].x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[2].y
@@ -2944,7 +2956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[3].x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7096342511280225626, guid: ae0d52ac3b2d42f47afa3dba239051bb, type: 3}
       propertyPath: attackRangeSize.Array.data[3].y
@@ -3396,7 +3408,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1693935450412976573
 MonoBehaviour:
@@ -3851,7 +3863,7 @@ PrefabInstance:
     - target: {fileID: 7589637715637355267, guid: 0ac3b106e282647b392a308747188735, type: 3}
       propertyPath: CubismFadeMotionList
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: e3e65befe1a2f47caa4ea358800b68df, type: 2}
     - target: {fileID: 8261500189692526947, guid: 0ac3b106e282647b392a308747188735, type: 3}
       propertyPath: '_childParts.Array.data[0]'
       value: 
