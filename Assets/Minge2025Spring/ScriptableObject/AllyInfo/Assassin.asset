@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Assassin
   m_EditorClassIdentifier: 
   attackType: 0
-  characterDeployInfo: 1
+  characterDeployInfo: 0
   characterState: 1
-  characterDirection: 0
+  characterDirection: 3
   characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -28,10 +28,10 @@ MonoBehaviour:
   maxHp: 1500
   hp: 1500
   maxBlockCount: 2
-  blockCount: 3
-  attack: 300
-  maxAttack: 300
-  attackCoolDown: 1
+  blockCount: 0
+  attack: 350
+  maxAttack: 350
+  attackCoolDown: 4
   defence: 0
   maxDefence: 0
   characterType: 0

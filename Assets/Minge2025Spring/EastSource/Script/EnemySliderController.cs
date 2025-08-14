@@ -19,7 +19,7 @@ namespace Minge2025Spring.EastSource.Script
 
         private void Update()
         {
-            if (hpSlider.value == enemyStatus.MaxHealth)
+            if (Mathf.Approximately(hpSlider.value, enemyStatus.MaxHealth))
                 hpSlider.gameObject.SetActive(false);
             else
                 hpSlider.gameObject.SetActive(true);

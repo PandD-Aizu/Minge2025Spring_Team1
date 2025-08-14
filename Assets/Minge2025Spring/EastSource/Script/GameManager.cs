@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int goalCapasity = 5;
     [SerializeField] private bool isdebugMode = false;
     
+    private int reachedGoalEnemies = 0;
+    private int spawndedEnemies = 0;
+    private bool isJudged = false;
     [SerializeField]private List<GameObject>enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
     private GameObject[] characterPlacementCells;
@@ -38,7 +42,7 @@ public class GameManager : MonoBehaviour
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
         UpdateEnemySpawnPointCells();
-        
+        StartCoroutine(GameJudgementCoroutine());
     }
 
     //brief シーン上のスポーンポイントを取得する
@@ -123,6 +127,7 @@ public class GameManager : MonoBehaviour
         if (StageLifeUIController.Instance.SpawnedEnemies >= maxSpawnEnemies && GameSpawnManager.Instance.NumberOfEnemies <= 0 )
         {
             OnGameClear?.Invoke(this, EventArgs.Empty);
+            isJudged = true;
         }
     }
     
@@ -140,6 +145,17 @@ public class GameManager : MonoBehaviour
             //ゲームオーバー
             GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
             OnGameOver?.Invoke(this, EventArgs.Empty);
+            isJudged = true;
+        }
+    }
+    
+    private IEnumerator GameJudgementCoroutine()
+    {
+        while (isJudged == false)
+        {
+            ClearJudgement();
+            JudgeGameOver();
+            yield return null; // Prevent infinite loop by yielding control
         }
     }
 

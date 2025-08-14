@@ -12,6 +12,10 @@ public class GameClearOrOverUITemp : MonoBehaviour
     [Header("Binding")] [SerializeField] private GameObject panel;
     [SerializeField] private TextMeshProUGUI GameCleartext;
     [SerializeField] private TextMeshProUGUI GameOverText;
+    [SerializeField] private SpriteRenderer GameClearSprite;
+    [SerializeField] private SpriteRenderer GameOverSprite;
+    [SerializeField] private StudioEventEmitter gameClearSE;
+
     [SerializeField] private StudioEventEmitter gameOverSE;
     [SerializeField] private StudioEventEmitter bgm;
     [SerializeField] private String nextSceneName;
@@ -32,26 +36,27 @@ public class GameClearOrOverUITemp : MonoBehaviour
     private async void GameManager_OnGameOver(object sender, EventArgs e)
     {
         Show();
-        GameCleartext.gameObject.SetActive(false);
-        GameOverText.gameObject.SetActive(true);
+        GameClearSprite.gameObject.SetActive(false);
+        GameOverSprite.gameObject.SetActive(true);
         gameOverSE.Play();
         bgm.Stop();
         // Time.timeScale = 0f;
-        await UniTask.WaitForSeconds(5.0f)
+        await UniTask.WaitForSeconds(15.0f)
             .ContinueWith(() =>
             {
-                SceneManager.LoadSceneAsync("Title");
+                SceneManager.LoadSceneAsync("StageSelect");
             });
     }
 
     private async void GameManager_OnGameClear(object sender, EventArgs e)
     {
         Show();
-        GameCleartext.gameObject.SetActive(true);
-        GameOverText.gameObject.SetActive(false);
+        GameClearSprite.gameObject.SetActive(true);
+        GameOverSprite.gameObject.SetActive(false);
+        gameClearSE.Play();
         bgm.Stop();
         // Time.timeScale = 0f;
-        await UniTask.WaitForSeconds(5.0f)
+        await UniTask.WaitForSeconds(10.0f)
             .ContinueWith(() =>
             {
                 SceneManager.LoadSceneAsync(nextSceneName);

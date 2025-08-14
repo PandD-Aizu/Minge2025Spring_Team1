@@ -3715,10 +3715,10 @@ AnimationClip:
     floatParameter: 0
     intParameter: -7898
     messageOptions: 1
-  - time: 0
-    functionName: 
+  - time: 1.5666667
+    functionName: WithDraw
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11400000, guid: 8947171e389794d00bc437071fe31adc, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
