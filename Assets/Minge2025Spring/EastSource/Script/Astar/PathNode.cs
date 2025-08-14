@@ -70,11 +70,26 @@ public class PathNode
 
         return false; //トータルコストが既存のコスト以上の時
     }
+    public bool UpdateFCost(PathNode parentNode, BaseEnemyWalkable distination)
+    {
+        if (TryUpdateGCost(parentNode))
+        {
+            CalcHuricCost(distination);
+            fCost = gCost + hCost;
+            return true; //トータルコストが既存以下の時
+        }
+
+        return false; //トータルコストが既存のコスト以上の時
+    }
 
     //ヒューリスティックコストを計算しhCostを更新する
     public void CalcHuricCost(EnemyGoalPointCell goalCell)
     {
         hCost = Vector3.Distance(goalCell.gameObject.transform.position, SurfacePosition);
+    }
+    public void CalcHuricCost(BaseEnemyWalkable distination)
+    {
+        hCost = Vector3.Distance(distination.gameObject.transform.position, SurfacePosition);
     }
 
     //新しい経路のCostと古いコストを計算し適切に更新する
