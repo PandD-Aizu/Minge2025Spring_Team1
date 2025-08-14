@@ -756,6 +756,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 702295858}
+  GameCleartext: {fileID: 0}
+  GameOverText: {fileID: 0}
   GameClearSprite: {fileID: 1703999720}
   GameOverSprite: {fileID: 652024076}
   gameClearSE: {fileID: 36036089}
@@ -39230,6 +39232,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722161160}
+  - component: {fileID: 1722161163}
+  - component: {fileID: 1722161162}
   - component: {fileID: 1722161161}
   m_Layer: 5
   m_Name: StageLifeUI
@@ -39267,10 +39271,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1722161159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948099e7eb3cb2846a792f565bd3a173, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f213e62183f3004daf929d4a557ab33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1291751906}
+--- !u!114 &1722161162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722161159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b1b4675558c6e4e82fb4fb796c4888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reachGoalEnemies:
+    value: 0
+  spawnedEnemeies:
+    value: 0
+--- !u!114 &1722161163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722161159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3d31fca7f2eb64791ce4e6bbbd5f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 1722161162}
+  view: {fileID: 1722161161}
 --- !u!1 &1725885395
 GameObject:
   m_ObjectHideFlags: 0
