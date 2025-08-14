@@ -119521,6 +119521,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1570839899}
   - component: {fileID: 1570839900}
+  - component: {fileID: 1570839903}
+  - component: {fileID: 1570839902}
+  - component: {fileID: 1570839901}
   m_Layer: 5
   m_Name: StageLifeUI
   m_TagString: Untagged
@@ -119561,6 +119564,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 1871706867}
+--- !u!114 &1570839901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570839898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f213e62183f3004daf929d4a557ab33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMesh: {fileID: 1871706867}
+--- !u!114 &1570839902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570839898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b1b4675558c6e4e82fb4fb796c4888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reachGoalEnemies:
+    value: 0
+  spawnedEnemeies:
+    value: 0
+--- !u!114 &1570839903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570839898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3d31fca7f2eb64791ce4e6bbbd5f13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 1570839902}
+  view: {fileID: 1570839901}
 --- !u!1 &1576265549
 GameObject:
   m_ObjectHideFlags: 0
@@ -140171,7 +140217,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1916456587
 RectTransform:
   m_ObjectHideFlags: 0
@@ -140205,6 +140251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1621245421}
+  GameCleartext: {fileID: 0}
+  GameOverText: {fileID: 0}
   GameClearSprite: {fileID: 1537412683}
   GameOverSprite: {fileID: 1983738562}
   gameClearSE: {fileID: 1916456590}
