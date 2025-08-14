@@ -262,11 +262,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
   attenuationObject: {fileID: 0}
---- !u!1 &476566841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2805971967611935974, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-  m_PrefabInstance: {fileID: 3371216907867210660}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &560676705
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,22 +494,22 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 638953021
+      Data2: 1219562508
+      Data3: -1424268136
+      Data4: 1406058795
+    Path: event:/BGM/Stage1Story
   Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!4 &1556689076
 Transform:
   m_ObjectHideFlags: 0
@@ -535,17 +530,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8254465276197963769, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
   m_PrefabInstance: {fileID: 3371216907867210660}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1677130524 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5708777785173428622, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-  m_PrefabInstance: {fileID: 3371216907867210660}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: add43c11112c420ead6fdebcdc4d73d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1893525410
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,49 +640,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1893525414}
     m_Modifications:
-    - target: {fileID: 2199335123813373244, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 65c9c649dc338344689f86ec45b281d2, type: 3}
-    - target: {fileID: 2363660303875306370, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3510325809767898823, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3906355607505240903, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4137195746196602580, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1600
-      objectReference: {fileID: 0}
     - target: {fileID: 4619753968926659408, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_Name
       value: Dialogue
-      objectReference: {fileID: 0}
-    - target: {fileID: 5452467701628074936, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5505397691860025860, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5708777785173428622, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: nextScene
-      value: Stage01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7161959603812360959, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: buttonFunc
-      value: 
-      objectReference: {fileID: 1677130524}
-    - target: {fileID: 7563513879106998476, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8254465276197963769, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_Pivot.x
@@ -784,14 +728,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8527311125793120562, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8970282282745738252, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
-      propertyPath: textBoxSendUI
-      value: 
-      objectReference: {fileID: 476566841}
     - target: {fileID: 8999790796507008889, guid: 45c2bdd1486b03a4a83370000d0ee151, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

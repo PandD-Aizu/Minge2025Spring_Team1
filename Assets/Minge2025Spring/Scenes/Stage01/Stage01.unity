@@ -7109,8 +7109,8 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
-  limiterSpawnEnemy: 5
-  readyTime: 5
+  limiterSpawnEnemy: 99
+  readyTime: 30
   isPassedSpawnSpawnTime: 0
 --- !u!43 &143330371
 Mesh:
@@ -24279,7 +24279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stopButton: {fileID: 1321542184}
   runButton: {fileID: 1321542188}
-  pauseOverlay: {fileID: 1784534781}
+  pauseOverlay: {fileID: 1402488046}
 --- !u!1 &316036861 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2983361433421920433, guid: 259caeb92b4794ec6a61473592f602d3, type: 3}
@@ -37965,6 +37965,7 @@ Transform:
   m_Children:
   - {fileID: 160791023}
   - {fileID: 99796609}
+  - {fileID: 1582404312}
   - {fileID: 661731149}
   - {fileID: 1423569830}
   - {fileID: 983799901}
@@ -73484,7 +73485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
   maxSpawnEnemies: 30
-  goalCapasity: 5
+  goalCapasity: 1
   isdebugMode: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}
@@ -96654,6 +96655,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5993549864135598807, guid: 7120166941ff74dadb3ae3dc0fcd5ff7, type: 3}
   m_PrefabInstance: {fileID: 1402488044}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1402488046 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2642837439733228321, guid: 7120166941ff74dadb3ae3dc0fcd5ff7, type: 3}
+  m_PrefabInstance: {fileID: 1402488044}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1418654082
 Mesh:
   m_ObjectHideFlags: 0
@@ -103499,6 +103505,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDeployed: 0
+--- !u!1001 &1582404311
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 507749741}
+    m_Modifications:
+    - target: {fileID: 6954521613702764318, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_Name
+      value: Long Sword (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5745896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.41212475
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5745896
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.41212475
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 71.3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+--- !u!4 &1582404312 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7766664415997840804, guid: b398b560b9d505d4ab34d65aa12ac84b, type: 3}
+  m_PrefabInstance: {fileID: 1582404311}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1583370161
 GameObject:
   m_ObjectHideFlags: 0
@@ -119855,11 +119923,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1784534781 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6130204527394621546, guid: fca70de7ff0e74c659533379467dcce5, type: 3}
-  m_PrefabInstance: {fileID: 1321542181}
-  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1788189233
 Mesh:
   m_ObjectHideFlags: 0
@@ -127098,6 +127161,7 @@ GameObject:
   - component: {fileID: 1953556444}
   - component: {fileID: 1953556446}
   - component: {fileID: 1953556445}
+  - component: {fileID: 1953556447}
   m_Layer: 5
   m_Name: GameClearOrOverUI(temp)
   m_TagString: Untagged
@@ -127171,9 +127235,41 @@ MonoBehaviour:
   panel: {fileID: 1789852198}
   GameClearSprite: {fileID: 533124173}
   GameOverSprite: {fileID: 114666978}
+  gameClearSE: {fileID: 1953556447}
   gameOverSE: {fileID: 1953556445}
   bgm: {fileID: 1387629618}
   nextSceneName: StageSelect
+--- !u!114 &1953556447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953556443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 611398474
+      Data2: 1214314226
+      Data3: 588357562
+      Data4: 1714392832
+    Path: event:/SE/StageClear
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1966493122
 PrefabInstance:
   m_ObjectHideFlags: 0

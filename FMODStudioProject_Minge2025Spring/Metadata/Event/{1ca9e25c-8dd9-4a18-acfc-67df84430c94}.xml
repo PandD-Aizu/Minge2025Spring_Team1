@@ -46,6 +46,9 @@
 		</relationship>
 	</object>
 	<object class="MixerInput" id="{3c2c440c-4ba4-4580-96d8-2827759e2db9}">
+		<relationship name="masters">
+			<destination>{0ca41ed2-5aa1-4a65-b0a8-34c87273685e}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{cba137a2-5cd3-4b6a-b96f-2b93cc5f0f7d}</destination>
 		</relationship>
@@ -56,7 +59,14 @@
 			<destination>{9091a70d-5565-40c9-a339-65b8fe8c8c24}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{325d6ee8-456e-4ede-a9a1-70dbd78d4f2f}" />
+	<object class="EventAutomatableProperties" id="{325d6ee8-456e-4ede-a9a1-70dbd78d4f2f}">
+		<property name="maxVoices">
+			<value>3</value>
+		</property>
+		<property name="voiceStealing">
+			<value>2</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{f6b73d19-eb74-4857-b34c-721d33270cfd}" />
 	<object class="GroupTrack" id="{d501af20-d823-4649-b4d0-14cbf5a4a548}">
 		<relationship name="modules">

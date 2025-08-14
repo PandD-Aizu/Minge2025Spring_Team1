@@ -482,6 +482,7 @@ GameObject:
   - component: {fileID: 468261163}
   - component: {fileID: 468261162}
   - component: {fileID: 468261161}
+  - component: {fileID: 468261164}
   m_Layer: 5
   m_Name: Stage1
   m_TagString: Untagged
@@ -603,6 +604,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468261159}
   m_CullTransparentMesh: 1
+--- !u!114 &468261164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468261159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &586288569
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +783,7 @@ GameObject:
   - component: {fileID: 661290248}
   - component: {fileID: 661290247}
   - component: {fileID: 661290246}
+  - component: {fileID: 661290249}
   m_Layer: 5
   m_Name: Stage5
   m_TagString: Untagged
@@ -872,6 +905,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 661290244}
   m_CullTransparentMesh: 1
+--- !u!114 &661290249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661290244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &757983995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1137,7 @@ GameObject:
   - component: {fileID: 842057520}
   - component: {fileID: 842057519}
   - component: {fileID: 842057518}
+  - component: {fileID: 842057521}
   m_Layer: 5
   m_Name: Stage3
   m_TagString: Untagged
@@ -1194,6 +1259,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 842057516}
   m_CullTransparentMesh: 1
+--- !u!114 &842057521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 842057516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &885998858
 GameObject:
   m_ObjectHideFlags: 0
@@ -2925,6 +3021,7 @@ GameObject:
   - component: {fileID: 1580170720}
   - component: {fileID: 1580170719}
   - component: {fileID: 1580170718}
+  - component: {fileID: 1580170721}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -3046,6 +3143,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580170716}
   m_CullTransparentMesh: 1
+--- !u!114 &1580170721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580170716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1598004556
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,6 +3186,7 @@ GameObject:
   - component: {fileID: 1598004560}
   - component: {fileID: 1598004559}
   - component: {fileID: 1598004558}
+  - component: {fileID: 1598004561}
   m_Layer: 5
   m_Name: Stage2
   m_TagString: Untagged
@@ -3179,6 +3308,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598004556}
   m_CullTransparentMesh: 1
+--- !u!114 &1598004561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1598004556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1842178698
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,6 +3351,7 @@ GameObject:
   - component: {fileID: 1842178702}
   - component: {fileID: 1842178701}
   - component: {fileID: 1842178700}
+  - component: {fileID: 1842178703}
   m_Layer: 5
   m_Name: Stage4
   m_TagString: Untagged
@@ -3312,6 +3473,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842178698}
   m_CullTransparentMesh: 1
+--- !u!114 &1842178703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842178698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2082415280
 GameObject:
   m_ObjectHideFlags: 0

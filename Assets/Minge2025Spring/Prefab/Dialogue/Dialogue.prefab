@@ -275,6 +275,7 @@ GameObject:
   - component: {fileID: 4661775863162619016}
   - component: {fileID: 4572158866885215095}
   - component: {fileID: 1334735419061141526}
+  - component: {fileID: 1622128457467225725}
   m_Layer: 5
   m_Name: DialogueButton
   m_TagString: Untagged
@@ -383,6 +384,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1622128457467225725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419137178234181411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &424389739289548711
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +848,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -400}
-  m_SizeDelta: {x: 700, y: 150}
+  m_SizeDelta: {x: 1600, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1328328749152374424
 CanvasRenderer:
@@ -1426,7 +1458,7 @@ RectTransform:
   m_Father: {fileID: 8749535990401537868}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1628,7 +1660,7 @@ RectTransform:
   m_Father: {fileID: 5053332829833204354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1687,7 +1719,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4295130389652491153
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1782,7 +1814,7 @@ RectTransform:
   m_Father: {fileID: 7173491239736441352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2135,7 +2167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 11400000, guid: ad82c2358eb3eb543a5636a2c5cc35d0, type: 2}
-  buttonFunc: {fileID: 0}
+  buttonFunc: {fileID: 5708777785173428622}
   view: {fileID: 8970282282745738252}
   logWindowView: {fileID: 5482163286433360103}
 --- !u!114 &8970282282745738252
@@ -2160,7 +2192,7 @@ MonoBehaviour:
   optionButton: {fileID: 6131089440970765053}
   skipButton: {fileID: 270659849322123143}
   closeButton: {fileID: 6935084304618674527}
-  textBoxSendUI: {fileID: 0}
+  textBoxSendUI: {fileID: 2805971967611935974}
   background: {fileID: 2199335123813373244}
 --- !u!114 &5708777785173428622
 MonoBehaviour:
@@ -2175,7 +2207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionPanel: {fileID: 3510325809767898823}
-  nextScene: Tutorial
+  nextScene: Stage01
   optionButton: {fileID: 6131089440970765053}
   optionCloseButton: {fileID: 1633614949731250180}
   skipButton: {fileID: 270659849322123143}
@@ -2423,7 +2455,7 @@ RectTransform:
   m_Father: {fileID: 7682597650772306065}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2613,6 +2645,7 @@ GameObject:
   - component: {fileID: 661423496233579309}
   - component: {fileID: 4269478920077521706}
   - component: {fileID: 6935084304618674527}
+  - component: {fileID: 229433753492052311}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -2722,6 +2755,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &229433753492052311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5392306631319856511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5546520905547133671
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,6 +2798,7 @@ GameObject:
   - component: {fileID: 945448157926923865}
   - component: {fileID: 876469748938244665}
   - component: {fileID: 3707330301487218597}
+  - component: {fileID: 7303821677856601219}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -2843,6 +2908,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7303821677856601219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5546520905547133671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5654648039609917883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +3193,7 @@ GameObject:
   - component: {fileID: 6445701283454119331}
   - component: {fileID: 2208850284358681713}
   - component: {fileID: 3843272076960664171}
+  - component: {fileID: 8358667128859959931}
   m_Layer: 5
   m_Name: LogButton
   m_TagString: Untagged
@@ -3206,6 +3303,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8358667128859959931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753671015544824063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5977338682446852882
 GameObject:
   m_ObjectHideFlags: 0
@@ -3218,6 +3346,7 @@ GameObject:
   - component: {fileID: 2518949891037419131}
   - component: {fileID: 6147598654313612682}
   - component: {fileID: 1633614949731250180}
+  - component: {fileID: 5687095155693118807}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -3327,6 +3456,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5687095155693118807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5977338682446852882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6131635712769648709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3339,6 +3499,7 @@ GameObject:
   - component: {fileID: 7442709006982378756}
   - component: {fileID: 4745592118191779402}
   - component: {fileID: 5536533644583965775}
+  - component: {fileID: 9183393413743362820}
   m_Layer: 0
   m_Name: MenuButton
   m_TagString: Untagged
@@ -3448,6 +3609,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &9183393413743362820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6131635712769648709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6727251930591173374
 GameObject:
   m_ObjectHideFlags: 0
@@ -3682,7 +3874,7 @@ RectTransform:
   m_Father: {fileID: 6377366877108423087}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3804,7 +3996,7 @@ SpriteRenderer:
   m_SortingLayerID: 1565897931
   m_SortingLayer: 3
   m_SortingOrder: -2
-  m_Sprite: {fileID: 21300000, guid: 6d5c524e2bd185942ad76f8d8453a0af, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 65c9c649dc338344689f86ec45b281d2, type: 3}
   m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4149,7 +4341,7 @@ RectTransform:
   m_Father: {fileID: 7945665512218545547}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4203,6 +4395,7 @@ GameObject:
   - component: {fileID: 2907168560900444363}
   - component: {fileID: 6309790735408792503}
   - component: {fileID: 6131089440970765053}
+  - component: {fileID: 4851141503097213427}
   m_Layer: 5
   m_Name: OptionButton
   m_TagString: Untagged
@@ -4312,6 +4505,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4851141503097213427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8093663108150411917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8314391312343109512
 GameObject:
   m_ObjectHideFlags: 0
@@ -4596,6 +4820,7 @@ GameObject:
   - component: {fileID: 7230980435756363232}
   - component: {fileID: 4736269931499470345}
   - component: {fileID: 270659849322123143}
+  - component: {fileID: 1417416894328121427}
   m_Layer: 5
   m_Name: SkipButton
   m_TagString: Untagged
@@ -4705,6 +4930,37 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1417416894328121427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8842785258147736461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1214324926
+      Data2: 1118233114
+      Data3: 1036462481
+      Data4: -821168818
+    Path: event:/SE/ButtonPushModern
+  Event: 
+  EventPlayTrigger: 20
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &9000962483039394348
 GameObject:
   m_ObjectHideFlags: 0
