@@ -4,40 +4,32 @@ using FMODUnity;
 using General;
 using UnityEngine;
 using DG.Tweening;
-using Random = System.Random;
 
-public class EnemyMovement : MonoBehaviour, IEnemyMovement
+public class BossEnemyController : MonoBehaviour, IEnemyMovement
 {
     public BaseEnemyWalkable startCell;
+    public BaseEnemyWalkable distinationCell;
     
-    private bool isMoving = true;
-    private RaycastHit currentPositionCellHit;
-    private Vector3 directionUnderY = new Vector3(0, -1, 0);//足元の方向にRayを飛ばすための単位ベクトル
+    public bool isMoving = true;
+    
     private Vector3 nextPosition;//移動先のポジション
     private Vector3 goalSurfacePosition;
     private EnemyStatus enemyStatus;
-    [SerializeField]private EnemyGoalPointCell goalPointCell;
     private List<PathNode> pathList = new List<PathNode>();
     private Pathfinding pathfinding = new Pathfinding();
 
-    private Random random = new ();
-
-    private const float MAX_RAYCAST_DISTANCE = 1f;
+    [SerializeField] private List<EnemyWalkableCell> wayPointCells;
+    [SerializeField] private EnemyGoalPointCell goalCell;
+    
     private const float MOVE_SPEED_COEF = 3f;　//移動速度の係数
     private const float DIFFERENCE_WITH_THE_GROUND = 0.5f;　//ゲームオブジェクトと地面との表面との差
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
     
-    [Header("SE")]
-    [SerializeField] private StudioEventEmitter goalEmitter;
-    
     //アクセサ
-    private Vector3 GoalPosition {get => goalPointCell.transform.position;}
-    
     public bool IsMoving {get => isMoving; set => isMoving = value;}
-    
-    //EnemyStatusの初期化、goalPoint、pathListを取得
+
     private void Start()
     {
         if (this.gameObject.TryGetComponent<EnemyStatus>(out enemyStatus))
@@ -48,22 +40,13 @@ public class EnemyMovement : MonoBehaviour, IEnemyMovement
         {
             Debug.LogError("Cannot Get EnemyStatus");
         }
-        
-        goalPointCell = GameManager.Instance.CallRandomEnemyGoalPoint();
-        if (goalPointCell != null)
-        {
-            Debug.LogWarning("GoalGet");
-        }
-        else
-        {
-            Debug.LogWarning("Goal Do not Get");
-        }
-        goalSurfacePosition = GoalPosition;
+        goalSurfacePosition = goalCell.transform.position;
         goalSurfacePosition.y += 1;
+        
         ((IEnemyMovement)this).UpdateRootPath();
         ((IEnemyMovement)this).EnemyMove();
     }
-
+    
     private void Update()
     {
         // pause中に敵を止める
@@ -84,54 +67,50 @@ public class EnemyMovement : MonoBehaviour, IEnemyMovement
         {
             //ゴールにたどり着いたらGameManagerのGoalReach()を使ってStageLifeUIを更新する
             GameManager.Instance.ReachedGoal();
-            GetComponent<StudioEventEmitter>().Play();
             Destroy(gameObject);
         }
     }
 
-    //pathListを新しく計算しなおす関数
-     void IEnemyMovement.UpdateRootPath()
+    void IEnemyMovement.UpdateRootPath()
     {
-        Physics.Raycast(transform.position, directionUnderY, out currentPositionCellHit, MAX_RAYCAST_DISTANCE, searchCurrentPositionCellLayerMask);
-        Debug.DrawRay(transform.position, directionUnderY, Color.red, 1f);
-        if (currentPositionCellHit.collider != null)
-        {
-            Debug.Log("not null");
-            startCell = currentPositionCellHit.collider.gameObject.GetComponent<BaseEnemyWalkable>();
-        }
-        
-        pathList = pathfinding.FindPath(startCell, goalPointCell);
-        foreach (PathNode node in pathList)
-        {
-            Debug.Log("Root " + ": " + node.NodeId);
-        }
-    }
-
-    //brief エネミーを移動させる関数
-    void IEnemyMovement.EnemyMove()
-    {
-        if (pathList == null) return;
-
-        if (pathList.Count <= 0)
+        if (wayPointCells.Count <= 1)
         {
             nextPosition = goalSurfacePosition;
             this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
             return;
         }
+        startCell = wayPointCells[0];
+        distinationCell = wayPointCells[1];
+        pathList = pathfinding.FindPath(startCell, distinationCell);
+        foreach (PathNode node in pathList)
+        {
+            Debug.Log("Root " + ": " + node.NodeId);
+        }
+        wayPointCells.RemoveAt(0);
+    }
+
+    void IEnemyMovement.EnemyMove()
+    {
+        if (pathList == null) return;
         
+        if (pathList.Count <= 0)
+        {
+            //オブジェクトの表面を計算
+            Vector3 distinationPosition = distinationCell.transform.position;
+            Vector3 distinationScale = distinationCell.gameObject.transform.localScale;
+            distinationPosition.y += (distinationScale.y / 2) + 0.5f;
+            nextPosition = distinationPosition;
+            this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
+            ((IEnemyMovement)this).UpdateRootPath();    
+            return;
+        }
         nextPosition = pathList[0].SurfacePosition;
         nextPosition.y += DIFFERENCE_WITH_THE_GROUND;
-        
-        // 次の移動地点にランダムなオフセットを追加
-        Vector3 randomPos = new Vector3((float)(random.NextDouble() * (0.2f - (-0.2f)) + (-0.2f)), 0, (float)(random.NextDouble() * (0.2f - (-0.2f)) + (-0.2f)));
-        nextPosition += randomPos;
-        
         enemyStatus.CurrentMoveDirection = nextPosition - transform.position; // 敵の向きを設定
         pathList.RemoveAt(0);
         this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
     }
-    
-    // @brief 敵の移動を一時停止する
+
     void IEnemyMovement.StopEnemyMovement()
     {
         PathNode tempNode = new PathNode("-1", nextPosition);

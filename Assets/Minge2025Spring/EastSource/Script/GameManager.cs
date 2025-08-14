@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> EnemyWalkableCells {get{return enemyWalkableCells;}}
     public List<EnemyWalkableCell> MovementRootList {get{return movementRootList;}}
     
+    public int MaxSpawnEnemies { get => maxSpawnEnemies; }
+    public int GoalCapasity { get => goalCapasity; }
     private void Awake()
     {
         Instance = this;
@@ -41,14 +43,6 @@ public class GameManager : MonoBehaviour
         UpdateEnemyGoalPointCells();
         UpdateEnemySpawnPointCells();
         StartCoroutine(GameJudgementCoroutine());
-    }
-
-    private void Start()
-    {
-        reachedGoalEnemies = 0;
-        spawndedEnemies = 0;
-        
-        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemies, spawndedEnemies, reachedGoalEnemies, goalCapasity);
     }
 
     //brief シーン上のスポーンポイントを取得する
@@ -120,9 +114,8 @@ public class GameManager : MonoBehaviour
     //@brief エネミーがスポーンしたときにカウントする
     public void SpawnEnemy()
     {
-        spawndedEnemies++;
-        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemies, spawndedEnemies, reachedGoalEnemies, goalCapasity);
-        if (spawndedEnemies >= maxSpawnEnemies)
+        StageLifeUIController.Instance.UpdateSpawnedEnemies(1);
+        if (StageLifeUIController.Instance.SpawnedEnemies >= maxSpawnEnemies)
         {
             GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
         }
@@ -131,7 +124,7 @@ public class GameManager : MonoBehaviour
     //@brief すべてのエネミーが出きったかどうか確認の後ゲームクリア判定
     public void ClearJudgement()
     {
-        if (spawndedEnemies >= maxSpawnEnemies && GameSpawnManager.Instance.NumberOfEnemies <= 0 )
+        if (StageLifeUIController.Instance.SpawnedEnemies >= maxSpawnEnemies && GameSpawnManager.Instance.NumberOfEnemies <= 0 )
         {
             OnGameClear?.Invoke(this, EventArgs.Empty);
             isJudged = true;
@@ -141,15 +134,14 @@ public class GameManager : MonoBehaviour
     //@brief エネミーがゴールに到達したときreachedGoalEnemiesを加算し、GoalCapacity以上かどうか確認する
     public void ReachedGoal()
     {
-        reachedGoalEnemies++;
-        StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemies, spawndedEnemies, reachedGoalEnemies, goalCapasity);
+        StageLifeUIController.Instance.UpdateReachGoalEnemies(1);
+        JudgeGameOver();
     }
 
     public void JudgeGameOver()
     {
-        if (reachedGoalEnemies >= goalCapasity)
+        if (StageLifeUIController.Instance.MaxSpawnEnemies >= goalCapasity)
         {
-            StageLifeUI.Instance.UpdateStageLifeUI(maxSpawnEnemies, spawndedEnemies, reachedGoalEnemies, goalCapasity);
             //ゲームオーバー
             GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める
             OnGameOver?.Invoke(this, EventArgs.Empty);
