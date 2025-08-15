@@ -153,12 +153,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyState: 1
   animator: {fileID: 7011219788672685171}
-  maxHealth: 1000
-  initialAttack: 100
+  maxHealth: 1250
+  initialAttack: 300
   initialMoveSpeed: 1
   initialDefence: 50
   spawnCooltime: 4
-  attackCoolTime: 3
+  attackCoolTime: 1.5
   movementAnimationParameter: Moving
   attackAnimationParameter: Attacking
   attackerType: 2

@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public List<EnemyWalkableCell> MovementRootList {get{return movementRootList;}}
     
     public int MaxSpawnEnemies { get => maxSpawnEnemies; }
+    public int SpawnedEnemies => spawndedEnemies;
     public int GoalCapasity { get => goalCapasity; }
     private void Awake()
     {
@@ -42,6 +43,10 @@ public class GameManager : MonoBehaviour
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
         UpdateEnemySpawnPointCells();
+    }
+
+    private void Start()
+    {
         StartCoroutine(GameJudgementCoroutine());
     }
 

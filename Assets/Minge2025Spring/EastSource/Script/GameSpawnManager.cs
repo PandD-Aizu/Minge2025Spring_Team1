@@ -7,6 +7,7 @@ public class GameSpawnManager : MonoBehaviour
 {
     [Header("Binding")]
     [SerializeField] private GameObject[] enemySpawnOrder;
+    [SerializeField] private GameObject[] enemyBoss;
 
     public static GameSpawnManager Instance{get; private set;}
     
@@ -62,16 +63,37 @@ public class GameSpawnManager : MonoBehaviour
 
     public void UpdateNextSpawn()
     {
-        Random random = new Random();
-        int index = random.Next(enemySpawnOrder.Length);
-        if (enemySpawnOrder[index].TryGetComponent<EnemyStatus>(out EnemyStatus enemyStatus))
+        int spawnedCount = GameManager.Instance.SpawnedEnemies;
+        int maxSpawns = GameManager.Instance.MaxSpawnEnemies;
+
+        if (spawnedCount == maxSpawns - 1 && enemyBoss.Length > 0)
         {
-            nextSpawnEnemy = enemySpawnOrder[index];
-            nextSpawnTime = enemyStatus.SpawnCooltime;
+            Random random = new Random();
+            int index = random.Next(enemyBoss.Length);
+            if (enemyBoss[index].TryGetComponent(out EnemyStatus enemyStatus))
+            {
+                nextSpawnEnemy = enemyBoss[index];
+                nextSpawnTime = enemyStatus.SpawnCooltime;
+                isSpawning = true; // ボスがスポーンする場合は即座にスポーン可能にする
+            }
+            else
+            {
+                Debug.LogError("Not Found EnemyStatus in UpdateNextSpawn() for Boss");
+            }
         }
         else
         {
-            Debug.LogError("Not Found EnemyStatus in UpdateNextSpawn()");
+            Random random = new Random();
+            int index = random.Next(enemySpawnOrder.Length);
+            if (enemySpawnOrder[index].TryGetComponent(out EnemyStatus enemyStatus))
+            {
+                nextSpawnEnemy = enemySpawnOrder[index];
+                nextSpawnTime = enemyStatus.SpawnCooltime;
+            }
+            else
+            {
+                Debug.LogError("Not Found EnemyStatus in UpdateNextSpawn() for Regular Enemy");
+            }
         }
     }
 

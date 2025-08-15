@@ -28,6 +28,9 @@ public class EnemyMovement : MonoBehaviour, IEnemyMovement
     
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
+
+    [Header("移動アニメーション(パーティクルシステムがある敵のみ)")] 
+    [SerializeField] private ParticleSystem moveAnimParticleSys;
     
     [Header("SE")]
     [SerializeField] private StudioEventEmitter goalEmitter;
@@ -68,6 +71,17 @@ public class EnemyMovement : MonoBehaviour, IEnemyMovement
     {
         // pause中に敵を止める
         if (Time.timeScale == 0f) return;
+        
+        // 移動アニメーション
+        if (moveAnimParticleSys != null && !moveAnimParticleSys.isPlaying)
+        {
+            moveAnimParticleSys.Play();
+        }
+        
+        if (moveAnimParticleSys != null && enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking)
+        {
+            moveAnimParticleSys.Stop();
+        }
         
         //次のセルまで移動
         if (nextPosition == this.gameObject.transform.position && IsMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)

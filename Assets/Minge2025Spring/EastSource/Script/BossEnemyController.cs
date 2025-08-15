@@ -27,6 +27,9 @@ public class BossEnemyController : MonoBehaviour, IEnemyMovement
     [Header("Binding")]
     [SerializeField] private LayerMask searchCurrentPositionCellLayerMask;
     
+    [Header("移動アニメーション(パーティクルシステムがある敵のみ)")] 
+    [SerializeField] private ParticleSystem moveAnimParticleSys;
+    
     //アクセサ
     public bool IsMoving {get => isMoving; set => isMoving = value;}
 
@@ -52,6 +55,17 @@ public class BossEnemyController : MonoBehaviour, IEnemyMovement
         // pause中に敵を止める
         if (Time.timeScale == 0f) return;
         
+        // 移動アニメーション
+        if (moveAnimParticleSys != null && !moveAnimParticleSys.isPlaying)
+        {
+            moveAnimParticleSys.Play();
+        }
+        
+        if (moveAnimParticleSys != null && enemyStatus.enemyState == EnemyStatus.EnemyState.Attacking)
+        {
+            moveAnimParticleSys.Stop();
+        }
+        
         //次のセルまで移動
         if (nextPosition == this.gameObject.transform.position && IsMoving && enemyStatus.enemyState == EnemyStatus.EnemyState.Moving)
         {
@@ -76,16 +90,19 @@ public class BossEnemyController : MonoBehaviour, IEnemyMovement
         if (wayPointCells.Count <= 1)
         {
             nextPosition = goalSurfacePosition;
-            this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
+            transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
             return;
         }
-        startCell = wayPointCells[0];
+        
+        // ルートの更新
+        startCell = wayPointCells[0]; // 
         distinationCell = wayPointCells[1];
         pathList = pathfinding.FindPath(startCell, distinationCell);
         foreach (PathNode node in pathList)
         {
             Debug.Log("Root " + ": " + node.NodeId);
         }
+        
         wayPointCells.RemoveAt(0);
     }
 
@@ -101,14 +118,15 @@ public class BossEnemyController : MonoBehaviour, IEnemyMovement
             distinationPosition.y += (distinationScale.y / 2) + 0.5f;
             nextPosition = distinationPosition;
             this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
-            ((IEnemyMovement)this).UpdateRootPath();    
+            ((IEnemyMovement)this).UpdateRootPath();
             return;
         }
+        
         nextPosition = pathList[0].SurfacePosition;
         nextPosition.y += DIFFERENCE_WITH_THE_GROUND;
         enemyStatus.CurrentMoveDirection = nextPosition - transform.position; // 敵の向きを設定
         pathList.RemoveAt(0);
-        this.transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
+        transform.DOMove(nextPosition, (MOVE_SPEED_COEF / enemyStatus.CurrentMoveSpeed)).SetEase(Ease.Linear);
     }
 
     void IEnemyMovement.StopEnemyMovement()
