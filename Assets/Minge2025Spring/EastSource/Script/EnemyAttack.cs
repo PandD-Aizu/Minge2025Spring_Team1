@@ -41,6 +41,9 @@ public class EnemyAttack : MonoBehaviour
     [InspectorName("ObserveTargetLayerMask")]
     [SerializeField] private LayerMask observeTargetLayerMask;
 
+    [Header("アニメーション(パーティクルシステムの場合)")] 
+    [SerializeField] private ParticleSystem attackAnimParticleSys;
+
     private void Start()
     {
         if (enemyAttackType == EnemyAttackType.LongRange)  // 遠距離攻撃タイプの敵の場合
@@ -121,6 +124,9 @@ public class EnemyAttack : MonoBehaviour
             if (enemyStatus.AttackCoolTime <= currentAttackCoolTime //　攻撃できてかつ攻撃対象の情報が取得できた場合 
                 && attackTarget.gameObject.TryGetComponent<CharacterBehaviourPresenter>(out CharacterBehaviourPresenter characterBehaviourPresenter))
             {
+                if (attackAnimParticleSys != null)
+                    attackAnimParticleSys.Play();
+                    
                 animator.SetTrigger(enemyStatus.attackAnimationParameter);
                 //Todo ターゲットにダメージを与える処理を正しく書き直す2024/03/22時点まだ
                 int damage = enemyStatus.CurrentAttack - characterBehaviourPresenter.AllyInfo.Defence;

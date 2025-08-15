@@ -35427,7 +35427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &608250239
 RectTransform:
   m_ObjectHideFlags: 0
@@ -101434,6 +101434,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!198 &1381337448 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3535328222488749356, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+  m_PrefabInstance: {fileID: 1527415222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1393413630
 GameObject:
   m_ObjectHideFlags: 0
@@ -105011,13 +105016,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 149825927}
     m_Modifications:
-    - target: {fileID: 2027737086382354627, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2203481349269473930, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
+    - target: {fileID: 976906364339890539, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+      propertyPath: looping
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2563736469155024321, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -105059,34 +105060,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3363862757327637067, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: initialMoveSpeed
-      value: 0.25
+    - target: {fileID: 3535328222488749356, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535328222488749356, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4290129022170508900, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
       propertyPath: m_Name
       value: MiniBoss
       objectReference: {fileID: 0}
-    - target: {fileID: 4290129022170508900, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4290129022170508900, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6194909153689540594, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7269008361063081163, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7607356401369220132, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
+    - target: {fileID: 5231054439162223149, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+      propertyPath: attackAnimParticleSys
+      value: 
+      objectReference: {fileID: 1381337448}
     - target: {fileID: 7931360937663078362, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
       propertyPath: goalCell
       value: 
@@ -105095,6 +105084,10 @@ PrefabInstance:
       propertyPath: startCell
       value: 
       objectReference: {fileID: 1598476117}
+    - target: {fileID: 7931360937663078362, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+      propertyPath: moveAnimParticleSys
+      value: 
+      objectReference: {fileID: 1815036221}
     - target: {fileID: 7931360937663078362, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
       propertyPath: 'wayPointCells.Array.data[0]'
       value: 
@@ -105270,10 +105263,6 @@ PrefabInstance:
     - target: {fileID: 7996794846317098669, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9051256423677497991, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -120473,6 +120462,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!198 &1815036221 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1208906440610409458, guid: 9ee3fea79416e894390428c69c1e926b, type: 3}
+  m_PrefabInstance: {fileID: 1527415222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1815207966
 Mesh:
   m_ObjectHideFlags: 0
