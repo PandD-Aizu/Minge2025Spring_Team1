@@ -9873,8 +9873,8 @@ GameObject:
   - component: {fileID: 3363862757327637067}
   - component: {fileID: 5231054439162223149}
   - component: {fileID: 6247205921903946848}
-  - component: {fileID: 6799376082111425169}
   - component: {fileID: 7403066077576329156}
+  - component: {fileID: 7931360937663078362}
   m_Layer: 0
   m_Name: MiniBoss
   m_TagString: Untagged
@@ -9936,7 +9936,7 @@ MonoBehaviour:
   enemyState: 1
   animator: {fileID: 0}
   maxHealth: 5000
-  initialAttack: 300
+  initialAttack: 500
   initialMoveSpeed: 1
   initialDefence: 50
   spawnCooltime: 0
@@ -9978,24 +9978,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyStatus: {fileID: 3363862757327637067}
   hpSlider: {fileID: 895781111744102346}
---- !u!114 &6799376082111425169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4290129022170508900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1210e0dbaf3dc54d99e48d9cbfe00bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startCell: {fileID: 0}
-  goalPointCell: {fileID: 0}
-  searchCurrentPositionCellLayerMask:
-    serializedVersion: 2
-    m_Bits: 8960
-  goalEmitter: {fileID: 7403066077576329156}
 --- !u!114 &7403066077576329156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10027,6 +10009,68 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &7931360937663078362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4290129022170508900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38023cfdefd308846be5f43c9e3821a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startCell: {fileID: 0}
+  distinationCell: {fileID: 0}
+  isMoving: 1
+  wayPointCells:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  goalCell: {fileID: 0}
+  searchCurrentPositionCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &6194909153689540594
 GameObject:
   m_ObjectHideFlags: 0

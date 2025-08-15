@@ -25,11 +25,11 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: a0892d81f5b045747acc29aa1e80d46b, type: 3}
   characterName: Archer
   cost: 30
-  maxHp: 1000
-  hp: 1000
+  maxHp: 500
+  hp: 500
   maxBlockCount: 1
-  blockCount: 2
-  attack: 250
+  blockCount: 1
+  attack: 300
   maxAttack: 250
   attackCoolDown: 2.28
   defence: 10

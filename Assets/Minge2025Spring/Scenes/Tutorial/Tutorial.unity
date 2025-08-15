@@ -77517,6 +77517,7 @@ MonoBehaviour:
   enemySpawnOrder:
   - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
+  enemyBoss: []
   limiterSpawnEnemy: 99
   readyTime: 15
   isPassedSpawnSpawnTime: 0
@@ -163353,7 +163354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
   maxSpawnEnemies: 10
-  goalCapasity: 1
+  goalCapasity: 5
   isdebugMode: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}

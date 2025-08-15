@@ -15,7 +15,7 @@ MonoBehaviour:
   attackType: 0
   characterDeployInfo: 0
   characterState: 1
-  characterDirection: 1
+  characterDirection: 3
   characterDeployableLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -25,13 +25,13 @@ MonoBehaviour:
   characterSprite: {fileID: 21300000, guid: 529f12b1bc09dd24387f92d8f497f1fb, type: 3}
   characterName: Sword
   cost: 20
-  maxHp: 2000
-  hp: 1760
+  maxHp: 1000
+  hp: 440
   maxBlockCount: 3
   blockCount: 0
-  attack: 300
+  attack: 350
   maxAttack: 250
   attackCoolDown: 1.25
   defence: 20
   maxDefence: 20
-  characterType: 3
+  characterType: 2

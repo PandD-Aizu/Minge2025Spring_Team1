@@ -7107,10 +7107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawnOrder:
-  - {fileID: 1351261909501241974, guid: 2a33186e2debcc54fae3531a5f6dab81, type: 3}
+  - {fileID: 2640319724461436175, guid: 4788d03e753e07c4f84b053947176699, type: 3}
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
+  enemyBoss: []
   limiterSpawnEnemy: 99
-  readyTime: 30
+  readyTime: 1
   isPassedSpawnSpawnTime: 0
 --- !u!43 &143330371
 Mesh:
@@ -73484,8 +73485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
-  maxSpawnEnemies: 30
-  goalCapasity: 1
+  maxSpawnEnemies: 5
+  goalCapasity: 5
   isdebugMode: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}
@@ -126944,7 +126945,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 4d43bafcb3032d14a80df21cf027fcd4, type: 2}
+  sharedProfile: {fileID: 11400000, guid: ec3aded28852d79499ad66ba88f08ae3, type: 2}
 --- !u!4 &1907090351
 Transform:
   m_ObjectHideFlags: 0
