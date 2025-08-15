@@ -10,7 +10,7 @@ public class StageLifeUIController : MonoBehaviour
     [SerializeField] private StageLifeUIView view;
     
     //アクセサ
-    public int MaxSpawnEnemies{get => model.reachGoalEnemies.Value;}
+    public int ReachGoalEnemies{get => model.reachGoalEnemies.Value;}
     public int SpawnedEnemies{get => model.spawnedEnemeies.Value;}
     
     private void Awake()

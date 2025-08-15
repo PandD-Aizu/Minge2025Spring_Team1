@@ -9,6 +9,7 @@ using Random = System.Random;
 
 public class GameManager : MonoBehaviour
 {
+   
     public static GameManager Instance {get; private set;}
     public event EventHandler OnGameOver;
     public event EventHandler OnGameClear;
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
     
     private int reachedGoalEnemies = 0;
     private int spawndedEnemies = 0;
-    private bool isJudged = false;
+    [SerializeField]private bool isJudged = false;
     [SerializeField]private List<GameObject>enemyWalkableCells;
     private GameObject[] enemyGoalPointCells;
     private GameObject[] characterPlacementCells;
@@ -140,12 +141,12 @@ public class GameManager : MonoBehaviour
     public void ReachedGoal()
     {
         StageLifeUIController.Instance.UpdateReachGoalEnemies(1);
-        JudgeGameOver();
+        JudgeGameOver(); 
     }
 
     public void JudgeGameOver()
     {
-        if (StageLifeUIController.Instance.MaxSpawnEnemies >= goalCapasity)
+        if (StageLifeUIController.Instance.ReachGoalEnemies >= goalCapasity)
         {
             //ゲームオーバー
             GameSpawnManager.Instance.IsPassedSpawnTime = false; //エネミーのスポーンを止める

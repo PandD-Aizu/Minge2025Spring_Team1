@@ -77519,7 +77519,7 @@ MonoBehaviour:
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
   enemyBoss: []
   limiterSpawnEnemy: 99
-  readyTime: 30
+  readyTime: 5
   isPassedSpawnSpawnTime: 0
 --- !u!1 &1162866885
 GameObject:
@@ -119522,7 +119522,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1570839899}
-  - component: {fileID: 1570839900}
   - component: {fileID: 1570839903}
   - component: {fileID: 1570839902}
   - component: {fileID: 1570839901}
@@ -119553,19 +119552,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000045776367}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1570839900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1570839898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948099e7eb3cb2846a792f565bd3a173, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMesh: {fileID: 1871706867}
 --- !u!114 &1570839901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163354,9 +163340,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
-  maxSpawnEnemies: 10
-  goalCapasity: 1
+  maxSpawnEnemies: 2
+  goalCapasity: 2
   isdebugMode: 0
+  isJudged: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}
 --- !u!43 &2104198640
