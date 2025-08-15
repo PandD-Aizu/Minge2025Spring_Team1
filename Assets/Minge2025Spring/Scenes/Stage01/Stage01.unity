@@ -7111,7 +7111,7 @@ MonoBehaviour:
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
   enemyBoss: []
   limiterSpawnEnemy: 99
-  readyTime: 1
+  readyTime: 30
   isPassedSpawnSpawnTime: 0
 --- !u!43 &143330371
 Mesh:
@@ -73485,8 +73485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
-  maxSpawnEnemies: 5
-  goalCapasity: 5
+  maxSpawnEnemies: 30
+  goalCapasity: 1
   isdebugMode: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}
@@ -88448,6 +88448,7 @@ Transform:
   - {fileID: 135981590}
   - {fileID: 309813184}
   - {fileID: 1749647774}
+  - {fileID: 1553456602}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1179986250
@@ -102990,6 +102991,52 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   connectEnemyWalkableCells: []
+--- !u!1 &1553456601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553456602}
+  - component: {fileID: 1553456603}
+  m_Layer: 0
+  m_Name: ParticleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1553456602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553456601}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1170555476}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1553456603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553456601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78a05ad5b1194b1d89d6af2723c0dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmbientParticle: {fileID: 743261020}
+  FogParticle: {fileID: 34075356}
 --- !u!1 &1558080310
 GameObject:
   m_ObjectHideFlags: 0

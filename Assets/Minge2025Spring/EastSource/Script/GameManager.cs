@@ -43,6 +43,10 @@ public class GameManager : MonoBehaviour
         UpdateEnemyWalkableCells();
         UpdateEnemyGoalPointCells();
         UpdateEnemySpawnPointCells();
+    }
+
+    private void Start()
+    {
         StartCoroutine(GameJudgementCoroutine());
     }
 

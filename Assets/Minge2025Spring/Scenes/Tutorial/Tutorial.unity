@@ -77519,7 +77519,7 @@ MonoBehaviour:
   - {fileID: 1702553290804783497, guid: 186fb4a004913e44c9d99c80438a7154, type: 3}
   enemyBoss: []
   limiterSpawnEnemy: 99
-  readyTime: 15
+  readyTime: 30
   isPassedSpawnSpawnTime: 0
 --- !u!1 &1162866885
 GameObject:
@@ -84541,6 +84541,7 @@ Transform:
   - {fileID: 605719552}
   - {fileID: 1971005996}
   - {fileID: 954480248}
+  - {fileID: 1299245969}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1283600130
@@ -94447,12 +94448,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299245967}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.273147, y: 8.513889, z: -10.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1275343592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1305481559
 Mesh:
@@ -163354,7 +163355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testWalkableCellNumber: 0
   maxSpawnEnemies: 10
-  goalCapasity: 5
+  goalCapasity: 1
   isdebugMode: 0
   enemyWalkableCells: []
   testObject: {fileID: 0}
@@ -169473,5 +169474,4 @@ SceneRoots:
   - {fileID: 935321800}
   - {fileID: 11688386}
   - {fileID: 7446469415642353276}
-  - {fileID: 1299245969}
   - {fileID: 420688406}
